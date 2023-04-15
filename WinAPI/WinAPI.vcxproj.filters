@@ -49,8 +49,11 @@
     <Filter Include="GameObject\Common">
       <UniqueIdentifier>{9e45e506-939f-4c97-8f87-6146ebb42d5f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameObject\Stage01">
+    <Filter Include="GameObject\Player">
       <UniqueIdentifier>{f2ad0501-d505-4b88-af0d-880a4673ef5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Player\State">
+      <UniqueIdentifier>{94537fb0-f05c-46bd-9a93-6eaafb21580b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -163,13 +166,13 @@
       <Filter>GameObject\Common</Filter>
     </ClInclude>
     <ClInclude Include="CMissile.h">
-      <Filter>GameObject\Stage01</Filter>
+      <Filter>GameObject\Player</Filter>
     </ClInclude>
     <ClInclude Include="CMonster.h">
-      <Filter>GameObject\Stage01</Filter>
+      <Filter>GameObject\Player</Filter>
     </ClInclude>
     <ClInclude Include="CPlayer.h">
-      <Filter>GameObject\Stage01</Filter>
+      <Filter>GameObject\Player</Filter>
     </ClInclude>
     <ClInclude Include="CTilePanel.h">
       <Filter>Engine\Asset\UI</Filter>
@@ -182,6 +185,9 @@
     </ClInclude>
     <ClInclude Include="CSoundManager.h">
       <Filter>Engine\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="CState.h">
+      <Filter>GameObject\Player\State</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -276,13 +282,13 @@
       <Filter>GameObject\Common</Filter>
     </ClCompile>
     <ClCompile Include="CMissile.cpp">
-      <Filter>GameObject\Stage01</Filter>
+      <Filter>GameObject\Player</Filter>
     </ClCompile>
     <ClCompile Include="CMonster.cpp">
-      <Filter>GameObject\Stage01</Filter>
+      <Filter>GameObject\Player</Filter>
     </ClCompile>
     <ClCompile Include="CPlayer.cpp">
-      <Filter>GameObject\Stage01</Filter>
+      <Filter>GameObject\Player</Filter>
     </ClCompile>
     <ClCompile Include="CTileButton.cpp">
       <Filter>Engine\Asset\UI</Filter>
@@ -295,6 +301,9 @@
     </ClCompile>
     <ClCompile Include="CSoundManager.cpp">
       <Filter>Engine\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="CState.cpp">
+      <Filter>GameObject\Player\State</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
