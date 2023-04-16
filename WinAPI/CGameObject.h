@@ -21,9 +21,9 @@ class CGameObject
 public:
 	CGameObject();
 	virtual ~CGameObject();
+	Vector m_vecPos;	// 게임오브젝트의 위치
 
 protected:
-	Vector m_vecPos;	// 게임오브젝트의 위치
 	Vector m_vecScale;	// 게임오브젝트의 크기
 	Layer m_layer;		// 게임오브젝트의 레이어
 	wstring m_strName;	// 게임오브젝트의 이름
