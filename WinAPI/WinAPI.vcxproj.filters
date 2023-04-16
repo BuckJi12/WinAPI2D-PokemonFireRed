@@ -189,6 +189,9 @@
     <ClInclude Include="CState.h">
       <Filter>GameObject\Player\State</Filter>
     </ClInclude>
+    <ClInclude Include="CIdle.h">
+      <Filter>GameObject\Player\State</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -303,6 +306,9 @@
       <Filter>Engine\Manager</Filter>
     </ClCompile>
     <ClCompile Include="CState.cpp">
+      <Filter>GameObject\Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CIdle.cpp">
       <Filter>GameObject\Player\State</Filter>
     </ClCompile>
   </ItemGroup>
