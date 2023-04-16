@@ -195,6 +195,9 @@
     <ClInclude Include="CWalk.h">
       <Filter>GameObject\Player\State</Filter>
     </ClInclude>
+    <ClInclude Include="CRun.h">
+      <Filter>GameObject\Player\State</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -315,6 +318,9 @@
       <Filter>GameObject\Player\State</Filter>
     </ClCompile>
     <ClCompile Include="CWalk.cpp">
+      <Filter>GameObject\Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CRun.cpp">
       <Filter>GameObject\Player\State</Filter>
     </ClCompile>
   </ItemGroup>

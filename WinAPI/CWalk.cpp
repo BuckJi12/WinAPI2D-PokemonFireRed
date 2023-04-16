@@ -15,7 +15,7 @@ CWalk::~CWalk()
 
 void CWalk::Init()
 {
-	m_pWalkImage = RESOURCE->LoadImg(L"PlayerWalk", L"Image\\Player||PlayerWalk.png");
+	m_pWalkImage = RESOURCE->LoadImg(L"PlayerWalk", L"Image\\Player\\PlayerWalk.png");
 
 	pPlayer->GetAnimator()->CreateAnimation(L"WalkDown", m_pWalkImage, Vector(0, 0), Vector(16.f, 20.f), Vector(20.f, 0.f), 0.5, 3);
 	pPlayer->GetAnimator()->CreateAnimation(L"WalkUP", m_pWalkImage, Vector(0, 20), Vector(16.f, 20.f), Vector(20.f, 0.f), 0.5, 3);
