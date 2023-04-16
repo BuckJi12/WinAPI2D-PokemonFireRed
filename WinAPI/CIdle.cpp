@@ -12,10 +12,10 @@ CIdle::~CIdle()
 
 void CIdle::Init()
 {
-	m_pIdleImage = RESOURCE->LoadImg(L"PlayerIdle", L"Image\\Player\\PlayerMove.png");
+	m_pIdleImage = RESOURCE->LoadImg(L"PlayerIdle", L"Image\\Player\\PlayerIdle.png");
 
 	pPlayer->GetAnimator()->CreateAnimation(L"IdleDown", m_pIdleImage, Vector(0, 0), Vector(16.f, 20.f), Vector(16.f, 0.f), 0.1, 1);
-	pPlayer->GetAnimator()->CreateAnimation(L"IdleUP", m_pIdleImage, Vector(0, 20), Vector(16.f, 20.f), Vector(16.f, 0.f), 0.1, 1);
+	pPlayer->GetAnimator()->CreateAnimation(L"IdleUp", m_pIdleImage, Vector(0, 20), Vector(16.f, 20.f), Vector(16.f, 0.f), 0.1, 1);
 	pPlayer->GetAnimator()->CreateAnimation(L"IdleLeft", m_pIdleImage, Vector(0, 40), Vector(16.f, 20.f), Vector(16.f, 0.f), 0.1, 1);
 	pPlayer->GetAnimator()->CreateAnimation(L"IdleRight", m_pIdleImage, Vector(0, 60), Vector(16.f, 20.f), Vector(16.f, 0.f), 0.1, 1);
 }

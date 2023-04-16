@@ -1,17 +1,9 @@
 #include "framework.h"
 #include "CPlayer.h"
 
-#include "WinAPI.h"
-#include "CInputManager.h"
-#include "CTimeManager.h"
-#include "CRenderManager.h"
-#include "CEventManager.h"
-#include "CResourceManager.h"
-#include "CCollider.h"
-#include "CImage.h"
-#include "CAnimator.h"
-
-#include "CMissile.h"
+#include "CIdle.h"
+#include "CWalk.h"
+#include "CRun.h"
 
 CPlayer::CPlayer()
 {
@@ -40,7 +32,9 @@ PlayerDir CPlayer::GetDir()
 
 void CPlayer::ChangeState(PlayerState state)
 {
+	m_mapState[m_curState]->Exit();
 	m_curState = state;
+	m_mapState[m_curState]->Enter();
 }
 
 void CPlayer::ChangeDir(PlayerDir dir)
@@ -50,7 +44,15 @@ void CPlayer::ChangeDir(PlayerDir dir)
 
 void CPlayer::Init()
 {
+	m_mapState.insert(make_pair(PlayerState::Idle, new CIdle(this)));
+	m_mapState.insert(make_pair(PlayerState::Walk, new CWalk(this)));
+	m_mapState.insert(make_pair(PlayerState::Run, new CRun(this)));
+
 	m_pAnimator = new CAnimator;
+
+	m_mapState[PlayerState::Idle]->Init();
+	m_mapState[PlayerState::Walk]->Init();
+	m_mapState[PlayerState::Run]->Init();
 
 	AddComponent(m_pAnimator);
 	AddCollider(ColliderType::Rect, Vector(90, 90), Vector(0, 0));
@@ -58,7 +60,7 @@ void CPlayer::Init()
 
 void CPlayer::Update()
 {
-
+	m_mapState[m_curState]->Update();
 }
 
 void CPlayer::Render()
