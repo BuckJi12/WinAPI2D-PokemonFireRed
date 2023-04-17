@@ -1,9 +1,9 @@
 #pragma once
 
-class IObject
+class ISubject
 {
 public:
-	virtual ~IObject() {};
+	virtual ~ISubject() {};
 	virtual void AddObserver() = 0;
 	virtual void RemoveObserver() = 0;
 	virtual void Notify() = 0;

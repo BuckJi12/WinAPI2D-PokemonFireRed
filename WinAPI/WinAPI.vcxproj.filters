@@ -204,7 +204,7 @@
     <ClInclude Include="CRun.h">
       <Filter>GameObject\Player\State</Filter>
     </ClInclude>
-    <ClInclude Include="IObject.h">
+    <ClInclude Include="ISubject.h">
       <Filter>Engine\DesignPattern\Observer Pattern</Filter>
     </ClInclude>
     <ClInclude Include="IObserver.h">
