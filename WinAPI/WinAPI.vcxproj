@@ -181,6 +181,7 @@
     <ClInclude Include="CWalk.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="IObject.h" />
+    <ClInclude Include="IObserver.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SingleTon.h" />

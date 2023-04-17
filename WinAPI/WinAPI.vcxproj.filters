@@ -207,6 +207,9 @@
     <ClInclude Include="IObject.h">
       <Filter>Engine\DesignPattern\Observer Pattern</Filter>
     </ClInclude>
+    <ClInclude Include="IObserver.h">
+      <Filter>Engine\DesignPattern\Observer Pattern</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
