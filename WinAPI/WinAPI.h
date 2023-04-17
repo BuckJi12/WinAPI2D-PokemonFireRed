@@ -26,10 +26,9 @@ extern HWND hWnd;
 enum class GroupScene
 {
 	Title,
-
 	TileTool,
-
 	Stage01,
+	PlayerHome2F,
 
 	Size,
 };

@@ -210,6 +210,9 @@
     <ClInclude Include="IObserver.h">
       <Filter>Engine\DesignPattern\Observer Pattern</Filter>
     </ClInclude>
+    <ClInclude Include="CScenePlayerHome2F.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -334,6 +337,9 @@
     </ClCompile>
     <ClCompile Include="CRun.cpp">
       <Filter>GameObject\Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CScenePlayerHome2F.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
