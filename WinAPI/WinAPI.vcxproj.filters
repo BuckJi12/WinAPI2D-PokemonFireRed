@@ -55,6 +55,12 @@
     <Filter Include="GameObject\Player\State">
       <UniqueIdentifier>{94537fb0-f05c-46bd-9a93-6eaafb21580b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\DesignPattern">
+      <UniqueIdentifier>{955747a4-0236-4f28-994d-a33bddf4c53d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\DesignPattern\Observer Pattern">
+      <UniqueIdentifier>{d890f6f0-854e-42f5-a576-baa7fffef2fe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -197,6 +203,9 @@
     </ClInclude>
     <ClInclude Include="CRun.h">
       <Filter>GameObject\Player\State</Filter>
+    </ClInclude>
+    <ClInclude Include="IObject.h">
+      <Filter>Engine\DesignPattern\Observer Pattern</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
