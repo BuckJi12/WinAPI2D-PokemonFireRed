@@ -29,6 +29,7 @@ enum class GroupScene
 	TileTool,
 	Stage01,
 	PlayerHome2F,
+	PlayerHome1F,
 
 	None,
 	Size,

@@ -219,6 +219,9 @@
     <ClInclude Include="CWarp.h">
       <Filter>GameObject\Environment</Filter>
     </ClInclude>
+    <ClInclude Include="CScenePlayerHome1F.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -349,6 +352,9 @@
     </ClCompile>
     <ClCompile Include="CWarp.cpp">
       <Filter>GameObject\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="CScenePlayerHome1F.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
