@@ -55,7 +55,7 @@ void CPlayer::Init()
 	m_mapState[PlayerState::Run]->Init();
 
 	AddComponent(m_pAnimator);
-	AddCollider(ColliderType::Rect, Vector(90, 90), Vector(0, 0));
+	AddCollider(ColliderType::Rect, Vector(64, 80), Vector(0, 0));
 }
 
 void CPlayer::Update()

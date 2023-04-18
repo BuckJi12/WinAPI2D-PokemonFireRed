@@ -50,7 +50,7 @@ void CTile::Render()
 			m_vecPos.y + m_vecScale.y
 		);
 
-		if (m_type == TypeTile::Ground)
+		if (m_type == TypeTile::Wall)
 		{
 			RENDER->FrameEllipse(
 				m_vecPos.x,

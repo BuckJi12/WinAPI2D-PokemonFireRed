@@ -30,6 +30,7 @@ void CScenePlayerHome2F::Init()
 
 void CScenePlayerHome2F::Enter()
 {
+	LoadTile(GETPATH + L"Tile\\PlayerHome2F.tile");
 	CAMERA->FadeIn(0.25f);
 	CAMERA->SetTargetObj(m_pPlayer);
 }

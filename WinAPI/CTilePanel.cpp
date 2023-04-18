@@ -99,12 +99,12 @@ void CTilePanel::CreateTileTypeButton()
 	pNoneTypeButton->SetClickedCallback(click, (DWORD_PTR)pTileToolScene, (DWORD_PTR)TypeTile::None);
 	AddChildUI(pNoneTypeButton);
 
-	CButton* pGroundTypeButton = new CButton;
-	pGroundTypeButton->SetScale(100.f, 50.f);
-	pGroundTypeButton->SetPos(Vector(150.f, m_vecScale.y - 100.f));
-	pGroundTypeButton->SetText(L"Ground");
-	pGroundTypeButton->SetClickedCallback(click, (DWORD_PTR)pTileToolScene, (DWORD_PTR)TypeTile::Ground);
-	AddChildUI(pGroundTypeButton);
+	CButton* pWallTypeButton = new CButton;
+	pWallTypeButton->SetScale(100.f, 50.f);
+	pWallTypeButton->SetPos(Vector(150.f, m_vecScale.y - 100.f));
+	pWallTypeButton->SetText(L"Wall");
+	pWallTypeButton->SetClickedCallback(click, (DWORD_PTR)pTileToolScene, (DWORD_PTR)TypeTile::Wall);
+	AddChildUI(pWallTypeButton);
 }
 
 void CTilePanel::SetPage(UINT page)

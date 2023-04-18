@@ -7,7 +7,6 @@
 CMonster::CMonster()
 {
 	m_vecScale = Vector(100, 100);
-	m_layer = Layer::Monster;
 }
 
 CMonster::~CMonster()

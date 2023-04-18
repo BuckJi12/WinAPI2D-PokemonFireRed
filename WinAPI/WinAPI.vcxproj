@@ -150,7 +150,7 @@
     <ClInclude Include="CCore.h" />
     <ClInclude Include="CEventManager.h" />
     <ClInclude Include="CGameObject.h" />
-    <ClInclude Include="CGroundTile.h" />
+    <ClInclude Include="CWallTile.h" />
     <ClInclude Include="CIdle.h" />
     <ClInclude Include="CImageObject.h" />
     <ClInclude Include="CInputManager.h" />
@@ -202,7 +202,7 @@
     <ClCompile Include="CCore.cpp" />
     <ClCompile Include="CEventManager.cpp" />
     <ClCompile Include="CGameObject.cpp" />
-    <ClCompile Include="CGroundTile.cpp" />
+    <ClCompile Include="CWallTile.cpp" />
     <ClCompile Include="CIdle.cpp" />
     <ClCompile Include="CImageObject.cpp" />
     <ClCompile Include="CInputManager.cpp" />

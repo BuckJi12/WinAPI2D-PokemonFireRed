@@ -42,8 +42,7 @@ enum class Layer
 	Default,
 	Tile,
 	Player,
-	Missile,
-	Monster,
+	Wall,
 
 	Ui,
 	Size,
@@ -56,9 +55,8 @@ enum class Layer
 enum class TypeTile
 {
 	None,
-	Ground,
-	Platform,
 	Wall,
+	Platform,
 
 	Size,
 };
