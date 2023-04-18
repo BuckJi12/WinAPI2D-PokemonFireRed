@@ -180,6 +180,7 @@
     <ClInclude Include="CUI.h" />
     <ClInclude Include="CUIManager.h" />
     <ClInclude Include="CWalk.h" />
+    <ClInclude Include="CWarp.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="ISubject.h" />
     <ClInclude Include="IObserver.h" />
@@ -232,6 +233,7 @@
     <ClCompile Include="CUI.cpp" />
     <ClCompile Include="CUIManager.cpp" />
     <ClCompile Include="CWalk.cpp" />
+    <ClCompile Include="CWarp.cpp" />
     <ClCompile Include="WinAPI.cpp" />
   </ItemGroup>
   <ItemGroup>

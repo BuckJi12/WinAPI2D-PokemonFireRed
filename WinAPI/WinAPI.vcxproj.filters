@@ -61,6 +61,9 @@
     <Filter Include="Engine\DesignPattern\Observer Pattern">
       <UniqueIdentifier>{d890f6f0-854e-42f5-a576-baa7fffef2fe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Environment">
+      <UniqueIdentifier>{8134647b-1c24-4efc-b5ba-0b1871faf7aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -213,6 +216,9 @@
     <ClInclude Include="CScenePlayerHome2F.h">
       <Filter>Scene</Filter>
     </ClInclude>
+    <ClInclude Include="CWarp.h">
+      <Filter>GameObject\Environment</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -340,6 +346,9 @@
     </ClCompile>
     <ClCompile Include="CScenePlayerHome2F.cpp">
       <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CWarp.cpp">
+      <Filter>GameObject\Environment</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
