@@ -45,6 +45,7 @@ enum class Layer
 	Tile,
 	Player,
 	Wall,
+	Environment,
 
 	Ui,
 	Size,

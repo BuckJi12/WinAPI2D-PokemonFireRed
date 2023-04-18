@@ -3,11 +3,13 @@
 
 #include "CPlayer.h"
 #include "CImageObject.h"
+#include "CWarp.h"
 
 CScenePlayerHome1F::CScenePlayerHome1F()
 {
 	m_pPlayer = nullptr;
 	m_pImageBackGround = nullptr;
+	m_pWarp = nullptr;
 }
 
 CScenePlayerHome1F::~CScenePlayerHome1F()
@@ -27,12 +29,18 @@ void CScenePlayerHome1F::Init()
 	m_pPlayer->SetPos(1000, 680);
 	m_pPlayer->ChangeDir(PlayerDir::Left);
 	AddGameObject(m_pPlayer);
+
+	m_pWarp = new CWarp;
+	m_pWarp->SetPos(1100, 680);
+	m_pWarp->SetScale(80, 160);
+	m_pWarp->SetDestination(GroupScene::PlayerHome2F);
+	AddGameObject(m_pWarp);
 }
 
 void CScenePlayerHome1F::Enter()
 {
 	LoadTile(GETPATH + L"Tile\\PlayerHome1F.tile");
-	CAMERA->FadeIn(0.25f);
+	CAMERA->FadeIn(0.5f);
 	CAMERA->SetTargetObj(m_pPlayer);
 }
 

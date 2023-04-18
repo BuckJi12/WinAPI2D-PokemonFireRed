@@ -3,6 +3,7 @@
 
 class CPlayer;
 class CImageObject;
+class CWarp;
 
 class CScenePlayerHome2F : public CScene
 {
@@ -11,8 +12,9 @@ public:
 	virtual ~CScenePlayerHome2F();
 
 private:
-	CPlayer* m_pPlayer;
-	CImageObject* m_pImageBackGround;
+	CPlayer*		m_pPlayer;
+	CImageObject*	m_pImageBackGround;
+	CWarp*			m_pWarp;
 
 private:
 	void Init()		override;

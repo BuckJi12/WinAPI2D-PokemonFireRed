@@ -1,6 +1,7 @@
 #pragma once
 class CPlayer;
 class CImageObject;
+class CWarp;
 
 class CScenePlayerHome1F : public CScene
 {
@@ -11,6 +12,7 @@ public:
 private:
 	CPlayer* m_pPlayer;
 	CImageObject* m_pImageBackGround;
+	CWarp* m_pWarp;
 
 private:
 	void Init()		override;

@@ -33,7 +33,7 @@ void CSceneTitle::Update()
 	if (BUTTONDOWN(VK_SPACE))
 	{
 		CAMERA->FadeOut(0.25f);
-		DELAYCHANGESCENE(GroupScene::PlayerHome1F, 0.25f);
+		DELAYCHANGESCENE(GroupScene::PlayerHome2F, 0.25f);
 	}
 }
 

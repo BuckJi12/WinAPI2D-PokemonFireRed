@@ -11,6 +11,7 @@ private:
 
 public:
 	void SetDestination(GroupScene destination);
+
 private:
 	void Init() override;
 	void Update() override;
