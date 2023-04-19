@@ -35,11 +35,12 @@ void CScenePlayerHome2F::Init()
 	m_pWarp->SetScale(80, 160);
 	m_pWarp->SetDestination(GroupScene::PlayerHome1F);
 	AddGameObject(m_pWarp);
+
+	LoadTile(GETPATH + L"Tile\\PlayerHome2F.tile");
 }
 
 void CScenePlayerHome2F::Enter()
 {
-	LoadTile(GETPATH + L"Tile\\PlayerHome2F.tile");
 	CAMERA->FadeIn(0.5f);
 	CAMERA->SetTargetObj(m_pPlayer);
 }

@@ -41,11 +41,12 @@ void CScenePlayerHome1F::Init()
 	m_pWarp2->SetScale(100, 60);
 	m_pWarp2->SetDestination(GroupScene::PalletTown);
 	AddGameObject(m_pWarp2);
+
+	LoadTile(GETPATH + L"Tile\\PlayerHome1F.tile");
 }
 
 void CScenePlayerHome1F::Enter()
 {
-	LoadTile(GETPATH + L"Tile\\PlayerHome1F.tile");
 	CAMERA->FadeIn(0.5f);
 	CAMERA->SetTargetObj(m_pPlayer);
 }
