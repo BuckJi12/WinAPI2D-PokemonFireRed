@@ -10,6 +10,7 @@
 #include "CScenePlayerHome1F.h"
 #include "CScenePalletTown.h"
 #include "CSceneOakLab.h"
+#include "CSceneRoute01.h"
 //======== Scene ========
 
 CSceneManager::CSceneManager()
@@ -39,6 +40,8 @@ void CSceneManager::Init()
 	m_mapScene.insert(make_pair(GroupScene::PalletTown, pPalletTown));
 	CScene* pOakLab = new CSceneOakLab();
 	m_mapScene.insert(make_pair(GroupScene::OakLab, pOakLab));
+	CScene* pRoute01 = new CSceneRoute01();
+	m_mapScene.insert(make_pair(GroupScene::Route01, pRoute01));
 
 	// 게임씬 자료구조를 순회하며 씬을 초기화
 	for (pair<GroupScene, CScene*> scene : m_mapScene)

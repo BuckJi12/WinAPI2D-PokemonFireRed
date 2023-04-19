@@ -153,6 +153,7 @@
     <ClInclude Include="CSceneOakLab.h" />
     <ClInclude Include="CScenePalletTown.h" />
     <ClInclude Include="CScenePlayerHome1F.h" />
+    <ClInclude Include="CSceneRoute01.h" />
     <ClInclude Include="CWallTile.h" />
     <ClInclude Include="CIdle.h" />
     <ClInclude Include="CImageObject.h" />
@@ -209,6 +210,7 @@
     <ClCompile Include="CSceneOakLab.cpp" />
     <ClCompile Include="CScenePalletTown.cpp" />
     <ClCompile Include="CScenePlayerHome1F.cpp" />
+    <ClCompile Include="CSceneRoute01.cpp" />
     <ClCompile Include="CWallTile.cpp" />
     <ClCompile Include="CIdle.cpp" />
     <ClCompile Include="CImageObject.cpp" />

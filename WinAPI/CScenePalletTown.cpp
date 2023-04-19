@@ -53,7 +53,7 @@ void CScenePalletTown::Init()
 	m_pWarp3 = new CWarp;
 	m_pWarp3->SetPos(830, 20);
 	m_pWarp3->SetScale(120, 30);
-	m_pWarp3->SetDestination(GroupScene::PlayerHome1F);
+	m_pWarp3->SetDestination(GroupScene::Route01);
 	AddGameObject(m_pWarp3);
 
 	LoadTile(GETPATH + L"Tile\\PalletTown.tile");
