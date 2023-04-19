@@ -30,6 +30,7 @@ enum class GroupScene
 	Stage01,
 	PlayerHome2F,
 	PlayerHome1F,
+	PalletTown,
 
 	None,
 	Size,

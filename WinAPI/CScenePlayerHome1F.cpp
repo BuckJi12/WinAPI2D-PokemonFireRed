@@ -35,6 +35,12 @@ void CScenePlayerHome1F::Init()
 	m_pWarp->SetScale(80, 160);
 	m_pWarp->SetDestination(GroupScene::PlayerHome2F);
 	AddGameObject(m_pWarp);
+
+	m_pWarp2 = new CWarp;
+	m_pWarp2->SetPos(635, 1100);
+	m_pWarp2->SetScale(100, 60);
+	m_pWarp2->SetDestination(GroupScene::PalletTown);
+	AddGameObject(m_pWarp2);
 }
 
 void CScenePlayerHome1F::Enter()

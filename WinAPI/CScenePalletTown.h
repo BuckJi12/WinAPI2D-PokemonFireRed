@@ -3,17 +3,18 @@ class CPlayer;
 class CImageObject;
 class CWarp;
 
-class CScenePlayerHome1F : public CScene
+class CScenePalletTown : public CScene
 {
 public:
-	CScenePlayerHome1F();
-	virtual ~CScenePlayerHome1F();
+	CScenePalletTown();
+	virtual ~CScenePalletTown();
 
 private:
 	CPlayer* m_pPlayer;
 	CImageObject* m_pImageBackGround;
 	CWarp* m_pWarp;
 	CWarp* m_pWarp2;
+	CWarp* m_pWarp3;
 
 private:
 	void Init()		override;
