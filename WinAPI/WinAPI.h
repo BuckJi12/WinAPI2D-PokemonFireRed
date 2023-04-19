@@ -31,6 +31,7 @@ enum class GroupScene
 	PlayerHome2F,
 	PlayerHome1F,
 	PalletTown,
+	OakLab,
 
 	None,
 	Size,

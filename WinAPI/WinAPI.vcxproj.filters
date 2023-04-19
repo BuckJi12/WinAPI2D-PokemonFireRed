@@ -225,6 +225,9 @@
     <ClInclude Include="CScenePalletTown.h">
       <Filter>Scene</Filter>
     </ClInclude>
+    <ClInclude Include="CSceneOakLab.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -360,6 +363,9 @@
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="CScenePalletTown.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneOakLab.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
   </ItemGroup>

@@ -150,6 +150,7 @@
     <ClInclude Include="CCore.h" />
     <ClInclude Include="CEventManager.h" />
     <ClInclude Include="CGameObject.h" />
+    <ClInclude Include="CSceneOakLab.h" />
     <ClInclude Include="CScenePalletTown.h" />
     <ClInclude Include="CScenePlayerHome1F.h" />
     <ClInclude Include="CWallTile.h" />
@@ -205,6 +206,7 @@
     <ClCompile Include="CCore.cpp" />
     <ClCompile Include="CEventManager.cpp" />
     <ClCompile Include="CGameObject.cpp" />
+    <ClCompile Include="CSceneOakLab.cpp" />
     <ClCompile Include="CScenePalletTown.cpp" />
     <ClCompile Include="CScenePlayerHome1F.cpp" />
     <ClCompile Include="CWallTile.cpp" />

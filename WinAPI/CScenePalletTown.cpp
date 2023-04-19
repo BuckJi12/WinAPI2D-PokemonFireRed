@@ -35,18 +35,21 @@ void CScenePalletTown::Init()
 	m_pPlayer->ChangeDir(PlayerDir::Left);
 	AddGameObject(m_pPlayer);
 
+	// 플레이어 집
 	m_pWarp = new CWarp;
 	m_pWarp->SetPos(410, 475);
 	m_pWarp->SetScale(100, 30);
 	m_pWarp->SetDestination(GroupScene::PlayerHome1F);
 	AddGameObject(m_pWarp);
 
+	// 오박사 연구소
 	m_pWarp2 = new CWarp;
 	m_pWarp2->SetPos(1060, 850);
 	m_pWarp2->SetScale(100, 30);
-	m_pWarp2->SetDestination(GroupScene::PlayerHome1F);
+	m_pWarp2->SetDestination(GroupScene::OakLab);
 	AddGameObject(m_pWarp2);
 
+	// 1번 도로
 	m_pWarp3 = new CWarp;
 	m_pWarp3->SetPos(830, 20);
 	m_pWarp3->SetScale(120, 30);
