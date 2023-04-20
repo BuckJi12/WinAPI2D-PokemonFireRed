@@ -3,6 +3,8 @@
 
 #include "CMove.h"
 
+#include "IObserver.h"
+
 CPokemon::CPokemon(int level)
 {
 	m_stat.level = level;
@@ -127,14 +129,21 @@ void CPokemon::Release()
 {
 }
 
-void CPokemon::AddObserver()
+void CPokemon::AddObserver(IObserver* observer)
 {
+	m_listObservers.push_back(observer);
 }
 
-void CPokemon::RemoveObserver()
+void CPokemon::RemoveObserver(IObserver* observer)
 {
+	m_listObservers.remove(observer);
 }
 
 void CPokemon::Notify()
 {
+	auto iter = m_listObservers.begin();
+	while (iter != m_listObservers.end())
+	{
+		(*iter)->Update();
+	}
 }
