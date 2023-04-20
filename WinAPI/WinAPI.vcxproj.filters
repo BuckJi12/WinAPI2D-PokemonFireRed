@@ -70,6 +70,12 @@
     <Filter Include="GameObject\Pokemon\Moves">
       <UniqueIdentifier>{08c4e5c2-8030-43f1-bad6-e10660d053ca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Pokemon\Moves\Normal">
+      <UniqueIdentifier>{c1be9048-c164-4a72-bff8-a3b5f56e9bb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Pokemon\Pokemon">
+      <UniqueIdentifier>{35c6f4ff-f91b-4fd8-b269-b0d018ef4cc3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -240,6 +246,12 @@
     <ClInclude Include="CMove.h">
       <Filter>GameObject\Pokemon\Moves</Filter>
     </ClInclude>
+    <ClInclude Include="CPokemon.h">
+      <Filter>GameObject\Pokemon\Pokemon</Filter>
+    </ClInclude>
+    <ClInclude Include="CPokemonResource.h">
+      <Filter>GameObject\Pokemon\Pokemon</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -385,6 +397,12 @@
     </ClCompile>
     <ClCompile Include="CMove.cpp">
       <Filter>GameObject\Pokemon\Moves</Filter>
+    </ClCompile>
+    <ClCompile Include="CPokemon.cpp">
+      <Filter>GameObject\Pokemon\Pokemon</Filter>
+    </ClCompile>
+    <ClCompile Include="CPokemonResource.cpp">
+      <Filter>GameObject\Pokemon\Pokemon</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

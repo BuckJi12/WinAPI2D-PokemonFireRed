@@ -1,5 +1,6 @@
 #pragma once
 #include "WinAPI.h"
+#include "ISubject.h"
 
 class CEventManager;
 class CCollisionManager;
@@ -12,7 +13,7 @@ enum class ColliderType;
 // 씬 내에 존재하는 물체, ex) 캐릭터, 미사일, 몬스터, 아이템, 등
 // 게임오브젝트를 캡슐화하여 행동과 표현을 정의할 경우
 // 다른 게임오브젝트와 독립적으로 설계할 수 있음
-class CGameObject
+class CGameObject : public ISubject
 {
 	friend CEventManager;
 	friend CCollisionManager;
