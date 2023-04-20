@@ -64,6 +64,12 @@
     <Filter Include="GameObject\Environment">
       <UniqueIdentifier>{8134647b-1c24-4efc-b5ba-0b1871faf7aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Pokemon">
+      <UniqueIdentifier>{417bd52f-2aea-4c66-ba91-1e8d413d362b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Pokemon\Moves">
+      <UniqueIdentifier>{08c4e5c2-8030-43f1-bad6-e10660d053ca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -231,6 +237,9 @@
     <ClInclude Include="CSceneRoute01.h">
       <Filter>Scene</Filter>
     </ClInclude>
+    <ClInclude Include="CMove.h">
+      <Filter>GameObject\Pokemon\Moves</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -373,6 +382,9 @@
     </ClCompile>
     <ClCompile Include="CSceneRoute01.cpp">
       <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CMove.cpp">
+      <Filter>GameObject\Pokemon\Moves</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
