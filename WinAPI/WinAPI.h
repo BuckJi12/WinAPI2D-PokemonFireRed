@@ -66,3 +66,31 @@ enum class TypeTile
 
 	Size,
 };
+
+//========================================
+//##			포켓몬 타입				##
+//========================================
+
+enum class PokemonType
+{
+	None,
+	Normal,
+	Fire,
+	Water,
+	Electric,
+	Grass,
+	Ice,
+	Fight,
+	Poison,
+	Ground,
+	Flying,
+	Psychic,
+	Bug,
+	Rock,
+	Ghost,
+	Dragon,
+	Dark,
+	Steel,
+
+	Size,
+};
