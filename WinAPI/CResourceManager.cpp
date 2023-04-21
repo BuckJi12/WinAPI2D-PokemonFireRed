@@ -105,4 +105,10 @@ void CResourceManager::Release()
 		delete sound.second;
 	}
 	m_umapSound.clear();
+
+	for (pair<int, CPokemonResource*> pokemon : m_mapPokemonResource)
+	{
+		delete pokemon.second;
+	}
+	m_mapPokemonResource.clear();
 }
