@@ -8,6 +8,33 @@
 CPokemon::CPokemon(int level)
 {
 	m_stat.level = level;
+
+	// 포켓몬 정보
+	m_info.name = L"";
+	m_info.description = L"";
+	m_info.number = 0;
+	m_info.rate = 255;
+
+	// 포켓몬 기초값 파이리: 309
+	m_baseStat.hp = 1;
+	m_baseStat.attack = 1;
+	m_baseStat.specialAttack = 1;
+	m_baseStat.defence = 1;
+	m_baseStat.specialDefence = 1;
+	m_baseStat.speed = 1;
+
+	// 포켓몬 스텟
+	SetPokemonStat(level);
+
+	m_curState = PokemonState::Normal;
+	m_owner = PokemonOwner::Wild;
+
+	// 기본 기술
+	// TODO: 기술 추가
+
+	// 초기화
+	m_pResource = nullptr;
+	m_pAnimator = nullptr;
 }
 
 CPokemon::~CPokemon()
