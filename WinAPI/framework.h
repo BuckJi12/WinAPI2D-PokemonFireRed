@@ -87,6 +87,7 @@ using namespace FMOD;
 #include "CCollider.h"
 #include "ISubject.h"
 #include "IObserver.h"
+#include "CSubject.h"
 
 // Pokemon
 #include "CPokemon.h"

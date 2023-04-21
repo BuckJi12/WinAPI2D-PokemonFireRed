@@ -261,6 +261,9 @@
     <ClInclude Include="CTackle.h">
       <Filter>GameObject\Pokemon\Moves\Normal</Filter>
     </ClInclude>
+    <ClInclude Include="CSubject.h">
+      <Filter>Engine\DesignPattern\Observer Pattern</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -418,6 +421,9 @@
     </ClCompile>
     <ClCompile Include="CTackle.cpp">
       <Filter>GameObject\Pokemon\Moves\Normal</Filter>
+    </ClCompile>
+    <ClCompile Include="CSubject.cpp">
+      <Filter>Engine\DesignPattern\Observer Pattern</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

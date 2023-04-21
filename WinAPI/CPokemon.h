@@ -2,6 +2,7 @@
 class CPokemonResource;
 class IObserver;
 class CMove;
+class CSubject;
 
 struct PokemonInfo
 {
@@ -99,6 +100,7 @@ protected:
 	CPokemonResource*	m_pResource;
 	CAnimator*			m_pAnimator;
 	vector<CMove>		m_vecMoves;
+	CSubject*			m_pSubject;
 
 public:
 	PokemonInfo			GetPokemonInfo();
@@ -124,8 +126,7 @@ private:
 	void				Render() override;
 	void				Release() override;
 
-	/*void				AddObserver(IObserver* observer) override;
-	void				RemoveObserver(IObserver* observer) override;
-	void				Notify() override;*/
+	void				AddObserver(IObserver* observer);
+	void				RemoveObserver(IObserver* observer);
 };
 
