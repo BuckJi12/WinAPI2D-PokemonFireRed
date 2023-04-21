@@ -83,6 +83,7 @@ void CPokemon::SetPokemonStat(int level)
 	m_stat.defence = (int)((m_baseStat.defence * 2) * ((float)level / 100) + 5);
 	m_stat.specialDefence = (int)((m_baseStat.specialDefence * 2) * ((float)level / 100) + 5);
 	m_stat.speed = (int)((m_baseStat.speed * 2) * ((float)level / 100) + 5);
+	m_stat.maxExp = 500 * ((float)level / 100);
 	m_pSubject->Notify();
 }
 
@@ -109,12 +110,18 @@ void CPokemon::ChangeState(PokemonState state)
 
 void CPokemon::AddExp(float exp)
 {
+	bool canLevelUp = true;
 	if (m_stat.level < 100)
 	{
-		m_stat.curExp += exp;
-		if (m_stat.curExp >= m_stat.maxExp)
+		while (canLevelUp)
 		{
-			LevelUp();
+			m_stat.curExp += exp;
+			canLevelUp = false;
+			if (m_stat.curExp >= m_stat.maxExp)
+			{
+				LevelUp();
+				canLevelUp = true;
+			}
 		}
 	}
 	m_pSubject->Notify();
@@ -126,7 +133,7 @@ void CPokemon::LevelUp()
 	m_stat.curExp = 0;
 	m_stat.level += 1;
 	m_stat.curExp += temp;
-	m_stat.maxExp = m_stat.maxExp * 1.2f;
+	m_stat.maxExp += 500;
 	PokemonStat increaseValue;
 	increaseValue = (GetLevelStat(m_stat.level) -= GetLevelStat(m_stat.level - 1));
 	m_stat += increaseValue;
