@@ -258,6 +258,9 @@
     <ClInclude Include="CCharmander.h">
       <Filter>GameObject\Pokemon\Pokemon\StartingPokemon</Filter>
     </ClInclude>
+    <ClInclude Include="CTackle.h">
+      <Filter>GameObject\Pokemon\Moves\Normal</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -412,6 +415,9 @@
     </ClCompile>
     <ClCompile Include="CCharmander.cpp">
       <Filter>GameObject\Pokemon\Pokemon\StartingPokemon</Filter>
+    </ClCompile>
+    <ClCompile Include="CTackle.cpp">
+      <Filter>GameObject\Pokemon\Moves\Normal</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -30,7 +30,7 @@ protected:
 	MoveKind m_moveKind;
 
 public:
-	virtual void UseMove() {};
+	virtual void UseMove(CPokemon* pokemon) {};
 	void RecoverPP(int value);
 };
 
