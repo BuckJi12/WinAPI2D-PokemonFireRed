@@ -114,7 +114,7 @@ public:
 	void				Recover();
 
 public:
-	virtual void		Evolution() = 0;
+	virtual void		Evolution() {};
 	virtual void		LearnMoveList() = 0;
 
 private:

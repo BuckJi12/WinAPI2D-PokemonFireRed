@@ -76,6 +76,9 @@
     <Filter Include="GameObject\Pokemon\Pokemon">
       <UniqueIdentifier>{35c6f4ff-f91b-4fd8-b269-b0d018ef4cc3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Pokemon\Pokemon\StartingPokemon">
+      <UniqueIdentifier>{b97d6fac-220b-4d16-9127-d437e1055c23}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -252,6 +255,9 @@
     <ClInclude Include="CPokemonResource.h">
       <Filter>GameObject\Pokemon\Pokemon</Filter>
     </ClInclude>
+    <ClInclude Include="CCharmander.h">
+      <Filter>GameObject\Pokemon\Pokemon\StartingPokemon</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -403,6 +409,9 @@
     </ClCompile>
     <ClCompile Include="CPokemonResource.cpp">
       <Filter>GameObject\Pokemon\Pokemon</Filter>
+    </ClCompile>
+    <ClCompile Include="CCharmander.cpp">
+      <Filter>GameObject\Pokemon\Pokemon\StartingPokemon</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
