@@ -25,6 +25,28 @@ struct PokemonStat
 
 	float	curExp;
 	float	maxExp;
+
+	PokemonStat operator+=(const PokemonStat& other)
+	{
+		maxHp += other.maxHp;
+		curHp += other.curHp;	
+		attack += other.attack;
+		specialAttack += other.specialAttack;
+		defence += other.defence;
+		specialDefence += other.specialDefence;
+		speed += other.speed;
+	}
+
+	PokemonStat operator-=(const PokemonStat& other)
+	{
+		maxHp -= other.maxHp;
+		curHp -= other.curHp;
+		attack -= other.attack;
+		specialAttack -= other.specialAttack;
+		defence -= other.defence;
+		specialDefence -= other.specialDefence;
+		speed -= other.speed;
+	}
 };
 
 struct PokemonBaseStat	// Æ÷ÄÏ¸ó Á¾Á·°ª ex) ¸Á³ª´¨ 600Á·
@@ -77,6 +99,7 @@ protected:
 public:
 	PokemonInfo			GetPokemonInfo();
 	PokemonStat			GetPokemonStat();
+	PokemonStat			GetLevelStat(int level);
 	PokemonState		GetCurState();
 	void				SetPokemonStat(int level);
 	void				ChangeState(PokemonState state);

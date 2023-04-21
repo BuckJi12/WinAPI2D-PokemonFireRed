@@ -24,6 +24,19 @@ PokemonStat CPokemon::GetPokemonStat()
 	return m_stat;
 }
 
+PokemonStat CPokemon::GetLevelStat(int level)
+{
+	PokemonStat temp;
+	temp.maxHp = (((m_baseStat.hp * 2) * ((float)level / 100)) + 10 + m_stat.level);
+	temp.curHp = (((m_baseStat.hp * 2) * ((float)level / 100)) + 10 + m_stat.level);
+	temp.attack = ((m_baseStat.attack * 2) * ((float)level / 100) + 5);
+	temp.specialAttack = ((m_baseStat.specialAttack * 2) * ((float)level / 100) + 5);
+	temp.defence = ((m_baseStat.defence * 2) * ((float)level / 100) + 5);
+	temp.specialDefence = ((m_baseStat.specialDefence * 2) * ((float)level / 100) + 5);
+	temp.speed = ((m_baseStat.speed * 2) * ((float)level / 100) + 5);
+	return temp;
+}
+
 PokemonState CPokemon::GetCurState()
 {
 	return m_curState;
@@ -82,7 +95,9 @@ void CPokemon::LevelUp()
 	m_stat.level += 1;
 	m_stat.curExp += temp;
 	m_stat.maxExp = m_stat.maxExp * 1.2f;
-	// TODO: 레벨업 시 스텟 증가 구현
+	PokemonStat increaseValue;
+	increaseValue = (GetLevelStat(m_stat.level) -= GetLevelStat(m_stat.level - 1));
+	m_stat += increaseValue;
 	Notify();
 }
 
@@ -108,7 +123,7 @@ void CPokemon::TakeDamage(int value)
 
 void CPokemon::Recover()
 {
-	ChangeState(PokemonState::Faint);
+	ChangeState(PokemonState::Normal);
 	SetPokemonStat(m_stat.level);
 	Notify();
 }
