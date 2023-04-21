@@ -83,8 +83,8 @@ public:
 	CPokemon(int level);
 	virtual ~CPokemon();
 	
-private:
-	list<IObserver*>		m_listObservers;
+//private:
+//	list<IObserver*>		m_listObservers;
 
 protected:
 	PokemonInfo			m_info;
@@ -119,8 +119,8 @@ private:
 	void				Render() override;
 	void				Release() override;
 
-	void				AddObserver(IObserver* observer) override;
+	/*void				AddObserver(IObserver* observer) override;
 	void				RemoveObserver(IObserver* observer) override;
-	void				Notify() override;
+	void				Notify() override;*/
 };
 

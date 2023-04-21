@@ -1,5 +1,14 @@
 #pragma once
 
+enum class MoveKind // 기술 종류
+{
+	Physics,	// 물리 기술
+	Special,	// 특수 기술
+	Change,		// 변화 기술
+
+	Size
+};
+
 struct MoveStats // 기술 스텟
 {
 	wstring		name;

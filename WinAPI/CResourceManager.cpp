@@ -79,6 +79,15 @@ CSound* CResourceManager::LoadSound(const wstring& key, const wstring& fileName)
 	return pSound;
 }
 
+CPokemonResource* CResourceManager::GetPokemonResource(const int& key)
+{
+	auto iter = m_mapPokemonResource.find(key);
+	if (iter == m_mapPokemonResource.end())
+		return nullptr;
+	else
+		return m_mapPokemonResource[key];
+}
+
 void CResourceManager::Init()
 {
 }

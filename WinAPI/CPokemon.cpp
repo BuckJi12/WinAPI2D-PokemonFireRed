@@ -26,14 +26,14 @@ PokemonStat CPokemon::GetPokemonStat()
 
 PokemonStat CPokemon::GetLevelStat(int level)
 {
-	PokemonStat temp;
-	temp.maxHp = (((m_baseStat.hp * 2) * ((float)level / 100)) + 10 + m_stat.level);
-	temp.curHp = (((m_baseStat.hp * 2) * ((float)level / 100)) + 10 + m_stat.level);
-	temp.attack = ((m_baseStat.attack * 2) * ((float)level / 100) + 5);
-	temp.specialAttack = ((m_baseStat.specialAttack * 2) * ((float)level / 100) + 5);
-	temp.defence = ((m_baseStat.defence * 2) * ((float)level / 100) + 5);
-	temp.specialDefence = ((m_baseStat.specialDefence * 2) * ((float)level / 100) + 5);
-	temp.speed = ((m_baseStat.speed * 2) * ((float)level / 100) + 5);
+	PokemonStat temp {};
+	temp.maxHp = (int)(((m_baseStat.hp * 2) * ((float)level / 100)) + 10 + m_stat.level);
+	temp.curHp = (int)(((m_baseStat.hp * 2) * ((float)level / 100)) + 10 + m_stat.level);
+	temp.attack = (int)((m_baseStat.attack * 2) * ((float)level / 100) + 5);
+	temp.specialAttack = (int)((m_baseStat.specialAttack * 2) * ((float)level / 100) + 5);
+	temp.defence = (int)((m_baseStat.defence * 2) * ((float)level / 100) + 5);
+	temp.specialDefence = (int)((m_baseStat.specialDefence * 2) * ((float)level / 100) + 5);
+	temp.speed = (int)((m_baseStat.speed * 2) * ((float)level / 100) + 5);
 	return temp;
 }
 
@@ -44,14 +44,14 @@ PokemonState CPokemon::GetCurState()
 
 void CPokemon::SetPokemonStat(int level)
 {
-	m_stat.maxHp = (((m_baseStat.hp * 2) * ((float)level / 100)) + 10 + m_stat.level);
-	m_stat.curHp = (((m_baseStat.hp * 2) * ((float)level / 100)) + 10 + m_stat.level);
-	m_stat.attack = ((m_baseStat.attack * 2) * ((float)level / 100) + 5);
-	m_stat.specialAttack = ((m_baseStat.specialAttack * 2) * ((float)level / 100) + 5);
-	m_stat.defence = ((m_baseStat.defence * 2) * ((float)level / 100) + 5);
-	m_stat.specialDefence = ((m_baseStat.specialDefence * 2) * ((float)level / 100) + 5);
-	m_stat.speed = ((m_baseStat.speed * 2) * ((float)level / 100) + 5);
-	Notify();
+	m_stat.maxHp = (int)(((m_baseStat.hp * 2) * ((float)level / 100)) + 10 + m_stat.level);
+	m_stat.curHp = (int)(((m_baseStat.hp * 2) * ((float)level / 100)) + 10 + m_stat.level);
+	m_stat.attack = (int)((m_baseStat.attack * 2) * ((float)level / 100) + 5);
+	m_stat.specialAttack = (int)((m_baseStat.specialAttack * 2) * ((float)level / 100) + 5);
+	m_stat.defence = (int)((m_baseStat.defence * 2) * ((float)level / 100) + 5);
+	m_stat.specialDefence = (int)((m_baseStat.specialDefence * 2) * ((float)level / 100) + 5);
+	m_stat.speed = (int)((m_baseStat.speed * 2) * ((float)level / 100) + 5);
+	//Notify();
 }
 
 void CPokemon::ChangeState(PokemonState state)
@@ -72,7 +72,7 @@ void CPokemon::ChangeState(PokemonState state)
 	default:
 		break;
 	}
-	Notify();
+	//Notify();
 }
 
 void CPokemon::AddExp(float exp)
@@ -85,7 +85,7 @@ void CPokemon::AddExp(float exp)
 			LevelUp();
 		}
 	}
-	Notify();
+	//Notify();
 }
 
 void CPokemon::LevelUp()
@@ -98,7 +98,7 @@ void CPokemon::LevelUp()
 	PokemonStat increaseValue;
 	increaseValue = (GetLevelStat(m_stat.level) -= GetLevelStat(m_stat.level - 1));
 	m_stat += increaseValue;
-	Notify();
+	//Notify();
 }
 
 void CPokemon::LearnMove(CMove* move)
@@ -107,7 +107,7 @@ void CPokemon::LearnMove(CMove* move)
 	{
 		m_vecMoves.push_back(*move);
 	}
-	Notify();
+	//Notify();
 }
 
 void CPokemon::TakeDamage(int value)
@@ -118,14 +118,14 @@ void CPokemon::TakeDamage(int value)
 		m_stat.curHp = 0;
 		ChangeState(PokemonState::Faint);
 	}
-	Notify();
+	//Notify();
 }
 
 void CPokemon::Recover()
 {
 	ChangeState(PokemonState::Normal);
 	SetPokemonStat(m_stat.level);
-	Notify();
+	//Notify();
 }
 
 void CPokemon::Init()
@@ -144,21 +144,21 @@ void CPokemon::Release()
 {
 }
 
-void CPokemon::AddObserver(IObserver* observer)
-{
-	m_listObservers.push_back(observer);
-}
-
-void CPokemon::RemoveObserver(IObserver* observer)
-{
-	m_listObservers.remove(observer);
-}
-
-void CPokemon::Notify()
-{
-	auto iter = m_listObservers.begin();
-	while (iter != m_listObservers.end())
-	{
-		(*iter)->Update();
-	}
-}
+//void CPokemon::AddObserver(IObserver* observer)
+//{
+//	m_listObservers.push_back(observer);
+//}
+//
+//void CPokemon::RemoveObserver(IObserver* observer)
+//{
+//	m_listObservers.remove(observer);
+//}
+//
+//void CPokemon::Notify()
+//{
+//	auto iter = m_listObservers.begin();
+//	while (iter != m_listObservers.end())
+//	{
+//		(*iter)->Update();
+//	}
+//}

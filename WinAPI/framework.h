@@ -85,3 +85,5 @@ using namespace FMOD;
 #include "CComponent.h"
 #include "CAnimator.h"
 #include "CCollider.h"
+#include "ISubject.h"
+#include "IObserver.h"

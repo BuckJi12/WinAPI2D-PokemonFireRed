@@ -3,6 +3,7 @@
 class CCore;
 class CImage;
 class CSound;
+class CPokemonResource;
 
 class CResourceManager : public SingleTon<CResourceManager>
 {
@@ -15,6 +16,7 @@ private:
 private:
 	unordered_map<wstring, CImage*> m_umapImage;
 	unordered_map<wstring, CSound*> m_umapSound;
+	map<int, CPokemonResource*> m_mapPokemonResource;
 
 public:
 	CImage* FindImg(const wstring& key);
@@ -24,6 +26,7 @@ public:
 	CSound* FindSound(const wstring& key);
 	CSound* LoadSound(const wstring& key, const wstring& fileName);
 
+	CPokemonResource* GetPokemonResource(const int& key);
 private:
 	void Init();
 	void Release();
