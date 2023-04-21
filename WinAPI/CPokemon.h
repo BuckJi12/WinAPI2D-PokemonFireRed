@@ -105,6 +105,7 @@ public:
 	PokemonStat			GetPokemonStat();
 	PokemonStat			GetLevelStat(int level);
 	PokemonState		GetCurState();
+	CPokemonResource*	GetPokemonResource();
 	void				SetPokemonStat(int level);
 	void				ChangeState(PokemonState state);
 	void				AddExp(float exp);

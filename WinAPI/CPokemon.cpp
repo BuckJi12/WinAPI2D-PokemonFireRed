@@ -42,6 +42,11 @@ PokemonState CPokemon::GetCurState()
 	return m_curState;
 }
 
+CPokemonResource* CPokemon::GetPokemonResource()
+{
+	return m_pResource;
+}
+
 void CPokemon::SetPokemonStat(int level)
 {
 	m_stat.maxHp = (int)(((m_baseStat.hp * 2) * ((float)level / 100)) + 10 + m_stat.level);
