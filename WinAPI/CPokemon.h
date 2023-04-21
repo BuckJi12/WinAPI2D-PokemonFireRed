@@ -35,6 +35,8 @@ struct PokemonStat
 		defence += other.defence;
 		specialDefence += other.specialDefence;
 		speed += other.speed;
+
+		return *this;
 	}
 
 	PokemonStat operator-=(const PokemonStat& other)
@@ -46,6 +48,8 @@ struct PokemonStat
 		defence -= other.defence;
 		specialDefence -= other.specialDefence;
 		speed -= other.speed;
+
+		return *this;
 	}
 };
 
