@@ -264,6 +264,9 @@
     <ClInclude Include="CSubject.h">
       <Filter>Engine\DesignPattern\Observer Pattern</Filter>
     </ClInclude>
+    <ClInclude Include="CGameManager.h">
+      <Filter>Engine\Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -424,6 +427,9 @@
     </ClCompile>
     <ClCompile Include="CSubject.cpp">
       <Filter>Engine\DesignPattern\Observer Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="CGameManager.cpp">
+      <Filter>Engine\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
