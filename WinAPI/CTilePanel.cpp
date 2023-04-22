@@ -105,6 +105,13 @@ void CTilePanel::CreateTileTypeButton()
 	pWallTypeButton->SetText(L"Wall");
 	pWallTypeButton->SetClickedCallback(click, (DWORD_PTR)pTileToolScene, (DWORD_PTR)TypeTile::Wall);
 	AddChildUI(pWallTypeButton);
+
+	CButton* pMeetingTypeButton = new CButton;
+	pMeetingTypeButton->SetScale(100.f, 50.f);
+	pMeetingTypeButton->SetPos(Vector(290.f, m_vecScale.y - 100.f));
+	pMeetingTypeButton->SetText(L"Meeting");
+	pMeetingTypeButton->SetClickedCallback(click, (DWORD_PTR)pTileToolScene, (DWORD_PTR)TypeTile::Meeting);
+	AddChildUI(pMeetingTypeButton);
 }
 
 void CTilePanel::SetPage(UINT page)

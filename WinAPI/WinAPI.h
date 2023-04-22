@@ -63,6 +63,7 @@ enum class TypeTile
 	None,
 	Wall,
 	Platform,
+	Meeting,
 
 	Size,
 };
