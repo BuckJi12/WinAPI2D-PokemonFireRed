@@ -4,6 +4,7 @@
 #include "CPathManager.h"
 #include "CImage.h"
 #include "CSound.h"
+#include "CPokemonResource.h"
 
 CResourceManager::CResourceManager()
 {
@@ -90,6 +91,10 @@ CPokemonResource* CResourceManager::GetPokemonResource(const int& key)
 
 void CResourceManager::Init()
 {
+	
+	// No.4 ÆÄÀÌ¸®
+	CPokemonResource* charmander = new CPokemonResource;
+	m_mapPokemonResource.insert(make_pair(4, charmander));
 }
 
 void CResourceManager::Release()

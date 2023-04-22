@@ -13,6 +13,7 @@
 #include "CCameraManager.h"
 #include "CUIManager.h"
 #include "CSoundManager.h"
+#include "CPlayerManager.h"
 
 CCore::CCore()
 {
@@ -37,6 +38,7 @@ void CCore::Init()
 	UI->Init();
 	SOUND->Init();
 	GAME->Init();
+	PLAYER->Init();
 
 	SCENE->Init();
 }
@@ -53,6 +55,7 @@ void CCore::Update()
 	CAMERA->Update();
 	UI->Update();
 	SOUND->Update();
+	PLAYER->Update();
 
 	// 게임 오브젝트들이 업데이트 된 후 충돌처리 진행
 	COLLISION->Update();
@@ -89,4 +92,5 @@ void CCore::Release()
 	UI->Release();
 	SOUND->Release();
 	GAME->Release();
+	PLAYER->Release();
 }

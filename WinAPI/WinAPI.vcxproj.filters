@@ -270,6 +270,9 @@
     <ClInclude Include="CMeetingTile.h">
       <Filter>Engine\Asset\Tile</Filter>
     </ClInclude>
+    <ClInclude Include="CPlayerManager.h">
+      <Filter>Engine\Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -436,6 +439,9 @@
     </ClCompile>
     <ClCompile Include="CMeetingTile.cpp">
       <Filter>Engine\Asset\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerManager.cpp">
+      <Filter>Engine\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
