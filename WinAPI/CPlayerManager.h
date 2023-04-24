@@ -24,6 +24,7 @@ public:
 	void	AddPokemonToPlayer(CPokemon* pokemon);
 	void	CheckPokemonIndex(CPokemon* pokemon);
 	CPokemon* GetPlayerFirstPokemon();
+	vector<CPokemon*> GetPlayerPokemonList();
 
 };
 

@@ -48,6 +48,11 @@ CPokemon* CPlayerManager::GetPlayerFirstPokemon()
 	return nullptr;
 }
 
+vector<CPokemon*> CPlayerManager::GetPlayerPokemonList()
+{
+	return m_pVecPlayerPokemons;
+}
+
 void CPlayerManager::CheckPokemonIndex(CPokemon* pokemon)
 {
 	auto iter = m_pVecPlayerPokemons.begin();
