@@ -74,6 +74,11 @@ CPokemonResource* CPokemon::GetPokemonResource()
 	return m_pResource;
 }
 
+vector<CMove> CPokemon::GetPokemonMoveList()
+{
+	return m_vecMoves;
+}
+
 void CPokemon::SetPokemonStat(int level)
 {
 	m_stat.maxHp = (int)(((m_baseStat.hp * 2) * ((float)level / 100)) + 10 + m_stat.level);

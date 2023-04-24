@@ -108,6 +108,7 @@ public:
 	PokemonStat			GetLevelStat(int level);
 	PokemonState		GetCurState();
 	CPokemonResource*	GetPokemonResource();
+	vector<CMove>		GetPokemonMoveList();
 	void				SetPokemonStat(int level);
 	void				ChangeState(PokemonState state);
 	void				AddExp(float exp);
