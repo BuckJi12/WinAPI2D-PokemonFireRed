@@ -26,6 +26,11 @@ MoveStats CMove::GetMoveStat()
 	return m_moveStat;
 }
 
+void CMove::UseMove()
+{
+	m_moveStat.curPP -= 1;
+}
+
 void CMove::RecoverPP(int value)
 {
 	m_moveStat.curPP = value;

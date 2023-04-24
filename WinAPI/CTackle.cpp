@@ -20,8 +20,3 @@ CTackle::CTackle()
 CTackle::~CTackle()
 {
 }
-
-void CTackle::UseMove(CPokemon* pokemon)
-{
-	pokemon->TakeDamage(m_moveStat.moveDamage);
-}

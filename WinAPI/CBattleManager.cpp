@@ -64,9 +64,10 @@ void CBattleManager::CheckFirstAttack()
 	}
 }
 
-void CBattleManager::PlayerUseMove()
+void CBattleManager::PlayerUseMove(int value)
 {
 	// TODO: ¼öÁ¤
+	//m_pPlayerCurPokemon->GetPokemonMoveList()[value].UseMove();
 }
 
 void CBattleManager::OppoentUseMove()

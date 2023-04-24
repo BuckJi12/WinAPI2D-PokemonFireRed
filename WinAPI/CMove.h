@@ -31,7 +31,7 @@ protected:
 
 public:
 	MoveStats GetMoveStat();
-	virtual void UseMove(CPokemon* pokemon) {};
+	void UseMove();
 	void RecoverPP(int value);
 };
 
