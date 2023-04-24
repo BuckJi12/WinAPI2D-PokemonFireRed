@@ -1,6 +1,7 @@
 #pragma once
 
 class CCore;
+class CPokemon;
 
 class CPlayerManager : public SingleTon<CPlayerManager>
 {
@@ -19,6 +20,7 @@ private:
 	void	Update();
 	void	Release();
 
+public:
 	void	AddPokemonToPlayer(CPokemon* pokemon);
 	void	CheckPokemonIndex(CPokemon* pokemon);
 	CPokemon* GetPlayerFirstPokemon();

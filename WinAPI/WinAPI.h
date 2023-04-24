@@ -95,3 +95,30 @@ enum class PokemonType
 
 	Size,
 };
+
+//========================================
+//##			플레이어 행동				##
+//========================================
+
+enum class PlayerAction
+{
+	Wait,
+	Battle,
+	Change,
+	Item,
+	Runaway,
+
+	Size
+};
+
+//========================================
+//##			선제	 공격				##
+//========================================
+
+enum class FirstAttack
+{
+	Player,
+	Oppoent,
+
+	Size
+};

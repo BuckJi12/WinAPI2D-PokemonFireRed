@@ -273,6 +273,9 @@
     <ClInclude Include="CPlayerManager.h">
       <Filter>Engine\Manager</Filter>
     </ClInclude>
+    <ClInclude Include="CBattleManager.h">
+      <Filter>Engine\Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -441,6 +444,9 @@
       <Filter>Engine\Asset\Tile</Filter>
     </ClCompile>
     <ClCompile Include="CPlayerManager.cpp">
+      <Filter>Engine\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="CBattleManager.cpp">
       <Filter>Engine\Manager</Filter>
     </ClCompile>
   </ItemGroup>

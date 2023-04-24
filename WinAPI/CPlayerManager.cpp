@@ -1,6 +1,8 @@
 #include "framework.h"
 #include "CPlayerManager.h"
 
+#include "CPokemon.h"
+
 CPlayerManager::CPlayerManager()
 {
 }
