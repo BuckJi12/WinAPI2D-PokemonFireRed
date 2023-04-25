@@ -69,6 +69,14 @@ PokemonState CPokemon::GetCurState()
 	return m_curState;
 }
 
+PokemonType CPokemon::GetType(int num)
+{	
+	if (num == 1)
+		return m_type1;
+	else
+		return m_type2;
+}
+
 CPokemonResource* CPokemon::GetPokemonResource()
 {
 	return m_pResource;

@@ -26,6 +26,16 @@ MoveStats CMove::GetMoveStat()
 	return m_moveStat;
 }
 
+PokemonType CMove::GetType()
+{
+	return m_moveType;
+}
+
+MoveKind CMove::GetKind()
+{
+	return m_moveKind;
+}
+
 void CMove::UseMove()
 {
 	m_moveStat.curPP -= 1;

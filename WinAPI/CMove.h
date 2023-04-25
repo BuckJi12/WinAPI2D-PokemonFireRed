@@ -31,6 +31,8 @@ protected:
 
 public:
 	MoveStats GetMoveStat();
+	PokemonType GetType();
+	MoveKind GetKind();
 	void UseMove();
 	void RecoverPP(int value);
 };

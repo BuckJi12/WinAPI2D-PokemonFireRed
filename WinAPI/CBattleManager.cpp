@@ -67,18 +67,47 @@ void CBattleManager::CheckFirstAttack()
 void CBattleManager::PlayerUseMove(int value)
 {
 	// TODO: 수정
-	//m_pPlayerCurPokemon->GetPokemonMoveList()[value].UseMove();
+	if (m_pPlayerCurPokemon->GetPokemonMoveList()[value].GetMoveStat().curPP > 0)
+	{
+		m_pPlayerCurPokemon->GetPokemonMoveList()[value].UseMove();
+		m_pOppoentCurPokemon->TakeDamage(CalculateDamage(m_pPlayerCurPokemon, m_pOppoentCurPokemon,
+			m_pPlayerCurPokemon->GetPokemonMoveList()[value]));
+	}
 }
 
 void CBattleManager::OppoentUseMove()
 {
-	// TODO: 수정
+	// TODO: 추후 수정이 필요함
+	int random;
+	while (true)
+	{
+		random = rand() % m_pOppoentCurPokemon->GetPokemonMoveList().size();
+		if (m_pOppoentCurPokemon->GetPokemonMoveList()[random].GetMoveStat().curPP > 0)
+			break;
+	}
+
+	m_pOppoentCurPokemon->GetPokemonMoveList()[random].UseMove();
+	m_pPlayerCurPokemon->TakeDamage(CalculateDamage(m_pOppoentCurPokemon, m_pPlayerCurPokemon,
+		m_pPlayerCurPokemon->GetPokemonMoveList()[random]));
 }
 
 int CBattleManager::CalculateDamage(CPokemon* attacker, CPokemon* victim, CMove move)
 {
-	// TODO: 수정
-	return 0;
+	int damage;
+	if (move.GetKind() == MoveKind::Physics)
+	{
+		damage = ((((((attacker->GetPokemonStat().level * 2 / 5) + 2) * move.GetMoveStat().moveDamage *
+			attacker->GetPokemonStat().attack / 50) / victim->GetPokemonStat().defence) * 1) + 2) *
+			typeDamage[(int)move.GetType()][(int)victim->GetType(1)] * typeDamage[(int)move.GetType()][(int)victim->GetType(2)];
+	}
+	else
+	{
+		damage = ((((((attacker->GetPokemonStat().level * 2 / 5) + 2) * move.GetMoveStat().moveDamage *
+			attacker->GetPokemonStat().specialAttack / 50) / victim->GetPokemonStat().specialDefence) * 1) + 2) *
+			typeDamage[(int)move.GetType()][(int)victim->GetType(1)] * typeDamage[(int)move.GetType()][(int)victim->GetType(2)];
+	}
+
+	return damage;
 }
 
 int CBattleManager::CalculateCatchRate()
@@ -95,6 +124,7 @@ int CBattleManager::CalculateCatchRate()
 void CBattleManager::PokemonChanage(int index)
 {
 	// TODO: 수정
+	m_pPlayerCurPokemon = PLAYER->GetPlayerPokemonList()[index];
 }
 
 bool CBattleManager::TryPokemonCatch()

@@ -96,6 +96,8 @@ protected:
 	PokemonStat			m_stat;
 	PokemonBaseStat		m_baseStat;
 	PokemonState		m_curState;
+	PokemonType			m_type1;
+	PokemonType			m_type2;
 	PokemonOwner		m_owner;
 	CPokemonResource*	m_pResource;
 	CAnimator*			m_pAnimator;
@@ -107,6 +109,7 @@ public:
 	PokemonStat			GetPokemonStat();
 	PokemonStat			GetLevelStat(int level);
 	PokemonState		GetCurState();
+	PokemonType			GetType(int num);
 	CPokemonResource*	GetPokemonResource();
 	vector<CMove>		GetPokemonMoveList();
 	void				SetPokemonStat(int level);
