@@ -69,7 +69,7 @@ void CBattleManager::PlayerUseMove(int value)
 	// TODO: ¼öÁ¤
 	if (m_pPlayerCurPokemon->GetPokemonMoveList()[value].GetMoveStat().curPP > 0)
 	{
-		m_pPlayerCurPokemon->GetPokemonMoveList()[value].UseMove();
+		m_pPlayerCurPokemon->GetPokemonMoveList()[value].UseMove(m_pOppoentCurPokemon);
 		m_pOppoentCurPokemon->TakeDamage(CalculateDamage(m_pPlayerCurPokemon, m_pOppoentCurPokemon,
 			m_pPlayerCurPokemon->GetPokemonMoveList()[value]));
 	}
@@ -86,7 +86,7 @@ void CBattleManager::OppoentUseMove()
 			break;
 	}
 
-	m_pOppoentCurPokemon->GetPokemonMoveList()[random].UseMove();
+	m_pOppoentCurPokemon->GetPokemonMoveList()[random].UseMove(m_pPlayerCurPokemon);
 	m_pPlayerCurPokemon->TakeDamage(CalculateDamage(m_pOppoentCurPokemon, m_pPlayerCurPokemon,
 		m_pPlayerCurPokemon->GetPokemonMoveList()[random]));
 }

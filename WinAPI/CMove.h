@@ -33,7 +33,7 @@ public:
 	MoveStats GetMoveStat();
 	PokemonType GetType();
 	MoveKind GetKind();
-	void UseMove();
+	virtual void UseMove(CPokemon* pokemon);
 	void RecoverPP(int value);
 };
 

@@ -36,7 +36,7 @@ MoveKind CMove::GetKind()
 	return m_moveKind;
 }
 
-void CMove::UseMove()
+void CMove::UseMove(CPokemon* pokemon)
 {
 	m_moveStat.curPP -= 1;
 }
