@@ -20,7 +20,7 @@ void CMeetingTile::Init()
 	m_pImage = RESOURCE->LoadImg(L"Grass", L"Image\\GrassTile.png");
 
 	m_pAnimator = new CAnimator;
-	m_pAnimator->CreateAnimation(L"Splash", m_pImage, Vector(0, 0), Vector(64.f, 64.f), Vector(64.f, 0.f), 0.5, 1);
+	m_pAnimator->CreateAnimation(L"Splash", m_pImage, Vector(0, 0), Vector(128.f, 128.f), Vector(128.f, 0.f), 0.5, 1);
 
 	AddComponent(m_pAnimator);
 	CTile::Init();
@@ -28,8 +28,6 @@ void CMeetingTile::Init()
 	AddCollider(ColliderType::Rect,
 		Vector(CTile::TILESIZE, CTile::TILESIZE),
 		Vector(CTile::TILESIZE / 2, CTile::TILESIZE / 2));
-
-	m_vecPos += Vector(32, 32);
 }
 
 void CMeetingTile::Update()
