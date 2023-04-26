@@ -25,6 +25,7 @@ private:
 public:
 	UINT GetFPS();
 	float GetDT();
+	void Delay(float time);
 };
 
 #define	TIME	CTimeManager::GetInstance()

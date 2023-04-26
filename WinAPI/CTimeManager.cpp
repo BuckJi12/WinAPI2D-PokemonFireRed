@@ -56,3 +56,15 @@ float CTimeManager::GetDT()
 {
 	return m_fDT;
 }
+
+void CTimeManager::Delay(float time)
+{
+	float timer;
+	while (true)
+	{
+		timer += DT;
+		if (time > timer)
+			break;
+	}
+	return;
+}
