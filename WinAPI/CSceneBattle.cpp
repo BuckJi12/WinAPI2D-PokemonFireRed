@@ -4,6 +4,9 @@
 #include "CImageObject.h"
 #include "CGameObject.h"
 
+// Enviorment
+#include "CPlayerFloor.h"
+
 CSceneBattle::CSceneBattle()
 {
 	m_pImageBackGround = nullptr;
@@ -16,6 +19,14 @@ CSceneBattle::~CSceneBattle()
 {
 }
 
+void CSceneBattle::EnterInit()
+{
+	m_pImagePlayerFloor->SetPos(1600, 335);
+
+	AddGameObject(m_pImagePlayerFloor);
+	AddGameObject(m_pImageNoramUI);
+}
+
 void CSceneBattle::Init()
 {
 	// ¹è°æ
@@ -24,8 +35,7 @@ void CSceneBattle::Init()
 	m_pImageBackGround->SetPos(0, 0);
 	AddGameObject(m_pImageBackGround);
 
-	m_pImagePlayerFloor = new CImageObject;
-	m_pImagePlayerFloor->SetImage(RESOURCE->LoadImg(L"PlayerFloor", L"Image\\Battle\\PlayerFloor.png"));
+	m_pImagePlayerFloor = new CPlayerFloor;
 
 	m_pImageOpponentFloor = new CImageObject;
 	m_pImageOpponentFloor->SetImage(RESOURCE->LoadImg(L"OppFloor", L"Image\\Battle\\OppFloor.png"));
@@ -35,12 +45,12 @@ void CSceneBattle::Init()
 	m_pImageNoramUI = new CImageObject;
 	m_pImageNoramUI->SetPos(0, 400);
 	m_pImageNoramUI->SetImage(RESOURCE->LoadImg(L"TextBox", L"Image\\Battle\\TextBox.png"));
-	AddGameObject(m_pImageNoramUI);
 }
 
 void CSceneBattle::Enter()
 {
 	CAMERA->FadeIn(3.0f);
+	EnterInit();
 }
 
 void CSceneBattle::Update()

@@ -155,6 +155,7 @@
     <ClInclude Include="CGameObject.h" />
     <ClInclude Include="CMeetingTile.h" />
     <ClInclude Include="CMove.h" />
+    <ClInclude Include="CPlayerFloor.h" />
     <ClInclude Include="CPlayerManager.h" />
     <ClInclude Include="CPokemon.h" />
     <ClInclude Include="CPokemonResource.h" />
@@ -223,6 +224,7 @@
     <ClCompile Include="CGameObject.cpp" />
     <ClCompile Include="CMeetingTile.cpp" />
     <ClCompile Include="CMove.cpp" />
+    <ClCompile Include="CPlayerFloor.cpp" />
     <ClCompile Include="CPlayerManager.cpp" />
     <ClCompile Include="CPokemon.cpp" />
     <ClCompile Include="CPokemonResource.cpp" />

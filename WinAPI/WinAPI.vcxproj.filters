@@ -79,6 +79,9 @@
     <Filter Include="GameObject\Pokemon\Pokemon\StartingPokemon">
       <UniqueIdentifier>{b97d6fac-220b-4d16-9127-d437e1055c23}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Battle">
+      <UniqueIdentifier>{6e312a56-c1f0-406a-9102-73e3cc26fe33}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -279,6 +282,9 @@
     <ClInclude Include="CSceneBattle.h">
       <Filter>Scene</Filter>
     </ClInclude>
+    <ClInclude Include="CPlayerFloor.h">
+      <Filter>GameObject\Battle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -454,6 +460,9 @@
     </ClCompile>
     <ClCompile Include="CSceneBattle.cpp">
       <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerFloor.cpp">
+      <Filter>GameObject\Battle</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

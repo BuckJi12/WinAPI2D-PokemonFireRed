@@ -15,6 +15,9 @@ private:
 	CImageObject* m_pImageNoramUI;
 
 private:
+	void EnterInit();
+
+private:
 	void Init()		override;
 	void Enter()	override;
 	void Update()	override;
