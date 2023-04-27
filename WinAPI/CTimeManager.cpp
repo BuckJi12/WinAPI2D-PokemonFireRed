@@ -59,7 +59,7 @@ float CTimeManager::GetDT()
 
 void CTimeManager::Delay(float time)
 {
-	float timer;
+	float timer = 0;
 	while (true)
 	{
 		timer += DT;

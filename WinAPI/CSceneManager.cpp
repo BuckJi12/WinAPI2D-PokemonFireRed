@@ -11,6 +11,7 @@
 #include "CScenePalletTown.h"
 #include "CSceneOakLab.h"
 #include "CSceneRoute01.h"
+#include "CSceneBattle.h"
 //======== Scene ========
 
 CSceneManager::CSceneManager()
@@ -40,6 +41,8 @@ void CSceneManager::Init()
 	m_mapScene.insert(make_pair(GroupScene::PalletTown, pPalletTown));
 	CScene* pOakLab = new CSceneOakLab();
 	m_mapScene.insert(make_pair(GroupScene::OakLab, pOakLab));
+	CScene* pBattle = new CSceneBattle();
+	m_mapScene.insert(make_pair(GroupScene::Battle, pBattle));
 	CScene* pRoute01 = new CSceneRoute01();
 	m_mapScene.insert(make_pair(GroupScene::Route01, pRoute01));
 

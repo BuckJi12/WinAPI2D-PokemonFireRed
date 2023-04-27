@@ -58,7 +58,8 @@ void CMeetingTile::OnCollisionStay(CCollider* pOther)
 	if (GAME->canMeet && m_time > GAME->randomValue)
 	{
 		//TODO: 배틀씬 전환
-		Logger::Debug(L"포켓몬 만났다");
+		CAMERA->FadeOut(0.25f);
+		DELAYCHANGESCENE(GroupScene::Battle, 0.5f);
 		m_time = 0;
 	}
 }
