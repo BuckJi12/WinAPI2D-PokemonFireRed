@@ -8,12 +8,16 @@
 #include "CPlayerFloor.h"
 #include "COpponentFloor.h"
 
+// Player
+#include "CPlayerThrowBall.h"
+
 CSceneBattle::CSceneBattle()
 {
 	m_pImageBackGround		= nullptr;
 	m_pImagePlayerFloor		= nullptr;
 	m_pImageOpponentFloor	= nullptr;
 	m_pImageNoramUI			= nullptr;
+	m_pImagePlayerThrow		= nullptr;
 }
 
 CSceneBattle::~CSceneBattle()
@@ -23,9 +27,13 @@ CSceneBattle::~CSceneBattle()
 void CSceneBattle::EnterInit()
 {
 	m_pImagePlayerFloor->SetPos(1600, 335);
+
+	m_pImagePlayerThrow->Setting(Vector(1802, 272));
+
 	m_pImageOpponentFloor->SetPos(-1025, 125);
 
 	AddGameObject(m_pImagePlayerFloor);
+	AddGameObject(m_pImagePlayerThrow);
 	AddGameObject(m_pImageOpponentFloor);
 	AddGameObject(m_pImageNoramUI);
 }
@@ -42,6 +50,8 @@ void CSceneBattle::Init()
 	m_pImagePlayerFloor		= new CPlayerFloor;
 	m_pImageOpponentFloor	= new COpponentFloor;
 
+	// 플레이어
+	m_pImagePlayerThrow		= new CPlayerThrowBall;
 
 	//TODO: 별도 텍스트 박스로 만들기
 	m_pImageNoramUI = new CImageObject;

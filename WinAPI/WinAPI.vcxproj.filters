@@ -82,6 +82,12 @@
     <Filter Include="GameObject\Battle">
       <UniqueIdentifier>{6e312a56-c1f0-406a-9102-73e3cc26fe33}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Battle\Environment">
+      <UniqueIdentifier>{7b33a69f-653b-43f6-b6ef-458ed31baa79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Battle\Player">
+      <UniqueIdentifier>{0cab1a56-529c-442e-b16d-5830933c2423}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -282,11 +288,14 @@
     <ClInclude Include="CSceneBattle.h">
       <Filter>Scene</Filter>
     </ClInclude>
-    <ClInclude Include="CPlayerFloor.h">
-      <Filter>GameObject\Battle</Filter>
-    </ClInclude>
     <ClInclude Include="COpponentFloor.h">
-      <Filter>GameObject\Battle</Filter>
+      <Filter>GameObject\Battle\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerFloor.h">
+      <Filter>GameObject\Battle\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerThrowBall.h">
+      <Filter>GameObject\Battle\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -464,11 +473,14 @@
     <ClCompile Include="CSceneBattle.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="CPlayerFloor.cpp">
-      <Filter>GameObject\Battle</Filter>
-    </ClCompile>
     <ClCompile Include="COpponentFloor.cpp">
-      <Filter>GameObject\Battle</Filter>
+      <Filter>GameObject\Battle\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerFloor.cpp">
+      <Filter>GameObject\Battle\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerThrowBall.cpp">
+      <Filter>GameObject\Battle\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

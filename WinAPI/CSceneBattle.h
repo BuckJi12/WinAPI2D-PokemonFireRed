@@ -1,6 +1,7 @@
 #pragma once
 
 class CImageObject;
+class CPlayerThrowBall;
 
 class CSceneBattle : public CScene
 {
@@ -13,6 +14,8 @@ private:
 	CImageObject* m_pImagePlayerFloor;
 	CImageObject* m_pImageOpponentFloor;
 	CImageObject* m_pImageNoramUI;
+
+	CPlayerThrowBall* m_pImagePlayerThrow;
 
 private:
 	void EnterInit();

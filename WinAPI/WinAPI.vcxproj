@@ -158,6 +158,7 @@
     <ClInclude Include="COpponentFloor.h" />
     <ClInclude Include="CPlayerFloor.h" />
     <ClInclude Include="CPlayerManager.h" />
+    <ClInclude Include="CPlayerThrowBall.h" />
     <ClInclude Include="CPokemon.h" />
     <ClInclude Include="CPokemonResource.h" />
     <ClInclude Include="CSceneBattle.h" />
@@ -228,6 +229,7 @@
     <ClCompile Include="COpponentFloor.cpp" />
     <ClCompile Include="CPlayerFloor.cpp" />
     <ClCompile Include="CPlayerManager.cpp" />
+    <ClCompile Include="CPlayerThrowBall.cpp" />
     <ClCompile Include="CPokemon.cpp" />
     <ClCompile Include="CPokemonResource.cpp" />
     <ClCompile Include="CSceneBattle.cpp" />
