@@ -6,13 +6,14 @@
 
 // Enviorment
 #include "CPlayerFloor.h"
+#include "COpponentFloor.h"
 
 CSceneBattle::CSceneBattle()
 {
-	m_pImageBackGround = nullptr;
-	m_pImagePlayerFloor = nullptr;
-	m_pImageOpponentFloor = nullptr;
-	m_pImageNoramUI = nullptr;
+	m_pImageBackGround		= nullptr;
+	m_pImagePlayerFloor		= nullptr;
+	m_pImageOpponentFloor	= nullptr;
+	m_pImageNoramUI			= nullptr;
 }
 
 CSceneBattle::~CSceneBattle()
@@ -22,8 +23,10 @@ CSceneBattle::~CSceneBattle()
 void CSceneBattle::EnterInit()
 {
 	m_pImagePlayerFloor->SetPos(1600, 335);
+	m_pImageOpponentFloor->SetPos(-1025, 125);
 
 	AddGameObject(m_pImagePlayerFloor);
+	AddGameObject(m_pImageOpponentFloor);
 	AddGameObject(m_pImageNoramUI);
 }
 
@@ -35,10 +38,9 @@ void CSceneBattle::Init()
 	m_pImageBackGround->SetPos(0, 0);
 	AddGameObject(m_pImageBackGround);
 
-	m_pImagePlayerFloor = new CPlayerFloor;
-
-	m_pImageOpponentFloor = new CImageObject;
-	m_pImageOpponentFloor->SetImage(RESOURCE->LoadImg(L"OppFloor", L"Image\\Battle\\OppFloor.png"));
+	// 환경
+	m_pImagePlayerFloor		= new CPlayerFloor;
+	m_pImageOpponentFloor	= new COpponentFloor;
 
 
 	//TODO: 별도 텍스트 박스로 만들기
@@ -55,7 +57,10 @@ void CSceneBattle::Enter()
 
 void CSceneBattle::Update()
 {
-	
+	if (BUTTONDOWN(VK_F4))
+	{
+		EnterInit();
+	}
 }
 
 void CSceneBattle::Render()

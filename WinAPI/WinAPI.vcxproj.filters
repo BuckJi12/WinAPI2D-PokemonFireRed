@@ -285,6 +285,9 @@
     <ClInclude Include="CPlayerFloor.h">
       <Filter>GameObject\Battle</Filter>
     </ClInclude>
+    <ClInclude Include="COpponentFloor.h">
+      <Filter>GameObject\Battle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -462,6 +465,9 @@
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="CPlayerFloor.cpp">
+      <Filter>GameObject\Battle</Filter>
+    </ClCompile>
+    <ClCompile Include="COpponentFloor.cpp">
       <Filter>GameObject\Battle</Filter>
     </ClCompile>
   </ItemGroup>

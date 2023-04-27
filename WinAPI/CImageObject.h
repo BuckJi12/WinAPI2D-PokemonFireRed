@@ -16,7 +16,7 @@ public:
 	CImage* GetIamge();
 	void SetImage(CImage* pImage);
 
-private:
+protected:
 	void Init() override;
 	void Update() override;
 	void Render() override;

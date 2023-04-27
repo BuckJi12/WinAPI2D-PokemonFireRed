@@ -26,16 +26,7 @@ void CPlayerFloor::Update()
 
 void CPlayerFloor::Render()
 {
-	if (nullptr != m_pImage)
-	{
-		RENDER->Image(
-			m_pImage,
-			m_vecPos.x,
-			m_vecPos.y,
-			m_vecPos.x + (float)m_pImage->GetWidth(),
-			m_vecPos.y + (float)m_pImage->GetHeight()
-		);
-	}
+	CImageObject::Render();
 }
 
 void CPlayerFloor::Release()
