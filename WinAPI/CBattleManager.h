@@ -32,3 +32,4 @@ public:
 	bool CheckBattleAble();
 };
 
+#define BATTLE CBattleManager::GetInstance()
