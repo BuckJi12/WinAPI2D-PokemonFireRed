@@ -8,12 +8,16 @@ public:
 	virtual ~COpponentFloor();
 
 private:
-	Vector m_point;		// ¹Ù´ÚÀÌ µµÂøÇÒ ÁöÁ¡
+	Vector			m_point;		// ¹Ù´ÚÀÌ µµÂøÇÒ ÁöÁ¡
+	CGameObject*	m_pChild;
+
+public:
+	void SetChild(CGameObject* object);
 
 private:
-	void Init() override;
-	void Update() override;
-	void Render() override;
-	void Release() override;
+	void Init()		override;
+	void Update()	override;
+	void Render()	override;
+	void Release()	override;
 };
 

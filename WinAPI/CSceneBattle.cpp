@@ -31,7 +31,7 @@ void CSceneBattle::EnterInit()
 	m_pImagePlayerThrow->Setting(Vector(1802, 272));
 
 	m_pImageOpponentFloor->SetPos(-1025, 125);
-	BATTLE->GetOpponentCurPokemon()->m_vecPos = Vector(425, 125);
+	m_pImageOpponentFloor->SetChild(BATTLE->GetOpponentCurPokemon());
 
 	AddGameObject(m_pImagePlayerFloor);
 	AddGameObject(m_pImagePlayerThrow);
