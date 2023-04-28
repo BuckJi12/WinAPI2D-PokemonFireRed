@@ -75,6 +75,11 @@ void CSceneBattle::Update()
 	{
 		EnterInit();
 	}
+
+	if (BUTTONDOWN(VK_ESCAPE))
+	{
+		DELAYCHANGESCENE(GroupScene::PrevScene, 3);
+	}
 }
 
 void CSceneBattle::Render()

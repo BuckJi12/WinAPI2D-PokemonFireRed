@@ -17,6 +17,7 @@
 CSceneManager::CSceneManager()
 {
 	m_pCurScene = nullptr;
+	m_pPrevScene = nullptr;
 }
 
 CSceneManager::~CSceneManager()
@@ -81,12 +82,27 @@ void CSceneManager::Release()
 	m_mapScene.clear();
 }
 
+void CSceneManager::SwapScene()
+{
+	CScene* temp = m_pCurScene;
+	m_pCurScene = m_pPrevScene;
+	m_pPrevScene = temp;
+}
+
 void CSceneManager::ChangeScene(GroupScene scene)
 {
 	// ÀÌÀü¾ÀÀ» Exit, ´ÙÀ½¾ÀÀ» Enter
+	m_pPrevScene = m_pCurScene;
 	m_pCurScene->SceneExit();
 	m_pCurScene = m_mapScene[scene];
 	m_pCurScene->SceneEnter();
+}
+
+void CSceneManager::ChangePrevScene()
+{
+	m_pCurScene->SceneExit();
+	m_pPrevScene->SceneEnter();
+	SwapScene();
 }
 
 CScene* CSceneManager::GetCurScene()

@@ -95,11 +95,23 @@ void CEventManager::ProgressChangeScene()
 
 	// 지연실행 이벤트가 잔여시간이 모두 소진되었을 경우 이벤트 진행
 	m_pChangeScene->second -= DT;
-	if (m_pChangeScene->second <= 0)
+	if (m_pChangeScene->first == GroupScene::PrevScene)
 	{
-		GroupScene scene = m_pChangeScene->first;
-		delete m_pChangeScene;
-		m_pChangeScene = nullptr;
-		SCENE->ChangeScene(scene);
+		if (m_pChangeScene->second <= 0)
+		{
+			delete m_pChangeScene;
+			m_pChangeScene = nullptr;
+			SCENE->ChangePrevScene();
+		}
+	}
+	else
+	{
+		if (m_pChangeScene->second <= 0)
+		{
+			GroupScene scene = m_pChangeScene->first;
+			delete m_pChangeScene;
+			m_pChangeScene = nullptr;
+			SCENE->ChangeScene(scene);
+		}
 	}
 }
