@@ -66,6 +66,7 @@ using namespace FMOD;
 #include "CSoundManager.h"
 #include "CGameManager.h"
 #include "CPlayerManager.h"
+#include "CBattleManager.h"
 
 // Asset
 #include "CGameObject.h"

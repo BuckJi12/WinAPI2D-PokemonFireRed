@@ -23,6 +23,8 @@ CPokemon::CPokemon(int level)
 	m_baseStat.specialDefence = 1;
 	m_baseStat.speed = 1;
 
+	m_pSubject = new CSubject;
+
 	// 포켓몬 스텟
 	SetPokemonStat(level);
 
@@ -35,6 +37,7 @@ CPokemon::CPokemon(int level)
 	// 초기화
 	m_pResource = nullptr;
 	m_pAnimator = nullptr;
+	Init();
 }
 
 CPokemon::~CPokemon()

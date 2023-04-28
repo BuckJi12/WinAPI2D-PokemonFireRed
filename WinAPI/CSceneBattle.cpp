@@ -31,10 +31,13 @@ void CSceneBattle::EnterInit()
 	m_pImagePlayerThrow->Setting(Vector(1802, 272));
 
 	m_pImageOpponentFloor->SetPos(-1025, 125);
+	BATTLE->GetOpponentCurPokemon()->m_vecPos = Vector(425, 125);
 
 	AddGameObject(m_pImagePlayerFloor);
 	AddGameObject(m_pImagePlayerThrow);
+
 	AddGameObject(m_pImageOpponentFloor);
+	AddGameObject(BATTLE->GetOpponentCurPokemon());
 	AddGameObject(m_pImageNoramUI);
 }
 
@@ -62,6 +65,7 @@ void CSceneBattle::Init()
 void CSceneBattle::Enter()
 {
 	CAMERA->FadeIn(3.0f);
+	BATTLE->BattleInit();
 	EnterInit();
 }
 

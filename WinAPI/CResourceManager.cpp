@@ -94,6 +94,8 @@ void CResourceManager::Init()
 	
 	// No.4 ÆÄÀÌ¸®
 	CPokemonResource* charmander = new CPokemonResource;
+	charmander->SetImage(RESOURCE->LoadImg(L"Charmander", L"Image\\Pokemon\\CharmanderImage.png"));
+	charmander->SetIcon(RESOURCE->LoadImg(L"CharmanderIcon", L"Image\\Pokemon\\CharmanderIcon.png"));
 	m_mapPokemonResource.insert(make_pair(4, charmander));
 }
 

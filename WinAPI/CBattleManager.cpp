@@ -41,6 +41,16 @@ CBattleManager::~CBattleManager()
 {
 }
 
+CPokemon* CBattleManager::GetPlayerCurPokemon()
+{
+	return m_pPlayerCurPokemon;
+}
+
+CPokemon* CBattleManager::GetOpponentCurPokemon()
+{
+	return m_pOppoentCurPokemon;
+}
+
 void CBattleManager::BattleInit()
 {
 	m_pPlayerCurPokemon = PLAYER->GetPlayerFirstPokemon();
