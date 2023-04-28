@@ -30,7 +30,7 @@ CBattleManager::CBattleManager()
 {
 	m_pPlayerCurPokemon = nullptr;
 	m_pOppoentCurPokemon = nullptr;
-	m_curAction = PlayerAction::Wait;
+	m_curAction = PlayerAction::Enter;
 	m_curFirstAttack = FirstAttack::Player;
 
 	catchRate = 1;

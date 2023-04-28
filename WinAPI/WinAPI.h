@@ -103,11 +103,19 @@ enum class PokemonType
 
 enum class PlayerAction
 {
-	Wait,
-	Battle,
+	Enter,
+	PlayerReady,
+	ChooseAction,
+	Fight,
+	ChooseMove,
 	Change,
-	Item,
+	ChoosePokemon,
+	Bag,
+	ChooseItem,
+	Ball,
 	Runaway,
+	Check,
+	None,
 
 	Size
 };
