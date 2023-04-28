@@ -30,6 +30,8 @@ CCharmander::CCharmander(int level) : CPokemon(level)
 	// ÃÊ±âÈ­
 	m_pResource = nullptr;
 	m_pAnimator = nullptr;
+
+	Init();
 }
 
 CCharmander::~CCharmander()
@@ -55,7 +57,6 @@ void CCharmander::Init()
 	m_pAnimator->CreateAnimation(L"Front", m_pResource->GetImage(), Vector(0, 0), Vector(256, 256), Vector(256, 0.f), 0.2, 1);
 	m_pAnimator->CreateAnimation(L"Back", m_pResource->GetImage(), Vector(0, 256), Vector(256, 256), Vector(256, 0.f), 0.2, 1);
 	AddComponent(m_pAnimator);
-	m_pAnimator->Play(L"Front");
 }
 
 void CCharmander::Update()

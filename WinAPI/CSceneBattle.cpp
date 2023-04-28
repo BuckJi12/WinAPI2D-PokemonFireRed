@@ -18,6 +18,8 @@ CSceneBattle::CSceneBattle()
 	m_pImageOpponentFloor	= nullptr;
 	m_pImageNoramUI			= nullptr;
 	m_pImagePlayerThrow		= nullptr;
+
+	m_time					= 0;
 }
 
 CSceneBattle::~CSceneBattle()
@@ -31,14 +33,29 @@ void CSceneBattle::EnterInit()
 	m_pImagePlayerThrow->Setting(Vector(1802, 272));
 
 	m_pImageOpponentFloor->SetPos(-1025, 125);
+	BATTLE->GetOpponentCurPokemon()->SetAnimation();
 	m_pImageOpponentFloor->SetChild(BATTLE->GetOpponentCurPokemon());
 
 	AddGameObject(m_pImagePlayerFloor);
-	AddGameObject(m_pImagePlayerThrow);
-
 	AddGameObject(m_pImageOpponentFloor);
+
+	AddGameObject(m_pImagePlayerThrow);
 	AddGameObject(BATTLE->GetOpponentCurPokemon());
 	AddGameObject(m_pImageNoramUI);
+}
+
+void CSceneBattle::TakeOutPlayerPokemon()
+{
+	m_pImagePlayerThrow->Play();
+	m_time += DT;
+	if (m_time >= 3)
+	{
+		BATTLE->GetPlayerCurPokemon()->SetPos(200, 310);
+		BATTLE->GetPlayerCurPokemon()->SetAnimation();
+		AddGameObject(BATTLE->GetPlayerCurPokemon());
+		BATTLE->ChooseAction(PlayerAction::ChooseAction);
+		m_time = 0;
+	}
 }
 
 void CSceneBattle::Init()
@@ -79,6 +96,23 @@ void CSceneBattle::Update()
 	if (BUTTONDOWN(VK_ESCAPE))
 	{
 		DELAYCHANGESCENE(GroupScene::PrevScene, 3);
+	}
+
+	switch (BATTLE->GetCurAction())
+	{
+	case PlayerAction::Enter:
+		if (BUTTONDOWN(VK_SPACE))
+		{
+			BATTLE->ChooseAction(PlayerAction::PlayerReady);
+		}
+		break;
+	case PlayerAction::PlayerReady:
+		TakeOutPlayerPokemon();
+		break;
+	case PlayerAction::ChooseAction:
+		break;
+	default:
+		break;
 	}
 }
 

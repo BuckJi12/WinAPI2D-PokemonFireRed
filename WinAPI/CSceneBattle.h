@@ -18,9 +18,10 @@ private:
 
 	CPlayerThrowBall*	m_pImagePlayerThrow;
 
+	float				m_time;
 private:
 	void EnterInit();
-
+	void TakeOutPlayerPokemon();
 private:
 	void Init()		override;
 	void Enter()	override;

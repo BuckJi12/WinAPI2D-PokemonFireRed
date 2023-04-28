@@ -23,6 +23,7 @@ private:
 public:
 	CPokemon* GetPlayerCurPokemon();
 	CPokemon* GetOpponentCurPokemon();
+	PlayerAction GetCurAction();
 	void BattleInit();	// 배틀 기본 설정
 	void ChooseAction(PlayerAction action); // 1. 배틀 2. 교체 3. 아이템 4. 도망
 	void CheckFirstAttack();
