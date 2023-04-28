@@ -13,6 +13,8 @@ CPlayerManager::~CPlayerManager()
 
 void CPlayerManager::Init()
 {
+	CPokemon* charmander = new CCharmander(5);
+	AddPokemonToPlayer(charmander);
 }
 
 void CPlayerManager::Update()
@@ -30,7 +32,7 @@ void CPlayerManager::AddPokemonToPlayer(CPokemon* pokemon)
 		return;
 		//TODO: 포켓몬이 6마리일시 자동으로 PC로 보내기
 	}
-
+	pokemon->SetOwner(PokemonOwner::Player);
 	m_pVecPlayerPokemons.push_back(pokemon);
 }
 

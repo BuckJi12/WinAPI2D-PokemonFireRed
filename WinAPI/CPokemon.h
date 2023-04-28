@@ -117,7 +117,9 @@ public:
 	void				AddExp(float exp);
 	void				LevelUp();
 	void				LearnMove(CMove* move);
+	void				SetAnimation();
 	void				TakeDamage(int value);
+	void				SetOwner(PokemonOwner owner);
 	void				Recover();
 
 public:

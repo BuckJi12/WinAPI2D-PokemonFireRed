@@ -96,3 +96,6 @@ using namespace FMOD;
 #include "CPokemon.h"
 #include "CMove.h"
 #include "CPokemonResource.h"
+
+
+#include "CCharmander.h" // No.4 파이리

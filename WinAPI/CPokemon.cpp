@@ -165,6 +165,14 @@ void CPokemon::LearnMove(CMove* move)
 	m_pSubject->Notify();
 }
 
+void CPokemon::SetAnimation()
+{
+	if (m_owner == PokemonOwner::Player)
+		m_pAnimator->Play(L"Back");
+	else
+		m_pAnimator->Play(L"Front");
+}
+
 void CPokemon::TakeDamage(int value)
 {
 	m_stat.curHp -= value;
@@ -174,6 +182,11 @@ void CPokemon::TakeDamage(int value)
 		ChangeState(PokemonState::Faint);
 	}
 	m_pSubject->Notify();
+}
+
+void CPokemon::SetOwner(PokemonOwner owner)
+{
+	m_owner = owner;
 }
 
 void CPokemon::Recover()
