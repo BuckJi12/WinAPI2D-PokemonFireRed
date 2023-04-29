@@ -13,6 +13,8 @@
 
 CSceneBattle::CSceneBattle()
 {
+	m_curTurn = nullptr;
+
 	m_pImageBackGround		= nullptr;
 	m_pImagePlayerFloor		= nullptr;
 	m_pImageOpponentFloor	= nullptr;
@@ -42,6 +44,8 @@ void CSceneBattle::EnterInit()
 	AddGameObject(m_pImagePlayerThrow);
 	AddGameObject(BATTLE->GetOpponentCurPokemon());
 	AddGameObject(m_pImageNoramUI);
+
+	m_curTurn = m_mapTurns[PlayerAction::Enter];
 }
 
 void CSceneBattle::TakeOutPlayerPokemon()
@@ -58,6 +62,18 @@ void CSceneBattle::TakeOutPlayerPokemon()
 	}
 }
 
+void CSceneBattle::AddObjectThisScene(CGameObject* object)
+{
+	AddGameObject(object);
+}
+
+void CSceneBattle::ChangeTurn(PlayerAction action)
+{
+	m_curTurn->Exit();
+	m_curTurn = m_mapTurns[action];
+	m_curTurn->Enter();
+}
+
 void CSceneBattle::Init()
 {
 	// 배경
@@ -65,7 +81,7 @@ void CSceneBattle::Init()
 	m_pImageBackGround->SetImage(RESOURCE->LoadImg(L"BackGround", L"Image\\Battle\\BackGround.png"));
 	m_pImageBackGround->SetPos(0, 0);
 	AddGameObject(m_pImageBackGround);
-
+	
 	// 환경
 	m_pImagePlayerFloor		= new CPlayerFloor;
 	m_pImageOpponentFloor	= new COpponentFloor;
@@ -83,12 +99,13 @@ void CSceneBattle::Enter()
 {
 	CAMERA->FadeIn(3.0f);
 	BATTLE->BattleInit();
-	EnterInit();
+	//EnterInit();
 }
 
 void CSceneBattle::Update()
 {
-	if (BUTTONDOWN(VK_F4))
+	m_curTurn->Update();
+	/*if (BUTTONDOWN(VK_F4))
 	{
 		EnterInit();
 	}
@@ -113,7 +130,7 @@ void CSceneBattle::Update()
 		break;
 	default:
 		break;
-	}
+	}*/
 }
 
 void CSceneBattle::Render()

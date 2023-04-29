@@ -88,6 +88,12 @@
     <Filter Include="GameObject\Battle\Player">
       <UniqueIdentifier>{0cab1a56-529c-442e-b16d-5830933c2423}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\Battle">
+      <UniqueIdentifier>{9996f45e-6ced-454a-9de5-e3401947e5b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Battle\Turn">
+      <UniqueIdentifier>{50f397f2-34d0-4ecb-a022-dfaa4d310e21}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -285,9 +291,6 @@
     <ClInclude Include="CBattleManager.h">
       <Filter>Engine\Manager</Filter>
     </ClInclude>
-    <ClInclude Include="CSceneBattle.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
     <ClInclude Include="COpponentFloor.h">
       <Filter>GameObject\Battle\Environment</Filter>
     </ClInclude>
@@ -296,6 +299,12 @@
     </ClInclude>
     <ClInclude Include="CPlayerThrowBall.h">
       <Filter>GameObject\Battle\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneBattle.h">
+      <Filter>Scene\Battle</Filter>
+    </ClInclude>
+    <ClInclude Include="CTurn.h">
+      <Filter>Scene\Battle\Turn</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -470,9 +479,6 @@
     <ClCompile Include="CBattleManager.cpp">
       <Filter>Engine\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="CSceneBattle.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
     <ClCompile Include="COpponentFloor.cpp">
       <Filter>GameObject\Battle\Environment</Filter>
     </ClCompile>
@@ -481,6 +487,12 @@
     </ClCompile>
     <ClCompile Include="CPlayerThrowBall.cpp">
       <Filter>GameObject\Battle\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneBattle.cpp">
+      <Filter>Scene\Battle</Filter>
+    </ClCompile>
+    <ClCompile Include="CTurn.cpp">
+      <Filter>Scene\Battle\Turn</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

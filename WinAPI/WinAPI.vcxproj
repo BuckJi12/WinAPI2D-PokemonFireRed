@@ -168,6 +168,7 @@
     <ClInclude Include="CSceneRoute01.h" />
     <ClInclude Include="CSubject.h" />
     <ClInclude Include="CTackle.h" />
+    <ClInclude Include="CTurn.h" />
     <ClInclude Include="CWallTile.h" />
     <ClInclude Include="CIdle.h" />
     <ClInclude Include="CImageObject.h" />
@@ -239,6 +240,7 @@
     <ClCompile Include="CSceneRoute01.cpp" />
     <ClCompile Include="CSubject.cpp" />
     <ClCompile Include="CTackle.cpp" />
+    <ClCompile Include="CTurn.cpp" />
     <ClCompile Include="CWallTile.cpp" />
     <ClCompile Include="CIdle.cpp" />
     <ClCompile Include="CImageObject.cpp" />
