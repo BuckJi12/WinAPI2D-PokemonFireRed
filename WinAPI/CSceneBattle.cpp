@@ -13,6 +13,7 @@
 
 // Turn
 #include "CTurnEnter.h"
+#include "CTurnPlayerReady.h"
 
 CSceneBattle::CSceneBattle()
 {
@@ -23,20 +24,6 @@ CSceneBattle::CSceneBattle()
 
 CSceneBattle::~CSceneBattle()
 {
-}
-
-void CSceneBattle::TakeOutPlayerPokemon()
-{
-	/*m_pImagePlayerThrow->Play();
-	m_time += DT;
-	if (m_time >= 3)
-	{
-		BATTLE->GetPlayerCurPokemon()->SetPos(200, 310);
-		BATTLE->GetPlayerCurPokemon()->SetAnimation();
-		AddGameObject(BATTLE->GetPlayerCurPokemon());
-		BATTLE->ChooseAction(PlayerAction::ChooseAction);
-		m_time = 0;
-	}*/
 }
 
 void CSceneBattle::AddObjectThisScene(CGameObject* object)
@@ -60,8 +47,10 @@ void CSceneBattle::Init()
 	AddGameObject(m_pImageBackGround);
 
 	m_mapTurns.insert(make_pair(PlayerAction::Enter, new CTurnEnter(this)));
+	m_mapTurns.insert(make_pair(PlayerAction::PlayerReady, new CTurnPlayerReady(this)));
 
 	m_mapTurns[PlayerAction::Enter]->Init();
+	m_mapTurns[PlayerAction::PlayerReady]->Init();
 
 	m_curTurn = m_mapTurns[PlayerAction::Enter];
 }
@@ -76,19 +65,6 @@ void CSceneBattle::Enter()
 void CSceneBattle::Update()
 {
 	m_curTurn->Update();
-	/*
-	switch (BATTLE->GetCurAction())
-	{
-	case PlayerAction::Enter:
-		break;
-	case PlayerAction::PlayerReady:
-		TakeOutPlayerPokemon();
-		break;
-	case PlayerAction::ChooseAction:
-		break;
-	default:
-		break;
-	}*/
 }
 
 void CSceneBattle::Render()

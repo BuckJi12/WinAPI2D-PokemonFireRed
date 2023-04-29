@@ -54,14 +54,19 @@ void CTurnEnter::Update()
 {
 	if (BUTTONDOWN(VK_SPACE))
 	{
-		BATTLE->ChooseAction(PlayerAction::PlayerReady);
+		m_battleScene->ChangeTurn(PlayerAction::PlayerReady);
 	}
 }
 
 void CTurnEnter::Exit()
 {
+	m_pImagePlayerThrow->Play();
 }
 
 void CTurnEnter::Release()
 {
+	DELETEOBJECT(m_pImagePlayerFloor);
+	DELETEOBJECT(m_pImageOpponentFloor);
+	DELETEOBJECT(m_pImagePlayerThrow);
+	DELETEOBJECT(m_pImageNoramUI);
 }

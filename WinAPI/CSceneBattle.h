@@ -18,9 +18,6 @@ private:
 
 	CImageObject*		m_pImageBackGround;
 
-private:
-	void TakeOutPlayerPokemon();
-
 public:
 	void AddObjectThisScene(CGameObject* object);
 	void ChangeTurn(PlayerAction action);
