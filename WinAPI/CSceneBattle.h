@@ -13,19 +13,12 @@ public:
 	virtual ~CSceneBattle();
 
 private:
-	CImageObject*		m_pImageBackGround;
-	CImageObject*		m_pImagePlayerFloor;
-	CImageObject*		m_pImageNoramUI;
-	COpponentFloor*		m_pImageOpponentFloor;
-
-	CPlayerThrowBall*	m_pImagePlayerThrow;
-
 	map<PlayerAction, CTurn*> m_mapTurns;
 	CTurn* m_curTurn;
 
-	float				m_time;
+	CImageObject*		m_pImageBackGround;
+
 private:
-	void EnterInit();
 	void TakeOutPlayerPokemon();
 
 public:
