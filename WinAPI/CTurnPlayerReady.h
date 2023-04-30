@@ -1,6 +1,8 @@
 #pragma once
 #include "CTurn.h"
 
+class CBallObject;
+
 class CTurnPlayerReady : public CTurn
 {
 public:
@@ -9,6 +11,7 @@ public:
 
 private:
 	float m_time;
+	CBallObject* m_pBallObject;
 
 public:
 	void Init()    override;

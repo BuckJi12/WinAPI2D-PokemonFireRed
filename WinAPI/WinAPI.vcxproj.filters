@@ -94,6 +94,9 @@
     <Filter Include="Scene\Battle\Turn">
       <UniqueIdentifier>{50f397f2-34d0-4ecb-a022-dfaa4d310e21}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Battle\Ball">
+      <UniqueIdentifier>{01f5a20a-2179-425c-baea-4f4adb1a81fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -312,6 +315,9 @@
     <ClInclude Include="CTurnPlayerReady.h">
       <Filter>Scene\Battle\Turn</Filter>
     </ClInclude>
+    <ClInclude Include="CBallObject.h">
+      <Filter>GameObject\Battle\Ball</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -505,6 +511,9 @@
     </ClCompile>
     <ClCompile Include="CTurnPlayerReady.cpp">
       <Filter>Scene\Battle\Turn</Filter>
+    </ClCompile>
+    <ClCompile Include="CBallObject.cpp">
+      <Filter>GameObject\Battle\Ball</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
