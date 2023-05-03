@@ -23,8 +23,6 @@ CPokemon::CPokemon(int level)
 	m_baseStat.specialDefence = 1;
 	m_baseStat.speed = 1;
 
-	m_pSubject = new CSubject;
-
 	// Æ÷ÄÏ¸ó ½ºÅÝ
 	SetPokemonStat(level);
 
@@ -100,7 +98,7 @@ void CPokemon::SetPokemonStat(int level)
 	m_stat.specialDefence = (int)((m_baseStat.specialDefence * 2) * ((float)level / 100) + 5);
 	m_stat.speed = (int)((m_baseStat.speed * 2) * ((float)level / 100) + 5);
 	m_stat.maxExp = 500 * ((float)level / 100);
-	m_pSubject->Notify();
+	Notify();
 }
 
 void CPokemon::ChangeState(PokemonState state)
@@ -121,7 +119,7 @@ void CPokemon::ChangeState(PokemonState state)
 	default:
 		break;
 	}
-	m_pSubject->Notify();
+	Notify();
 }
 
 void CPokemon::AddExp(float exp)
@@ -140,7 +138,7 @@ void CPokemon::AddExp(float exp)
 			}
 		}
 	}
-	m_pSubject->Notify();
+	Notify();
 }
 
 void CPokemon::LevelUp()
@@ -153,7 +151,7 @@ void CPokemon::LevelUp()
 	PokemonStat increaseValue;
 	increaseValue = (GetLevelStat(m_stat.level) -= GetLevelStat(m_stat.level - 1));
 	m_stat += increaseValue;
-	m_pSubject->Notify();
+	Notify();
 }
 
 void CPokemon::LearnMove(CMove* move)
@@ -162,7 +160,7 @@ void CPokemon::LearnMove(CMove* move)
 	{
 		m_vecMoves.push_back(*move);
 	}
-	m_pSubject->Notify();
+	Notify();
 }
 
 void CPokemon::SetAnimation()
@@ -181,7 +179,7 @@ void CPokemon::TakeDamage(int value)
 		m_stat.curHp = 0;
 		ChangeState(PokemonState::Faint);
 	}
-	m_pSubject->Notify();
+	Notify();
 }
 
 void CPokemon::SetOwner(PokemonOwner owner)
@@ -193,7 +191,7 @@ void CPokemon::Recover()
 {
 	ChangeState(PokemonState::Normal);
 	SetPokemonStat(m_stat.level);
-	m_pSubject->Notify();
+	Notify();
 }
 
 void CPokemon::Init()
@@ -214,10 +212,19 @@ void CPokemon::Release()
 
 void CPokemon::AddObserver(IObserver* observer)
 {
-	m_pSubject->AddObserver(observer);
+	m_listObservers.push_back(observer);
 }
 
 void CPokemon::RemoveObserver(IObserver* observer)
 {
-	m_pSubject->RemoveObserver(observer);
+	m_listObservers.remove(observer);
+}
+
+void CPokemon::Notify()
+{
+	auto iter = m_listObservers.begin();
+	while (iter != m_listObservers.end())
+	{
+		(*iter)->ValueUpdate();
+	}
 }

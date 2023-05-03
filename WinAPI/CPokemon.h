@@ -82,14 +82,14 @@ enum class PokemonOwner
 	Size,
 };
 
-class CPokemon : public CGameObject
+class CPokemon : public CGameObject, public ISubject
 {
 public:
 	CPokemon(int level);
 	virtual ~CPokemon();
 	
-//private:
-//	list<IObserver*>		m_listObservers;
+private:
+	list<IObserver*>		m_listObservers;
 
 protected:
 	PokemonInfo			m_info;
@@ -102,7 +102,6 @@ protected:
 	CPokemonResource*	m_pResource;
 	CAnimator*			m_pAnimator;
 	vector<CMove>		m_vecMoves;
-	CSubject*			m_pSubject;
 
 public:
 	PokemonInfo			GetPokemonInfo();
@@ -133,7 +132,8 @@ private:
 	void				Release() override;
 
 public:
-	void				AddObserver(IObserver* observer);
-	void				RemoveObserver(IObserver* observer);
+	void				AddObserver(IObserver* observer) override;
+	void				RemoveObserver(IObserver* observer) override;
+	void				Notify() override;
 };
 
