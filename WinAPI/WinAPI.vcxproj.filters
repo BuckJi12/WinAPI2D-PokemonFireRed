@@ -97,6 +97,9 @@
     <Filter Include="GameObject\Battle\Ball">
       <UniqueIdentifier>{01f5a20a-2179-425c-baea-4f4adb1a81fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Battle\UI">
+      <UniqueIdentifier>{34fb23f7-5af8-4e9a-b4ec-161bd974e9eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -318,6 +321,9 @@
     <ClInclude Include="CBallObject.h">
       <Filter>GameObject\Battle\Ball</Filter>
     </ClInclude>
+    <ClInclude Include="COpponentStatUI.h">
+      <Filter>GameObject\Battle\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -514,6 +520,9 @@
     </ClCompile>
     <ClCompile Include="CBallObject.cpp">
       <Filter>GameObject\Battle\Ball</Filter>
+    </ClCompile>
+    <ClCompile Include="COpponentStatUI.cpp">
+      <Filter>GameObject\Battle\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

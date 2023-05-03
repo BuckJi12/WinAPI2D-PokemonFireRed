@@ -132,6 +132,7 @@ private:
 	void				Render() override;
 	void				Release() override;
 
+public:
 	void				AddObserver(IObserver* observer);
 	void				RemoveObserver(IObserver* observer);
 };

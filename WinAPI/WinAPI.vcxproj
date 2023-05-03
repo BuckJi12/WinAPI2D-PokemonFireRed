@@ -157,6 +157,7 @@
     <ClInclude Include="CMeetingTile.h" />
     <ClInclude Include="CMove.h" />
     <ClInclude Include="COpponentFloor.h" />
+    <ClInclude Include="COpponentStatUI.h" />
     <ClInclude Include="CPlayerFloor.h" />
     <ClInclude Include="CPlayerManager.h" />
     <ClInclude Include="CPlayerThrowBall.h" />
@@ -232,6 +233,7 @@
     <ClCompile Include="CMeetingTile.cpp" />
     <ClCompile Include="CMove.cpp" />
     <ClCompile Include="COpponentFloor.cpp" />
+    <ClCompile Include="COpponentStatUI.cpp" />
     <ClCompile Include="CPlayerFloor.cpp" />
     <ClCompile Include="CPlayerManager.cpp" />
     <ClCompile Include="CPlayerThrowBall.cpp" />

@@ -4,6 +4,7 @@
 class CImageObject;
 class COpponentFloor;
 class CPlayerThrowBall;
+class COpponentStatUI;
 
 class CTurnEnter : public CTurn
 {
@@ -16,6 +17,7 @@ private:
 	CImageObject*		m_pImageNoramUI;
 	COpponentFloor*		m_pImageOpponentFloor;
 	CPlayerThrowBall*	m_pImagePlayerThrow;
+	COpponentStatUI*	m_pImageOppStatUI;
 
 public:
 	void Init()    override;

@@ -24,6 +24,6 @@ void CSubject::Notify()
 	auto iter = m_listObservers.begin();
 	while (iter != m_listObservers.end())
 	{
-		(*iter)->Update();
+		(*iter)->ValueUpdate();
 	}
 }
