@@ -324,6 +324,9 @@
     <ClInclude Include="COpponentStatUI.h">
       <Filter>GameObject\Battle\UI</Filter>
     </ClInclude>
+    <ClInclude Include="CPlayerStatUI.h">
+      <Filter>GameObject\Battle\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -522,6 +525,9 @@
       <Filter>GameObject\Battle\Ball</Filter>
     </ClCompile>
     <ClCompile Include="COpponentStatUI.cpp">
+      <Filter>GameObject\Battle\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerStatUI.cpp">
       <Filter>GameObject\Battle\UI</Filter>
     </ClCompile>
   </ItemGroup>

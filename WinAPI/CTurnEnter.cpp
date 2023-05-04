@@ -6,6 +6,7 @@
 #include "COpponentFloor.h"
 #include "CPlayerThrowBall.h"
 #include "COpponentStatUI.h"
+#include "CPlayerStatUI.h"
 
 CTurnEnter::CTurnEnter(CSceneBattle* battleScene) : CTurn(battleScene)
 {
@@ -53,7 +54,6 @@ void CTurnEnter::Enter()
 	m_pImageOppStatUI->SetPokemon(BATTLE->GetOpponentCurPokemon());
 	m_pImageOppStatUI->SetPos(-1225, 50);
 
-
 	// 오브젝트 추가
 	m_battleScene->AddObjectThisScene(m_pImagePlayerFloor);
 	m_battleScene->AddObjectThisScene(m_pImageOpponentFloor);
@@ -82,5 +82,6 @@ void CTurnEnter::Release()
 	DELETEOBJECT(m_pImageOpponentFloor);
 	DELETEOBJECT(m_pImagePlayerThrow);
 	DELETEOBJECT(m_pImageNoramUI);
+	DELETEOBJECT(m_pImageOppStatUI);
 	BATTLE->GetOpponentCurPokemon()->RemoveObserver(m_pImageOppStatUI);
 }
