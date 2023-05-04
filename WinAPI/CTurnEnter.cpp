@@ -48,7 +48,7 @@ void CTurnEnter::Enter()
 	m_pImageOpponentFloor->SetPos(-1025, 125);
 	BATTLE->GetOpponentCurPokemon()->SetAnimation();
 	m_pImageOpponentFloor->SetChild(BATTLE->GetOpponentCurPokemon());
-	//BATTLE->GetOpponentCurPokemon()->AddObserver(m_pImageOppStatUI);
+	BATTLE->GetOpponentCurPokemon()->AddObserver(m_pImageOppStatUI);
 
 	m_pImageOppStatUI->SetPokemon(BATTLE->GetOpponentCurPokemon());
 	m_pImageOppStatUI->SetPos(-1225, 50);
@@ -82,5 +82,5 @@ void CTurnEnter::Release()
 	DELETEOBJECT(m_pImageOpponentFloor);
 	DELETEOBJECT(m_pImagePlayerThrow);
 	DELETEOBJECT(m_pImageNoramUI);
-	//BATTLE->GetOpponentCurPokemon()->RemoveObserver(m_pImageOppStatUI);
+	BATTLE->GetOpponentCurPokemon()->RemoveObserver(m_pImageOppStatUI);
 }
