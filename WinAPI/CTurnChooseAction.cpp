@@ -39,6 +39,22 @@ void CTurnChooseAction::CursorControl()
 			m_curCount = 2;
 	}
 
+	if (BUTTONDOWN(VK_SPACE))
+	{
+		switch (m_curCount)
+		{
+		case 0:
+			m_battleScene->ChangeTurn(PlayerAction::ChooseMove);
+			break;
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		}
+	}
+
 	switch (m_curCount)
 	{
 	case 0:
@@ -78,8 +94,10 @@ void CTurnChooseAction::Update()
 void CTurnChooseAction::Exit()
 {
 	m_pChooseWindow->SetPos(1000, 1000);
+	m_battleScene->GetCursor()->SetPos(1000, 1000);
 }
 
 void CTurnChooseAction::Release()
 {
+	DELETEOBJECT(m_pChooseWindow);
 }
