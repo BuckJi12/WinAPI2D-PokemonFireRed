@@ -3,16 +3,6 @@
 
 class CChooseWindow;
 
-enum class CursorState
-{
-	Fight,
-	Bag,
-	Pokemon,
-	Runaway,
-
-	Size
-};
-
 class CTurnChooseAction : public CTurn
 {
 public:
@@ -21,7 +11,6 @@ public:
 
 private:
 	CChooseWindow*	m_pChooseWindow;
-	CursorState		m_cursorState;
 
 	int				m_curCount;
 

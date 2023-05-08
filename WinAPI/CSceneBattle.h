@@ -17,10 +17,12 @@ private:
 	CTurn* m_curTurn;
 
 	CImageObject*		m_pImageBackGround;
+	CImageObject*		m_pCursor;
 
 public:
 	void AddObjectThisScene(CGameObject* object);
 	void ChangeTurn(PlayerAction action);
+	CImageObject* GetCursor();
 
 private:
 	void Init()		override;

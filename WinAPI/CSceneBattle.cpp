@@ -18,9 +18,9 @@
 
 CSceneBattle::CSceneBattle()
 {
-	m_curTurn = nullptr;
-
-	m_pImageBackGround		= nullptr;
+	m_curTurn			= nullptr;
+	m_pImageBackGround	= nullptr;
+	m_pCursor			= nullptr;
 }
 
 CSceneBattle::~CSceneBattle()
@@ -39,6 +39,11 @@ void CSceneBattle::ChangeTurn(PlayerAction action)
 	m_curTurn->Enter();
 }
 
+CImageObject* CSceneBattle::GetCursor()
+{
+	return m_pCursor;
+}
+
 void CSceneBattle::Init()
 {
 	// πË∞Ê
@@ -47,6 +52,12 @@ void CSceneBattle::Init()
 	m_pImageBackGround->SetPos(0, 0);
 	AddGameObject(m_pImageBackGround);
 
+	m_pCursor = new CImageObject;
+	m_pCursor->SetImage(RESOURCE->LoadImg(L"Cursor", L"Image\\Battle\\Cursor.png"));
+	m_pCursor->SetLayer(Layer::Environment3);
+	m_pCursor->SetPos(1000, 1000);
+	AddGameObject(m_pCursor);
+	// ≈œ
 	m_mapTurns.insert(make_pair(PlayerAction::Enter, new CTurnEnter(this)));
 	m_mapTurns.insert(make_pair(PlayerAction::PlayerReady, new CTurnPlayerReady(this)));
 	m_mapTurns.insert(make_pair(PlayerAction::ChooseAction, new CTurnChooseAction(this)));
