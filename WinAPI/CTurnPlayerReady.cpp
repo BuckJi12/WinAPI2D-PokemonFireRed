@@ -48,7 +48,7 @@ void CTurnPlayerReady::Update()
 		BATTLE->GetPlayerCurPokemon()->SetPos(200, 310);
 		BATTLE->GetPlayerCurPokemon()->SetAnimation();
 		m_battleScene->AddObjectThisScene(BATTLE->GetPlayerCurPokemon());
-		BATTLE->ChooseAction(PlayerAction::ChooseAction);
+		m_battleScene->ChangeTurn(PlayerAction::ChooseAction);
 		m_time = 0;
 	}
 

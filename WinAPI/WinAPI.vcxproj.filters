@@ -330,6 +330,9 @@
     <ClInclude Include="CTurnChooseAction.h">
       <Filter>Scene\Battle\Turn</Filter>
     </ClInclude>
+    <ClInclude Include="CChooseWindow.h">
+      <Filter>GameObject\Battle\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -535,6 +538,9 @@
     </ClCompile>
     <ClCompile Include="CTurnChooseAction.cpp">
       <Filter>Scene\Battle\Turn</Filter>
+    </ClCompile>
+    <ClCompile Include="CChooseWindow.cpp">
+      <Filter>GameObject\Battle\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

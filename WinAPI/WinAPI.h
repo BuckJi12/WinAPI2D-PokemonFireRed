@@ -51,6 +51,8 @@ enum class Layer
 	Player,
 	Wall,
 	Environment,
+	Environment2,
+	Environment3,
 
 	Ui,
 	Size,

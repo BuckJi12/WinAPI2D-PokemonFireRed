@@ -14,6 +14,7 @@
 // Turn
 #include "CTurnEnter.h"
 #include "CTurnPlayerReady.h"
+#include "CTurnChooseAction.h"
 
 CSceneBattle::CSceneBattle()
 {
@@ -48,9 +49,11 @@ void CSceneBattle::Init()
 
 	m_mapTurns.insert(make_pair(PlayerAction::Enter, new CTurnEnter(this)));
 	m_mapTurns.insert(make_pair(PlayerAction::PlayerReady, new CTurnPlayerReady(this)));
+	m_mapTurns.insert(make_pair(PlayerAction::ChooseAction, new CTurnChooseAction(this)));
 
 	m_mapTurns[PlayerAction::Enter]->Init();
 	m_mapTurns[PlayerAction::PlayerReady]->Init();
+	m_mapTurns[PlayerAction::ChooseAction]->Init();
 
 	m_curTurn = m_mapTurns[PlayerAction::Enter];
 }
