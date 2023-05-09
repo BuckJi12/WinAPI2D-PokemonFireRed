@@ -4,6 +4,7 @@ struct MoveStats // ±â¼ú ½ºÅÝ
 {
 	wstring		name;
 	wstring		description;
+	wstring		moveType;
 	int			maxPP;
 	int			curPP;
 	int			moveDamage;

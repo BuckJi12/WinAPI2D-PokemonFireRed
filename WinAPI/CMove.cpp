@@ -6,6 +6,7 @@ CMove::CMove()
 	// 기술 정보
 	m_moveStat.name = L"";
 	m_moveStat.description = L"";
+	m_moveStat.moveType = L"";
 	m_moveStat.maxPP = 35;
 	m_moveStat.curPP = 35;
 	m_moveStat.moveDamage = 1;

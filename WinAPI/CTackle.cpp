@@ -6,6 +6,7 @@ CTackle::CTackle()
 	// 기술 정보
 	m_moveStat.name = L"몸통박치기";
 	m_moveStat.description = L"";
+	m_moveStat.moveType = L"노말";
 	m_moveStat.maxPP = 35;
 	m_moveStat.curPP = 35;
 	m_moveStat.moveDamage = 40;
