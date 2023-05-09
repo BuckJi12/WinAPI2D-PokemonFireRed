@@ -2,6 +2,7 @@
 #include "CTurn.h"
 
 class CImageObject;
+class CChooseMoveWindow;
 
 class CTurnChooseMove : public CTurn
 {
@@ -10,7 +11,7 @@ public:
 	virtual ~CTurnChooseMove();
 
 private:
-	CImageObject* m_pImageChooseMove;
+	CChooseMoveWindow* m_pImageChooseMove;
 
 private:
 	void CursorControl();

@@ -147,6 +147,7 @@
     <ClInclude Include="CCameraController.h" />
     <ClInclude Include="CCameraManager.h" />
     <ClInclude Include="CCharmander.h" />
+    <ClInclude Include="CChooseMoveWindow.h" />
     <ClInclude Include="CChooseWindow.h" />
     <ClInclude Include="CCollider.h" />
     <ClInclude Include="CCollisionManager.h" />
@@ -227,6 +228,7 @@
     <ClCompile Include="CCameraController.cpp" />
     <ClCompile Include="CCameraManager.cpp" />
     <ClCompile Include="CCharmander.cpp" />
+    <ClCompile Include="CChooseMoveWindow.cpp" />
     <ClCompile Include="CChooseWindow.cpp" />
     <ClCompile Include="CCollider.cpp" />
     <ClCompile Include="CCollisionManager.cpp" />

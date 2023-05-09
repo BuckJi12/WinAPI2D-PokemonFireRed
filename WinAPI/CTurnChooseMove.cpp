@@ -1,7 +1,7 @@
 #include "framework.h"
 #include "CTurnChooseMove.h"
 
-#include "CImageObject.h"
+#include "CChooseMoveWindow.h"
 
 CTurnChooseMove::CTurnChooseMove(CSceneBattle* battleScene) : CTurn(battleScene)
 {
@@ -18,10 +18,8 @@ void CTurnChooseMove::CursorControl()
 
 void CTurnChooseMove::Init()
 {
-	m_pImageChooseMove = new CImageObject;
-	m_pImageChooseMove->SetImage(RESOURCE->LoadImg(L"ChooseMoveWindow", L"Image\\Battle\\ChooseMoveWindow.png"));
+	m_pImageChooseMove = new CChooseMoveWindow;
 	m_pImageChooseMove->SetPos(1000, 1000);
-	m_pImageChooseMove->SetLayer(Layer::Environment3);
 	m_battleScene->AddObjectThisScene(m_pImageChooseMove);
 }
 
