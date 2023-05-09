@@ -69,7 +69,7 @@ void CRenderManager::Init()
 		&m_pDefaultTextFormat);
 	assert(S_OK == hResult && "TextFormat Create Failed");
 
-	hResult = m_pDefaultTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);
+	hResult = m_pDefaultTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING);
 	assert(S_OK == hResult && "TextFormat SetAlignment Failed");
 
 	hResult = m_pDefaultTextFormat->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_CENTER);
@@ -91,7 +91,7 @@ void CRenderManager::Init()
 		&m_pCurTextFormat);
 	assert(S_OK == hResult && "TextFormat Create Failed");
 
-	hResult = m_pCurTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);
+	hResult = m_pCurTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING);
 	assert(S_OK == hResult && "TextFormat SetAlignment Failed");
 
 	hResult = m_pCurTextFormat->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_CENTER);
