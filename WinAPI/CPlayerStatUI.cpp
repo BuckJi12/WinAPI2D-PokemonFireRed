@@ -61,9 +61,9 @@ void CPlayerStatUI::Render()
 
 	RENDER->Text(
 		m_pCurPokemon->GetPokemonInfo().name,
-		m_vecPos.x + 30,
+		m_vecPos.x + 50,
 		m_vecPos.y + 10,
-		m_vecPos.x + 150,
+		m_vecPos.x + 180,
 		m_vecPos.y + 50,
 		Color(0, 0, 0, 1),
 		25
