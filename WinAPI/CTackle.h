@@ -1,6 +1,6 @@
 #pragma once
 
-class CTackle : CMove
+class CTackle : public CMove
 {
 public:
 	CTackle();

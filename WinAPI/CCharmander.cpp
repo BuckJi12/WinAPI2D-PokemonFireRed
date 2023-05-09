@@ -31,6 +31,8 @@ CCharmander::CCharmander(int level) : CPokemon(level)
 	m_pResource = nullptr;
 	m_pAnimator = nullptr;
 
+	CTackle tackle;
+	LearnMove(tackle);
 	Init();
 }
 

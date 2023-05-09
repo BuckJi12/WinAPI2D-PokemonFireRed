@@ -19,6 +19,7 @@ void CTurnChooseMove::CursorControl()
 void CTurnChooseMove::Init()
 {
 	m_pImageChooseMove = new CChooseMoveWindow;
+	m_pImageChooseMove->Init();
 	m_pImageChooseMove->SetPos(1000, 1000);
 	m_battleScene->AddObjectThisScene(m_pImageChooseMove);
 }
@@ -26,6 +27,7 @@ void CTurnChooseMove::Init()
 void CTurnChooseMove::Enter()
 {
 	m_pImageChooseMove->SetPos(0, 400);
+	Logger::Debug(to_wstring(PLAYER->GetPlayerPokemonList()[0]->GetPokemonMoveList().size()));
 }
 
 void CTurnChooseMove::Update()

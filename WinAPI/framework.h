@@ -99,3 +99,6 @@ using namespace FMOD;
 
 
 #include "CCharmander.h" // No.4 파이리
+
+// Pokemon Moves
+#include "CTackle.h"

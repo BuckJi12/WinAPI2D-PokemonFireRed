@@ -21,11 +21,13 @@ void CChooseMoveWindow::Update()
 
 void CChooseMoveWindow::Render()
 {
+	CImageObject::Render();
+
 	RENDER->Text(
 		BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[0].GetMoveStat().name,
-		m_vecPos.x + 100,
+		m_vecPos.x + 75,
 		m_vecPos.y + 50,
-		m_vecPos.x + 200,
+		m_vecPos.x + 300,
 		m_vecPos.y + 100,
 		Color(0, 0, 0, 1),
 		25
@@ -35,9 +37,9 @@ void CChooseMoveWindow::Render()
 	{
 		RENDER->Text(
 			BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[1].GetMoveStat().name,
-			m_vecPos.x + 400,
+			m_vecPos.x + 300,
 			m_vecPos.y + 50,
-			m_vecPos.x + 500,
+			m_vecPos.x + 600,
 			m_vecPos.y + 100,
 			Color(0, 0, 0, 1),
 			25
@@ -48,9 +50,9 @@ void CChooseMoveWindow::Render()
 	{
 		RENDER->Text(
 			BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[2].GetMoveStat().name,
-			m_vecPos.x + 100,
+			m_vecPos.x + 75,
 			m_vecPos.y + 100,
-			m_vecPos.x + 200,
+			m_vecPos.x + 300,
 			m_vecPos.y + 150,
 			Color(0, 0, 0, 1),
 			25
@@ -61,9 +63,9 @@ void CChooseMoveWindow::Render()
 	{
 		RENDER->Text(
 			BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[3].GetMoveStat().name,
-			m_vecPos.x + 400,
+			m_vecPos.x + 300,
 			m_vecPos.y + 100,
-			m_vecPos.x + 500,
+			m_vecPos.x + 600,
 			m_vecPos.y + 150,
 			Color(0, 0, 0, 1),
 			25

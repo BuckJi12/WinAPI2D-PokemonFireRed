@@ -154,13 +154,13 @@ void CPokemon::LevelUp()
 	Notify();
 }
 
-void CPokemon::LearnMove(CMove* move)
+void CPokemon::LearnMove(CMove move)
 {
 	if (m_vecMoves.size() < 4)
 	{
-		m_vecMoves.push_back(*move);
+		m_vecMoves.push_back(move);
 	}
-	Notify();
+	//Notify();
 }
 
 void CPokemon::SetAnimation()
