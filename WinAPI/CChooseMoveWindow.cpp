@@ -3,7 +3,7 @@
 
 CChooseMoveWindow::CChooseMoveWindow()
 {
-	m_layer = Layer::Environment3;
+	m_layer = Layer::Environment2;
 }
 
 CChooseMoveWindow::~CChooseMoveWindow()

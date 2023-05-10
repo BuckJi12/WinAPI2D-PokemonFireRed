@@ -11,7 +11,8 @@ public:
 	virtual ~CTurnChooseMove();
 
 private:
-	CChooseMoveWindow* m_pImageChooseMove;
+	CChooseMoveWindow*	m_pImageChooseMove;
+	int					m_curCount;
 
 private:
 	void CursorControl();
