@@ -16,6 +16,7 @@ private:
 	CPokemon* m_pOppoentCurPokemon;
 	PlayerAction m_curAction;
 	FirstAttack m_curFirstAttack;
+	CMove* m_pPlayerCurMove;
 
 	int catchRate;
 	bool isCatching;
@@ -27,7 +28,7 @@ public:
 	void BattleInit();	// 배틀 기본 설정
 	void ChooseAction(PlayerAction action); // 1. 배틀 2. 교체 3. 아이템 4. 도망
 	void CheckFirstAttack();
-	void PlayerUseMove(int value);
+	void PlayerAttack();
 	void OppoentUseMove();
 	int	 CalculateDamage(CPokemon* attacker, CPokemon* victim, CMove move);
 	int	 CalculateCatchRate();	//TODO: 아이템 추가

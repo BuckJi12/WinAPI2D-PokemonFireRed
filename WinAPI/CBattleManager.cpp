@@ -28,13 +28,14 @@ float typeDamage[18][18] // 효과 좋음 2.0 일반 1.0 효과가 안좋음 0.5 효과 없음 0
 
 CBattleManager::CBattleManager()
 {
-	m_pPlayerCurPokemon = nullptr;
-	m_pOppoentCurPokemon = nullptr;
-	m_curAction = PlayerAction::Enter;
-	m_curFirstAttack = FirstAttack::Player;
+	m_pPlayerCurPokemon		= nullptr;
+	m_pOppoentCurPokemon	= nullptr;
+	m_curAction				= PlayerAction::Enter;
+	m_curFirstAttack		= FirstAttack::Player;
+	m_pPlayerCurMove		= nullptr;
 
-	catchRate = 1;
-	isCatching = false;
+	catchRate				= 1;
+	isCatching				= false;
 }
 
 CBattleManager::~CBattleManager()
@@ -79,15 +80,11 @@ void CBattleManager::CheckFirstAttack()
 	}
 }
 
-void CBattleManager::PlayerUseMove(int value)
+void CBattleManager::PlayerAttack()
 {
 	// TODO: 수정
-	if (m_pPlayerCurPokemon->GetPokemonMoveList()[value].GetMoveStat().curPP > 0)
-	{
-		m_pPlayerCurPokemon->GetPokemonMoveList()[value].UseMove(m_pOppoentCurPokemon);
-		m_pOppoentCurPokemon->TakeDamage(CalculateDamage(m_pPlayerCurPokemon, m_pOppoentCurPokemon,
-			m_pPlayerCurPokemon->GetPokemonMoveList()[value]));
-	}
+	m_pOppoentCurPokemon->TakeDamage(CalculateDamage(m_pPlayerCurPokemon, m_pOppoentCurPokemon,
+		*m_pPlayerCurMove));
 }
 
 void CBattleManager::OppoentUseMove()
