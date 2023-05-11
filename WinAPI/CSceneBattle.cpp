@@ -68,14 +68,13 @@ void CSceneBattle::Init()
 	m_mapTurns[PlayerAction::PlayerReady]->Init();
 	m_mapTurns[PlayerAction::ChooseAction]->Init();
 	m_mapTurns[PlayerAction::ChooseMove]->Init();
-
-	m_curTurn = m_mapTurns[PlayerAction::Enter];
 }
 
 void CSceneBattle::Enter()
 {
 	CAMERA->FadeIn(3.0f);
 	BATTLE->BattleInit();
+	m_curTurn = m_mapTurns[PlayerAction::Enter];
 	m_curTurn->Enter();
 }
 
@@ -90,6 +89,10 @@ void CSceneBattle::Render()
 
 void CSceneBattle::Exit()
 {
+	for (pair<PlayerAction, CTurn*> turn : m_mapTurns)
+	{
+		turn.second->Release();
+	}
 }
 
 void CSceneBattle::Release()

@@ -82,6 +82,7 @@ void CTurnEnter::Release()
 	DELETEOBJECT(m_pImageOpponentFloor);
 	DELETEOBJECT(m_pImagePlayerThrow);
 	DELETEOBJECT(m_pImageNoramUI);
-	DELETEOBJECT(m_pImageOppStatUI);
+	//DELETEOBJECT(BATTLE->GetOpponentCurPokemon());
 	BATTLE->GetOpponentCurPokemon()->RemoveObserver(m_pImageOppStatUI);
+	DELETEOBJECT(m_pImageOppStatUI);
 }

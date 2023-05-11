@@ -51,6 +51,7 @@ void CTurnChooseAction::CursorControl()
 		case 2:
 			break;
 		case 3:
+			SCENE->ChangePrevScene();
 			break;
 		}
 	}

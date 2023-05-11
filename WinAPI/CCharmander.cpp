@@ -72,5 +72,4 @@ void CCharmander::Render()
 void CCharmander::Release()
 {
 	delete m_pResource;
-	delete m_pAnimator;
 }
