@@ -30,6 +30,7 @@ public:
 	void CheckFirstAttack();
 	void PlayerAttack();
 	void OppoentUseMove();
+	void SelectMove(CMove move);
 	int	 CalculateDamage(CPokemon* attacker, CPokemon* victim, CMove move);
 	int	 CalculateCatchRate();	//TODO: 아이템 추가
 	void PokemonChanage(int index);

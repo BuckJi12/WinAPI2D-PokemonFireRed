@@ -83,6 +83,7 @@ void CBattleManager::CheckFirstAttack()
 void CBattleManager::PlayerAttack()
 {
 	// TODO: ¼öÁ¤
+	m_pPlayerCurMove->UseMove(m_pOppoentCurPokemon);
 	m_pOppoentCurPokemon->TakeDamage(CalculateDamage(m_pPlayerCurPokemon, m_pOppoentCurPokemon,
 		*m_pPlayerCurMove));
 }
@@ -101,6 +102,11 @@ void CBattleManager::OppoentUseMove()
 	m_pOppoentCurPokemon->GetPokemonMoveList()[random].UseMove(m_pPlayerCurPokemon);
 	m_pPlayerCurPokemon->TakeDamage(CalculateDamage(m_pOppoentCurPokemon, m_pPlayerCurPokemon,
 		m_pPlayerCurPokemon->GetPokemonMoveList()[random]));
+}
+
+void CBattleManager::SelectMove(CMove move)
+{
+	m_pPlayerCurMove = &move;
 }
 
 int CBattleManager::CalculateDamage(CPokemon* attacker, CPokemon* victim, CMove move)
