@@ -18,8 +18,6 @@ CTurnPlayerReady::~CTurnPlayerReady()
 
 void CTurnPlayerReady::Init()
 {
-	m_pBallObject = new CBallObject;
-
 	m_pImagePlayerStatUI = new CPlayerStatUI;
 	m_pImagePlayerStatUI->Init();
 }
@@ -27,6 +25,7 @@ void CTurnPlayerReady::Init()
 void CTurnPlayerReady::Enter()
 {
 	m_time = 0;
+	m_pBallObject = new CBallObject;
 	m_pBallObject->SetMode(BallMode::TakeOut);
 	m_pBallObject->SetPos(50, 300);
 	//m_pBallObject->SetMode(BallMode::Catch);
@@ -58,11 +57,11 @@ void CTurnPlayerReady::Update()
 
 void CTurnPlayerReady::Exit()
 {
+	BATTLE->GetOpponentCurPokemon()->RemoveObserver(m_pImagePlayerStatUI);
 }
 
 void CTurnPlayerReady::Release()
 {
 	DELETEOBJECT(m_pBallObject);
 	DELETEOBJECT(m_pImagePlayerStatUI);
-	BATTLE->GetOpponentCurPokemon()->RemoveObserver(m_pImagePlayerStatUI);
 }
