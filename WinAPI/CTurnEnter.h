@@ -18,6 +18,7 @@ private:
 	COpponentFloor*		m_pImageOpponentFloor;
 	CPlayerThrowBall*	m_pImagePlayerThrow;
 	COpponentStatUI*	m_pImageOppStatUI;
+	bool				m_OpponentSpawn;
 
 public:
 	void Init()    override;

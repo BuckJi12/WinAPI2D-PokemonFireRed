@@ -89,12 +89,12 @@ void CSceneBattle::Render()
 
 void CSceneBattle::Exit()
 {
-	for (pair<PlayerAction, CTurn*> turn : m_mapTurns)
-	{
-		turn.second->Release();
-	}
 }
 
 void CSceneBattle::Release()
 {
+	for (pair<PlayerAction, CTurn*> turn : m_mapTurns)
+	{
+		turn.second->Release();
+	}
 }

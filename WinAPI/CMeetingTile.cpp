@@ -48,18 +48,23 @@ void CMeetingTile::Release()
 
 void CMeetingTile::OnCollisionEnter(CCollider* pOther)
 {
-	GAME->m_meetTime + 1;
+	GAME->m_meetTime += 1;
+	if (GAME->m_canMeet && GAME->m_meetTime > GAME->m_randomValue)
+	{
+		CAMERA->FadeOut(0.25f);
+		DELAYCHANGESCENE(GroupScene::Battle, 0.5f);
+	}
 }
 
 void CMeetingTile::OnCollisionStay(CCollider* pOther)
 {
 	m_pAnimator->Play(L"Splash", false);
-	if (GAME->m_canMeet && GAME->m_meetTime > GAME->m_randomValue)
-	{
-		//TODO: ¹èÆ²¾À ÀüÈ¯
-		CAMERA->FadeOut(0.25f);
-		DELAYCHANGESCENE(GroupScene::Battle, 0.5f);
-	}
+	//if (GAME->m_canMeet && GAME->m_meetTime > GAME->m_randomValue)
+	//{
+	//	//TODO: ¹èÆ²¾À ÀüÈ¯
+	//	CAMERA->FadeOut(0.25f);
+	//	DELAYCHANGESCENE(GroupScene::Battle, 0.5f);
+	//}
 }
 
 void CMeetingTile::OnCollisionExit(CCollider* pOther)
