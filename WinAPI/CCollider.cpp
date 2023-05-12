@@ -86,7 +86,7 @@ void CCollider::PhysicsUpdate()
 
 void CCollider::Render()
 {
-	if (GAME->debugMode)
+	if (GAME->m_debugMode)
 	{
 		Color color = Color(0, 0, 0, 0);
 		if (m_uiCollisionCount > 0)

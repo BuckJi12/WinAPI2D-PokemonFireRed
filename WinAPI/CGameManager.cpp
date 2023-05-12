@@ -3,9 +3,10 @@
 
 CGameManager::CGameManager()
 {
-	debugMode = false;
-	canMeet = true;
-	randomValue = 0;
+	m_meetTime = 0;
+	m_debugMode = false;
+	m_canMeet = true;
+	m_randomValue = 0;
 	srand(time(NULL));
 }
 
@@ -15,18 +16,19 @@ CGameManager::~CGameManager()
 
 void CGameManager::ChangeDebugMode()
 {
-	debugMode = !debugMode;
+	m_debugMode = !m_debugMode;
 }
 
 void CGameManager::SetRandomValue()
 {
-	canMeet = true;
-	randomValue = rand() % 15 + 5;
-	Logger::Debug(randomValue + L"");
+	GAME->m_meetTime = 0;
+	m_canMeet = true;
+	m_randomValue = rand() % 15 + 5;
 }
 
 void CGameManager::Init()
 {
+	SetRandomValue();
 }
 
 void CGameManager::Update()

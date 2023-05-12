@@ -12,13 +12,15 @@ private:
 	virtual ~CGameManager();
 
 public:
-	bool debugMode;
-	bool canMeet;
-	int randomValue;
+	float	m_meetTime;
+	bool	m_debugMode;
+	bool	m_canMeet;
+	int		m_randomValue;
+
+	void SetRandomValue();
 
 private:
 	void ChangeDebugMode();
-	void SetRandomValue();
 	void Init();
 	void Update();
 	void Release();

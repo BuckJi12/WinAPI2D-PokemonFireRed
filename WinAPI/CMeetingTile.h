@@ -9,7 +9,6 @@ public:
 private:
 	CImage* m_pImage;
 	CAnimator* m_pAnimator;
-	float m_time;
 
 private:
 	void Init() override;

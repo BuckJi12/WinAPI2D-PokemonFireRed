@@ -5,7 +5,6 @@ CMeetingTile::CMeetingTile()
 {
 	m_pImage = nullptr;
 	m_pAnimator = nullptr;
-	m_time = 0.f;
 	m_vecScale = Vector(64, 64);
 	m_vecPos = Vector(64, 64);
 	m_layer = Layer::Environment;
@@ -49,18 +48,17 @@ void CMeetingTile::Release()
 
 void CMeetingTile::OnCollisionEnter(CCollider* pOther)
 {
+	GAME->m_meetTime + 1;
 }
 
 void CMeetingTile::OnCollisionStay(CCollider* pOther)
 {
 	m_pAnimator->Play(L"Splash", false);
-	m_time += DT;
-	if (GAME->canMeet && m_time > GAME->randomValue)
+	if (GAME->m_canMeet && GAME->m_meetTime > GAME->m_randomValue)
 	{
 		//TODO: ¹èÆ²¾À ÀüÈ¯
 		CAMERA->FadeOut(0.25f);
 		DELAYCHANGESCENE(GroupScene::Battle, 0.5f);
-		m_time = 0;
 	}
 }
 
