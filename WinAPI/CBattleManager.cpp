@@ -32,7 +32,8 @@ CBattleManager::CBattleManager()
 	m_pOppoentCurPokemon	= nullptr;
 	m_curAction				= PlayerAction::Enter;
 	m_curFirstAttack		= FirstAttack::Player;
-	m_pPlayerCurMove		= nullptr;
+	m_playerCurInex			= 0;
+	m_curBattleSituation	= BattleSituation::BothSide_Can_Battle;
 
 	catchRate				= 1;
 	isCatching				= false;
@@ -55,6 +56,16 @@ CPokemon* CBattleManager::GetOpponentCurPokemon()
 PlayerAction CBattleManager::GetCurAction()
 {
 	return m_curAction;
+}
+
+FirstAttack CBattleManager::GetFirstAttack()
+{
+	return m_curFirstAttack;
+}
+
+BattleSituation CBattleManager::GetBattleSituation()
+{
+	return m_curBattleSituation;
 }
 
 void CBattleManager::BattleInit()
@@ -83,9 +94,10 @@ void CBattleManager::CheckFirstAttack()
 void CBattleManager::PlayerAttack()
 {
 	// TODO: 수정
-	m_pPlayerCurMove->UseMove(m_pOppoentCurPokemon);
+	m_pPlayerCurPokemon->GetPokemonMoveList()[m_playerCurInex].UseMove(m_pOppoentCurPokemon);
 	m_pOppoentCurPokemon->TakeDamage(CalculateDamage(m_pPlayerCurPokemon, m_pOppoentCurPokemon,
-		*m_pPlayerCurMove));
+		m_pPlayerCurPokemon->GetPokemonMoveList()[m_playerCurInex]));
+	CheckBattleAble();
 }
 
 void CBattleManager::OppoentUseMove()
@@ -102,11 +114,12 @@ void CBattleManager::OppoentUseMove()
 	m_pOppoentCurPokemon->GetPokemonMoveList()[random].UseMove(m_pPlayerCurPokemon);
 	m_pPlayerCurPokemon->TakeDamage(CalculateDamage(m_pOppoentCurPokemon, m_pPlayerCurPokemon,
 		m_pPlayerCurPokemon->GetPokemonMoveList()[random]));
+	CheckBattleAble();
 }
 
-void CBattleManager::SelectMove(CMove move)
+void CBattleManager::SelectMove(int index)
 {
-	m_pPlayerCurMove = &move;
+	m_playerCurInex = index;
 }
 
 int CBattleManager::CalculateDamage(CPokemon* attacker, CPokemon* victim, CMove move)
@@ -206,8 +219,13 @@ bool CBattleManager::TryPokemonCatch()
 	return false;
 }
 
-bool CBattleManager::CheckBattleAble()
+void CBattleManager::CheckBattleAble()
 {
 	//TODO: 수정
-	return false;
+	if (m_pPlayerCurPokemon->GetCurState() == PokemonState::Faint)
+		m_curBattleSituation = BattleSituation::Player_CanNot_Battle;
+	else if (m_pOppoentCurPokemon->GetCurState() == PokemonState::Faint)
+		m_curBattleSituation = BattleSituation::Opponet_CanNot_Battle;
+	else
+		m_curBattleSituation = BattleSituation::BothSide_Can_Battle;
 }

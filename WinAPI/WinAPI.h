@@ -131,6 +131,20 @@ enum class FirstAttack
 {
 	Player,
 	Oppoent,
+	OnlyOpponent,
+
+	Size
+};
+
+//========================================
+//##			전투	 상황				##
+//========================================
+
+enum class BattleSituation
+{
+	Player_CanNot_Battle,
+	Opponet_CanNot_Battle,
+	BothSide_Can_Battle,
 
 	Size
 };

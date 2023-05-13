@@ -12,11 +12,12 @@ private:
 	virtual ~CBattleManager();
 
 private:
-	CPokemon* m_pPlayerCurPokemon;
-	CPokemon* m_pOppoentCurPokemon;
-	PlayerAction m_curAction;
-	FirstAttack m_curFirstAttack;
-	CMove* m_pPlayerCurMove;
+	CPokemon*		m_pPlayerCurPokemon;
+	CPokemon*		m_pOppoentCurPokemon;
+	PlayerAction	m_curAction;
+	FirstAttack		m_curFirstAttack;
+	BattleSituation m_curBattleSituation;
+	int				m_playerCurInex;
 
 	int catchRate;
 	bool isCatching;
@@ -25,17 +26,19 @@ public:
 	CPokemon* GetPlayerCurPokemon();
 	CPokemon* GetOpponentCurPokemon();
 	PlayerAction GetCurAction();
+	FirstAttack GetFirstAttack();
+	BattleSituation GetBattleSituation();
 	void BattleInit();	// 배틀 기본 설정
 	void ChooseAction(PlayerAction action); // 1. 배틀 2. 교체 3. 아이템 4. 도망
 	void CheckFirstAttack();
 	void PlayerAttack();
 	void OppoentUseMove();
-	void SelectMove(CMove move);
+	void SelectMove(int index);
+	void CheckBattleAble();
 	int	 CalculateDamage(CPokemon* attacker, CPokemon* victim, CMove move);
 	int	 CalculateCatchRate();	//TODO: 아이템 추가
 	void PokemonChanage(int index);
 	bool TryPokemonCatch();
-	bool CheckBattleAble();
 };
 
 #define BATTLE CBattleManager::GetInstance()

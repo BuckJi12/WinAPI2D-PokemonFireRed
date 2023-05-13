@@ -7,6 +7,15 @@ public:
 	CTurnBattle(CSceneBattle* battleScene);
 	virtual ~CTurnBattle();
 
+private:
+	float m_timer;
+
+	bool m_playerAttacked;
+	bool m_OpponentAttacked;
+
+private:
+	void PokemonAttack();
+
 public:
 	void Init()    override;
 	void Enter()   override;
