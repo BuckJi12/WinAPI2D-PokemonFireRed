@@ -13,6 +13,7 @@ private:
 	Color m_color;
 
 	float m_bar;
+	float m_value;
 public:
 	void SetPokemon(CPokemon* pokemon);
 

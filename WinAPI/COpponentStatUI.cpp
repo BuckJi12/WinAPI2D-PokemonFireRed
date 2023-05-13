@@ -5,11 +5,12 @@
 
 COpponentStatUI::COpponentStatUI()
 {
-	m_pCurPokemon = nullptr;
-	m_tempStat = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+	m_pCurPokemon	= nullptr;
+	m_tempStat		= {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
 
-	m_color = Color(0 ,255 ,0 ,1);
-	m_bar = 0;
+	m_color			= Color(0 ,255 ,0 ,1);
+	m_bar			= 0;
+	m_value			= 0;
 }
 
 COpponentStatUI::~COpponentStatUI()
@@ -26,13 +27,8 @@ void COpponentStatUI::SetPokemon(CPokemon* pokemon)
 void COpponentStatUI::UpdateUI()
 {
 	// 지금 스텟에서 감소된 스텟의 차
-	m_bar = 183 * (m_pCurPokemon->GetPokemonStat().curHp / m_pCurPokemon->GetPokemonStat().maxHp);
-	int value = m_tempStat.curHp - m_pCurPokemon->GetPokemonStat().curHp;
-
-	while (m_tempStat.curHp > m_pCurPokemon->GetPokemonStat().curHp)
-	{
-		m_tempStat.curHp -= value * DT;
-	}
+	m_bar = 183 * ((float)m_pCurPokemon->GetPokemonStat().curHp / (float)m_pCurPokemon->GetPokemonStat().maxHp);
+	m_value = (float)(m_tempStat.curHp - m_pCurPokemon->GetPokemonStat().curHp) / 10.0f;
 }
 
 void COpponentStatUI::Init()
@@ -44,6 +40,11 @@ void COpponentStatUI::Update()
 {
 	if (m_vecPos.x < 75)
 		m_vecPos.x += 600 * DT;
+
+	while (m_tempStat.curHp > m_pCurPokemon->GetPokemonStat().curHp)
+	{
+		m_tempStat.curHp -= m_value * DT;
+	}
 }
 
 void COpponentStatUI::Render()
