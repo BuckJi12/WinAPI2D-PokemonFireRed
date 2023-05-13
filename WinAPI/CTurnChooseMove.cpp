@@ -48,28 +48,32 @@ void CTurnChooseMove::CursorControl()
 			if (BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[0].GetMoveStat().curPP > 0)
 			{
 				BATTLE->SelectMove(BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[0]);
-				//TODO: 배틀 계산으로 변경
+				//TODO: 선공 결정
+				m_battleScene->ChangeTurn(PlayerAction::Battle);
 			}
 			break;
 		case 1:
 			if (BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[1].GetMoveStat().curPP > 0)
 			{
 				BATTLE->SelectMove(BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[1]);
-				//TODO: 배틀 계산으로 변경
+				//TODO: 선공 결정
+				m_battleScene->ChangeTurn(PlayerAction::Battle);
 			}
 			break;
 		case 2:
 			if (BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[2].GetMoveStat().curPP > 0)
 			{
 				BATTLE->SelectMove(BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[2]);
-				//TODO: 배틀 계산으로 변경
+				//TODO: 선공 결정
+				m_battleScene->ChangeTurn(PlayerAction::Battle);
 			}
 			break;
 		case 3:
 			if (BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[3].GetMoveStat().curPP > 0)
 			{
 				BATTLE->SelectMove(BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[3]);
-				//TODO: 배틀 계산으로 변경
+				//TODO: 선공 결정
+				m_battleScene->ChangeTurn(PlayerAction::Battle);
 			}
 			break;
 		}

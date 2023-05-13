@@ -109,7 +109,7 @@ enum class PlayerAction
 	Enter,
 	PlayerReady,
 	ChooseAction,
-	Fight,
+	Battle,
 	ChooseMove,
 	Change,
 	ChoosePokemon,
