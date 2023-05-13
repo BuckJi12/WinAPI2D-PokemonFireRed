@@ -8,11 +8,12 @@ public:
 	virtual ~CPlayerStatUI();
 
 private:
-	CPokemon* m_pCurPokemon;
+	CPokemon*	m_pCurPokemon;
 	PokemonStat m_tempStat;
-	Color m_color;
+	Color		m_color;
 
-	float m_bar;
+	float		m_bar;
+	float		m_value;
 public:
 	void SetPokemon(CPokemon* pokemon);
 

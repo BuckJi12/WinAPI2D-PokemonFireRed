@@ -41,7 +41,7 @@ void COpponentStatUI::Update()
 	if (m_vecPos.x < 75)
 		m_vecPos.x += 600 * DT;
 
-	while (m_tempStat.curHp > m_pCurPokemon->GetPokemonStat().curHp)
+	if (m_tempStat.curHp > m_pCurPokemon->GetPokemonStat().curHp)
 	{
 		m_tempStat.curHp -= m_value * DT;
 	}
