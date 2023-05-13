@@ -29,7 +29,7 @@ void CTurnBattle::PokemonAttack()
 				//TODO: 배틀 승리
 			}
 		}
-		if (m_timer > 4 && !m_OpponentAttacked)
+		if (m_timer > 3 && !m_OpponentAttacked)
 		{
 			//TODO: 상대 공격
 			m_OpponentAttacked = true;
@@ -51,7 +51,7 @@ void CTurnBattle::PokemonAttack()
 				//TODO: 플레이어 포켓몬 교체 또는 플레이어 패배
 			}
 		}
-		if (m_timer > 4 && !m_playerAttacked)
+		if (m_timer > 3 && !m_playerAttacked)
 		{
 			//TODO: 상대 공격
 			m_playerAttacked = true;
