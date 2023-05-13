@@ -223,8 +223,8 @@ void CPokemon::RemoveObserver(IObserver* observer)
 void CPokemon::Notify()
 {
 	auto iter = m_listObservers.begin();
-	while (iter != m_listObservers.end())
+	for (auto list : m_listObservers)
 	{
-		(*iter)->ValueUpdate();
+		list->ValueUpdate();
 	}
 }
