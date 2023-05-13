@@ -51,6 +51,7 @@ void CTurnChooseAction::CursorControl()
 		case 2:
 			break;
 		case 3:
+			Exit();
 			SCENE->ChangePrevScene();
 			GAME->SetRandomValue();
 			break;

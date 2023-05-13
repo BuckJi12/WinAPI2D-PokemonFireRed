@@ -57,7 +57,7 @@ void CTurnEnter::Enter()
 	BATTLE->GetOpponentCurPokemon()->SetAnimation();
 	m_pImageOppStatUI->SetPokemon(BATTLE->GetOpponentCurPokemon());
 	m_pImageOppStatUI->SetPos(-1225, 50);
-
+	m_battleScene->GetCursor()->SetPos(1000, 1000);
 	// 오브젝트 추가
 	if (m_OpponentSpawn == false)
 	{
