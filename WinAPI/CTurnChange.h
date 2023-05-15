@@ -7,6 +7,9 @@ public:
 	CTurnChange(CSceneBattle* battleScene);
 	virtual ~CTurnChange();
 
+private:
+	CImageObject* m_pImagePokemonMenu;
+
 public:
 	void Init()    override;
 	void Enter()   override;
