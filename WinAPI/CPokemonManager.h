@@ -9,10 +9,10 @@ private:
 	virtual ~CPokemonManager();
 
 private:
-
+	map<int, CPokemon*> m_mapPokemons;
 
 public:
-
+	CPokemon* FindPokemon(int pokeNumber);
 
 private:
 	void Init();
