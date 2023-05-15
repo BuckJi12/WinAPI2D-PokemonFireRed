@@ -4,7 +4,7 @@
 class CCharmander : public CPokemon
 {
 public:
-	CCharmander(int level);
+	CCharmander();
 	virtual ~CCharmander();
 
 public:

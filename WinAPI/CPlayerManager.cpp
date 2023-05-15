@@ -13,7 +13,8 @@ CPlayerManager::~CPlayerManager()
 
 void CPlayerManager::Init()
 {
-	CPokemon* charmander = new CCharmander(5);
+	CPokemon* charmander = new CCharmander();
+	charmander->SetPokemonStat(5);
 	AddPokemonToPlayer(charmander);
 }
 

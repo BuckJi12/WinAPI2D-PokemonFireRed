@@ -71,7 +71,8 @@ BattleSituation CBattleManager::GetBattleSituation()
 void CBattleManager::BattleInit()
 {
 	m_pPlayerCurPokemon = PLAYER->GetPlayerFirstPokemon();
-	m_pOppoentCurPokemon = new CCharmander(5);
+	m_pOppoentCurPokemon = new CCharmander();
+	m_pOppoentCurPokemon->SetPokemonStat(5);
 }
 
 void CBattleManager::ChooseAction(PlayerAction action)

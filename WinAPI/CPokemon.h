@@ -85,7 +85,7 @@ enum class PokemonOwner
 class CPokemon : public CGameObject, public ISubject
 {
 public:
-	CPokemon(int level);
+	CPokemon();
 	virtual ~CPokemon();
 	
 private:
