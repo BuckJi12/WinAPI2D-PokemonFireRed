@@ -87,14 +87,15 @@ vector<CMove> CPokemon::GetPokemonMoveList()
 
 void CPokemon::SetPokemonStat(int level)
 {
-	m_stat.maxHp = (int)(((m_baseStat.hp * 2) * ((float)level / 100)) + 10 + m_stat.level);
-	m_stat.curHp = (int)(((m_baseStat.hp * 2) * ((float)level / 100)) + 10 + m_stat.level);
-	m_stat.attack = (int)((m_baseStat.attack * 2) * ((float)level / 100) + 5);
-	m_stat.specialAttack = (int)((m_baseStat.specialAttack * 2) * ((float)level / 100) + 5);
-	m_stat.defence = (int)((m_baseStat.defence * 2) * ((float)level / 100) + 5);
-	m_stat.specialDefence = (int)((m_baseStat.specialDefence * 2) * ((float)level / 100) + 5);
-	m_stat.speed = (int)((m_baseStat.speed * 2) * ((float)level / 100) + 5);
-	m_stat.maxExp = 500 * ((float)level / 100);
+	m_stat.level			= level;
+	m_stat.maxHp			= (int)(((m_baseStat.hp * 2) * ((float)level / 100)) + 10 + m_stat.level);
+	m_stat.curHp			= (int)(((m_baseStat.hp * 2) * ((float)level / 100)) + 10 + m_stat.level);
+	m_stat.attack			= (int)((m_baseStat.attack * 2) * ((float)level / 100) + 5);
+	m_stat.specialAttack	= (int)((m_baseStat.specialAttack * 2) * ((float)level / 100) + 5);
+	m_stat.defence			= (int)((m_baseStat.defence * 2) * ((float)level / 100) + 5);
+	m_stat.specialDefence	= (int)((m_baseStat.specialDefence * 2) * ((float)level / 100) + 5);
+	m_stat.speed			= (int)((m_baseStat.speed * 2) * ((float)level / 100) + 5);
+	m_stat.maxExp			= 500 * ((float)level / 100);
 	Notify();
 }
 
