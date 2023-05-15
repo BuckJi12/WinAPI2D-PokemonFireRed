@@ -123,7 +123,7 @@ public:
 
 public:
 	virtual void		Evolution() {};
-	virtual void		LearnMoveList() = 0;
+	virtual void		LearnMoveList() {};
 
 private:
 	void				Init() override;
