@@ -357,6 +357,9 @@
     <ClInclude Include="CSquirtle.h">
       <Filter>GameObject\Pokemon\Pokemon\Water</Filter>
     </ClInclude>
+    <ClInclude Include="CTurnChange.h">
+      <Filter>Scene\Battle\Turn</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -583,6 +586,9 @@
     </ClCompile>
     <ClCompile Include="CSquirtle.cpp">
       <Filter>GameObject\Pokemon\Pokemon\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="CTurnChange.cpp">
+      <Filter>Scene\Battle\Turn</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

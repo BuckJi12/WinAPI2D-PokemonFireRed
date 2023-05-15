@@ -178,6 +178,7 @@
     <ClInclude Include="CTackle.h" />
     <ClInclude Include="CTurn.h" />
     <ClInclude Include="CTurnBattle.h" />
+    <ClInclude Include="CTurnChange.h" />
     <ClInclude Include="CTurnChooseAction.h" />
     <ClInclude Include="CTurnChooseMove.h" />
     <ClInclude Include="CTurnEnter.h" />
@@ -263,6 +264,7 @@
     <ClCompile Include="CTackle.cpp" />
     <ClCompile Include="CTurn.cpp" />
     <ClCompile Include="CTurnBattle.cpp" />
+    <ClCompile Include="CTurnChange.cpp" />
     <ClCompile Include="CTurnChooseAction.cpp" />
     <ClCompile Include="CTurnChooseMove.cpp" />
     <ClCompile Include="CTurnEnter.cpp" />

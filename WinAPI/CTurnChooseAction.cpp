@@ -49,6 +49,7 @@ void CTurnChooseAction::CursorControl()
 		case 1:
 			break;
 		case 2:
+			m_battleScene->ChangeTurn(PlayerAction::Change);
 			break;
 		case 3:
 			Exit();
