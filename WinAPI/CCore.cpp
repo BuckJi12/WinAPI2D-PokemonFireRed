@@ -39,6 +39,7 @@ void CCore::Init()
 	SOUND->Init();
 	GAME->Init();
 	PLAYER->Init();
+	POKEMON->Init();
 
 	SCENE->Init();
 }
@@ -93,4 +94,5 @@ void CCore::Release()
 	SOUND->Release();
 	GAME->Release();
 	PLAYER->Release();
+	POKEMON->Release();
 }

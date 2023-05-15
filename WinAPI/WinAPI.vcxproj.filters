@@ -342,6 +342,9 @@
     <ClInclude Include="CTurnBattle.h">
       <Filter>Scene\Battle\Turn</Filter>
     </ClInclude>
+    <ClInclude Include="CPokemonManager.h">
+      <Filter>Engine\Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -559,6 +562,9 @@
     </ClCompile>
     <ClCompile Include="CTurnBattle.cpp">
       <Filter>Scene\Battle\Turn</Filter>
+    </ClCompile>
+    <ClCompile Include="CPokemonManager.cpp">
+      <Filter>Engine\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

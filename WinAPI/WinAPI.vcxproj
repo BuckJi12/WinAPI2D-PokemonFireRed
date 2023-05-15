@@ -165,6 +165,7 @@
     <ClInclude Include="CPlayerStatUI.h" />
     <ClInclude Include="CPlayerThrowBall.h" />
     <ClInclude Include="CPokemon.h" />
+    <ClInclude Include="CPokemonManager.h" />
     <ClInclude Include="CPokemonResource.h" />
     <ClInclude Include="CSceneBattle.h" />
     <ClInclude Include="CSceneOakLab.h" />
@@ -247,6 +248,7 @@
     <ClCompile Include="CPlayerStatUI.cpp" />
     <ClCompile Include="CPlayerThrowBall.cpp" />
     <ClCompile Include="CPokemon.cpp" />
+    <ClCompile Include="CPokemonManager.cpp" />
     <ClCompile Include="CPokemonResource.cpp" />
     <ClCompile Include="CSceneBattle.cpp" />
     <ClCompile Include="CSceneOakLab.cpp" />
