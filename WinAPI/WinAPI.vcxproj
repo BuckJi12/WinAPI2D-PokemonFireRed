@@ -173,6 +173,7 @@
     <ClInclude Include="CScenePalletTown.h" />
     <ClInclude Include="CScenePlayerHome1F.h" />
     <ClInclude Include="CSceneRoute01.h" />
+    <ClInclude Include="CSquirtle.h" />
     <ClInclude Include="CSubject.h" />
     <ClInclude Include="CTackle.h" />
     <ClInclude Include="CTurn.h" />
@@ -257,6 +258,7 @@
     <ClCompile Include="CScenePalletTown.cpp" />
     <ClCompile Include="CScenePlayerHome1F.cpp" />
     <ClCompile Include="CSceneRoute01.cpp" />
+    <ClCompile Include="CSquirtle.cpp" />
     <ClCompile Include="CSubject.cpp" />
     <ClCompile Include="CTackle.cpp" />
     <ClCompile Include="CTurn.cpp" />

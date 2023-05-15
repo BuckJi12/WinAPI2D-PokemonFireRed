@@ -72,7 +72,7 @@ void CBattleManager::BattleInit()
 {
 	m_pPlayerCurPokemon = PLAYER->GetPlayerFirstPokemon();
 	m_pOppoentCurPokemon = new CPokemon();
-	m_pOppoentCurPokemon = POKEMON->FindPokemon(1);
+	m_pOppoentCurPokemon = POKEMON->FindPokemon(7);
 	m_pOppoentCurPokemon->SetPokemonStat(5);
 }
 

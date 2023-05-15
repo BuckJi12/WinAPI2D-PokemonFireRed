@@ -354,6 +354,9 @@
     <ClInclude Include="CBulbasaur.h">
       <Filter>GameObject\Pokemon\Pokemon\Grass</Filter>
     </ClInclude>
+    <ClInclude Include="CSquirtle.h">
+      <Filter>GameObject\Pokemon\Pokemon\Water</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -577,6 +580,9 @@
     </ClCompile>
     <ClCompile Include="CBulbasaur.cpp">
       <Filter>GameObject\Pokemon\Pokemon\Grass</Filter>
+    </ClCompile>
+    <ClCompile Include="CSquirtle.cpp">
+      <Filter>GameObject\Pokemon\Pokemon\Water</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

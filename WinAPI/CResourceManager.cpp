@@ -91,7 +91,7 @@ CPokemonResource* CResourceManager::GetPokemonResource(const int& key)
 
 void CResourceManager::Init()
 {
-	// No. 1 ÀÌ»óÇØ¾¾
+	// No.1 ÀÌ»óÇØ¾¾
 	CPokemonResource* bulbasaur = new CPokemonResource;
 	bulbasaur->SetImage(RESOURCE->LoadImg(L"Bulbasaur", L"Image\\Pokemon\\BulbasaurImage.png"));
 	bulbasaur->SetIcon(RESOURCE->LoadImg(L"BulbasaurIcon", L"Image\\Pokemon\\BulbasaurIcon.png"));
@@ -102,6 +102,12 @@ void CResourceManager::Init()
 	charmander->SetImage(RESOURCE->LoadImg(L"Charmander", L"Image\\Pokemon\\CharmanderImage.png"));
 	charmander->SetIcon(RESOURCE->LoadImg(L"CharmanderIcon", L"Image\\Pokemon\\CharmanderIcon.png"));
 	m_mapPokemonResource.insert(make_pair(4, charmander));
+
+	// No.4 ²¿ºÎ±â 
+	CPokemonResource* squirtle = new CPokemonResource;
+	squirtle->SetImage(RESOURCE->LoadImg(L"Squirtle", L"Image\\Pokemon\\SquirtleImage.png"));
+	squirtle->SetIcon(RESOURCE->LoadImg(L"SquirtleIcon", L"Image\\Pokemon\\SquirtleIcon.png"));
+	m_mapPokemonResource.insert(make_pair(7, squirtle));
 }
 
 void CResourceManager::Release()

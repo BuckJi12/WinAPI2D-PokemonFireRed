@@ -18,6 +18,7 @@ void CPokemonManager::Init()
 {
 	m_mapPokemons.insert(make_pair(1, new CBulbasaur()));		// 이상해씨
 	m_mapPokemons.insert(make_pair(4, new CCharmander()));		// 파이리
+	m_mapPokemons.insert(make_pair(7, new CSquirtle()));		// 꼬부기
 }
 
 void CPokemonManager::Release()
