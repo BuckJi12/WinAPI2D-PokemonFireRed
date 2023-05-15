@@ -98,8 +98,9 @@ using namespace FMOD;
 #include "CMove.h"
 #include "CPokemonResource.h"
 
+#include "CBulbasaur.h"			// No.1 이상해씨
 
-#include "CCharmander.h" // No.4 파이리
+#include "CCharmander.h"		// No.4 파이리
 
 // Pokemon Moves
 #include "CTackle.h"

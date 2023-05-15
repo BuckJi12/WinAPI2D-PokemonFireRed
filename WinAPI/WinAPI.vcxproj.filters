@@ -76,9 +76,6 @@
     <Filter Include="GameObject\Pokemon\Pokemon">
       <UniqueIdentifier>{35c6f4ff-f91b-4fd8-b269-b0d018ef4cc3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameObject\Pokemon\Pokemon\StartingPokemon">
-      <UniqueIdentifier>{b97d6fac-220b-4d16-9127-d437e1055c23}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameObject\Battle">
       <UniqueIdentifier>{6e312a56-c1f0-406a-9102-73e3cc26fe33}</UniqueIdentifier>
     </Filter>
@@ -99,6 +96,15 @@
     </Filter>
     <Filter Include="GameObject\Battle\UI">
       <UniqueIdentifier>{34fb23f7-5af8-4e9a-b4ec-161bd974e9eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Pokemon\Pokemon\Fire">
+      <UniqueIdentifier>{b97d6fac-220b-4d16-9127-d437e1055c23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Pokemon\Pokemon\Water">
+      <UniqueIdentifier>{daafbf29-5a6c-4f28-9dd5-31632a1ec6a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Pokemon\Pokemon\Grass">
+      <UniqueIdentifier>{ad76264b-81a6-489d-84eb-020475f9967a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -277,7 +283,7 @@
       <Filter>GameObject\Pokemon\Pokemon</Filter>
     </ClInclude>
     <ClInclude Include="CCharmander.h">
-      <Filter>GameObject\Pokemon\Pokemon\StartingPokemon</Filter>
+      <Filter>GameObject\Pokemon\Pokemon\Fire</Filter>
     </ClInclude>
     <ClInclude Include="CTackle.h">
       <Filter>GameObject\Pokemon\Moves\Normal</Filter>
@@ -344,6 +350,9 @@
     </ClInclude>
     <ClInclude Include="CPokemonManager.h">
       <Filter>Engine\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="CBulbasaur.h">
+      <Filter>GameObject\Pokemon\Pokemon\Grass</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -498,7 +507,7 @@
       <Filter>GameObject\Pokemon\Pokemon</Filter>
     </ClCompile>
     <ClCompile Include="CCharmander.cpp">
-      <Filter>GameObject\Pokemon\Pokemon\StartingPokemon</Filter>
+      <Filter>GameObject\Pokemon\Pokemon\Fire</Filter>
     </ClCompile>
     <ClCompile Include="CTackle.cpp">
       <Filter>GameObject\Pokemon\Moves\Normal</Filter>
@@ -565,6 +574,9 @@
     </ClCompile>
     <ClCompile Include="CPokemonManager.cpp">
       <Filter>Engine\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="CBulbasaur.cpp">
+      <Filter>GameObject\Pokemon\Pokemon\Grass</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

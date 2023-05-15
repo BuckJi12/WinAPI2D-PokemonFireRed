@@ -16,7 +16,7 @@ CPokemon* CPokemonManager::FindPokemon(int pokeNumber)
 
 void CPokemonManager::Init()
 {
-	//m_mapPokemons.insert(make_pair(4, new CCharmander(5)));
+	m_mapPokemons.insert(make_pair(4, new CCharmander()));
 }
 
 void CPokemonManager::Release()

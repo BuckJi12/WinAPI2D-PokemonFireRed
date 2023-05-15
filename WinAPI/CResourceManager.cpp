@@ -91,7 +91,12 @@ CPokemonResource* CResourceManager::GetPokemonResource(const int& key)
 
 void CResourceManager::Init()
 {
-	
+	// No. 1 이상해씨
+	CPokemonResource* bulbasaur = new CPokemonResource;
+	bulbasaur->SetImage(RESOURCE->LoadImg(L"Bulbasaur", L"Image\\Pokemon\\BulbasaurImage.png"));
+	bulbasaur->SetIcon(RESOURCE->LoadImg(L"BulbasaurIcon", L"Image\\Pokemon\\BulbasaurIcon.png"));
+	m_mapPokemonResource.insert(make_pair(1, bulbasaur));
+
 	// No.4 파이리
 	CPokemonResource* charmander = new CPokemonResource;
 	charmander->SetImage(RESOURCE->LoadImg(L"Charmander", L"Image\\Pokemon\\CharmanderImage.png"));

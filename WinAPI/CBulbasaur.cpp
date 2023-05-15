@@ -1,52 +1,54 @@
 #include "framework.h"
-#include "CCharmander.h"
+#include "CBulbasaur.h"
 
-
-CCharmander::CCharmander()
+CBulbasaur::CBulbasaur()
 {
 	// 포켓몬 정보
-	m_info.name					= L"파이리";
-	m_info.description			= L"태어날 때부터 꼬리의 불꽃이 타오르고 있다.\n 불꽃이 꺼지면 그 생명이 다하고 만다.";
-	m_info.number				= 4;
+	m_info.name					= L"이상해씨";
+	m_info.description			= L"";
+	m_info.number				= 1;
 	m_info.rate					= 45;
 
-	// 포켓몬 기초값 파이리: 309
-	m_baseStat.hp				= 39;
-	m_baseStat.attack			= 52;
-	m_baseStat.specialAttack	= 43;
-	m_baseStat.defence			= 60;
-	m_baseStat.specialDefence	= 50;
-	m_baseStat.speed			= 65;
+	// 포켓몬 기초값 이상해씨: 318
+	m_baseStat.hp				= 45;
+	m_baseStat.attack			= 49;
+	m_baseStat.specialAttack	= 49;
+	m_baseStat.defence			= 65;
+	m_baseStat.specialDefence	= 65;
+	m_baseStat.speed			= 45;
 
 	m_curState					= PokemonState::Normal;
 	m_owner						= PokemonOwner::Wild;
-	m_type1						= PokemonType::Fire;
-	m_type2						= PokemonType::None;
+	m_type1						= PokemonType::Grass;
+	m_type2						= PokemonType::Poison;
+
+	// 기본 기술
+	// TODO: 기술 추가
+
 	// 초기화
 	m_pResource					= nullptr;
 	m_pAnimator					= nullptr;
 
-	// 기본 기술
 	CTackle tackle;
 	LearnMove(tackle);
 	Init();
 }
 
-CCharmander::~CCharmander()
+CBulbasaur::~CBulbasaur()
 {
 }
 
-void CCharmander::Evolution()
+void CBulbasaur::Evolution()
 {
 	// TODO: 진화 구현
 }
 
-void CCharmander::LearnMoveList()
+void CBulbasaur::LearnMoveList()
 {
 	// TODO: 배울 기술 정리
 }
 
-void CCharmander::Init()
+void CBulbasaur::Init()
 {
 	m_pResource = new CPokemonResource();
 	m_pResource = RESOURCE->GetPokemonResource(m_info.number);
@@ -57,15 +59,15 @@ void CCharmander::Init()
 	AddComponent(m_pAnimator);
 }
 
-void CCharmander::Update()
+void CBulbasaur::Update()
 {
 }
 
-void CCharmander::Render()
+void CBulbasaur::Render()
 {
 }
 
-void CCharmander::Release()
+void CBulbasaur::Release()
 {
 	delete m_pResource;
 }
