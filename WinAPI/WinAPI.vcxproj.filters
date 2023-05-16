@@ -106,6 +106,9 @@
     <Filter Include="GameObject\Pokemon\Pokemon\Grass">
       <UniqueIdentifier>{ad76264b-81a6-489d-84eb-020475f9967a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Battle\UI\Change">
+      <UniqueIdentifier>{59ead21b-bd91-4d25-8b77-d6fff5e9bfbf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -360,6 +363,9 @@
     <ClInclude Include="CTurnChange.h">
       <Filter>Scene\Battle\Turn</Filter>
     </ClInclude>
+    <ClInclude Include="CCurPokemonUI.h">
+      <Filter>GameObject\Battle\UI\Change</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -589,6 +595,9 @@
     </ClCompile>
     <ClCompile Include="CTurnChange.cpp">
       <Filter>Scene\Battle\Turn</Filter>
+    </ClCompile>
+    <ClCompile Include="CCurPokemonUI.cpp">
+      <Filter>GameObject\Battle\UI\Change</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

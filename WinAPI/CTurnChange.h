@@ -1,6 +1,8 @@
 #pragma once
 #include "CTurn.h"
 
+class CCurPokemonUI;
+
 class CTurnChange : public CTurn
 {
 public:
@@ -8,8 +10,8 @@ public:
 	virtual ~CTurnChange();
 
 private:
-	CImageObject* m_pImagePokemonMenu;
-
+	CImageObject*	m_pImagePokemonMenu;
+	CCurPokemonUI*	m_pImageCurPokemonUI;
 public:
 	void Init()    override;
 	void Enter()   override;
