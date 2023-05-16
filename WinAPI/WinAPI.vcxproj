@@ -147,6 +147,7 @@
     <ClInclude Include="CButton.h" />
     <ClInclude Include="CCameraController.h" />
     <ClInclude Include="CCameraManager.h" />
+    <ClInclude Include="CChangePokemonUI.h" />
     <ClInclude Include="CCharmander.h" />
     <ClInclude Include="CChooseMoveWindow.h" />
     <ClInclude Include="CChooseWindow.h" />
@@ -234,6 +235,7 @@
     <ClCompile Include="CButton.cpp" />
     <ClCompile Include="CCameraController.cpp" />
     <ClCompile Include="CCameraManager.cpp" />
+    <ClCompile Include="CChangePokemonUI.cpp" />
     <ClCompile Include="CCharmander.cpp" />
     <ClCompile Include="CChooseMoveWindow.cpp" />
     <ClCompile Include="CChooseWindow.cpp" />

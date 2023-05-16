@@ -2,6 +2,7 @@
 #include "CTurn.h"
 
 class CCurPokemonUI;
+class CChangePokemonUI;
 
 class CTurnChange : public CTurn
 {
@@ -10,8 +11,10 @@ public:
 	virtual ~CTurnChange();
 
 private:
-	CImageObject*	m_pImagePokemonMenu;
-	CCurPokemonUI*	m_pImageCurPokemonUI;
+	CImageObject*		m_pImagePokemonMenu;
+	CCurPokemonUI*		m_pImageCurPokemonUI;
+	CChangePokemonUI*	m_pImagePokemonUI1;
+
 public:
 	void Init()    override;
 	void Enter()   override;

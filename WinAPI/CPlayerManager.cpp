@@ -15,7 +15,10 @@ void CPlayerManager::Init()
 {
 	CPokemon* charmander = new CCharmander();
 	charmander->SetPokemonStat(5);
+	CPokemon* bulbasaur = new CBulbasaur;
+	bulbasaur->SetPokemonStat(7);
 	AddPokemonToPlayer(charmander);
+	AddPokemonToPlayer(bulbasaur);
 }
 
 void CPlayerManager::Update()

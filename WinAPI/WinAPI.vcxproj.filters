@@ -366,6 +366,9 @@
     <ClInclude Include="CCurPokemonUI.h">
       <Filter>GameObject\Battle\UI\Change</Filter>
     </ClInclude>
+    <ClInclude Include="CChangePokemonUI.h">
+      <Filter>GameObject\Battle\UI\Change</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -597,6 +600,9 @@
       <Filter>Scene\Battle\Turn</Filter>
     </ClCompile>
     <ClCompile Include="CCurPokemonUI.cpp">
+      <Filter>GameObject\Battle\UI\Change</Filter>
+    </ClCompile>
+    <ClCompile Include="CChangePokemonUI.cpp">
       <Filter>GameObject\Battle\UI\Change</Filter>
     </ClCompile>
   </ItemGroup>

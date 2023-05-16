@@ -3,11 +3,13 @@
 
 #include "CImageObject.h"
 #include "CCurPokemonUI.h"
+#include "CChangePokemonUI.h"
 
 CTurnChange::CTurnChange(CSceneBattle* battleScene) : CTurn(battleScene)
 {
 	m_pImagePokemonMenu		= nullptr;
 	m_pImageCurPokemonUI	= nullptr;
+	m_pImagePokemonUI1		= nullptr;
 }
 
 CTurnChange::~CTurnChange()
@@ -26,12 +28,20 @@ void CTurnChange::Init()
 	m_pImageCurPokemonUI->SetPos(1000, 1000);
 	m_pImageCurPokemonUI->Init();
 	m_battleScene->AddObjectThisScene(m_pImageCurPokemonUI);
+
+	m_pImagePokemonUI1 = new CChangePokemonUI;
+	m_pImagePokemonUI1->SetPos(1000, 1000);
+	m_pImagePokemonUI1->Init();
+	m_pImagePokemonUI1->SetTarget(PLAYER->GetPlayerPokemonList()[1]);
+	m_battleScene->AddObjectThisScene(m_pImagePokemonUI1);
+
 }
 
 void CTurnChange::Enter()
 {
 	m_pImagePokemonMenu->SetPos(0, 0);
 	m_pImageCurPokemonUI->SetPos(3, 75);
+	m_pImagePokemonUI1->SetPos(200, 200);
 }
 
 void CTurnChange::Update()
