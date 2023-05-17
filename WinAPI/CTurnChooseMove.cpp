@@ -40,6 +40,22 @@ void CTurnChooseMove::CursorControl()
 			m_curCount = BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList().size() - 1;
 	}
 
+	switch (m_curCount)
+	{
+	case 0:
+		m_battleScene->GetCursor()->SetPos(20, 440);
+		break;
+	case 1:
+		m_battleScene->GetCursor()->SetPos(240, 440);
+		break;
+	case 2:
+		m_battleScene->GetCursor()->SetPos(20, 490);
+		break;
+	case 3:
+		m_battleScene->GetCursor()->SetPos(240, 490);
+		break;
+	}
+
 	if (BUTTONDOWN(VK_SPACE))
 	{
 		switch (m_curCount)
@@ -78,22 +94,6 @@ void CTurnChooseMove::CursorControl()
 			break;
 		}
 	}
-
-	switch (m_curCount)
-	{
-	case 0:
-		m_battleScene->GetCursor()->SetPos(20, 440);
-		break;
-	case 1:
-		m_battleScene->GetCursor()->SetPos(240, 440);
-		break;
-	case 2:
-		m_battleScene->GetCursor()->SetPos(20, 490);
-		break;
-	case 3:
-		m_battleScene->GetCursor()->SetPos(240, 490);
-		break;
-	}
 }
 
 void CTurnChooseMove::Init()
@@ -120,6 +120,7 @@ void CTurnChooseMove::Update()
 void CTurnChooseMove::Exit()
 {
 	m_pImageChooseMove->SetPos(1000, 1000);
+	m_battleScene->GetCursor()->SetPos(1000, 1000);
 }
 
 void CTurnChooseMove::Release()
