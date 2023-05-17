@@ -39,6 +39,22 @@ void CTurnChooseAction::CursorControl()
 			m_curCount = 2;
 	}
 
+	switch (m_curCount)
+	{
+	case 0:
+		m_battleScene->GetCursor()->SetPos(410, 435);
+		break;
+	case 1:
+		m_battleScene->GetCursor()->SetPos(590, 435);
+		break;
+	case 2:
+		m_battleScene->GetCursor()->SetPos(410, 490);
+		break;
+	case 3:
+		m_battleScene->GetCursor()->SetPos(590, 490);
+		break;
+	}
+
 	if (BUTTONDOWN(VK_SPACE))
 	{
 		switch (m_curCount)
@@ -57,22 +73,6 @@ void CTurnChooseAction::CursorControl()
 			GAME->SetRandomValue();
 			break;
 		}
-	}
-
-	switch (m_curCount)
-	{
-	case 0:
-		m_battleScene->GetCursor()->SetPos(410, 435);
-		break;
-	case 1:
-		m_battleScene->GetCursor()->SetPos(590, 435);
-		break;
-	case 2:
-		m_battleScene->GetCursor()->SetPos(410, 490);
-		break;
-	case 3:
-		m_battleScene->GetCursor()->SetPos(590, 490);
-		break;
 	}
 }
 
