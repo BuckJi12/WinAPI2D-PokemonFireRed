@@ -369,6 +369,9 @@
     <ClInclude Include="CChangePokemonUI.h">
       <Filter>GameObject\Battle\UI\Change</Filter>
     </ClInclude>
+    <ClInclude Include="CSelectBox.h">
+      <Filter>GameObject\Battle\UI\Change</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -603,6 +606,9 @@
       <Filter>GameObject\Battle\UI\Change</Filter>
     </ClCompile>
     <ClCompile Include="CChangePokemonUI.cpp">
+      <Filter>GameObject\Battle\UI\Change</Filter>
+    </ClCompile>
+    <ClCompile Include="CSelectBox.cpp">
       <Filter>GameObject\Battle\UI\Change</Filter>
     </ClCompile>
   </ItemGroup>

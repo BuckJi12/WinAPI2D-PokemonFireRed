@@ -2,6 +2,7 @@
 #include "CTurnChange.h"
 
 #include "CImageObject.h"
+#include "CSelectBox.h"
 #include "CCurPokemonUI.h"
 #include "CChangePokemonUI.h"
 
@@ -10,6 +11,7 @@ CTurnChange::CTurnChange(CSceneBattle* battleScene) : CTurn(battleScene)
 	m_pImagePokemonMenu		= nullptr;
 	m_pImageCurPokemonUI	= nullptr;
 	m_pImagePokemonUI1		= nullptr;
+	m_pSelectBox			= nullptr;
 }
 
 CTurnChange::~CTurnChange()
@@ -23,6 +25,12 @@ void CTurnChange::Init()
 	m_pImagePokemonMenu->SetPos(1000, 1000);
 	m_pImagePokemonMenu->SetLayer(Layer::Environment);
 	m_battleScene->AddObjectThisScene(m_pImagePokemonMenu);
+
+	m_pSelectBox = new CSelectBox;
+	m_pSelectBox->SetSize(473, 88, 3);
+	m_pSelectBox->SetColor(255,127,0);
+	m_pSelectBox->SetPos(1000, 1000);
+	m_battleScene->AddObjectThisScene(m_pSelectBox);
 
 	m_pImageCurPokemonUI = new CCurPokemonUI;
 	m_pImageCurPokemonUI->SetPos(1000, 1000);
@@ -42,6 +50,7 @@ void CTurnChange::Enter()
 	m_pImagePokemonMenu->SetPos(0, 0);
 	m_pImageCurPokemonUI->SetPos(3, 75);
 	m_pImagePokemonUI1->SetPos(320, 30);
+	m_pSelectBox->SetPos(320, 30);
 }
 
 void CTurnChange::Update()
@@ -56,6 +65,7 @@ void CTurnChange::Exit()
 {
 	m_pImagePokemonMenu->SetPos(1000, 1000);
 	m_pImageCurPokemonUI->SetPos(1000, 1000);
+	m_pImagePokemonUI1->SetPos(1000, 1000);
 }
 
 void CTurnChange::Release()
