@@ -10,12 +10,38 @@ CTurnChange::CTurnChange(CSceneBattle* battleScene) : CTurn(battleScene)
 {
 	m_pImagePokemonMenu		= nullptr;
 	m_pImageCurPokemonUI	= nullptr;
-	m_pImagePokemonUI1		= nullptr;
 	m_pSelectBox			= nullptr;
 }
 
 CTurnChange::~CTurnChange()
 {
+}
+
+void CTurnChange::Setting()
+{
+	for (int i = 0; i < PLAYER->GetPlayerPokemonList().size(); i++)
+	{
+		if (PLAYER->GetPlayerPokemonList()[i] == BATTLE->GetPlayerCurPokemon())
+			continue;
+
+		m_queueIndexs.push(i);
+	}
+
+	for (int i = 0; !m_queueIndexs.empty(); i++)
+	{
+		m_vecPokemonUI[i]->SetTarget(PLAYER->GetPlayerPokemonList()[m_queueIndexs.front()]);
+		m_vecPokemonUI[i]->SetPos(m_vecVector[i]);
+		m_queueIndexs.pop();
+	}
+}
+
+void CTurnChange::Reset()
+{
+	for (auto pokemonUI : m_vecPokemonUI)
+	{
+		pokemonUI->SetPos(1000,1000);
+		pokemonUI->SetTarget(nullptr);
+	}
 }
 
 void CTurnChange::Init()
@@ -37,20 +63,50 @@ void CTurnChange::Init()
 	m_pImageCurPokemonUI->Init();
 	m_battleScene->AddObjectThisScene(m_pImageCurPokemonUI);
 
-	m_pImagePokemonUI1 = new CChangePokemonUI;
+	CChangePokemonUI* m_pImagePokemonUI1 = new CChangePokemonUI;
 	m_pImagePokemonUI1->SetPos(1000, 1000);
 	m_pImagePokemonUI1->Init();
-	m_pImagePokemonUI1->SetTarget(PLAYER->GetPlayerPokemonList()[1]);
 	m_battleScene->AddObjectThisScene(m_pImagePokemonUI1);
 
+	CChangePokemonUI* m_pImagePokemonUI2 = new CChangePokemonUI;
+	m_pImagePokemonUI2->SetPos(1000, 1000);
+	m_pImagePokemonUI2->Init();
+	m_battleScene->AddObjectThisScene(m_pImagePokemonUI2);
+
+	CChangePokemonUI* m_pImagePokemonUI3 = new CChangePokemonUI;
+	m_pImagePokemonUI3->SetPos(1000, 1000);
+	m_pImagePokemonUI3->Init();
+	m_battleScene->AddObjectThisScene(m_pImagePokemonUI3);
+
+	CChangePokemonUI* m_pImagePokemonUI4 = new CChangePokemonUI;
+	m_pImagePokemonUI4->SetPos(1000, 1000);
+	m_pImagePokemonUI4->Init();
+	m_battleScene->AddObjectThisScene(m_pImagePokemonUI4);
+
+	CChangePokemonUI* m_pImagePokemonUI5 = new CChangePokemonUI;
+	m_pImagePokemonUI5->SetPos(1000, 1000);
+	m_pImagePokemonUI5->Init();
+	m_battleScene->AddObjectThisScene(m_pImagePokemonUI5);
+
+	m_vecPokemonUI.push_back(m_pImagePokemonUI1);
+	m_vecPokemonUI.push_back(m_pImagePokemonUI2);
+	m_vecPokemonUI.push_back(m_pImagePokemonUI3);
+	m_vecPokemonUI.push_back(m_pImagePokemonUI4);
+	m_vecPokemonUI.push_back(m_pImagePokemonUI5);
+
+	m_vecVector.push_back(Vector(320, 30));
+	m_vecVector.push_back(Vector(320, 123));
+	m_vecVector.push_back(Vector(320, 213));
+	m_vecVector.push_back(Vector(320, 303));
+	m_vecVector.push_back(Vector(320, 393));
 }
 
 void CTurnChange::Enter()
 {
 	m_pImagePokemonMenu->SetPos(0, 0);
 	m_pImageCurPokemonUI->SetPos(3, 75);
-	m_pImagePokemonUI1->SetPos(320, 30);
 	m_pSelectBox->SetPos(320, 30);
+	Setting();
 }
 
 void CTurnChange::Update()
@@ -65,7 +121,7 @@ void CTurnChange::Exit()
 {
 	m_pImagePokemonMenu->SetPos(1000, 1000);
 	m_pImageCurPokemonUI->SetPos(1000, 1000);
-	m_pImagePokemonUI1->SetPos(1000, 1000);
+	Reset();
 }
 
 void CTurnChange::Release()

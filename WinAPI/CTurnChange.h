@@ -12,11 +12,16 @@ public:
 	virtual ~CTurnChange();
 
 private:
-	CImageObject*		m_pImagePokemonMenu;
-	CCurPokemonUI*		m_pImageCurPokemonUI;
-	CChangePokemonUI*	m_pImagePokemonUI1;
-	CSelectBox*			m_pSelectBox;
+	CImageObject*				m_pImagePokemonMenu;
+	CCurPokemonUI*				m_pImageCurPokemonUI;
+	vector<CChangePokemonUI*>	m_vecPokemonUI;
+	vector<Vector>				m_vecVector;
+	queue<int>					m_queueIndexs;
+	CSelectBox*					m_pSelectBox;
 
+private:
+	void Setting();
+	void Reset();
 
 public:
 	void Init()    override;

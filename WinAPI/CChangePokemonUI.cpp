@@ -20,6 +20,11 @@ void CChangePokemonUI::SetTarget(CPokemon* pokemon)
 	m_pTargetPokemon = pokemon;
 }
 
+CPokemon* CChangePokemonUI::GetTarget()
+{
+	return m_pTargetPokemon;
+}
+
 void CChangePokemonUI::Init()
 {
 	m_pImage = RESOURCE->LoadImg(L"ChangePokemonUI", L"Image\\Battle\\ChangePokemonUI.png");
@@ -85,7 +90,7 @@ void CChangePokemonUI::Render()
 			+ to_wstring(m_pTargetPokemon->GetPokemonStat().maxHp),
 			m_vecPos.x + 325,
 			m_vecPos.y + 52,
-			m_vecPos.x + 425,
+			m_vecPos.x + 475,
 			m_vecPos.y + 82,
 			Color(255, 255, 255, 1),
 			25

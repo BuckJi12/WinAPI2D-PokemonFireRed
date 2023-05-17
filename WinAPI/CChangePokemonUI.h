@@ -14,7 +14,8 @@ private:
 	Color m_color;
 
 public:
-	void SetTarget(CPokemon* pokemon);
+	void		SetTarget(CPokemon* pokemon);
+	CPokemon*	GetTarget();
 
 public:
 	void Init()		override;
