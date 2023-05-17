@@ -41,7 +41,7 @@ void CTurnChange::Enter()
 {
 	m_pImagePokemonMenu->SetPos(0, 0);
 	m_pImageCurPokemonUI->SetPos(3, 75);
-	m_pImagePokemonUI1->SetPos(200, 200);
+	m_pImagePokemonUI1->SetPos(320, 30);
 }
 
 void CTurnChange::Update()
