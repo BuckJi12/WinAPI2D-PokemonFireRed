@@ -19,9 +19,11 @@ private:
 	queue<int>					m_queueIndexs;
 	CSelectBox*					m_pSelectBox;
 
+	int							m_curCount;
 private:
 	void Setting();
 	void Reset();
+	void SelectBoxControl();
 
 public:
 	void Init()    override;

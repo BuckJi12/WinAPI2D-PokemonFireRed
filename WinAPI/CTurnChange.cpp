@@ -11,6 +11,7 @@ CTurnChange::CTurnChange(CSceneBattle* battleScene) : CTurn(battleScene)
 	m_pImagePokemonMenu		= nullptr;
 	m_pImageCurPokemonUI	= nullptr;
 	m_pSelectBox			= nullptr;
+	m_curCount				= 0;
 }
 
 CTurnChange::~CTurnChange()
@@ -42,6 +43,42 @@ void CTurnChange::Reset()
 		pokemonUI->SetPos(1000,1000);
 		pokemonUI->SetTarget(nullptr);
 	}
+}
+
+void CTurnChange::SelectBoxControl()
+{
+	switch (m_curCount)
+	{
+	case 0:
+		m_pSelectBox->SetPos(m_vecVector[0]);
+		break;
+	case 1:
+		m_pSelectBox->SetPos(m_vecVector[1]);
+		break;
+	case 2:
+		m_pSelectBox->SetPos(m_vecVector[2]);
+		break;
+	case 3:
+		m_pSelectBox->SetPos(m_vecVector[3]);
+		break;
+	case 4:
+		m_pSelectBox->SetPos(m_vecVector[4]);
+		break;
+	default:
+		m_pSelectBox->SetPos(1000, 1000);
+		break;
+	}
+
+	if (BUTTONDOWN(VK_UP))
+		m_curCount -= 1;
+	else if (BUTTONDOWN(VK_DOWN))
+		m_curCount += 1;
+
+	if (m_curCount < 0)
+		m_curCount = PLAYER->GetPlayerPokemonList().size() - 2;
+
+	if (m_curCount > PLAYER->GetPlayerPokemonList().size() - 2)
+		m_curCount = 0;
 }
 
 void CTurnChange::Init()
@@ -105,7 +142,6 @@ void CTurnChange::Enter()
 {
 	m_pImagePokemonMenu->SetPos(0, 0);
 	m_pImageCurPokemonUI->SetPos(3, 75);
-	m_pSelectBox->SetPos(320, 30);
 	Setting();
 }
 
@@ -115,12 +151,15 @@ void CTurnChange::Update()
 	{
 		m_battleScene->ChangeTurn(PlayerAction::ChooseAction);
 	}
+
+	SelectBoxControl();
 }
 
 void CTurnChange::Exit()
 {
 	m_pImagePokemonMenu->SetPos(1000, 1000);
 	m_pImageCurPokemonUI->SetPos(1000, 1000);
+	m_curCount = -1;
 	Reset();
 }
 
