@@ -141,7 +141,7 @@ void CTurnChange::ChangePokemon()
 		{
 			m_phase3 = true;
 			BATTLE->GetPlayerCurPokemon()->SetPos(200, 310);
-			//TODO: 배틀 상황 설정;
+			BATTLE->SetBattleSituation(BattleSituation::Player_CanNot_Battle);
 			m_battleScene->ChangeTurn(PlayerAction::Battle);
 		}
 	}
