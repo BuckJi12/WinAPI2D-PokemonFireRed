@@ -154,10 +154,10 @@ int CBattleManager::CalculateCatchRate()
 	return catchRate;
 }
 
-void CBattleManager::PokemonChanage(int index)
+void CBattleManager::PokemonChanage(CPokemon* pokemon)
 {
 	// TODO: ¼öÁ¤
-	m_pPlayerCurPokemon = PLAYER->GetPlayerPokemonList()[index];
+	m_pPlayerCurPokemon = pokemon;
 }
 
 bool CBattleManager::TryPokemonCatch()
