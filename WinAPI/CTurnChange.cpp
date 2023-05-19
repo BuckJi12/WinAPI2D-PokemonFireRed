@@ -12,6 +12,11 @@ CTurnChange::CTurnChange(CSceneBattle* battleScene) : CTurn(battleScene)
 	m_pImageCurPokemonUI	= nullptr;
 	m_pSelectBox			= nullptr;
 	m_curCount				= 0;
+	m_timer					= 0;
+	m_pokemonChanging		= false;
+	m_phase1				= false;
+	m_phase2				= false;
+	m_phase3				= false;
 }
 
 CTurnChange::~CTurnChange()
@@ -34,6 +39,16 @@ void CTurnChange::Setting()
 		m_vecPokemonUI[i]->SetPos(m_vecVector[i]);
 		m_queueIndexs.pop();
 	}
+
+	m_pImagePokemonMenu->SetPos(0, 0);
+	m_pImageCurPokemonUI->SetPos(3, 75);
+
+	m_curCount			= 0;
+	m_timer				= 0;
+	m_pokemonChanging	= false;
+	m_phase1			= false;
+	m_phase2			= false;
+	m_phase3			= false;
 }
 
 void CTurnChange::Reset()
@@ -43,42 +58,93 @@ void CTurnChange::Reset()
 		pokemonUI->SetPos(1000,1000);
 		pokemonUI->SetTarget(nullptr);
 	}
+
+	m_pImagePokemonMenu->SetPos(1000, 1000);
+	m_pImageCurPokemonUI->SetPos(1000, 1000);
+	m_curCount = -1;
 }
 
 void CTurnChange::SelectBoxControl()
 {
-	switch (m_curCount)
+	if (!m_pokemonChanging)
 	{
-	case 0:
-		m_pSelectBox->SetPos(m_vecVector[0]);
-		break;
-	case 1:
-		m_pSelectBox->SetPos(m_vecVector[1]);
-		break;
-	case 2:
-		m_pSelectBox->SetPos(m_vecVector[2]);
-		break;
-	case 3:
-		m_pSelectBox->SetPos(m_vecVector[3]);
-		break;
-	case 4:
-		m_pSelectBox->SetPos(m_vecVector[4]);
-		break;
-	default:
-		m_pSelectBox->SetPos(1000, 1000);
-		break;
+		switch (m_curCount)
+		{
+		case 0:
+			m_pSelectBox->SetPos(m_vecVector[0]);
+			break;
+		case 1:
+			m_pSelectBox->SetPos(m_vecVector[1]);
+			break;
+		case 2:
+			m_pSelectBox->SetPos(m_vecVector[2]);
+			break;
+		case 3:
+			m_pSelectBox->SetPos(m_vecVector[3]);
+			break;
+		case 4:
+			m_pSelectBox->SetPos(m_vecVector[4]);
+			break;
+		default:
+			m_pSelectBox->SetPos(1000, 1000);
+			break;
+		}
+
+		if (BUTTONDOWN(VK_UP))
+			m_curCount -= 1;
+		else if (BUTTONDOWN(VK_DOWN))
+			m_curCount += 1;
+
+		if (m_curCount < 0)
+			m_curCount = PLAYER->GetPlayerPokemonList().size() - 2;
+
+		if (m_curCount > PLAYER->GetPlayerPokemonList().size() - 2)
+			m_curCount = 0;
 	}
+}
 
-	if (BUTTONDOWN(VK_UP))
-		m_curCount -= 1;
-	else if (BUTTONDOWN(VK_DOWN))
-		m_curCount += 1;
+void CTurnChange::SelectPokemon()
+{
+	if (BUTTONDOWN(VK_SPACE) && !m_pokemonChanging)
+	{
+		m_pokemonChanging = true;
+		m_pImagePokemonMenu->SetPos(1000, 1000);
+		m_pImageCurPokemonUI->SetPos(1000, 1000);
+		m_pSelectBox->SetPos(1000, 1000);
+		for (auto pokemonUI : m_vecPokemonUI)
+		{
+			pokemonUI->SetPos(1000, 1000);
+		}
+	}
+}
 
-	if (m_curCount < 0)
-		m_curCount = PLAYER->GetPlayerPokemonList().size() - 2;
+void CTurnChange::ChangePokemon()
+{
+	if (m_pokemonChanging)
+	{
+		m_timer += DT;
 
-	if (m_curCount > PLAYER->GetPlayerPokemonList().size() - 2)
-		m_curCount = 0;
+		if (m_timer > 1 && !m_phase1)	// 1단계: 포켓몬 이동 1000, 1000
+		{
+			m_phase1 = true;
+			BATTLE->GetPlayerCurPokemon()->SetPos(1000, 1000);
+		}
+
+		if (m_timer > 3 && !m_phase2)	// 2단계: 포켓몬 변경
+		{
+			m_phase2 = true;
+			BATTLE->PokemonChanage(m_vecPokemonUI[m_curCount]->GetTarget());
+			BATTLE->GetPlayerCurPokemon()->SetAnimation();
+		}
+
+		if (m_timer > 5 && !m_phase3)	// 3단계: 포켓몬 이동 200, 310
+		{
+			m_phase3 = true;
+			BATTLE->GetPlayerCurPokemon()->SetPos(200, 310);
+			//TODO: 배틀 상황 설정;
+			m_battleScene->ChangeTurn(PlayerAction::Battle);
+		}
+	}
 }
 
 void CTurnChange::Init()
@@ -140,8 +206,6 @@ void CTurnChange::Init()
 
 void CTurnChange::Enter()
 {
-	m_pImagePokemonMenu->SetPos(0, 0);
-	m_pImageCurPokemonUI->SetPos(3, 75);
 	Setting();
 }
 
@@ -153,13 +217,12 @@ void CTurnChange::Update()
 	}
 
 	SelectBoxControl();
+	SelectPokemon();
+	ChangePokemon();
 }
 
 void CTurnChange::Exit()
 {
-	m_pImagePokemonMenu->SetPos(1000, 1000);
-	m_pImageCurPokemonUI->SetPos(1000, 1000);
-	m_curCount = -1;
 	Reset();
 }
 

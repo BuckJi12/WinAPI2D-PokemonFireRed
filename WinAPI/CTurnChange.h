@@ -20,10 +20,18 @@ private:
 	CSelectBox*					m_pSelectBox;
 
 	int							m_curCount;
+	float						m_timer;
+	bool						m_pokemonChanging;
+	bool						m_phase1;
+	bool						m_phase2;
+	bool						m_phase3;
+
 private:
 	void Setting();
 	void Reset();
 	void SelectBoxControl();
+	void SelectPokemon();
+	void ChangePokemon();
 
 public:
 	void Init()    override;
