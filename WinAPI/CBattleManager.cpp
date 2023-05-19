@@ -68,6 +68,11 @@ BattleSituation CBattleManager::GetBattleSituation()
 	return m_curBattleSituation;
 }
 
+void CBattleManager::SetBattleSituation(BattleSituation situation)
+{
+	m_curBattleSituation = situation;
+}
+
 void CBattleManager::BattleInit()
 {
 	m_pPlayerCurPokemon = PLAYER->GetPlayerFirstPokemon();
