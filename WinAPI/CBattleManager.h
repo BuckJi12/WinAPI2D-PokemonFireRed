@@ -19,8 +19,8 @@ private:
 	BattleSituation m_curBattleSituation;
 	int				m_playerCurInex;
 
-	int catchRate;
-	bool isCatching;
+	int				catchRate;
+	bool			isCatching;
 
 public:
 	CPokemon*		GetPlayerCurPokemon();
@@ -28,6 +28,7 @@ public:
 	PlayerAction	GetCurAction();
 	FirstAttack		GetFirstAttack();
 	BattleSituation GetBattleSituation();
+	void			SetFirstAttack(FirstAttack attack);
 	void			SetBattleSituation(BattleSituation situation);
 	void			BattleInit();	// 배틀 기본 설정
 	void			ChooseAction(PlayerAction action); // 1. 배틀 2. 교체 3. 아이템 4. 도망

@@ -68,6 +68,11 @@ BattleSituation CBattleManager::GetBattleSituation()
 	return m_curBattleSituation;
 }
 
+void CBattleManager::SetFirstAttack(FirstAttack attack)
+{
+	m_curFirstAttack = attack;
+}
+
 void CBattleManager::SetBattleSituation(BattleSituation situation)
 {
 	m_curBattleSituation = situation;
