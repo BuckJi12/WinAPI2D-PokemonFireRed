@@ -213,6 +213,16 @@ void CScene::AddGameObject(CGameObject* pGameObj)
 	pGameObj->GameObjectInit();
 }
 
+bool CScene::FindGameObject(CGameObject* pGameObj)
+{
+	for (auto object : m_listObj[(int)pGameObj->GetLayer()])
+	{
+		if (object == pGameObj)
+			return true;
+	}
+	return false;
+}
+
 void CScene::DeleteLayerObject(Layer layer)
 {
 	for (CGameObject* pObj : m_listObj[(int)layer])
