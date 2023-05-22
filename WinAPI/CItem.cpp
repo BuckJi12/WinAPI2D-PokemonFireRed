@@ -3,12 +3,11 @@
 
 CItem::CItem()
 {
-	m_name			= L"";
-	m_description	= L"";
-
-	m_count			= 0;
-	m_cost			= 0;
-	m_rate			= 0;
+	m_itemData.name			= L"";
+	m_itemData.description	= L"";
+	m_itemData.count		= 0;
+	m_itemData.cost			= 0;
+	m_itemData.rate			= 0;
 }
 
 CItem::~CItem()
@@ -19,24 +18,12 @@ void CItem::Init()
 {
 }
 
-void CItem::Update()
+CImage* CItem::GetImage()
 {
+	return m_pImage;
 }
 
-void CItem::Render()
+ItemData CItem::GetItemData()
 {
-	if (nullptr != m_pImage)
-	{
-		RENDER->Image(
-			m_pImage,
-			m_vecPos.x,
-			m_vecPos.y,
-			m_vecPos.x + (float)m_pImage->GetWidth(),
-			m_vecPos.y + (float)m_pImage->GetHeight()
-		);
-	}
-}
-
-void CItem::Release()
-{
+	return m_itemData;
 }

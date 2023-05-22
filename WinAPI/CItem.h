@@ -1,27 +1,29 @@
 #pragma once
-#include "CImageObject.h"
+struct ItemData
+{
+	wstring		name;
+	wstring		description;
+	int			count;
+	int			cost;
+	float		rate;
+};
 
-class CItem : public CImageObject
+class CItem
 {
 public:
 	CItem();
 	virtual ~CItem();
 
-public:
-	wstring		m_name;
-	wstring		m_description;
-
-	int			m_count;
-	int			m_cost;
-	float		m_rate;
+protected:
+	CImage*		m_pImage;
+	ItemData	m_itemData;
 
 public:
-	virtual void UseItem() {};
+	void			Init();
+	CImage*			GetImage();
+	ItemData		GetItemData();
 
 public:
-	void Init()		override;
-	void Update()	override;
-	void Render()	override;
-	void Release()	override;
+	virtual void	UseItem() {};
 };
 
