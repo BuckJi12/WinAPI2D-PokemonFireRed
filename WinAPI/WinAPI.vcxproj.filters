@@ -387,6 +387,9 @@
     <ClInclude Include="CMasterBall.h">
       <Filter>GameObject\Item\Ball</Filter>
     </ClInclude>
+    <ClInclude Include="CTurnBag.h">
+      <Filter>Scene\Battle\Turn</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -634,6 +637,9 @@
     </ClCompile>
     <ClCompile Include="CMasterBall.cpp">
       <Filter>GameObject\Item\Ball</Filter>
+    </ClCompile>
+    <ClCompile Include="CTurnBag.cpp">
+      <Filter>Scene\Battle\Turn</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

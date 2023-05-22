@@ -18,6 +18,7 @@
 #include "CTurnChooseMove.h"
 #include "CTurnBattle.h"
 #include "CTurnChange.h"
+#include "CTurnBag.h"
 
 CSceneBattle::CSceneBattle()
 {
@@ -82,6 +83,7 @@ void CSceneBattle::Init()
 	m_mapTurns.insert(make_pair(PlayerAction::ChooseMove, new CTurnChooseMove(this)));
 	m_mapTurns.insert(make_pair(PlayerAction::Battle, new CTurnBattle(this)));
 	m_mapTurns.insert(make_pair(PlayerAction::Change, new CTurnChange(this)));
+	m_mapTurns.insert(make_pair(PlayerAction::Bag, new CTurnBag(this)));
 
 	m_mapTurns[PlayerAction::Enter]->Init();
 	m_mapTurns[PlayerAction::PlayerReady]->Init();
@@ -89,6 +91,7 @@ void CSceneBattle::Init()
 	m_mapTurns[PlayerAction::ChooseMove]->Init();
 	m_mapTurns[PlayerAction::Battle]->Init();
 	m_mapTurns[PlayerAction::Change]->Init();
+	m_mapTurns[PlayerAction::Bag]->Init();
 }
 
 void CSceneBattle::Enter()
