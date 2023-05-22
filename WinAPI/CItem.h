@@ -13,6 +13,7 @@ public:
 
 	int			m_count;
 	int			m_cost;
+	float		m_rate;
 
 public:
 	virtual void UseItem() {};

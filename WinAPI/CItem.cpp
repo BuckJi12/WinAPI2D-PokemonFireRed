@@ -8,6 +8,7 @@ CItem::CItem()
 
 	m_count			= 0;
 	m_cost			= 0;
+	m_rate			= 0;
 }
 
 CItem::~CItem()
