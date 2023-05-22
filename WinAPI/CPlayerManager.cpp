@@ -62,6 +62,11 @@ vector<CPokemon*> CPlayerManager::GetPlayerPokemonList()
 	return m_pVecPlayerPokemons;
 }
 
+vector<CItem*> CPlayerManager::GetPlayerItemList()
+{
+	return m_pVecPlayerItems;
+}
+
 void CPlayerManager::CheckPokemonIndex(CPokemon* pokemon)
 {
 	auto iter = m_pVecPlayerPokemons.begin();
@@ -69,4 +74,19 @@ void CPlayerManager::CheckPokemonIndex(CPokemon* pokemon)
 	{
 		//TODO: 비교 연산자 재정의 필요할 듯
 	}
+}
+
+void CPlayerManager::AddItem(CItem* pItem, int count)
+{
+	for (auto item : m_pVecPlayerItems)
+	{
+		if (item == pItem)
+		{
+			item->m_count += count;
+			return;
+		}
+	}
+
+	pItem->m_count = count;
+	m_pVecPlayerItems.push_back(pItem);
 }

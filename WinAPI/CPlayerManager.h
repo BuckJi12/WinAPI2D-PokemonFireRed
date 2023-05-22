@@ -1,4 +1,5 @@
 #pragma once
+#include "CItem.h"
 
 class CCore;
 class CPokemon;
@@ -12,19 +13,21 @@ private:
 	virtual ~CPlayerManager();
 
 private:
-	vector<CPokemon*> m_pVecPlayerPokemons;
-	// TODO: °¡¹æ
+	vector<CPokemon*>	m_pVecPlayerPokemons;
+	vector<CItem*>		m_pVecPlayerItems;
 
 private:
-	void	Init();
-	void	Update();
-	void	Release();
+	void				Init();
+	void				Update();
+	void				Release();
 
 public:
-	void	AddPokemonToPlayer(CPokemon* pokemon);
-	void	CheckPokemonIndex(CPokemon* pokemon);
-	CPokemon* GetPlayerFirstPokemon();
-	vector<CPokemon*> GetPlayerPokemonList();
+	void				AddPokemonToPlayer(CPokemon* pokemon);
+	void				CheckPokemonIndex(CPokemon* pokemon);
+	void				AddItem(CItem* pItem, int count);
+	CPokemon*			GetPlayerFirstPokemon();
+	vector<CPokemon*>	GetPlayerPokemonList();
+	vector<CItem*>		GetPlayerItemList();
 
 };
 
