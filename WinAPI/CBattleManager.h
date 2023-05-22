@@ -19,8 +19,8 @@ private:
 	BattleSituation m_curBattleSituation;
 	int				m_playerCurInex;
 
-	int				catchRate;
-	bool			isCatching;
+	int				m_catchRate;
+	bool			m_isCatching;
 
 public:
 	CPokemon*		GetPlayerCurPokemon();
@@ -42,7 +42,7 @@ public:
 	int				CalculateDamage(CPokemon* attacker, CPokemon* victim, CMove move);
 	int				CalculateCatchRate();	//TODO: 아이템 추가
 	
-	bool			TryPokemonCatch();
+	CatchResult		TryPokemonCatch();
 };
 
 #define BATTLE CBattleManager::GetInstance()

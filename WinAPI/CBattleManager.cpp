@@ -35,8 +35,8 @@ CBattleManager::CBattleManager()
 	m_playerCurInex			= 0;
 	m_curBattleSituation	= BattleSituation::BothSide_Can_Battle;
 
-	catchRate				= 1;
-	isCatching				= false;
+	m_catchRate				= 1;
+	m_isCatching				= false;
 }
 
 CBattleManager::~CBattleManager()
@@ -159,9 +159,9 @@ int CBattleManager::CalculateCatchRate()
 
 	fNum = ((((3 * m_pOppoentCurPokemon->GetPokemonStat().maxHp) - (2 * m_pOppoentCurPokemon->GetPokemonStat().curHp))
 		* m_pOppoentCurPokemon->GetPokemonInfo().rate * 1/*TODO: 볼 확률*/) / (3 * m_pOppoentCurPokemon->GetPokemonStat().maxHp));
-	catchRate = 65535 * pow((fNum / 255), 1.0 / 4) + 65535;
+	m_catchRate = 65535 * pow((fNum / 255), 1.0 / 4) + 65535;
 
-	return catchRate;
+	return m_catchRate;
 }
 
 void CBattleManager::PokemonChanage(CPokemon* pokemon)
@@ -170,65 +170,27 @@ void CBattleManager::PokemonChanage(CPokemon* pokemon)
 	m_pPlayerCurPokemon = pokemon;
 }
 
-bool CBattleManager::TryPokemonCatch()
+CatchResult CBattleManager::TryPokemonCatch()
 {
-	if (!isCatching)
-	{
-		isCatching = true;
-		float timer = 0;
-		srand(time(NULL));
-		int number1 = rand() % 65535 + 1;
-		int number2 = rand() % 65535 + 1;
-		int number3 = rand() % 65535 + 1;
-		int number4 = rand() % 65535 + 1;
+	srand(time(NULL));
+	int number1 = rand() % 65535 + 1;
+	int number2 = rand() % 65535 + 1;
+	int number3 = rand() % 65535 + 1;
+	int number4 = rand() % 65535 + 1;
 
-		while (true)
-		{
-			timer += DT;
-			if (timer > 3)
-			{
-				if (catchRate < number1)
-				{
-					isCatching = false;
-					return false;
-				}
-			}
+	if (m_catchRate < number1)			// Number1 보다 작으면 Fail1
+		return CatchResult::Fail1;
 
-			if (timer > 6)
-			{
-				if (catchRate < number2)
-				{
-					isCatching = false;
-					return false;
-				}
-			}
+	if (m_catchRate < number2)			// number2 보다 작으면 Fail2
+		return CatchResult::Fail2;
 
-			if (timer > 9)
-			{
-				if (catchRate < number3)
-				{
-					isCatching = false;
-					return false;
-				}
-			}
+	if (m_catchRate < number3)			// number3 보다 작으면 Fail3
+		return CatchResult::Fail3;
 
-			if (timer > 12)
-			{
-				if (catchRate <= number4)
-				{
-					isCatching = false;
-					return false;
-				}
-				else
-				{
-					isCatching = false;
-					return true;
-				}
-			}
-		}
-	}
-
-	return false;
+	if (m_catchRate < number4)			// number4 보다 작으면 Fail4
+		return CatchResult::Fail4;
+	else								// Number4 보다 크면 Success			
+		return CatchResult::Success;
 }
 
 void CBattleManager::CheckBattleAble()
