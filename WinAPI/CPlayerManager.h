@@ -14,7 +14,7 @@ private:
 
 private:
 	vector<CPokemon*>	m_pVecPlayerPokemons;
-	vector<CItem*>		m_pVecPlayerItems;
+	vector<CItem>		m_vecPlayerItems;
 
 private:
 	void				Init();
@@ -24,10 +24,10 @@ private:
 public:
 	void				AddPokemonToPlayer(CPokemon* pokemon);
 	void				CheckPokemonIndex(CPokemon* pokemon);
-	void				AddItem(CItem* pItem, int count);
+	void				AddItem(CItem item, int count);
 	CPokemon*			GetPlayerFirstPokemon();
 	vector<CPokemon*>	GetPlayerPokemonList();
-	vector<CItem*>		GetPlayerItemList();
+	vector<CItem>		GetPlayerItemList();
 
 };
 

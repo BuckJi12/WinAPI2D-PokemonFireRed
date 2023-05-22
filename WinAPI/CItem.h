@@ -21,7 +21,7 @@ protected:
 public:
 	CImage*			GetImage();
 	ItemData		GetItemData();
-
+	void			SetCount(int count);
 public:
 	virtual void	Init();
 };

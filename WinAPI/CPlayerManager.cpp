@@ -62,9 +62,9 @@ vector<CPokemon*> CPlayerManager::GetPlayerPokemonList()
 	return m_pVecPlayerPokemons;
 }
 
-vector<CItem*> CPlayerManager::GetPlayerItemList()
+vector<CItem> CPlayerManager::GetPlayerItemList()
 {
-	return m_pVecPlayerItems;
+	return m_vecPlayerItems;
 }
 
 void CPlayerManager::CheckPokemonIndex(CPokemon* pokemon)
@@ -76,17 +76,17 @@ void CPlayerManager::CheckPokemonIndex(CPokemon* pokemon)
 	}
 }
 
-void CPlayerManager::AddItem(CItem* pItem, int count)
+void CPlayerManager::AddItem(CItem item, int count)
 {
-	for (auto item : m_pVecPlayerItems)
+	for (auto item : m_vecPlayerItems)
 	{
-		if (item == pItem)
+		if (item.GetItemData().name == item.GetItemData().name)
 		{
-			item->m_count += count;
+			item.SetCount(item.GetItemData().count + count);
 			return;
 		}
 	}
 
-	pItem->m_count = count;
-	m_pVecPlayerItems.push_back(pItem);
+	item.SetCount(count);
+	m_vecPlayerItems.push_back(item);
 }

@@ -27,3 +27,8 @@ ItemData CItem::GetItemData()
 {
 	return m_itemData;
 }
+
+void CItem::SetCount(int count)
+{
+	m_itemData.count = count;
+}
