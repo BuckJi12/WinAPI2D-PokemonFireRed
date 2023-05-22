@@ -18,15 +18,3 @@ void CMonsterBall::Init()
 {
 	m_pImage = RESOURCE->LoadImg(L"MonsterBall", L"Image\\Item\\MonsterBall.png");
 }
-
-void CMonsterBall::Update()
-{
-}
-
-void CMonsterBall::Render()
-{
-}
-
-void CMonsterBall::Release()
-{
-}

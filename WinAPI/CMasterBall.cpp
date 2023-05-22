@@ -13,3 +13,8 @@ CMasterBall::CMasterBall()
 CMasterBall::~CMasterBall()
 {
 }
+
+void CMasterBall::Init()
+{
+	m_pImage = RESOURCE->LoadImg(L"MasterBall", L"Image\\Item\\MasterBall.png");
+}

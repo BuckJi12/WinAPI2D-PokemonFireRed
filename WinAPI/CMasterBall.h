@@ -6,5 +6,8 @@ class CMasterBall : public CItem
 public:
 	CMasterBall();
 	virtual ~CMasterBall();
+
+public:
+	void Init() override;
 };
 

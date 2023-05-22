@@ -15,15 +15,14 @@ public:
 	virtual ~CItem();
 
 protected:
-	CImage*		m_pImage;
-	ItemData	m_itemData;
+	CImage*			m_pImage;
+	ItemData		m_itemData;
 
 public:
-	void			Init();
 	CImage*			GetImage();
 	ItemData		GetItemData();
 
 public:
-	virtual void	UseItem() {};
+	virtual void	Init();
 };
 
