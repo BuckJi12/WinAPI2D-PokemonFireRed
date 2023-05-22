@@ -384,6 +384,9 @@
     <ClInclude Include="CMonsterBall.h">
       <Filter>GameObject\Item\Ball</Filter>
     </ClInclude>
+    <ClInclude Include="CMasterBall.h">
+      <Filter>GameObject\Item\Ball</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -627,6 +630,9 @@
       <Filter>GameObject\Item</Filter>
     </ClCompile>
     <ClCompile Include="CMonsterBall.cpp">
+      <Filter>GameObject\Item\Ball</Filter>
+    </ClCompile>
+    <ClCompile Include="CMasterBall.cpp">
       <Filter>GameObject\Item\Ball</Filter>
     </ClCompile>
   </ItemGroup>
