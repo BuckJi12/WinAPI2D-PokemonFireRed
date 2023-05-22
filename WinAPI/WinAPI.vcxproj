@@ -159,6 +159,7 @@
     <ClInclude Include="CEventManager.h" />
     <ClInclude Include="CGameManager.h" />
     <ClInclude Include="CGameObject.h" />
+    <ClInclude Include="CItem.h" />
     <ClInclude Include="CMeetingTile.h" />
     <ClInclude Include="CMove.h" />
     <ClInclude Include="COpponentFloor.h" />
@@ -248,6 +249,7 @@
     <ClCompile Include="CEventManager.cpp" />
     <ClCompile Include="CGameManager.cpp" />
     <ClCompile Include="CGameObject.cpp" />
+    <ClCompile Include="CItem.cpp" />
     <ClCompile Include="CMeetingTile.cpp" />
     <ClCompile Include="CMove.cpp" />
     <ClCompile Include="COpponentFloor.cpp" />
