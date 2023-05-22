@@ -112,6 +112,9 @@
     <Filter Include="GameObject\Item">
       <UniqueIdentifier>{798fde36-46e0-46cd-871b-39a66851e0f5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Item\Ball">
+      <UniqueIdentifier>{b6a9b3f8-06d3-47c3-b9b0-06a34360f939}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -378,6 +381,9 @@
     <ClInclude Include="CItem.h">
       <Filter>GameObject\Item</Filter>
     </ClInclude>
+    <ClInclude Include="CMonsterBall.h">
+      <Filter>GameObject\Item\Ball</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -619,6 +625,9 @@
     </ClCompile>
     <ClCompile Include="CItem.cpp">
       <Filter>GameObject\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="CMonsterBall.cpp">
+      <Filter>GameObject\Item\Ball</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

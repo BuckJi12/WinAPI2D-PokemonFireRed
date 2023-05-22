@@ -161,6 +161,7 @@
     <ClInclude Include="CGameObject.h" />
     <ClInclude Include="CItem.h" />
     <ClInclude Include="CMeetingTile.h" />
+    <ClInclude Include="CMonsterBall.h" />
     <ClInclude Include="CMove.h" />
     <ClInclude Include="COpponentFloor.h" />
     <ClInclude Include="COpponentStatUI.h" />
@@ -251,6 +252,7 @@
     <ClCompile Include="CGameObject.cpp" />
     <ClCompile Include="CItem.cpp" />
     <ClCompile Include="CMeetingTile.cpp" />
+    <ClCompile Include="CMonsterBall.cpp" />
     <ClCompile Include="CMove.cpp" />
     <ClCompile Include="COpponentFloor.cpp" />
     <ClCompile Include="COpponentStatUI.cpp" />
