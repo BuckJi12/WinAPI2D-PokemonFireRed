@@ -25,6 +25,9 @@ public:
 	CImageObject* GetCursor();
 
 private:
+	void CheckAddedGameObject();
+
+private:
 	void Init()		override;
 	void Enter()	override;
 	void Update()	override;

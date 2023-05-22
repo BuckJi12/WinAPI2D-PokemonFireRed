@@ -47,6 +47,21 @@ CImageObject* CSceneBattle::GetCursor()
 	return m_pCursor;
 }
 
+void CSceneBattle::CheckAddedGameObject()
+{
+	for (int i = 0; i < PLAYER->GetPlayerPokemonList().size(); i++)
+	{
+		if (FindGameObject(PLAYER->GetPlayerPokemonList()[i]))
+			continue;
+		else
+		{
+			AddGameObject(PLAYER->GetPlayerPokemonList()[i]);
+			PLAYER->GetPlayerPokemonList()[i]->SetPos(1000, 1000);
+		}
+			
+	}
+}
+
 void CSceneBattle::Init()
 {
 	// ¹è°æ
@@ -82,6 +97,7 @@ void CSceneBattle::Enter()
 	BATTLE->BattleInit();
 	m_curTurn = m_mapTurns[PlayerAction::Enter];
 	m_curTurn->Enter();
+	CheckAddedGameObject();
 }
 
 void CSceneBattle::Update()
