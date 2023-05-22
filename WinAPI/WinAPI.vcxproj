@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="CAnimation.h" />
     <ClInclude Include="CAnimator.h" />
+    <ClInclude Include="CBagWindow.h" />
     <ClInclude Include="CBallObject.h" />
     <ClInclude Include="CBattleManager.h" />
     <ClInclude Include="CBulbasaur.h" />
@@ -234,6 +235,7 @@
   <ItemGroup>
     <ClCompile Include="CAnimation.cpp" />
     <ClCompile Include="CAnimator.cpp" />
+    <ClCompile Include="CBagWindow.cpp" />
     <ClCompile Include="CBallObject.cpp" />
     <ClCompile Include="CBattleManager.cpp" />
     <ClCompile Include="CBulbasaur.cpp" />

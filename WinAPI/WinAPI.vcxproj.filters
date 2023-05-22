@@ -115,6 +115,9 @@
     <Filter Include="GameObject\Item\Ball">
       <UniqueIdentifier>{b6a9b3f8-06d3-47c3-b9b0-06a34360f939}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Battle\UI\Bag">
+      <UniqueIdentifier>{fb6f7d71-04aa-46a4-ad9e-70b859992c8a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -390,6 +393,9 @@
     <ClInclude Include="CTurnBag.h">
       <Filter>Scene\Battle\Turn</Filter>
     </ClInclude>
+    <ClInclude Include="CBagWindow.h">
+      <Filter>GameObject\Battle\UI\Bag</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -640,6 +646,9 @@
     </ClCompile>
     <ClCompile Include="CTurnBag.cpp">
       <Filter>Scene\Battle\Turn</Filter>
+    </ClCompile>
+    <ClCompile Include="CBagWindow.cpp">
+      <Filter>GameObject\Battle\UI\Bag</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
