@@ -22,6 +22,13 @@ void CPlayerManager::Init()
 	AddPokemonToPlayer(charmander);
 	AddPokemonToPlayer(bulbasaur);
 	AddPokemonToPlayer(bulbasaur3);
+
+	CMonsterBall monsterBall;
+	monsterBall.Init();
+	AddItem(monsterBall, 5);
+	CMasterBall masterBall;
+	masterBall.Init();
+	AddItem(masterBall, 5);
 }
 
 void CPlayerManager::Update()
@@ -78,14 +85,14 @@ void CPlayerManager::CheckPokemonIndex(CPokemon* pokemon)
 
 void CPlayerManager::AddItem(CItem item, int count)
 {
-	for (auto item : m_vecPlayerItems)
+	/*for (auto item : m_vecPlayerItems)
 	{
 		if (item.GetItemData().name == item.GetItemData().name)
 		{
 			item.SetCount(item.GetItemData().count + count);
 			return;
 		}
-	}
+	}*/
 
 	item.SetCount(count);
 	m_vecPlayerItems.push_back(item);

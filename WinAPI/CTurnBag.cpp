@@ -15,6 +15,7 @@ CTurnBag::~CTurnBag()
 void CTurnBag::Init()
 {
 	m_pImageBagWindow = new CBagWindow;
+	m_pImageBagWindow->Init();
 	m_pImageBagWindow->SetPos(1000, 1000);
 	m_battleScene->AddObjectThisScene(m_pImageBagWindow);
 }

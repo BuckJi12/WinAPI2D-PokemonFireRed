@@ -93,6 +93,10 @@ using namespace FMOD;
 #include "IObserver.h"
 #include "CSubject.h"
 
+// Item
+#include "CMonsterBall.h"
+#include "CMasterBall.h"
+
 // Pokemon
 #include "CPokemon.h"
 #include "CMove.h"
