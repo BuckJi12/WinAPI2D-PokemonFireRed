@@ -12,6 +12,11 @@ public:
 private:
 	CBagWindow* m_pImageBagWindow;
 
+	int			m_curCount;
+
+private:
+	void CurSorControl();
+
 public:
 	void Init()    override;
 	void Enter()   override;
