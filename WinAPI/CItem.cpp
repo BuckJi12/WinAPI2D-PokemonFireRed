@@ -32,3 +32,8 @@ void CItem::SetCount(int count)
 {
 	m_itemData.count = count;
 }
+
+void CItem::UseItem()
+{
+	--m_itemData.count;
+}

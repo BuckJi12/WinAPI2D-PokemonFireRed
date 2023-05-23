@@ -38,20 +38,14 @@ void CTurnBag::CurSorControl()
 
 	if (BUTTONDOWN(VK_SPACE))
 	{
-		switch (m_curCount)
+		if (PLAYER->GetPlayerItemList()[m_curCount]->GetItemData().count > 1)
 		{
-		case 0:
-			if (PLAYER->GetPlayerItemList()[0].GetItemData().count > 1)
+			PLAYER->GetPlayerItemList()[m_curCount]->UseItem();
+			if (PLAYER->GetPlayerItemList()[m_curCount]->GetItemData().count == 0)
 			{
-
+				//TODO: 인벤토리에서 제거
 			}
-			break;
-		case 1:
-			if (PLAYER->GetPlayerItemList()[1].GetItemData().count > 1)
-			{
-
-			}
-			break;
+			//TODO: 아이템 사용으로 이동
 		}
 	}
 }

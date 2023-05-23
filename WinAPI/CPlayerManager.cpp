@@ -23,12 +23,13 @@ void CPlayerManager::Init()
 	AddPokemonToPlayer(bulbasaur);
 	AddPokemonToPlayer(bulbasaur3);
 
-	CMonsterBall monsterBall;
-	monsterBall.Init();
+	CMonsterBall* monsterBall = new CMonsterBall;
+	monsterBall->Init();
 	AddItem(monsterBall, 5);
-	CMasterBall masterBall;
-	masterBall.Init();
+	CMasterBall* masterBall = new CMasterBall;
+	masterBall->Init();
 	AddItem(masterBall, 5);
+	AddItem(masterBall, 2);
 }
 
 void CPlayerManager::Update()
@@ -69,9 +70,9 @@ vector<CPokemon*> CPlayerManager::GetPlayerPokemonList()
 	return m_pVecPlayerPokemons;
 }
 
-vector<CItem> CPlayerManager::GetPlayerItemList()
+vector<CItem*> CPlayerManager::GetPlayerItemList()
 {
-	return m_vecPlayerItems;
+	return m_pVecPlayerItems;
 }
 
 void CPlayerManager::CheckPokemonIndex(CPokemon* pokemon)
@@ -83,17 +84,17 @@ void CPlayerManager::CheckPokemonIndex(CPokemon* pokemon)
 	}
 }
 
-void CPlayerManager::AddItem(CItem item, int count)
+void CPlayerManager::AddItem(CItem* item, int count)
 {
-	/*for (auto item : m_vecPlayerItems)
+	for (auto object : m_pVecPlayerItems)
 	{
-		if (item.GetItemData().name == item.GetItemData().name)
+		if (object->GetItemData().name == item->GetItemData().name)
 		{
-			item.SetCount(item.GetItemData().count + count);
+			object->SetCount(object->GetItemData().count + count);
 			return;
 		}
-	}*/
+	}
 
-	item.SetCount(count);
-	m_vecPlayerItems.push_back(item);
+	item->SetCount(count);
+	m_pVecPlayerItems.push_back(item);
 }

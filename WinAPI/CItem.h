@@ -22,6 +22,8 @@ public:
 	CImage*			GetImage();
 	ItemData		GetItemData();
 	void			SetCount(int count);
+	void			UseItem();
+
 public:
 	virtual void	Init();
 };

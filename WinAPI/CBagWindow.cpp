@@ -70,8 +70,8 @@ void CBagWindow::Render()
 	if (PLAYER->GetPlayerItemList().size() > 0)
 	{
 		RENDER->Text(
-			PLAYER->GetPlayerItemList()[0].GetItemData().name + L" X " +
-			to_wstring(PLAYER->GetPlayerItemList()[0].GetItemData().count),
+			PLAYER->GetPlayerItemList()[0]->GetItemData().name + L" X " +
+			to_wstring(PLAYER->GetPlayerItemList()[0]->GetItemData().count),
 			m_vecPos.x + 323,
 			m_vecPos.y + 31,
 			m_vecPos.x + 743,
@@ -84,8 +84,8 @@ void CBagWindow::Render()
 	if (PLAYER->GetPlayerItemList().size() > 1)
 	{
 		RENDER->Text(
-			PLAYER->GetPlayerItemList()[1].GetItemData().name + L" X " +
-			to_wstring(PLAYER->GetPlayerItemList()[1].GetItemData().count),
+			PLAYER->GetPlayerItemList()[1]->GetItemData().name + L" X " +
+			to_wstring(PLAYER->GetPlayerItemList()[1]->GetItemData().count),
 			m_vecPos.x + 323,
 			m_vecPos.y + 94,
 			m_vecPos.x + 743,
