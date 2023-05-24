@@ -41,12 +41,14 @@ void CTurnBag::CurSorControl()
 		if (PLAYER->GetPlayerItemList()[m_curCount]->GetItemData().count > 0)
 		{
 			PLAYER->GetPlayerItemList()[m_curCount]->UseItem();
+			if (PLAYER->GetPlayerItemList()[m_curCount]->GetItemData().type == ItemType::Ball)
+				m_battleScene->ChangeTurn(PlayerAction::Catch);
+
 			if (PLAYER->GetPlayerItemList()[m_curCount]->GetItemData().count == 0)
 			{
 				//TODO: 인벤토리에서 제거
 				PLAYER->RemoveItem(PLAYER->GetPlayerItemList()[m_curCount]);
 			}
-			//TODO: 아이템 사용으로 이동
 		}
 	}
 }
