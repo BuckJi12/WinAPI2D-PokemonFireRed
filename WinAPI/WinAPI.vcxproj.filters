@@ -399,6 +399,9 @@
     <ClInclude Include="CTurnCatch.h">
       <Filter>Scene\Battle\Turn</Filter>
     </ClInclude>
+    <ClInclude Include="CTurnResult.h">
+      <Filter>Scene\Battle\Turn</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -654,6 +657,9 @@
       <Filter>GameObject\Battle\UI\Bag</Filter>
     </ClCompile>
     <ClCompile Include="CTurnCatch.cpp">
+      <Filter>Scene\Battle\Turn</Filter>
+    </ClCompile>
+    <ClCompile Include="CTurnResult.cpp">
       <Filter>Scene\Battle\Turn</Filter>
     </ClCompile>
   </ItemGroup>
