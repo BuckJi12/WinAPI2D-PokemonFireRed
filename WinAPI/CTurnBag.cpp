@@ -42,7 +42,10 @@ void CTurnBag::CurSorControl()
 		{
 			PLAYER->GetPlayerItemList()[m_curCount]->UseItem();
 			if (PLAYER->GetPlayerItemList()[m_curCount]->GetItemData().type == ItemType::Ball)
+			{
+				BATTLE->CalculateCatchRate(PLAYER->GetPlayerItemList()[m_curCount]);
 				m_battleScene->ChangeTurn(PlayerAction::Catch);
+			}
 
 			if (PLAYER->GetPlayerItemList()[m_curCount]->GetItemData().count == 0)
 			{
