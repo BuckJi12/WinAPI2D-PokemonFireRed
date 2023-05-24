@@ -27,10 +27,12 @@ void CPlayerStatUI::UpdateUI()
 	m_bar = 176 * ((float)m_pCurPokemon->GetPokemonStat().curHp / (float)m_pCurPokemon->GetPokemonStat().maxHp);
 	m_value = m_tempStat.curHp - m_pCurPokemon->GetPokemonStat().curHp;
 
-	while (m_tempStat.curHp > m_pCurPokemon->GetPokemonStat().curHp)
-	{
-		m_tempStat.curHp -= m_value * DT;
-	}
+	if (m_pCurPokemon->GetPokemonStat().curHp < (m_pCurPokemon->GetPokemonStat().maxHp / 2))
+		m_color = Color(255, 255, 0, 1);
+	else if (m_pCurPokemon->GetPokemonStat().curHp < (m_pCurPokemon->GetPokemonStat().maxHp / 5))
+		m_color = Color(255, 0, 0, 1);
+	else
+		m_color = Color(0, 255, 0, 1);
 }
 
 void CPlayerStatUI::Init()
@@ -80,6 +82,17 @@ void CPlayerStatUI::Render()
 		m_vecPos.y + 10,
 		m_vecPos.x + 360,
 		m_vecPos.y + 50,
+		Color(0, 0, 0, 1),
+		25
+	);
+
+	RENDER->Text(
+		to_wstring(m_pCurPokemon->GetPokemonStat().curHp) + L" / " + 
+		to_wstring(m_pCurPokemon->GetPokemonStat().maxHp),
+		m_vecPos.x + 200,
+		m_vecPos.y + 80,
+		m_vecPos.x + 400,
+		m_vecPos.y + 110,
 		Color(0, 0, 0, 1),
 		25
 	);
