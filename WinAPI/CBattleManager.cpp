@@ -1,6 +1,8 @@
 #include "framework.h"
 #include "CBattleManager.h"
 
+#include "CItem.h"
+
 #include "CPokemon.h"
 #include "CCharmander.h"
 
@@ -153,12 +155,12 @@ int CBattleManager::CalculateDamage(CPokemon* attacker, CPokemon* victim, CMove 
 	return damage;
 }
 
-int CBattleManager::CalculateCatchRate()
+int CBattleManager::CalculateCatchRate(CItem* item)
 {
 	float fNum;
 
 	fNum = ((((3 * m_pOppoentCurPokemon->GetPokemonStat().maxHp) - (2 * m_pOppoentCurPokemon->GetPokemonStat().curHp))
-		* m_pOppoentCurPokemon->GetPokemonInfo().rate * 1/*TODO: º¼ È®·ü*/) / (3 * m_pOppoentCurPokemon->GetPokemonStat().maxHp));
+		* m_pOppoentCurPokemon->GetPokemonInfo().rate * 1 * item->GetItemData().rate) / (3 * m_pOppoentCurPokemon->GetPokemonStat().maxHp));
 	m_catchRate = 65535 * pow((fNum / 255), 1.0 / 4) + 65535;
 
 	return m_catchRate;

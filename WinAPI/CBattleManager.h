@@ -2,6 +2,7 @@
 
 class CCore;
 class CMove;
+class CItem;
 
 class CBattleManager : public SingleTon<CBattleManager>
 {
@@ -40,7 +41,7 @@ public:
 	void			PokemonChanage(CPokemon* pokemon);
 
 	int				CalculateDamage(CPokemon* attacker, CPokemon* victim, CMove move);
-	int				CalculateCatchRate();	//TODO: 아이템 추가
+	int				CalculateCatchRate(CItem* item);	//TODO: 아이템 추가
 	
 	CatchResult		TryPokemonCatch();
 };
