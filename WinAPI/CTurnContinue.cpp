@@ -31,7 +31,7 @@ void CTurnContinue::CurSorControl()
 		m_battleScene->GetCursor()->SetPos(410, 435);
 		break;
 	case 1:
-		m_battleScene->GetCursor()->SetPos(590, 435);
+		m_battleScene->GetCursor()->SetPos(410, 490);
 		break;
 	}
 
@@ -55,7 +55,7 @@ void CTurnContinue::Init()
 {
 	m_pImageContinue = new CImageObject;
 	m_pImageContinue->SetImage(RESOURCE->LoadImg(L"ToBeContinue", L"Image\\Battle\\ToBeContinue.png"));
-	m_pImageContinue->SetLayer(Layer::Environment3);
+	m_pImageContinue->SetLayer(Layer::Environment2);
 	m_pImageContinue->SetPos(1000, 1000);
 	m_battleScene->AddObjectThisScene(m_pImageContinue);
 }
@@ -67,11 +67,13 @@ void CTurnContinue::Enter()
 
 void CTurnContinue::Update()
 {
+	CurSorControl();
 }
 
 void CTurnContinue::Exit()
 {
 	m_pImageContinue->SetPos(1000, 1000);
+	m_battleScene->GetCursor()->SetPos(1000, 1000);
 }
 
 void CTurnContinue::Release()
