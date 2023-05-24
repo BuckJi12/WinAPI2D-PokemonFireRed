@@ -18,6 +18,7 @@ private:
 	PlayerAction	m_curAction;
 	FirstAttack		m_curFirstAttack;
 	BattleSituation m_curBattleSituation;
+	BattleResult	m_battleResult;
 	int				m_playerCurInex;
 
 	int				m_catchRate;
@@ -29,6 +30,8 @@ public:
 	PlayerAction	GetCurAction();
 	FirstAttack		GetFirstAttack();
 	BattleSituation GetBattleSituation();
+	BattleResult	GetBattleResult();
+	void			SetBattleResult(BattleResult result);
 	void			SetFirstAttack(FirstAttack attack);
 	void			SetBattleSituation(BattleSituation situation);
 	void			BattleInit();	// 배틀 기본 설정
