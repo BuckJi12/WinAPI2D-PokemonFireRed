@@ -5,6 +5,7 @@
 #include "CSelectBox.h"
 #include "CCurPokemonUI.h"
 #include "CChangePokemonUI.h"
+#include "CPlayerStatUI.h"
 
 CTurnChange::CTurnChange(CSceneBattle* battleScene) : CTurn(battleScene)
 {
@@ -133,7 +134,10 @@ void CTurnChange::ChangePokemon()
 		if (m_timer > 3 && !m_phase2)	// 2단계: 포켓몬 변경
 		{
 			m_phase2 = true;
+			BATTLE->GetPlayerCurPokemon()->RemoveObserver(m_battleScene->GetPlayerUI());
 			BATTLE->PokemonChanage(m_vecPokemonUI[m_curCount]->GetTarget());
+			m_battleScene->GetPlayerUI()->SetPokemon(BATTLE->GetPlayerCurPokemon());
+			BATTLE->GetPlayerCurPokemon()->AddObserver(m_battleScene->GetPlayerUI());
 			BATTLE->GetPlayerCurPokemon()->SetAnimation();
 		}
 

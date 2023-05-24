@@ -8,6 +8,9 @@
 #include "CPlayerFloor.h"
 #include "COpponentFloor.h"
 
+// UI
+#include "CPlayerStatUI.h"
+
 // Player
 #include "CPlayerThrowBall.h"
 
@@ -23,9 +26,10 @@
 
 CSceneBattle::CSceneBattle()
 {
-	m_curTurn			= nullptr;
-	m_pImageBackGround	= nullptr;
-	m_pCursor			= nullptr;
+	m_curTurn				= nullptr;
+	m_pImageBackGround		= nullptr;
+	m_pCursor				= nullptr;
+	m_pImagePlayerStatUI	= nullptr;
 }
 
 CSceneBattle::~CSceneBattle()
@@ -47,6 +51,11 @@ void CSceneBattle::ChangeTurn(PlayerAction action)
 CImageObject* CSceneBattle::GetCursor()
 {
 	return m_pCursor;
+}
+
+CPlayerStatUI* CSceneBattle::GetPlayerUI()
+{
+	return m_pImagePlayerStatUI;
 }
 
 void CSceneBattle::CheckAddedGameObject()
@@ -77,6 +86,12 @@ void CSceneBattle::Init()
 	m_pCursor->SetLayer(Layer::Environment3);
 	m_pCursor->SetPos(1000, 1000);
 	AddGameObject(m_pCursor);
+
+	// UI
+	m_pImagePlayerStatUI = new CPlayerStatUI;
+	m_pImagePlayerStatUI->Init();
+	m_pImagePlayerStatUI->SetPos(1000, 1000);
+	
 	// ео
 	m_mapTurns.insert(make_pair(PlayerAction::Enter, new CTurnEnter(this)));
 	m_mapTurns.insert(make_pair(PlayerAction::PlayerReady, new CTurnPlayerReady(this)));
@@ -125,4 +140,8 @@ void CSceneBattle::Release()
 	{
 		turn.second->Release();
 	}
+
+	DELETEOBJECT(m_pImageBackGround);
+	DELETEOBJECT(m_pCursor);
+	DELETEOBJECT(m_pImagePlayerStatUI);
 }

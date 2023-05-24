@@ -4,6 +4,7 @@
 class CImageObject;
 class COpponentFloor;
 class CPlayerThrowBall;
+class CPlayerStatUI;
 class CTurn;
 
 class CSceneBattle : public CScene
@@ -18,11 +19,13 @@ private:
 
 	CImageObject*		m_pImageBackGround;
 	CImageObject*		m_pCursor;
+	CPlayerStatUI*		m_pImagePlayerStatUI;
 
 public:
 	void AddObjectThisScene(CGameObject* object);
 	void ChangeTurn(PlayerAction action);
-	CImageObject* GetCursor();
+	CImageObject*	GetCursor();
+	CPlayerStatUI*	GetPlayerUI();
 
 private:
 	void CheckAddedGameObject();

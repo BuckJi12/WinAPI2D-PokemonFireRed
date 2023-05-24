@@ -2,7 +2,6 @@
 #include "CTurn.h"
 
 class CBallObject;
-class CPlayerStatUI;
 
 class CTurnPlayerReady : public CTurn
 {
@@ -12,8 +11,9 @@ public:
 
 private:
 	CBallObject*	m_pBallObject;
-	CPlayerStatUI*	m_pImagePlayerStatUI;
 	float			m_time;
+
+	bool			m_isUICreated;
 
 public:
 	void Init()    override;
