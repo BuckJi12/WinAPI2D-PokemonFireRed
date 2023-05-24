@@ -98,3 +98,14 @@ void CPlayerManager::AddItem(CItem* item, int count)
 	item->SetCount(count);
 	m_pVecPlayerItems.push_back(item);
 }
+
+void CPlayerManager::RemoveItem(CItem* item)
+{
+	for (int i = 0; i < m_pVecPlayerItems.size(); i++)
+	{
+		if (m_pVecPlayerItems[i] == item)
+		{
+			m_pVecPlayerItems.erase(m_pVecPlayerItems.begin() + i);
+		}
+	}
+}
