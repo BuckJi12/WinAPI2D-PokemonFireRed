@@ -23,6 +23,7 @@
 #include "CTurnChange.h"
 #include "CTurnBag.h"
 #include "CTurnCatch.h"
+#include "CTurnContinue.h"
 #include "CTurnResult.h"
 
 CSceneBattle::CSceneBattle()
@@ -102,6 +103,7 @@ void CSceneBattle::Init()
 	m_mapTurns.insert(make_pair(PlayerAction::Change, new CTurnChange(this)));
 	m_mapTurns.insert(make_pair(PlayerAction::Bag, new CTurnBag(this)));
 	m_mapTurns.insert(make_pair(PlayerAction::Catch, new CTurnCatch(this)));
+	m_mapTurns.insert(make_pair(PlayerAction::Continue, new CTurnContinue(this)));
 	m_mapTurns.insert(make_pair(PlayerAction::Result, new CTurnResult(this)));
 
 	m_mapTurns[PlayerAction::Enter]->Init();
@@ -112,6 +114,7 @@ void CSceneBattle::Init()
 	m_mapTurns[PlayerAction::Change]->Init();
 	m_mapTurns[PlayerAction::Bag]->Init();
 	m_mapTurns[PlayerAction::Catch]->Init();
+	m_mapTurns[PlayerAction::Continue]->Init();
 	m_mapTurns[PlayerAction::Result]->Init();
 }
 

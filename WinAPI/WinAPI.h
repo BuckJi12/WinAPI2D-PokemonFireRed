@@ -116,6 +116,7 @@ enum class PlayerAction
 	Bag,
 	Catch,
 	Runaway,
+	Continue,
 	Result,
 	None,
 
