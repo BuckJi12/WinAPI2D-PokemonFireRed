@@ -172,6 +172,19 @@ void CBattleManager::PokemonChanage(CPokemon* pokemon)
 	m_pPlayerCurPokemon = pokemon;
 }
 
+bool CBattleManager::PlayerCheckBattleAble()
+{
+	for (int i = 0; i < PLAYER->GetPlayerPokemonList().size(); i++)
+	{
+		if (PLAYER->GetPlayerPokemonList()[i]->GetCurState() != PokemonState::Faint)
+			continue;
+
+		return false;
+	}
+
+	return true;
+}
+
 CatchResult CBattleManager::TryPokemonCatch()
 {
 	srand(time(NULL));
