@@ -186,13 +186,13 @@ bool CBattleManager::PlayerCheckBattleAble()
 {
 	for (int i = 0; i < PLAYER->GetPlayerPokemonList().size(); i++)
 	{
-		if (PLAYER->GetPlayerPokemonList()[i]->GetCurState() != PokemonState::Faint)
+		if (PLAYER->GetPlayerPokemonList()[i]->GetCurState() == PokemonState::Faint)
 			continue;
 
-		return false;
+		return true;
 	}
 
-	return true;
+	return false;
 }
 
 CatchResult CBattleManager::TryPokemonCatch()
