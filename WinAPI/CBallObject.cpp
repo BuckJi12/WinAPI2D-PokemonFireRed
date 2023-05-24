@@ -102,7 +102,7 @@ void CBallObject::SetTarget(CGameObject* object)
 
 void CBallObject::Init()
 {
-	m_pImage = RESOURCE->LoadImg(L"MonsterBall", L"Image\\Battle\\MonsterBall.png");
+	m_pImage = RESOURCE->LoadImg(L"MonsterBallObject", L"Image\\Battle\\MonsterBall.png");
 	
 	m_pAnimator = new CAnimator;
 	m_pAnimator->CreateAnimation(L"Spin", m_pImage, Vector(0, 0), Vector(64.f, 64.f), Vector(64.f, 0.f), 0.1, 4);
