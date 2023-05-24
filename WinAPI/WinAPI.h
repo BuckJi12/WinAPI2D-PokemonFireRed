@@ -157,7 +157,6 @@ enum class CatchResult
 	Fail1,
 	Fail2,
 	Fail3,
-	Fail4,
 	Success,
 
 	Size

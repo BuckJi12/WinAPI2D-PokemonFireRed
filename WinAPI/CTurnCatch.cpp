@@ -72,28 +72,21 @@ void CTurnCatch::Update()
 		}
 		break;
 	case CatchResult::Fail2:
-		if (m_timer > 8)
+		if (m_timer > 7)
 		{
 			PokemonReset();
 			CatchFail();
 		}
 		break;
 	case CatchResult::Fail3:
-		if (m_timer > 11)
-		{
-			PokemonReset();
-			CatchFail();
-		}
-		break;
-	case CatchResult::Fail4:
-		if (m_timer > 14)
+		if (m_timer > 9)
 		{
 			PokemonReset();
 			CatchFail();
 		}
 		break;
 	case CatchResult::Success:
-		if (m_timer > 14 && !m_catchComplete)
+		if (m_timer > 11 && !m_catchComplete)
 		{
 			DELETEOBJECT(m_pBallObject);
 			m_catchComplete = true;

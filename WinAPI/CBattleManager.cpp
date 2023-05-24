@@ -176,22 +176,18 @@ CatchResult CBattleManager::TryPokemonCatch()
 {
 	srand(time(NULL));
 	int number1 = rand() % 65535 + 1;
-	int number2 = rand() % 65535 + 1;
-	int number3 = rand() % 65535 + 1;
-	int number4 = rand() % 65535 + 1;
+	int number2 = rand() % 60535 + 5000;
+	int number3 = rand() % 55535 + 10000;
 
 	if (m_catchRate < number1)			// Number1 보다 작으면 Fail1
 		return CatchResult::Fail1;
 
-	if (m_catchRate < number2)			// number2 보다 작으면 Fail2
+	if (m_catchRate < number2)			// Number2 보다 작으면 Fail2
 		return CatchResult::Fail2;
 
-	if (m_catchRate < number3)			// number3 보다 작으면 Fail3
+	if (m_catchRate < number3)			// Number3 보다 작으면 Fail3
 		return CatchResult::Fail3;
-
-	if (m_catchRate < number4)			// number4 보다 작으면 Fail4
-		return CatchResult::Fail4;
-	else								// Number4 보다 크면 Success			
+	else								// Number3 보다 크면 Success			
 		return CatchResult::Success;
 }
 
