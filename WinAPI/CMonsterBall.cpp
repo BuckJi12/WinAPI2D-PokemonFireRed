@@ -8,6 +8,7 @@ CMonsterBall::CMonsterBall()
 	m_itemData.count		= 1;
 	m_itemData.cost			= 1000;
 	m_itemData.rate			= 1.0f;
+	m_itemData.type			= ItemType::Ball;
 }
 
 CMonsterBall::~CMonsterBall()

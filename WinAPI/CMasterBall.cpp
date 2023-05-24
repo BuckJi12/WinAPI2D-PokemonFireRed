@@ -8,6 +8,7 @@ CMasterBall::CMasterBall()
 	m_itemData.count		= 1;
 	m_itemData.cost			= 100000;
 	m_itemData.rate			= 255.0f;
+	m_itemData.type			= ItemType::Ball;
 }
 
 CMasterBall::~CMasterBall()

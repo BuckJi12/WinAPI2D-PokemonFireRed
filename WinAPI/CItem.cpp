@@ -8,6 +8,7 @@ CItem::CItem()
 	m_itemData.count		= 0;
 	m_itemData.cost			= 0;
 	m_itemData.rate			= 0;
+	m_itemData.type			= ItemType::Ball;
 }
 
 CItem::~CItem()

@@ -1,4 +1,13 @@
 #pragma once
+
+enum class ItemType
+{
+	Potion,
+	Ball,
+
+	Size
+};
+
 struct ItemData
 {
 	wstring		name;
@@ -6,6 +15,7 @@ struct ItemData
 	int			count;
 	int			cost;
 	float		rate;
+	ItemType	type;
 };
 
 class CItem
