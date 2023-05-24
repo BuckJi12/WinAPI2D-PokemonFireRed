@@ -27,9 +27,9 @@ void CPlayerStatUI::UpdateUI()
 	m_bar = 176 * ((float)m_pCurPokemon->GetPokemonStat().curHp / (float)m_pCurPokemon->GetPokemonStat().maxHp);
 	m_value = m_tempStat.curHp - m_pCurPokemon->GetPokemonStat().curHp;
 
-	if (m_pCurPokemon->GetPokemonStat().curHp < (m_pCurPokemon->GetPokemonStat().maxHp / 2))
+	if (m_pCurPokemon->GetPokemonStat().curHp < ((float)m_pCurPokemon->GetPokemonStat().maxHp / 1.5))
 		m_color = Color(255, 255, 0, 1);
-	else if (m_pCurPokemon->GetPokemonStat().curHp < (m_pCurPokemon->GetPokemonStat().maxHp / 5))
+	else if (m_pCurPokemon->GetPokemonStat().curHp < (m_pCurPokemon->GetPokemonStat().maxHp / 4))
 		m_color = Color(255, 0, 0, 1);
 	else
 		m_color = Color(0, 255, 0, 1);
