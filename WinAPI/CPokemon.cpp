@@ -95,7 +95,7 @@ void CPokemon::SetPokemonStat(int level)
 	m_stat.defence			= (int)((m_baseStat.defence * 2) * ((float)level / 100) + 5);
 	m_stat.specialDefence	= (int)((m_baseStat.specialDefence * 2) * ((float)level / 100) + 5);
 	m_stat.speed			= (int)((m_baseStat.speed * 2) * ((float)level / 100) + 5);
-	m_stat.maxExp			= 500 * ((float)level / 100);
+	m_stat.maxExp			= 500 * level;
 	Notify();
 }
 
