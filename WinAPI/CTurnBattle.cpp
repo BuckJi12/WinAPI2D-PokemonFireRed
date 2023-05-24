@@ -38,28 +38,42 @@ void CTurnBattle::PokemonAttack()
 			BATTLE->OppoentUseMove();
 			if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
 			{
-				//TODO: 플레이어 패배
-				BATTLE->SetBattleResult(BattleResult::Lose);
-				m_battleScene->ChangeTurn(PlayerAction::Result);
+				//플레이어 패배
+				if (BATTLE->PlayerCheckBattleAble())
+				{
+					m_battleScene->ChangeTurn(PlayerAction::Continue);
+				}
+				else
+				{
+					BATTLE->SetBattleResult(BattleResult::Lose);
+					m_battleScene->ChangeTurn(PlayerAction::Result);
+				}
 			}
 		}
 		break;
 	case FirstAttack::Oppoent:
 		if (m_timer > 1 && !m_OpponentAttacked)
 		{
-			//TODO: 플레이어 공격
+			//상대 공격
 			m_OpponentAttacked = true;
 			BATTLE->OppoentUseMove();
 			if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
 			{
 				//플레이어 패배
-				BATTLE->SetBattleResult(BattleResult::Lose);
-				m_battleScene->ChangeTurn(PlayerAction::Result);
+				if (BATTLE->PlayerCheckBattleAble())
+				{
+					m_battleScene->ChangeTurn(PlayerAction::Continue);
+				}
+				else
+				{
+					BATTLE->SetBattleResult(BattleResult::Lose);
+					m_battleScene->ChangeTurn(PlayerAction::Result);
+				}
 			}
 		}
 		if (m_timer > 3 && !m_playerAttacked)
 		{
-			//상대 공격
+			// 플레이어 공격
 			m_playerAttacked = true;
 			BATTLE->PlayerAttack();
 			if (BATTLE->GetBattleSituation() == BattleSituation::Opponet_CanNot_Battle)
@@ -73,12 +87,20 @@ void CTurnBattle::PokemonAttack()
 		m_playerAttacked = true;
 		if (m_timer > 1 && !m_OpponentAttacked)
 		{
-			//TODO: 상대 공격
+			// 상대 공격
 			m_OpponentAttacked = true;
 			BATTLE->OppoentUseMove();
 			if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
 			{
-				//TODO: 플레이어 포켓몬 교체 또는 플레이어 패배
+				if (BATTLE->PlayerCheckBattleAble())
+				{
+					m_battleScene->ChangeTurn(PlayerAction::Continue);
+				}
+				else
+				{
+					BATTLE->SetBattleResult(BattleResult::Lose);
+					m_battleScene->ChangeTurn(PlayerAction::Result);
+				}
 			}
 		}
 		break;
