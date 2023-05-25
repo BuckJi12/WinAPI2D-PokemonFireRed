@@ -60,15 +60,19 @@ void CTurnChooseAction::CursorControl()
 		switch (m_curCount)
 		{
 		case 0:
+			m_battleScene->GetTextBox()->Reset();
 			m_battleScene->ChangeTurn(PlayerAction::ChooseMove);
 			break;
 		case 1:
+			m_battleScene->GetTextBox()->Reset();
 			m_battleScene->ChangeTurn(PlayerAction::Bag);
 			break;
 		case 2:
+			m_battleScene->GetTextBox()->Reset();
 			m_battleScene->ChangeTurn(PlayerAction::Change);
 			break;
 		case 3:
+			m_battleScene->GetTextBox()->Reset();
 			Exit();
 			SCENE->ChangePrevScene();
 			GAME->SetRandomValue();
@@ -88,6 +92,7 @@ void CTurnChooseAction::Init()
 void CTurnChooseAction::Enter()
 {
 	m_pChooseWindow->SetPos(400, 400);
+	m_battleScene->GetTextBox()->SetText(L"현준은 \n무엇을 할까?");
 	m_curCount = 0;
 }
 
