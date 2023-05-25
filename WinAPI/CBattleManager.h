@@ -15,6 +15,7 @@ private:
 private:
 	CPokemon*		m_pPlayerCurPokemon;
 	CPokemon*		m_pOppoentCurPokemon;
+	CMove*			m_pOpponentCurMove;
 	PlayerAction	m_curAction;
 	FirstAttack		m_curFirstAttack;
 	BattleSituation m_curBattleSituation;
@@ -32,6 +33,7 @@ public:
 	BattleSituation GetBattleSituation();
 	BattleResult	GetBattleResult();
 	CMove*			GetCurMove();
+	void			OpponentSelectMove();
 	void			SetBattleResult(BattleResult result);
 	void			SetFirstAttack(FirstAttack attack);
 	void			SetBattleSituation(BattleSituation situation);

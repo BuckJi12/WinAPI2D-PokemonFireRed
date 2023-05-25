@@ -32,13 +32,15 @@ CBattleManager::CBattleManager()
 {
 	m_pPlayerCurPokemon		= nullptr;
 	m_pOppoentCurPokemon	= nullptr;
+	m_pOpponentCurMove		= nullptr;
 	m_curAction				= PlayerAction::Enter;
 	m_curFirstAttack		= FirstAttack::Player;
 	m_playerCurInex			= 0;
 	m_curBattleSituation	= BattleSituation::BothSide_Can_Battle;
+	m_battleResult			= BattleResult::Win;
 
 	m_catchRate				= 1;
-	m_isCatching				= false;
+	m_isCatching			= false;
 }
 
 CBattleManager::~CBattleManager()
@@ -78,6 +80,19 @@ BattleResult CBattleManager::GetBattleResult()
 CMove* CBattleManager::GetCurMove()
 {
 	return m_pPlayerCurPokemon->GetPokemonMoveList()[m_playerCurInex];
+}
+
+void CBattleManager::OpponentSelectMove()
+{
+	int random;
+	while (true)
+	{
+		random = rand() % m_pOppoentCurPokemon->GetPokemonMoveList().size();
+		if (m_pOppoentCurPokemon->GetPokemonMoveList()[random]->GetMoveStat().curPP > 0)
+			break;
+	}
+
+	m_pOpponentCurMove = m_pOppoentCurPokemon->GetPokemonMoveList()[random];
 }
 
 void CBattleManager::SetBattleResult(BattleResult result)
@@ -131,18 +146,9 @@ void CBattleManager::PlayerAttack()
 
 void CBattleManager::OppoentUseMove()
 {
-	// TODO: 추후 수정이 필요함
-	int random;
-	while (true)
-	{
-		random = rand() % m_pOppoentCurPokemon->GetPokemonMoveList().size();
-		if (m_pOppoentCurPokemon->GetPokemonMoveList()[random]->GetMoveStat().curPP > 0)
-			break;
-	}
-
-	m_pOppoentCurPokemon->GetPokemonMoveList()[random]->UseMove(m_pPlayerCurPokemon);
+	m_pOpponentCurMove->UseMove(m_pPlayerCurPokemon);
 	m_pPlayerCurPokemon->TakeDamage(CalculateDamage(m_pOppoentCurPokemon, m_pPlayerCurPokemon,
-		m_pPlayerCurPokemon->GetPokemonMoveList()[random]));
+		m_pOpponentCurMove));
 	CheckBattleAble();
 }
 

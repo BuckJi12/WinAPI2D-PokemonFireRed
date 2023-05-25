@@ -167,6 +167,7 @@ void CTurnBattle::Enter()
 	m_timer = 0;
 	m_playerAttacked = false;
 	m_OpponentAttacked = false;
+	BATTLE->OpponentSelectMove();
 }
 
 void CTurnBattle::Update()
