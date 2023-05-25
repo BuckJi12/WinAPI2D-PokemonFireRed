@@ -28,6 +28,7 @@ void CTurnBattle::PokemonAttack()
 				{
 					//TODO: 효과 작성 ex 효과가 굉장했다 등
 					BATTLE->PlayerAttack();
+					BATTLE->GetOpponentCurPokemon()->HitAnimation();
 					m_playerAttacked = true;
 					if (BATTLE->GetBattleSituation() == BattleSituation::Opponet_CanNot_Battle)
 					{
@@ -46,6 +47,7 @@ void CTurnBattle::PokemonAttack()
 			{
 				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->OppoentUseMove();
+				BATTLE->GetPlayerCurPokemon()->HitAnimation();
 				m_OpponentAttacked = true;
 				if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
 				{
@@ -73,6 +75,7 @@ void CTurnBattle::PokemonAttack()
 			{
 				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->OppoentUseMove();
+				BATTLE->GetPlayerCurPokemon()->HitAnimation();
 				m_OpponentAttacked = true;
 				if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
 				{
@@ -99,6 +102,7 @@ void CTurnBattle::PokemonAttack()
 			{
 				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->PlayerAttack();
+				BATTLE->GetOpponentCurPokemon()->HitAnimation();
 				m_playerAttacked = true;
 				if (BATTLE->GetBattleSituation() == BattleSituation::Opponet_CanNot_Battle)
 				{
@@ -120,6 +124,7 @@ void CTurnBattle::PokemonAttack()
 			{
 				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->OppoentUseMove();
+				BATTLE->GetPlayerCurPokemon()->HitAnimation();
 				m_OpponentAttacked = true;
 				if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
 				{

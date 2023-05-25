@@ -25,6 +25,10 @@ CPokemon::CPokemon()
 
 	m_curState					= PokemonState::Normal;
 	m_owner						= PokemonOwner::Wild;
+	m_originalLocation			= Vector(0,0);
+	m_knockBackLocation			= Vector(0,0);
+	m_onHit						= false;
+	m_timer						= 0;
 
 	// 기본 기술
 	// TODO: 기술 추가
@@ -180,6 +184,17 @@ void CPokemon::TakeDamage(int value)
 	Notify();
 }
 
+void CPokemon::HitAnimation()
+{
+	m_onHit				= true;
+	m_timer				= 0;
+	if (m_owner == PokemonOwner::Player)
+		m_knockBackLocation = Vector(m_vecPos.x - 50, m_vecPos.y);
+	else
+		m_knockBackLocation = Vector(m_vecPos.x + 50, m_vecPos.y);
+	m_originalLocation	= m_vecPos;
+}
+
 void CPokemon::SetOwner(PokemonOwner owner)
 {
 	m_owner = owner;
@@ -198,6 +213,16 @@ void CPokemon::Init()
 
 void CPokemon::Update()
 {
+	if (m_onHit)
+	{
+		m_timer += DT;
+		m_vecPos = m_knockBackLocation;
+		if (m_timer > 0.2)
+		{
+			m_onHit = false;
+			m_vecPos = m_originalLocation;
+		}
+	}
 }
 
 void CPokemon::Render()

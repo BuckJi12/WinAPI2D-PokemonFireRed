@@ -90,6 +90,10 @@ public:
 	
 private:
 	list<IObserver*>	m_listObservers;
+	Vector				m_originalLocation;
+	Vector				m_knockBackLocation;
+	float				m_timer;
+	bool				m_onHit;
 
 protected:
 	PokemonInfo			m_info;
@@ -118,6 +122,7 @@ public:
 	void				LearnMove(CMove* move);
 	void				SetAnimation();
 	void				TakeDamage(int value);
+	void				HitAnimation();
 	void				SetOwner(PokemonOwner owner);
 	void				Recover();
 
@@ -125,7 +130,7 @@ public:
 	virtual void		Evolution() {};
 	virtual void		LearnMoveList() {};
 
-private:
+protected:
 	void				Init() override;
 	void				Update() override;
 	void				Render() override;

@@ -58,6 +58,7 @@ void CSquirtle::Init()
 
 void CSquirtle::Update()
 {
+	CPokemon::Update();
 }
 
 void CSquirtle::Render()

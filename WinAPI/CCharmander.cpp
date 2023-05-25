@@ -59,6 +59,7 @@ void CCharmander::Init()
 
 void CCharmander::Update()
 {
+	CPokemon::Update();
 }
 
 void CCharmander::Render()

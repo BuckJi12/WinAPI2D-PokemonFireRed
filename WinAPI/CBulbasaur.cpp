@@ -61,6 +61,7 @@ void CBulbasaur::Init()
 
 void CBulbasaur::Update()
 {
+	CPokemon::Update();
 }
 
 void CBulbasaur::Render()
