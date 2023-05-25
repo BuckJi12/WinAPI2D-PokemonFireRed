@@ -183,6 +183,7 @@
     <ClInclude Include="CSquirtle.h" />
     <ClInclude Include="CSubject.h" />
     <ClInclude Include="CTackle.h" />
+    <ClInclude Include="CTextBox.h" />
     <ClInclude Include="CTurn.h" />
     <ClInclude Include="CTurnBag.h" />
     <ClInclude Include="CTurnBattle.h" />
@@ -280,6 +281,7 @@
     <ClCompile Include="CSquirtle.cpp" />
     <ClCompile Include="CSubject.cpp" />
     <ClCompile Include="CTackle.cpp" />
+    <ClCompile Include="CTextBox.cpp" />
     <ClCompile Include="CTurn.cpp" />
     <ClCompile Include="CTurnBag.cpp" />
     <ClCompile Include="CTurnBattle.cpp" />
