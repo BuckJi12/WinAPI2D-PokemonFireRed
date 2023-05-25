@@ -33,6 +33,7 @@ public:
 	BattleSituation GetBattleSituation();
 	BattleResult	GetBattleResult();
 	CMove*			GetCurMove();
+	CMove*			GetCurOpponentMove();
 	void			OpponentSelectMove();
 	void			SetBattleResult(BattleResult result);
 	void			SetFirstAttack(FirstAttack attack);

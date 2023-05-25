@@ -82,6 +82,11 @@ CMove* CBattleManager::GetCurMove()
 	return m_pPlayerCurPokemon->GetPokemonMoveList()[m_playerCurInex];
 }
 
+CMove* CBattleManager::GetCurOpponentMove()
+{
+	return m_pOpponentCurMove;
+}
+
 void CBattleManager::OpponentSelectMove()
 {
 	int random;

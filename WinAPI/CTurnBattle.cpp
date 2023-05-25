@@ -21,15 +21,13 @@ void CTurnBattle::PokemonAttack()
 	case FirstAttack::Player:
 		if (!m_playerAttacked)
 		{
-			//플레이어 공격
+			//플레이어 사용 기술 대사
 			m_battleScene->GetTextBox()->SetText(L"가라! " + BATTLE->GetPlayerCurPokemon()->GetPokemonInfo().name +
 			L" " + BATTLE->GetCurMove()->GetMoveStat().name + L"\n");
-			if (m_timer > 2)
-			{
-				BATTLE->PlayerAttack();
-				//TODO: 효과 작성
-				if (m_timer > 4)
+				if (m_timer > 3)
 				{
+					//TODO: 효과 작성 ex 효과가 굉장했다 등
+					BATTLE->PlayerAttack();
 					m_playerAttacked = true;
 					if (BATTLE->GetBattleSituation() == BattleSituation::Opponet_CanNot_Battle)
 					{
@@ -38,58 +36,55 @@ void CTurnBattle::PokemonAttack()
 						m_battleScene->ChangeTurn(PlayerAction::Result);
 					}
 				}
-			}
 		}
 		if (m_timer > 6 && !m_OpponentAttacked)
 		{
-			//상대 공격
-			if (m_timer > 8)
+			//상대 사용 기술 대사
+			m_battleScene->GetTextBox()->SetText(BATTLE->GetOpponentCurPokemon()->GetPokemonInfo().name + L"이(가) " +
+				L" " + BATTLE->GetCurOpponentMove()->GetMoveStat().name + L" 사용했다! \n");
+			if (m_timer > 9)
 			{
-				//TODO: 효과 작성
+				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->OppoentUseMove();
-				if (m_timer > 10)
+				m_OpponentAttacked = true;
+				if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
 				{
-					m_OpponentAttacked = true;
-					if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
+					//플레이어 패배
+					if (BATTLE->PlayerCheckBattleAble())
 					{
-						//플레이어 패배
-						if (BATTLE->PlayerCheckBattleAble())
-						{
-							m_battleScene->ChangeTurn(PlayerAction::Continue);
-						}
-						else
-						{
-							BATTLE->SetBattleResult(BattleResult::Lose);
-							m_battleScene->ChangeTurn(PlayerAction::Result);
-						}
+						m_battleScene->ChangeTurn(PlayerAction::Continue);
+					}
+					else
+					{
+						BATTLE->SetBattleResult(BattleResult::Lose);
+						m_battleScene->ChangeTurn(PlayerAction::Result);
 					}
 				}
-			}
+			}		
 		}
 		break;
 	case FirstAttack::Oppoent:
 		if (!m_OpponentAttacked)
 		{
-			//상대 공격
-			if (m_timer > 2)
+			//상대 사용 기술 대사
+			m_battleScene->GetTextBox()->SetText(BATTLE->GetOpponentCurPokemon()->GetPokemonInfo().name + L"이(가) " +
+				L" " + BATTLE->GetCurOpponentMove()->GetMoveStat().name + L" 사용했다! \n");
+			if (m_timer > 3)
 			{
-				//TODO: 효과 작성
+				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->OppoentUseMove();
-				if (m_timer > 4)
+				m_OpponentAttacked = true;
+				if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
 				{
-					m_OpponentAttacked = true;
-					if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
+					//플레이어 패배
+					if (BATTLE->PlayerCheckBattleAble())
 					{
-						//플레이어 패배
-						if (BATTLE->PlayerCheckBattleAble())
-						{
-							m_battleScene->ChangeTurn(PlayerAction::Continue);
-						}
-						else
-						{
-							BATTLE->SetBattleResult(BattleResult::Lose);
-							m_battleScene->ChangeTurn(PlayerAction::Result);
-						}
+						m_battleScene->ChangeTurn(PlayerAction::Continue);
+					}
+					else
+					{
+						BATTLE->SetBattleResult(BattleResult::Lose);
+						m_battleScene->ChangeTurn(PlayerAction::Result);
 					}
 				}
 			}
@@ -97,22 +92,19 @@ void CTurnBattle::PokemonAttack()
 
 		if (m_timer > 6 && !m_playerAttacked)
 		{
-			//플레이어 공격
+			//플레이어 사용 기술 대사
 			m_battleScene->GetTextBox()->SetText(L"가라! " + BATTLE->GetPlayerCurPokemon()->GetPokemonInfo().name +
 				L" " + BATTLE->GetCurMove()->GetMoveStat().name + L"\n");
-			if (m_timer > 8)
+			if (m_timer > 9)
 			{
+				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->PlayerAttack();
-				//TODO: 효과 작성
-				if (m_timer > 10)
+				m_playerAttacked = true;
+				if (BATTLE->GetBattleSituation() == BattleSituation::Opponet_CanNot_Battle)
 				{
-					m_playerAttacked = true;
-					if (BATTLE->GetBattleSituation() == BattleSituation::Opponet_CanNot_Battle)
-					{
-						//배틀 승리
-						BATTLE->SetBattleResult(BattleResult::Win);
-						m_battleScene->ChangeTurn(PlayerAction::Result);
-					}
+					//배틀 승리
+					BATTLE->SetBattleResult(BattleResult::Win);
+					m_battleScene->ChangeTurn(PlayerAction::Result);
 				}
 			}
 		}
@@ -121,25 +113,25 @@ void CTurnBattle::PokemonAttack()
 		m_playerAttacked = true;
 		if (!m_OpponentAttacked)
 		{
-			// 상대 공격 대사
-			if (m_timer > 2)
+			//상대 사용 기술 대사
+			m_battleScene->GetTextBox()->SetText(BATTLE->GetOpponentCurPokemon()->GetPokemonInfo().name + L"이(가) " +
+				L" " + BATTLE->GetCurOpponentMove()->GetMoveStat().name + L" 사용했다! \n");
+			if (m_timer > 3)
 			{
+				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->OppoentUseMove();
-				//TODO: 효과 작성
-				if (m_timer > 4)
+				m_OpponentAttacked = true;
+				if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
 				{
-					m_OpponentAttacked = true;
-					if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
+					//플레이어 패배
+					if (BATTLE->PlayerCheckBattleAble())
 					{
-						if (BATTLE->PlayerCheckBattleAble())
-						{
-							m_battleScene->ChangeTurn(PlayerAction::Continue);
-						}
-						else
-						{
-							BATTLE->SetBattleResult(BattleResult::Lose);
-							m_battleScene->ChangeTurn(PlayerAction::Result);
-						}
+						m_battleScene->ChangeTurn(PlayerAction::Continue);
+					}
+					else
+					{
+						BATTLE->SetBattleResult(BattleResult::Lose);
+						m_battleScene->ChangeTurn(PlayerAction::Result);
 					}
 				}
 			}
