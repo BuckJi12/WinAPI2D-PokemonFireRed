@@ -106,7 +106,8 @@ void CTurnChange::SelectBoxControl()
 
 void CTurnChange::SelectPokemon()
 {
-	if (BUTTONDOWN(VK_SPACE) && !m_pokemonChanging)
+	if (BUTTONDOWN(VK_SPACE) && !m_pokemonChanging 
+		&& m_vecPokemonUI[m_curCount]->GetTarget()->GetCurState() != PokemonState::Faint)
 	{
 		m_pokemonChanging = true;
 		m_pImagePokemonMenu->SetPos(1000, 1000);
