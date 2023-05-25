@@ -40,19 +40,19 @@ void CBagWindow::Render()
 	{
 		RENDER->Image(
 			m_pItemIcon,
-			23,
-			461,
-			109,
-			559
+			m_vecPos.x + 23,
+			m_vecPos.y + 461,
+			m_vecPos.x + 109,
+			m_vecPos.y + 559
 		);
 	}
 
 	RENDER->Text(
 		m_itemDescription,
-		173,
-		461,
-		739,
-		558,
+		m_vecPos.x + 173,
+		m_vecPos.y + 461,
+		m_vecPos.x + 739,
+		m_vecPos.y + 558,
 		Color(0, 0, 0, 1),
 		25
 	);

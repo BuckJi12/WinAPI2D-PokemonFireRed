@@ -55,6 +55,8 @@ void CTurnEnter::Enter()
 	m_battleScene->GetTextBox()->SetPos(0, 400);
 	m_battleScene->GetTextBox()->SetText(L"야생의 " + BATTLE->GetOpponentCurPokemon()->GetPokemonInfo().name
 	+ L"이(가) 나타났다!!!\n");
+	BATTLE->GetPlayerCurPokemon()->SetPos(1000, 1000);
+	m_battleScene->GetPlayerUI()->SetPos(-1600, 266);
 	// 오브젝트 추가
 	if (m_OpponentSpawn == false)
 	{
