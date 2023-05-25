@@ -405,9 +405,6 @@
     <ClInclude Include="CTurnContinue.h">
       <Filter>Scene\Battle\Turn</Filter>
     </ClInclude>
-    <ClInclude Include="CTurnMustChange.h">
-      <Filter>Scene\Battle\Turn</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -669,9 +666,6 @@
       <Filter>Scene\Battle\Turn</Filter>
     </ClCompile>
     <ClCompile Include="CTurnContinue.cpp">
-      <Filter>Scene\Battle\Turn</Filter>
-    </ClCompile>
-    <ClCompile Include="CTurnMustChange.cpp">
       <Filter>Scene\Battle\Turn</Filter>
     </ClCompile>
   </ItemGroup>
