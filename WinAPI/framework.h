@@ -84,6 +84,7 @@ using namespace FMOD;
 #include "CUI.h"
 #include "CButton.h"
 #include "CPanel.h"
+#include "CTextBox.h"
 
 // Component
 #include "CComponent.h"

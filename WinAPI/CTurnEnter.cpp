@@ -35,11 +35,6 @@ void CTurnEnter::Init()
 	m_pImageOppStatUI = new COpponentStatUI;
 	m_pImageOppStatUI->Init();
 
-	//TODO: 별도 텍스트 박스로 만들기
- 	m_pImageNoramUI = new CImageObject;
-	m_pImageNoramUI->SetPos(0, 400);
-	m_pImageNoramUI->SetImage(RESOURCE->LoadImg(L"TextBox", L"Image\\Battle\\TextBox.png"));
-
 	// 오브젝트 추가
 	m_battleScene->AddObjectThisScene(m_pImagePlayerFloor);
 	m_battleScene->AddObjectThisScene(m_pImageOpponentFloor);
@@ -59,6 +54,7 @@ void CTurnEnter::Enter()
 	m_pImageOppStatUI->SetPos(-1225, 50);
 	m_battleScene->GetCursor()->SetPos(1000, 1000);
 	m_battleScene->SetTurnSituation(TurnSituation::Change);
+	m_battleScene->GetTextBox()->SetPos(0, 400);
 	// 오브젝트 추가
 	if (m_OpponentSpawn == false)
 	{

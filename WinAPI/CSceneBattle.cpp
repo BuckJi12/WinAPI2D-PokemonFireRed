@@ -71,6 +71,11 @@ CPlayerStatUI* CSceneBattle::GetPlayerUI()
 	return m_pImagePlayerStatUI;
 }
 
+CTextBox* CSceneBattle::GetTextBox()
+{
+	return m_pTextBox;
+}
+
 void CSceneBattle::CheckAddedGameObject()
 {
 	for (int i = 0; i < PLAYER->GetPlayerPokemonList().size(); i++)
@@ -101,6 +106,11 @@ void CSceneBattle::Init()
 	AddGameObject(m_pCursor);
 
 	// UI
+	m_pTextBox = new CTextBox;
+	m_pTextBox->SetPos(1000, 1000);
+	m_pTextBox->SetLayer(Layer::Environment2);
+	AddGameObject(m_pTextBox);
+
 	m_pImagePlayerStatUI = new CPlayerStatUI;
 	m_pImagePlayerStatUI->Init();
 	m_pImagePlayerStatUI->SetPos(1000, 1000);

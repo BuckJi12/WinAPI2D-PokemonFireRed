@@ -6,6 +6,7 @@ class COpponentFloor;
 class CPlayerThrowBall;
 class CPlayerStatUI;
 class CTurn;
+class CTextBox;
 
 enum class TurnSituation
 {
@@ -29,11 +30,13 @@ private:
 	CImageObject*				m_pImageBackGround;
 	CImageObject*				m_pCursor;
 	CPlayerStatUI*				m_pImagePlayerStatUI;
+	CTextBox*					m_pTextBox;
 
 public:
 	TurnSituation				GetCurSituation();
 	CImageObject*				GetCursor();
 	CPlayerStatUI*				GetPlayerUI();
+	CTextBox*					GetTextBox();
 
 	void						SetTurnSituation(TurnSituation situation);
 	void						AddObjectThisScene(CGameObject* object);
