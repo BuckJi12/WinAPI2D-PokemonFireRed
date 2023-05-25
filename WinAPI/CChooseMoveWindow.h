@@ -7,6 +7,12 @@ public:
 	CChooseMoveWindow();
 	virtual ~CChooseMoveWindow();
 
+private:
+	int	m_curCount;
+
+public:
+	void SetCount(int num);
+
 public:
 	void Init()		override;
 	void Update()	override;

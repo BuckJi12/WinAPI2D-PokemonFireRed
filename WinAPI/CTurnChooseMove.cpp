@@ -40,6 +40,8 @@ void CTurnChooseMove::CursorControl()
 			m_curCount = BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList().size() - 1;
 	}
 
+	m_pImageChooseMove->SetCount(m_curCount);
+
 	switch (m_curCount)
 	{
 	case 0:
