@@ -112,6 +112,7 @@ enum class PlayerAction
 	Battle,
 	ChooseMove,
 	Change,
+	MustChange,
 	ChoosePokemon,
 	Bag,
 	Catch,

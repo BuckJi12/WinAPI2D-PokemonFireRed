@@ -192,6 +192,7 @@
     <ClInclude Include="CTurnChooseMove.h" />
     <ClInclude Include="CTurnContinue.h" />
     <ClInclude Include="CTurnEnter.h" />
+    <ClInclude Include="CTurnMustChange.h" />
     <ClInclude Include="CTurnPlayerReady.h" />
     <ClInclude Include="CTurnResult.h" />
     <ClInclude Include="CWallTile.h" />
@@ -289,6 +290,7 @@
     <ClCompile Include="CTurnChooseMove.cpp" />
     <ClCompile Include="CTurnContinue.cpp" />
     <ClCompile Include="CTurnEnter.cpp" />
+    <ClCompile Include="CTurnMustChange.cpp" />
     <ClCompile Include="CTurnPlayerReady.cpp" />
     <ClCompile Include="CTurnResult.cpp" />
     <ClCompile Include="CWallTile.cpp" />

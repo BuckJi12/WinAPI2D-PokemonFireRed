@@ -41,6 +41,7 @@ void CTurnContinue::CurSorControl()
 		{
 		case 0:
 			//TODO: 포켓몬 필수 교체
+			m_battleScene->ChangeTurn(PlayerAction::MustChange);
 			break;
 		case 1:
 			Exit();
