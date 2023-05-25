@@ -30,7 +30,7 @@ void CChooseMoveWindow::Render()
 	CImageObject::Render();
 
 	RENDER->Text(
-		BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[0].GetMoveStat().name,
+		BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[0]->GetMoveStat().name,
 		m_vecPos.x + 75,
 		m_vecPos.y + 50,
 		m_vecPos.x + 300,
@@ -42,7 +42,7 @@ void CChooseMoveWindow::Render()
 	if (BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList().size() > 1)
 	{
 		RENDER->Text(
-			BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[1].GetMoveStat().name,
+			BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[1]->GetMoveStat().name,
 			m_vecPos.x + 300,
 			m_vecPos.y + 50,
 			m_vecPos.x + 600,
@@ -55,7 +55,7 @@ void CChooseMoveWindow::Render()
 	if (BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList().size() > 2)
 	{
 		RENDER->Text(
-			BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[2].GetMoveStat().name,
+			BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[2]->GetMoveStat().name,
 			m_vecPos.x + 75,
 			m_vecPos.y + 100,
 			m_vecPos.x + 300,
@@ -68,7 +68,7 @@ void CChooseMoveWindow::Render()
 	if (BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList().size() > 3)
 	{
 		RENDER->Text(
-			BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[3].GetMoveStat().name,
+			BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[3]->GetMoveStat().name,
 			m_vecPos.x + 300,
 			m_vecPos.y + 100,
 			m_vecPos.x + 600,
@@ -79,9 +79,9 @@ void CChooseMoveWindow::Render()
 	}
 
 	RENDER->Text(
-		to_wstring(BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[m_curCount].GetMoveStat().curPP)
+		to_wstring(BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[m_curCount]->GetMoveStat().curPP)
 		+ L" / "
-		+ to_wstring(BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[m_curCount].GetMoveStat().maxPP),
+		+ to_wstring(BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[m_curCount]->GetMoveStat().maxPP),
 		m_vecPos.x + 650,
 		m_vecPos.y + 35,
 		m_vecPos.x + 800,
@@ -91,7 +91,7 @@ void CChooseMoveWindow::Render()
 	);
 
 	RENDER->Text(
-		BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[m_curCount].GetMoveStat().moveType,
+		BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[m_curCount]->GetMoveStat().moveType,
 		m_vecPos.x + 650,
 		m_vecPos.y + 100,
 		m_vecPos.x + 800,

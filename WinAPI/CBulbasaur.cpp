@@ -29,7 +29,7 @@ CBulbasaur::CBulbasaur()
 	m_pResource					= nullptr;
 	m_pAnimator					= nullptr;
 
-	CTackle tackle;
+	CTackle* tackle = new CTackle;
 	LearnMove(tackle);
 	Init();
 }

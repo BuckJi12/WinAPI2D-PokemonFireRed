@@ -118,7 +118,7 @@ void CBattleManager::CheckFirstAttack()
 void CBattleManager::PlayerAttack()
 {
 	// TODO: ¼öÁ¤
-	m_pPlayerCurPokemon->GetPokemonMoveList()[m_playerCurInex].UseMove(m_pOppoentCurPokemon);
+	m_pPlayerCurPokemon->GetPokemonMoveList()[m_playerCurInex]->UseMove(m_pOppoentCurPokemon);
 	m_pOppoentCurPokemon->TakeDamage(CalculateDamage(m_pPlayerCurPokemon, m_pOppoentCurPokemon,
 		m_pPlayerCurPokemon->GetPokemonMoveList()[m_playerCurInex]));
 	CheckBattleAble();
@@ -131,11 +131,11 @@ void CBattleManager::OppoentUseMove()
 	while (true)
 	{
 		random = rand() % m_pOppoentCurPokemon->GetPokemonMoveList().size();
-		if (m_pOppoentCurPokemon->GetPokemonMoveList()[random].GetMoveStat().curPP > 0)
+		if (m_pOppoentCurPokemon->GetPokemonMoveList()[random]->GetMoveStat().curPP > 0)
 			break;
 	}
 
-	m_pOppoentCurPokemon->GetPokemonMoveList()[random].UseMove(m_pPlayerCurPokemon);
+	m_pOppoentCurPokemon->GetPokemonMoveList()[random]->UseMove(m_pPlayerCurPokemon);
 	m_pPlayerCurPokemon->TakeDamage(CalculateDamage(m_pOppoentCurPokemon, m_pPlayerCurPokemon,
 		m_pPlayerCurPokemon->GetPokemonMoveList()[random]));
 	CheckBattleAble();
@@ -146,20 +146,20 @@ void CBattleManager::SelectMove(int index)
 	m_playerCurInex = index;
 }
 
-int CBattleManager::CalculateDamage(CPokemon* attacker, CPokemon* victim, CMove move)
+int CBattleManager::CalculateDamage(CPokemon* attacker, CPokemon* victim, CMove* move)
 {
 	int damage;
-	if (move.GetKind() == MoveKind::Physics)
+	if (move->GetKind() == MoveKind::Physics)
 	{
-		damage = ((((((attacker->GetPokemonStat().level * 2 / 5) + 2) * move.GetMoveStat().moveDamage *
+		damage = ((((((attacker->GetPokemonStat().level * 2 / 5) + 2) * move->GetMoveStat().moveDamage *
 			attacker->GetPokemonStat().attack / 50) / victim->GetPokemonStat().defence) * 1) + 2) *
-			typeDamage[(int)move.GetType()][(int)victim->GetType(1)] * typeDamage[(int)move.GetType()][(int)victim->GetType(2)];
+			typeDamage[(int)move->GetType()][(int)victim->GetType(1)] * typeDamage[(int)move->GetType()][(int)victim->GetType(2)];
 	}
 	else
 	{
-		damage = ((((((attacker->GetPokemonStat().level * 2 / 5) + 2) * move.GetMoveStat().moveDamage *
+		damage = ((((((attacker->GetPokemonStat().level * 2 / 5) + 2) * move->GetMoveStat().moveDamage *
 			attacker->GetPokemonStat().specialAttack / 50) / victim->GetPokemonStat().specialDefence) * 1) + 2) *
-			typeDamage[(int)move.GetType()][(int)victim->GetType(1)] * typeDamage[(int)move.GetType()][(int)victim->GetType(2)];
+			typeDamage[(int)move->GetType()][(int)victim->GetType(1)] * typeDamage[(int)move->GetType()][(int)victim->GetType(2)];
 	}
 
 	return damage;

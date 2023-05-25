@@ -43,7 +43,7 @@ public:
 	void			CheckBattleAble();
 	void			PokemonChanage(CPokemon* pokemon);
 
-	int				CalculateDamage(CPokemon* attacker, CPokemon* victim, CMove move);
+	int				CalculateDamage(CPokemon* attacker, CPokemon* victim, CMove* move);
 	int				CalculateCatchRate(CItem* item);	//TODO: 아이템 추가
 	bool			PlayerCheckBattleAble();
 	

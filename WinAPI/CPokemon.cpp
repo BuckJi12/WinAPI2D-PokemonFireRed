@@ -80,7 +80,7 @@ CPokemonResource* CPokemon::GetPokemonResource()
 	return m_pResource;
 }
 
-vector<CMove> CPokemon::GetPokemonMoveList()
+vector<CMove*> CPokemon::GetPokemonMoveList()
 {
 	return m_vecMoves;
 }
@@ -152,7 +152,7 @@ void CPokemon::LevelUp()
 	Notify();
 }
 
-void CPokemon::LearnMove(CMove move)
+void CPokemon::LearnMove(CMove* move)
 {
 	if (m_vecMoves.size() < 4)
 	{

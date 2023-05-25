@@ -26,7 +26,7 @@ CSquirtle::CSquirtle()
 	m_pAnimator					= nullptr;
 
 	// 기본 기술
-	CTackle tackle;
+	CTackle* tackle = new CTackle;
 	LearnMove(tackle);
 	Init();
 }

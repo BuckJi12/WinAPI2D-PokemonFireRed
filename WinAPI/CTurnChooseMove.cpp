@@ -63,7 +63,7 @@ void CTurnChooseMove::CursorControl()
 		switch (m_curCount)
 		{
 		case 0:
-			if (BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[0].GetMoveStat().curPP > 0)
+			if (BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[0]->GetMoveStat().curPP > 0)
 			{
 				BATTLE->SelectMove(m_curCount);
 				BATTLE->CheckFirstAttack();
@@ -71,7 +71,7 @@ void CTurnChooseMove::CursorControl()
 			}
 			break;
 		case 1:
-			if (BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[1].GetMoveStat().curPP > 0)
+			if (BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[1]->GetMoveStat().curPP > 0)
 			{
 				BATTLE->SelectMove(m_curCount);
 				BATTLE->CheckFirstAttack();
@@ -79,7 +79,7 @@ void CTurnChooseMove::CursorControl()
 			}
 			break;
 		case 2:
-			if (BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[2].GetMoveStat().curPP > 0)
+			if (BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[2]->GetMoveStat().curPP > 0)
 			{
 				BATTLE->SelectMove(m_curCount);
 				BATTLE->CheckFirstAttack();
@@ -87,7 +87,7 @@ void CTurnChooseMove::CursorControl()
 			}
 			break;
 		case 3:
-			if (BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[3].GetMoveStat().curPP > 0)
+			if (BATTLE->GetPlayerCurPokemon()->GetPokemonMoveList()[3]->GetMoveStat().curPP > 0)
 			{
 				BATTLE->SelectMove(m_curCount);
 				BATTLE->CheckFirstAttack();

@@ -89,7 +89,7 @@ public:
 	virtual ~CPokemon();
 	
 private:
-	list<IObserver*>		m_listObservers;
+	list<IObserver*>	m_listObservers;
 
 protected:
 	PokemonInfo			m_info;
@@ -101,7 +101,7 @@ protected:
 	PokemonOwner		m_owner;
 	CPokemonResource*	m_pResource;
 	CAnimator*			m_pAnimator;
-	vector<CMove>		m_vecMoves;
+	vector<CMove*>		m_vecMoves;
 
 public:
 	PokemonInfo			GetPokemonInfo();
@@ -110,12 +110,12 @@ public:
 	PokemonState		GetCurState();
 	PokemonType			GetType(int num);
 	CPokemonResource*	GetPokemonResource();
-	vector<CMove>		GetPokemonMoveList();
+	vector<CMove*>		GetPokemonMoveList();
 	void				SetPokemonStat(int level);
 	void				ChangeState(PokemonState state);
 	void				AddExp(float exp);
 	void				LevelUp();
-	void				LearnMove(CMove move);
+	void				LearnMove(CMove* move);
 	void				SetAnimation();
 	void				TakeDamage(int value);
 	void				SetOwner(PokemonOwner owner);
