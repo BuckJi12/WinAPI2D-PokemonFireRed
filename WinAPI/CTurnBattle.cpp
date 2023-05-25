@@ -19,87 +19,128 @@ void CTurnBattle::PokemonAttack()
 	switch (BATTLE->GetFirstAttack())
 	{
 	case FirstAttack::Player:
-		if (m_timer > 1 && !m_playerAttacked)
+		if (!m_playerAttacked)
 		{
 			//플레이어 공격
-			m_playerAttacked = true;
-			BATTLE->PlayerAttack();
-			if (BATTLE->GetBattleSituation() == BattleSituation::Opponet_CanNot_Battle)
+			m_battleScene->GetTextBox()->SetText(L"가라! " + BATTLE->GetPlayerCurPokemon()->GetPokemonInfo().name +
+			L" " + BATTLE->GetCurMove()->GetMoveStat().name + L"\n");
+			if (m_timer > 2)
 			{
-				//배틀 승리
-				BATTLE->SetBattleResult(BattleResult::Win);
-				m_battleScene->ChangeTurn(PlayerAction::Result);
+				BATTLE->PlayerAttack();
+				//TODO: 효과 작성
+				if (m_timer > 4)
+				{
+					m_playerAttacked = true;
+					if (BATTLE->GetBattleSituation() == BattleSituation::Opponet_CanNot_Battle)
+					{
+						//배틀 승리
+						BATTLE->SetBattleResult(BattleResult::Win);
+						m_battleScene->ChangeTurn(PlayerAction::Result);
+					}
+				}
 			}
 		}
-		if (m_timer > 3 && !m_OpponentAttacked)
+		if (m_timer > 6 && !m_OpponentAttacked)
 		{
 			//상대 공격
-			m_OpponentAttacked = true;
-			BATTLE->OppoentUseMove();
-			if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
+			if (m_timer > 8)
 			{
-				//플레이어 패배
-				if (BATTLE->PlayerCheckBattleAble())
+				//TODO: 효과 작성
+				BATTLE->OppoentUseMove();
+				if (m_timer > 10)
 				{
-					m_battleScene->ChangeTurn(PlayerAction::Continue);
-				}
-				else
-				{
-					BATTLE->SetBattleResult(BattleResult::Lose);
-					m_battleScene->ChangeTurn(PlayerAction::Result);
+					m_OpponentAttacked = true;
+					if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
+					{
+						//플레이어 패배
+						if (BATTLE->PlayerCheckBattleAble())
+						{
+							m_battleScene->ChangeTurn(PlayerAction::Continue);
+						}
+						else
+						{
+							BATTLE->SetBattleResult(BattleResult::Lose);
+							m_battleScene->ChangeTurn(PlayerAction::Result);
+						}
+					}
 				}
 			}
 		}
 		break;
 	case FirstAttack::Oppoent:
-		if (m_timer > 1 && !m_OpponentAttacked)
+		if (!m_OpponentAttacked)
 		{
 			//상대 공격
-			m_OpponentAttacked = true;
-			BATTLE->OppoentUseMove();
-			if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
+			if (m_timer > 2)
 			{
-				//플레이어 패배
-				if (BATTLE->PlayerCheckBattleAble())
+				//TODO: 효과 작성
+				BATTLE->OppoentUseMove();
+				if (m_timer > 4)
 				{
-					m_battleScene->ChangeTurn(PlayerAction::Continue);
-				}
-				else
-				{
-					BATTLE->SetBattleResult(BattleResult::Lose);
-					m_battleScene->ChangeTurn(PlayerAction::Result);
+					m_OpponentAttacked = true;
+					if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
+					{
+						//플레이어 패배
+						if (BATTLE->PlayerCheckBattleAble())
+						{
+							m_battleScene->ChangeTurn(PlayerAction::Continue);
+						}
+						else
+						{
+							BATTLE->SetBattleResult(BattleResult::Lose);
+							m_battleScene->ChangeTurn(PlayerAction::Result);
+						}
+					}
 				}
 			}
 		}
-		if (m_timer > 3 && !m_playerAttacked)
+
+		if (m_timer > 6 && !m_playerAttacked)
 		{
-			// 플레이어 공격
-			m_playerAttacked = true;
-			BATTLE->PlayerAttack();
-			if (BATTLE->GetBattleSituation() == BattleSituation::Opponet_CanNot_Battle)
+			//플레이어 공격
+			m_battleScene->GetTextBox()->SetText(L"가라! " + BATTLE->GetPlayerCurPokemon()->GetPokemonInfo().name +
+				L" " + BATTLE->GetCurMove()->GetMoveStat().name + L"\n");
+			if (m_timer > 8)
 			{
-				BATTLE->SetBattleResult(BattleResult::Win);
-				m_battleScene->ChangeTurn(PlayerAction::Result);
+				BATTLE->PlayerAttack();
+				//TODO: 효과 작성
+				if (m_timer > 10)
+				{
+					m_playerAttacked = true;
+					if (BATTLE->GetBattleSituation() == BattleSituation::Opponet_CanNot_Battle)
+					{
+						//배틀 승리
+						BATTLE->SetBattleResult(BattleResult::Win);
+						m_battleScene->ChangeTurn(PlayerAction::Result);
+					}
+				}
 			}
 		}
 		break;
 	case FirstAttack::OnlyOpponent:
 		m_playerAttacked = true;
-		if (m_timer > 1 && !m_OpponentAttacked)
+		if (!m_OpponentAttacked)
 		{
-			// 상대 공격
-			m_OpponentAttacked = true;
-			BATTLE->OppoentUseMove();
-			if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
+			// 상대 공격 대사
+			if (m_timer > 2)
 			{
-				if (BATTLE->PlayerCheckBattleAble())
+				BATTLE->OppoentUseMove();
+				//TODO: 효과 작성
+				if (m_timer > 4)
 				{
-					m_battleScene->ChangeTurn(PlayerAction::Continue);
-				}
-				else
-				{
-					BATTLE->SetBattleResult(BattleResult::Lose);
-					m_battleScene->ChangeTurn(PlayerAction::Result);
+					m_OpponentAttacked = true;
+					if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
+					{
+						if (BATTLE->PlayerCheckBattleAble())
+						{
+							m_battleScene->ChangeTurn(PlayerAction::Continue);
+						}
+						else
+						{
+							BATTLE->SetBattleResult(BattleResult::Lose);
+							m_battleScene->ChangeTurn(PlayerAction::Result);
+						}
+					}
 				}
 			}
 		}

@@ -75,6 +75,11 @@ BattleResult CBattleManager::GetBattleResult()
 	return m_battleResult;
 }
 
+CMove* CBattleManager::GetCurMove()
+{
+	return m_pPlayerCurPokemon->GetPokemonMoveList()[m_playerCurInex];
+}
+
 void CBattleManager::SetBattleResult(BattleResult result)
 {
 	m_battleResult = result;
