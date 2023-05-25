@@ -14,7 +14,6 @@ public:
 
 private:
 	CImageObject*		m_pImagePlayerFloor;
-	CImageObject*		m_pImageNoramUI;
 	COpponentFloor*		m_pImageOpponentFloor;
 	CPlayerThrowBall*	m_pImagePlayerThrow;
 	COpponentStatUI*	m_pImageOppStatUI;

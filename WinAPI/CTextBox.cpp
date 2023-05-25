@@ -38,9 +38,9 @@ void CTextBox::Render()
 		m_vecPos.x + 50,
 		m_vecPos.y + 50,
 		m_vecPos.x + 750,
-		m_vecPos.y + 150,
-		Color(0, 0, 0, 1),
-		25
+		m_vecPos.y + 100,
+		Color(255, 255, 255, 1),
+		35
 	);
 }
 

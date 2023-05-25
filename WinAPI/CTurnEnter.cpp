@@ -11,7 +11,6 @@
 CTurnEnter::CTurnEnter(CSceneBattle* battleScene) : CTurn(battleScene)
 {
 	m_pImagePlayerFloor		= nullptr;
-	m_pImageNoramUI			= nullptr;
 	m_pImageOpponentFloor	= nullptr;
 	m_pImagePlayerThrow     = nullptr;
 	m_pImageOppStatUI		= nullptr;
@@ -41,7 +40,6 @@ void CTurnEnter::Init()
 	m_battleScene->AddObjectThisScene(m_pImageOppStatUI);
 	m_battleScene->AddObjectThisScene(m_pImagePlayerThrow);
 	//m_battleScene->AddObjectThisScene(BATTLE->GetOpponentCurPokemon());
-	m_battleScene->AddObjectThisScene(m_pImageNoramUI);
 }
 
 void CTurnEnter::Enter()
@@ -55,6 +53,8 @@ void CTurnEnter::Enter()
 	m_battleScene->GetCursor()->SetPos(1000, 1000);
 	m_battleScene->SetTurnSituation(TurnSituation::Change);
 	m_battleScene->GetTextBox()->SetPos(0, 400);
+	m_battleScene->GetTextBox()->SetText(L"야생의 " + BATTLE->GetOpponentCurPokemon()->GetPokemonInfo().name
+	+ L"이(가) 나타났다!!!\n");
 	// 오브젝트 추가
 	if (m_OpponentSpawn == false)
 	{
@@ -69,6 +69,7 @@ void CTurnEnter::Update()
 {
 	if (BUTTONDOWN(VK_SPACE))
 	{
+		m_battleScene->GetTextBox()->Reset();
 		m_battleScene->ChangeTurn(PlayerAction::PlayerReady);
 	}
 }
@@ -83,7 +84,6 @@ void CTurnEnter::Release()
 	DELETEOBJECT(m_pImagePlayerFloor);
 	DELETEOBJECT(m_pImageOpponentFloor);
 	DELETEOBJECT(m_pImagePlayerThrow);
-	DELETEOBJECT(m_pImageNoramUI);
 	DELETEOBJECT(BATTLE->GetOpponentCurPokemon());
 	BATTLE->GetOpponentCurPokemon()->RemoveObserver(m_pImageOppStatUI);
 	DELETEOBJECT(m_pImageOppStatUI);
