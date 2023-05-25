@@ -14,7 +14,7 @@ private:
 
 public:
 	CImage* GetItemIcon();
-	void	SetItem(CItem item);
+	void	SetItem(CItem* item);
 
 public:
 	void	Init()		override;

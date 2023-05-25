@@ -17,10 +17,10 @@ CImage* CBagWindow::GetItemIcon()
 	return m_pItemIcon;
 }
 
-void CBagWindow::SetItem(CItem item)
+void CBagWindow::SetItem(CItem* item)
 {
-	m_pItemIcon			= item.GetImage();
-	m_itemDescription	= item.GetItemData().description;
+	m_pItemIcon			= item->GetImage();
+	m_itemDescription	= item->GetItemData().description;
 }
 
 void CBagWindow::Init()

@@ -36,6 +36,8 @@ void CTurnBag::CurSorControl()
 		break;
 	}
 
+	m_pImageBagWindow->SetItem(PLAYER->GetPlayerItemList()[m_curCount]);
+
 	if (BUTTONDOWN(VK_SPACE))
 	{
 		if (PLAYER->GetPlayerItemList()[m_curCount]->GetItemData().count > 0)
