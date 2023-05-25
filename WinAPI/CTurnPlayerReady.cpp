@@ -32,7 +32,8 @@ void CTurnPlayerReady::Enter()
 	BATTLE->GetPlayerCurPokemon()->AddObserver(m_battleScene->GetPlayerUI());
 	m_battleScene->GetPlayerUI()->SetPokemon(BATTLE->GetPlayerCurPokemon());
 	m_battleScene->GetPlayerUI()->SetPos(1600, 266);
-
+	m_battleScene->GetTextBox()->SetText(L"가라! " + BATTLE->GetPlayerCurPokemon()->GetPokemonInfo().name
+		+ L" 너만 믿을게!\n");
 	m_battleScene->AddObjectThisScene(m_pBallObject);
 	if (!m_isUICreated)
 	{
@@ -46,6 +47,7 @@ void CTurnPlayerReady::Update()
 	m_time += DT;
 	if (m_time >= 2)
 	{
+		m_battleScene->GetTextBox()->Reset();
 		BATTLE->GetPlayerCurPokemon()->SetPos(200, 310);
 		BATTLE->GetPlayerCurPokemon()->SetAnimation();
 		m_battleScene->ChangeTurn(PlayerAction::ChooseAction);
