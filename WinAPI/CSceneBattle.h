@@ -7,6 +7,14 @@ class CPlayerThrowBall;
 class CPlayerStatUI;
 class CTurn;
 
+enum class TurnSituation
+{
+	Change,
+	MustChange,
+
+	Size
+};
+
 class CSceneBattle : public CScene
 {
 public:
@@ -14,21 +22,25 @@ public:
 	virtual ~CSceneBattle();
 
 private:
-	map<PlayerAction, CTurn*> m_mapTurns;
-	CTurn* m_curTurn;
+	map<PlayerAction, CTurn*>	m_mapTurns;
+	CTurn*						m_curTurn;
+	TurnSituation				m_curTurnSituation;
 
-	CImageObject*		m_pImageBackGround;
-	CImageObject*		m_pCursor;
-	CPlayerStatUI*		m_pImagePlayerStatUI;
+	CImageObject*				m_pImageBackGround;
+	CImageObject*				m_pCursor;
+	CPlayerStatUI*				m_pImagePlayerStatUI;
 
 public:
-	void AddObjectThisScene(CGameObject* object);
-	void ChangeTurn(PlayerAction action);
-	CImageObject*	GetCursor();
-	CPlayerStatUI*	GetPlayerUI();
+	TurnSituation				GetCurSituation();
+	CImageObject*				GetCursor();
+	CPlayerStatUI*				GetPlayerUI();
+
+	void						SetTurnSituation(TurnSituation situation);
+	void						AddObjectThisScene(CGameObject* object);
+	void						ChangeTurn(PlayerAction action);
 
 private:
-	void CheckAddedGameObject();
+	void						CheckAddedGameObject();
 
 private:
 	void Init()		override;

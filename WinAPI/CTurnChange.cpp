@@ -146,6 +146,7 @@ void CTurnChange::ChangePokemon()
 			m_phase3 = true;
 			BATTLE->GetPlayerCurPokemon()->SetPos(200, 310);
 			BATTLE->SetFirstAttack(FirstAttack::OnlyOpponent);
+			m_battleScene->SetTurnSituation(TurnSituation::Change);
 			m_battleScene->ChangeTurn(PlayerAction::Battle);
 		}
 	}
@@ -215,9 +216,13 @@ void CTurnChange::Enter()
 
 void CTurnChange::Update()
 {
-	if (BUTTONDOWN(VK_ESCAPE))
+	if (BUTTONDOWN(VK_ESCAPE) && m_battleScene->GetCurSituation() == TurnSituation::Change)
 	{
 		m_battleScene->ChangeTurn(PlayerAction::ChooseAction);
+	}
+	else if (BUTTONDOWN(VK_ESCAPE) && m_battleScene->GetCurSituation() == TurnSituation::MustChange)
+	{
+		m_battleScene->ChangeTurn(PlayerAction::Continue);
 	}
 
 	SelectBoxControl();

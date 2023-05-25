@@ -32,10 +32,16 @@ CSceneBattle::CSceneBattle()
 	m_pImageBackGround		= nullptr;
 	m_pCursor				= nullptr;
 	m_pImagePlayerStatUI	= nullptr;
+	m_curTurnSituation		= TurnSituation::Change;
 }
 
 CSceneBattle::~CSceneBattle()
 {
+}
+
+void CSceneBattle::SetTurnSituation(TurnSituation situation)
+{
+	m_curTurnSituation = situation;
 }
 
 void CSceneBattle::AddObjectThisScene(CGameObject* object)
@@ -48,6 +54,11 @@ void CSceneBattle::ChangeTurn(PlayerAction action)
 	m_curTurn->Exit();
 	m_curTurn = m_mapTurns[action];
 	m_curTurn->Enter();
+}
+
+TurnSituation CSceneBattle::GetCurSituation()
+{
+	return m_curTurnSituation;
 }
 
 CImageObject* CSceneBattle::GetCursor()
