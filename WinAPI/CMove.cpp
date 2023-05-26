@@ -23,6 +23,14 @@ CMove::~CMove()
 {
 }
 
+CMove::CMove(const CMove& move)
+{
+	m_moveStat	= move.m_moveStat;
+	m_moveType	= move.m_moveType;
+	m_moveKind	= move.m_moveKind;
+	m_isLearned = move.m_isLearned;
+}
+
 MoveStats CMove::GetMoveStat()
 {
 	return m_moveStat;

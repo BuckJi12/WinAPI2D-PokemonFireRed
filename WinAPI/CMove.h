@@ -8,6 +8,16 @@ struct MoveStats // 기술 스텟
 	int			maxPP;
 	int			curPP;
 	int			moveDamage;
+
+	MoveStats operator=(const MoveStats& stat)
+	{
+		name		= stat.name;
+		description = stat.description;
+		moveType	= stat.moveType;
+		maxPP		= stat.maxPP;
+		curPP		= stat.curPP;
+		moveDamage	= stat.moveDamage;
+	}
 };
 
 enum class MoveKind // 기술 종류
@@ -24,6 +34,8 @@ class CMove
 public:
 	CMove();
 	virtual ~CMove();
+
+	CMove(const CMove& move);
 
 protected:
 	MoveStats	m_moveStat;
