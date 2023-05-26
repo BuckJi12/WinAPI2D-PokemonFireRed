@@ -110,4 +110,7 @@ using namespace FMOD;
 #include "CSquirtle.h"			// No.7 꼬부기
 
 // Pokemon Moves
+// Normal
 #include "CTackle.h"
+// Fire
+#include "CEmber.h"

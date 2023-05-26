@@ -118,6 +118,9 @@
     <Filter Include="GameObject\Battle\UI\Bag">
       <UniqueIdentifier>{fb6f7d71-04aa-46a4-ad9e-70b859992c8a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Pokemon\Moves\Fire">
+      <UniqueIdentifier>{debfb4c2-d7c0-4b66-ad46-237dcff3e412}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -408,6 +411,9 @@
     <ClInclude Include="CTextBox.h">
       <Filter>GameObject\Battle\UI</Filter>
     </ClInclude>
+    <ClInclude Include="CEmber.h">
+      <Filter>GameObject\Pokemon\Moves\Fire</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -673,6 +679,9 @@
     </ClCompile>
     <ClCompile Include="CTextBox.cpp">
       <Filter>GameObject\Battle\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CEmber.cpp">
+      <Filter>GameObject\Pokemon\Moves\Fire</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
