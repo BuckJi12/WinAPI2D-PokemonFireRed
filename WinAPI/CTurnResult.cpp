@@ -18,7 +18,7 @@ void CTurnResult::GetReward()
 		m_gotReward = true;
 		for (auto pokemon : PLAYER->GetPlayerPokemonList())
 		{
-			pokemon->AddExp(500);
+			pokemon->AddExp(2500);
 		}
 	}
 

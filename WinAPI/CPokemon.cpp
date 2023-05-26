@@ -153,6 +153,7 @@ void CPokemon::LevelUp()
 	PokemonStat increaseValue;
 	increaseValue = (GetLevelStat(m_stat.level) -= GetLevelStat(m_stat.level - 1));
 	m_stat += increaseValue;
+	LearnMoveList();
 	Notify();
 }
 
@@ -230,7 +231,11 @@ void CPokemon::Render()
 }
 
 void CPokemon::Release()
-{
+{	
+	for (auto move : m_vecMoves)
+	{
+		delete move;
+	}
 }
 
 void CPokemon::AddObserver(IObserver* observer)

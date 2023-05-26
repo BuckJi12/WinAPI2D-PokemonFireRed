@@ -25,11 +25,7 @@ CCharmander::CCharmander()
 	// 초기화
 	m_pResource					= nullptr;
 	m_pAnimator					= nullptr;
-
-	// 기본 기술
-	CTackle* tackle = new CTackle;
-	LearnMove(tackle);
-	Init();
+	m_ember						= nullptr;
 }
 
 CCharmander::~CCharmander()
@@ -43,7 +39,12 @@ void CCharmander::Evolution()
 
 void CCharmander::LearnMoveList()
 {
-	// TODO: 배울 기술 정리
+	// 배울 기술 정리
+	if (m_stat.level >= 6 && !m_ember->GetIsLearned())
+	{
+		LearnMove(m_ember);
+		m_ember->SetLearned(true);
+	}
 }
 
 void CCharmander::Init()
@@ -55,6 +56,10 @@ void CCharmander::Init()
 	m_pAnimator->CreateAnimation(L"Front", m_pResource->GetImage(), Vector(0, 0), Vector(256, 256), Vector(256, 0.f), 0.2, 1);
 	m_pAnimator->CreateAnimation(L"Back", m_pResource->GetImage(), Vector(0, 256), Vector(256, 256), Vector(256, 0.f), 0.2, 1);
 	AddComponent(m_pAnimator);
+
+	CMove* tackle = POKEMON->FindMove(1);
+	LearnMove(tackle);
+	m_ember = POKEMON->FindMove(2);
 }
 
 void CCharmander::Update()
@@ -64,9 +69,12 @@ void CCharmander::Update()
 
 void CCharmander::Render()
 {
+	CPokemon::Render();
 }
 
 void CCharmander::Release()
 {
+	CPokemon::Release();
+
 	delete m_pResource;
 }

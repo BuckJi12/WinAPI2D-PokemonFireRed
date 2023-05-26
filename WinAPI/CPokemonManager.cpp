@@ -28,10 +28,10 @@ void CPokemonManager::Init()
 
 	// ========================== ±â ¼ú ==========================
 
-	m_mapMoves.insert(make_pair(1, new CTackle));				// ¸öÅë¹ÚÄ¡±â
-	m_mapMoves.insert(make_pair(2, new CEmber));				// ºÒ²É¼¼·Ê
-	m_mapMoves.insert(make_pair(3, new CWaterGun));				// ¹°´ëÆ÷
-	m_mapMoves.insert(make_pair(4, new CVineWhip));				// µ¢ÄğÃ¤Âï
+	m_mapMoves.insert(make_pair(1, new CTackle()));				// ¸öÅë¹ÚÄ¡±â
+	m_mapMoves.insert(make_pair(2, new CEmber()));				// ºÒ²É¼¼·Ê
+	m_mapMoves.insert(make_pair(3, new CWaterGun()));				// ¹°´ëÆ÷
+	m_mapMoves.insert(make_pair(4, new CVineWhip()));				// µ¢ÄğÃ¤Âï
 }
 
 void CPokemonManager::Release()
