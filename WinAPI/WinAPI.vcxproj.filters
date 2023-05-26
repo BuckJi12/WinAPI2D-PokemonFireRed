@@ -124,6 +124,9 @@
     <Filter Include="GameObject\Pokemon\Moves\Water">
       <UniqueIdentifier>{f58c7165-893c-45bc-8e0f-98349816c676}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Pokemon\Moves\Grass">
+      <UniqueIdentifier>{ac07eb57-98ae-4d94-83c3-f3430f6996d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -420,6 +423,9 @@
     <ClInclude Include="CWaterGun.h">
       <Filter>GameObject\Pokemon\Moves\Water</Filter>
     </ClInclude>
+    <ClInclude Include="CVineWhip.h">
+      <Filter>GameObject\Pokemon\Moves\Grass</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -691,6 +697,9 @@
     </ClCompile>
     <ClCompile Include="CWaterGun.cpp">
       <Filter>GameObject\Pokemon\Moves\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="CVineWhip.cpp">
+      <Filter>GameObject\Pokemon\Moves\Grass</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

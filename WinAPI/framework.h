@@ -116,3 +116,5 @@ using namespace FMOD;
 #include "CEmber.h"
 // Water
 #include "CWaterGun.h"
+// Grass
+#include "CVineWhip.h"
