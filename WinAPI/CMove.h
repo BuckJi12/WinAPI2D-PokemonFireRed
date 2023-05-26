@@ -26,15 +26,20 @@ public:
 	virtual ~CMove();
 
 protected:
-	MoveStats m_moveStat;
+	MoveStats	m_moveStat;
 	PokemonType m_moveType;
-	MoveKind m_moveKind;
+	MoveKind	m_moveKind;
+
+	bool		m_isLearned;
 
 public:
-	MoveStats GetMoveStat();
-	PokemonType GetType();
-	MoveKind GetKind();
-	virtual void UseMove(CPokemon* pokemon);
-	void RecoverPP(int value);
+	MoveStats		GetMoveStat();
+	PokemonType		GetType();
+	MoveKind		GetKind();
+	
+	bool			GetIsLearned();
+	void			SetLearned(bool isLearned);
+	void			RecoverPP(int value);
+	virtual void	UseMove(CPokemon* pokemon);
 };
 
