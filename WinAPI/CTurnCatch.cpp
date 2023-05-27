@@ -90,7 +90,9 @@ void CTurnCatch::Update()
 		{
 			DELETEOBJECT(m_pBallObject);
 			m_catchComplete = true;
-			PLAYER->AddPokemonToPlayer(BATTLE->GetOpponentCurPokemon());
+			CPokemon* pokemon = new CPokemon(*BATTLE->GetOpponentCurPokemon());
+			pokemon->Init();
+			PLAYER->AddPokemonToPlayer(pokemon);
 			BATTLE->SetBattleResult(BattleResult::Win);					// 배틀 승리
 			m_battleScene->ChangeTurn(PlayerAction::Result);			// 결산으로 이동
 		}

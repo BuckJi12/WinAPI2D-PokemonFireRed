@@ -17,6 +17,8 @@ struct MoveStats // ±â¼ú ½ºÅÝ
 		maxPP		= stat.maxPP;
 		curPP		= stat.curPP;
 		moveDamage	= stat.moveDamage;
+
+		return *this;
 	}
 };
 

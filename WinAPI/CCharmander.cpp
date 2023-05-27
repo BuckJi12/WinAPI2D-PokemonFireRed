@@ -32,6 +32,11 @@ CCharmander::~CCharmander()
 {
 }
 
+CCharmander::CCharmander(const CCharmander& charmander) : CPokemon(charmander)
+{
+	m_ember = new CEmber;
+}
+
 void CCharmander::Evolution()
 {
 	// TODO: 진화 구현

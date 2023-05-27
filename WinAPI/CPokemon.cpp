@@ -43,6 +43,36 @@ CPokemon::~CPokemon()
 {
 }
 
+CPokemon::CPokemon(const CPokemon& pokemon)
+{
+	m_originalLocation	= pokemon.m_originalLocation;
+	m_knockBackLocation = pokemon.m_knockBackLocation;
+	m_timer				= pokemon.m_timer;
+	m_onHit				= pokemon.m_onHit;
+
+	m_info				= pokemon.m_info;
+	m_stat				= pokemon.m_stat;
+	m_baseStat			= pokemon.m_baseStat;
+	m_curState			= pokemon.m_curState;
+	m_type1				= pokemon.m_type1;
+	m_type2				= pokemon.m_type2;
+	m_owner				= pokemon.m_owner;
+	
+	m_pResource			= new CPokemonResource();
+	m_pResource			= RESOURCE->GetPokemonResource(m_info.number);
+
+	m_pAnimator			= new CAnimator;
+	m_pAnimator->CreateAnimation(L"Front", m_pResource->GetImage(), Vector(0, 0), Vector(256, 256), Vector(256, 0.f), 0.2, 1);
+	m_pAnimator->CreateAnimation(L"Back", m_pResource->GetImage(), Vector(0, 256), Vector(256, 256), Vector(256, 0.f), 0.2, 1);
+	AddComponent(m_pAnimator);
+
+	for (int i = 0; i < pokemon.m_vecMoves.size(); i++)
+	{
+		CMove* move(pokemon.m_vecMoves[i]);
+		m_vecMoves.push_back(move);
+	}
+}
+
 PokemonInfo CPokemon::GetPokemonInfo()
 {
 	return m_info;

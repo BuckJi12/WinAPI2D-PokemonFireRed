@@ -10,6 +10,16 @@ struct PokemonInfo
 	wstring description;
 	int		number;
 	int		rate;
+
+	PokemonInfo operator= (const PokemonInfo& info)
+	{
+		name		= info.name;
+		description = info.description;
+		number		= info.number;
+		rate		= info.rate;
+		
+		return *this;
+	}
 };
 
 struct PokemonStat
@@ -29,26 +39,42 @@ struct PokemonStat
 
 	PokemonStat operator+=(const PokemonStat& other)
 	{
-		maxHp += other.maxHp;
-		curHp += other.curHp;	
-		attack += other.attack;
-		specialAttack += other.specialAttack;
-		defence += other.defence;
-		specialDefence += other.specialDefence;
-		speed += other.speed;
+		maxHp			+= other.maxHp;
+		curHp			+= other.curHp;	
+		attack			+= other.attack;
+		specialAttack	+= other.specialAttack;
+		defence			+= other.defence;
+		specialDefence	+= other.specialDefence;
+		speed			+= other.speed;
 
 		return *this;
 	}
 
 	PokemonStat operator-=(const PokemonStat& other)
 	{
-		maxHp -= other.maxHp;
-		curHp -= other.curHp;
-		attack -= other.attack;
-		specialAttack -= other.specialAttack;
-		defence -= other.defence;
-		specialDefence -= other.specialDefence;
-		speed -= other.speed;
+		maxHp			-= other.maxHp;
+		curHp			-= other.curHp;
+		attack			-= other.attack;
+		specialAttack	-= other.specialAttack;
+		defence			-= other.defence;
+		specialDefence	-= other.specialDefence;
+		speed			-= other.speed;
+
+		return *this;
+	}
+
+	PokemonStat operator=(const PokemonStat& other)
+	{
+		level			= other.level;
+		maxHp			= other.maxHp;
+		curHp			= other.curHp;
+		attack			= other.attack;
+		specialAttack	= other.specialAttack;
+		defence			= other.defence;
+		specialDefence	= other.specialDefence;
+		speed			= other.speed;
+		curExp			= other.curExp;
+		maxExp			= other.maxExp;
 
 		return *this;
 	}
@@ -62,6 +88,18 @@ struct PokemonBaseStat	// 포켓몬 종족값 ex) 망나뇽 600족
 	int		defence;
 	int		specialDefence;
 	int		speed;
+
+	PokemonBaseStat operator=(const PokemonBaseStat& baseStat)
+	{
+		hp				= baseStat.hp;
+		attack			= baseStat.attack;
+		specialAttack	= baseStat.specialAttack;
+		defence			= baseStat.defence;
+		specialDefence	= baseStat.specialDefence;
+		speed			= baseStat.speed;
+
+		return *this;
+	}
 };
 
 enum class PokemonState	// 포켓몬 현재 상태 ex) 기절, 마비
@@ -87,6 +125,8 @@ class CPokemon : public CGameObject, public ISubject
 public:
 	CPokemon();
 	virtual ~CPokemon();
+
+	CPokemon(const CPokemon& pokemon);
 	
 private:
 	list<IObserver*>	m_listObservers;
@@ -130,8 +170,8 @@ public:
 	virtual void		Evolution() {};
 	virtual void		LearnMoveList() {};
 
-protected:
 	void				Init() override;
+protected:
 	void				Update() override;
 	void				Render() override;
 	void				Release() override;

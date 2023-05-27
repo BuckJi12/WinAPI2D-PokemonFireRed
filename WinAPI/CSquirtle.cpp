@@ -35,6 +35,10 @@ CSquirtle::~CSquirtle()
 {
 }
 
+CSquirtle::CSquirtle(const CSquirtle& squirtle) : CPokemon(squirtle)
+{
+}
+
 void CSquirtle::Evolution()
 {
 	// TODO: 진화 구현

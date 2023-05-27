@@ -7,6 +7,8 @@ public:
 	CCharmander();
 	virtual ~CCharmander();
 
+	CCharmander(const CCharmander& charmander);
+
 private:
 	CMove* m_ember;
 

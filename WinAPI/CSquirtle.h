@@ -6,12 +6,15 @@ public:
 	CSquirtle();
 	virtual ~CSquirtle();
 
+	CSquirtle(const CSquirtle& squirtle);
+
 public:
 	void Evolution() override;
 	void LearnMoveList() override;
 
-private:
 	void Init() override;
+
+private:
 	void Update() override;
 	void Render() override;
 	void Release() override;

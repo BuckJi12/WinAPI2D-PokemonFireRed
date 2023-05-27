@@ -5,6 +5,8 @@ public:
 	CBulbasaur();
 	virtual ~CBulbasaur();
 
+	CBulbasaur(const CBulbasaur& bulbasaur);
+
 public:
 	void Evolution()		override;
 	void LearnMoveList()	override;

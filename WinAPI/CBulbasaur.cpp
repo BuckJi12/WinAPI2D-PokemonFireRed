@@ -38,6 +38,10 @@ CBulbasaur::~CBulbasaur()
 {
 }
 
+CBulbasaur::CBulbasaur(const CBulbasaur& bulbasaur) : CPokemon(bulbasaur)
+{
+}
+
 void CBulbasaur::Evolution()
 {
 	// TODO: 진화 구현
