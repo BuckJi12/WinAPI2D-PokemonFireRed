@@ -36,7 +36,6 @@ CPokemon::CPokemon()
 	// √ ±‚»≠
 	m_pResource					= nullptr;
 	m_pAnimator					= nullptr;
-	Init();
 }
 
 CPokemon::~CPokemon()

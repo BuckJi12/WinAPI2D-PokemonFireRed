@@ -26,6 +26,11 @@ CCharmander::CCharmander()
 	m_pResource					= nullptr;
 	m_pAnimator					= nullptr;
 	m_ember						= nullptr;
+
+	CMove* tackle = new CTackle;
+	LearnMove(tackle);
+	m_ember = new CEmber;
+	Init();
 }
 
 CCharmander::~CCharmander()
@@ -61,10 +66,6 @@ void CCharmander::Init()
 	m_pAnimator->CreateAnimation(L"Front", m_pResource->GetImage(), Vector(0, 0), Vector(256, 256), Vector(256, 0.f), 0.2, 1);
 	m_pAnimator->CreateAnimation(L"Back", m_pResource->GetImage(), Vector(0, 256), Vector(256, 256), Vector(256, 0.f), 0.2, 1);
 	AddComponent(m_pAnimator);
-
-	CMove* tackle = POKEMON->FindMove(1);
-	LearnMove(tackle);
-	m_ember = POKEMON->FindMove(2);
 }
 
 void CCharmander::Update()

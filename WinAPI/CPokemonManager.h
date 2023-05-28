@@ -10,11 +10,9 @@ private:
 
 private:
 	map<int, CPokemon*> m_mapPokemons;
-	map<int, CMove*>	m_mapMoves;
 
 public:
 	CPokemon*	FindPokemon(int pokeNumber);
-	CMove*		FindMove(int moveNumber);
 
 private:
 	void Init();
