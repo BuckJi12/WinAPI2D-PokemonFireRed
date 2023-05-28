@@ -80,6 +80,16 @@ CSound* CResourceManager::LoadSound(const wstring& key, const wstring& fileName)
 	return pSound;
 }
 
+CEffect* CResourceManager::GetEffect(const PokemonType& key)
+{
+	return m_mapEffect[key];
+}
+
+void CResourceManager::AddEffect(PokemonType key, CEffect* effect)
+{
+	m_mapEffect.insert(make_pair(key, effect));
+}
+
 CPokemonResource* CResourceManager::GetPokemonResource(const int& key)
 {
 	auto iter = m_mapPokemonResource.find(key);

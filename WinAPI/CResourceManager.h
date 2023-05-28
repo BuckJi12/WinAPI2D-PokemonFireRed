@@ -4,6 +4,7 @@ class CCore;
 class CImage;
 class CSound;
 class CPokemonResource;
+class CEffect;
 
 class CResourceManager : public SingleTon<CResourceManager>
 {
@@ -16,17 +17,21 @@ private:
 private:
 	unordered_map<wstring, CImage*> m_umapImage;
 	unordered_map<wstring, CSound*> m_umapSound;
-	map<int, CPokemonResource*> m_mapPokemonResource;
+	map<int, CPokemonResource*>		m_mapPokemonResource;
+	map<PokemonType, CEffect*>		m_mapEffect;
 
 public:
-	CImage* FindImg(const wstring& key);
-	CImage* LoadImg(const wstring& key, const wstring& fileName);
-	CImage* LoadImgWithPath(const wstring& key, const wstring& filePath);
+	CImage*				FindImg(const wstring& key);
+	CImage*				LoadImg(const wstring& key, const wstring& fileName);
+	CImage*				LoadImgWithPath(const wstring& key, const wstring& filePath);
 
-	CSound* FindSound(const wstring& key);
-	CSound* LoadSound(const wstring& key, const wstring& fileName);
+	CSound*				FindSound(const wstring& key);
+	CSound*				LoadSound(const wstring& key, const wstring& fileName);
 
-	CPokemonResource* GetPokemonResource(const int& key);
+	CEffect*			GetEffect(const PokemonType& key);
+	void				AddEffect(PokemonType key, CEffect* effect);
+
+	CPokemonResource*	GetPokemonResource(const int& key);
 private:
 	void Init();
 	void Release();
