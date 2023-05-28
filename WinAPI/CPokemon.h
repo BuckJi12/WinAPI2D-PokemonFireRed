@@ -10,13 +10,15 @@ struct PokemonInfo
 	wstring description;
 	int		number;
 	int		rate;
+	int		evolutionNumber;
 
 	PokemonInfo operator= (const PokemonInfo& info)
 	{
-		name		= info.name;
-		description = info.description;
-		number		= info.number;
-		rate		= info.rate;
+		name			= info.name;
+		description		= info.description;
+		number			= info.number;
+		rate			= info.rate;
+		evolutionNumber = info.evolutionNumber;
 		
 		return *this;
 	}
@@ -134,6 +136,7 @@ private:
 	Vector				m_knockBackLocation;
 	float				m_timer;
 	bool				m_onHit;
+	bool				m_canEvolution;
 
 protected:
 	PokemonInfo			m_info;
@@ -165,6 +168,8 @@ public:
 	void				HitAnimation();
 	void				SetOwner(PokemonOwner owner);
 	void				Recover();
+
+	bool				GetCanEvolution();
 
 public:
 	virtual void		Evolution() {};

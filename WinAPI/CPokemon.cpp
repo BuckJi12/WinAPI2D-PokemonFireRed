@@ -14,6 +14,7 @@ CPokemon::CPokemon()
 	m_info.description			= L"";
 	m_info.number				= 0;
 	m_info.rate					= 255;
+	m_info.evolutionNumber		= -1;
 
 	// 포켓몬 기초값 ex) 파이리: 309
 	m_baseStat.hp				= 1;
@@ -28,6 +29,7 @@ CPokemon::CPokemon()
 	m_originalLocation			= Vector(0,0);
 	m_knockBackLocation			= Vector(0,0);
 	m_onHit						= false;
+	m_canEvolution				= false;
 	m_timer						= 0;
 
 	// 기본 기술
@@ -236,6 +238,11 @@ void CPokemon::Recover()
 	ChangeState(PokemonState::Normal);
 	SetPokemonStat(m_stat.level);
 	Notify();
+}
+
+bool CPokemon::GetCanEvolution()
+{
+	return m_canEvolution;
 }
 
 void CPokemon::Init()
