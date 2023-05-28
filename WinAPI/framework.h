@@ -123,5 +123,6 @@ using namespace FMOD;
 #include "CEffect.h"
 
 #include "CEffectNormal.h"
+#include "CEffectGrass.h"
 #include "CEffectFire.h"
 #include "CEffectWater.h"

@@ -139,6 +139,9 @@
     <Filter Include="GameObject\Effect\Water">
       <UniqueIdentifier>{f927d0e4-ceac-48f0-9037-8b77bcdc27c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Effect\Grass">
+      <UniqueIdentifier>{741dfba2-47f4-495b-b708-5cccc6546d86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -450,6 +453,9 @@
     <ClInclude Include="CEffectWater.h">
       <Filter>GameObject\Effect\Water</Filter>
     </ClInclude>
+    <ClInclude Include="CEffectGrass.h">
+      <Filter>GameObject\Effect\Grass</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -736,6 +742,9 @@
     </ClCompile>
     <ClCompile Include="CEffectWater.cpp">
       <Filter>GameObject\Effect\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="CEffectGrass.cpp">
+      <Filter>GameObject\Effect\Grass</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
