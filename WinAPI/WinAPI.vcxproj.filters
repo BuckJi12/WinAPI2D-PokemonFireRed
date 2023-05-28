@@ -136,6 +136,9 @@
     <Filter Include="GameObject\Effect\Fire">
       <UniqueIdentifier>{e4a30d3f-0013-4075-aafa-9018367dd9d7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Effect\Water">
+      <UniqueIdentifier>{f927d0e4-ceac-48f0-9037-8b77bcdc27c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -444,6 +447,9 @@
     <ClInclude Include="CEffectNormal.h">
       <Filter>GameObject\Effect\Normal</Filter>
     </ClInclude>
+    <ClInclude Include="CEffectWater.h">
+      <Filter>GameObject\Effect\Water</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -727,6 +733,9 @@
     </ClCompile>
     <ClCompile Include="CEffectNormal.cpp">
       <Filter>GameObject\Effect\Normal</Filter>
+    </ClCompile>
+    <ClCompile Include="CEffectWater.cpp">
+      <Filter>GameObject\Effect\Water</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

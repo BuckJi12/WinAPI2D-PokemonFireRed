@@ -123,9 +123,13 @@ void CSceneBattle::Init()
 	CEffect* normal = new CEffectNormal;
 	normal->SetPos(1000, 1000);
 	RESOURCE->AddEffect(PokemonType::Normal, normal);
+	CEffect* water = new CEffectWater;
+	water->SetPos(1000, 1000);
+	RESOURCE->AddEffect(PokemonType::Water, water);
 
 	AddGameObject(fire);
 	AddGameObject(normal);
+	AddGameObject(water);
 
 	// ео
 	m_mapTurns.insert(make_pair(PlayerAction::Enter, new CTurnEnter(this)));

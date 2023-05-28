@@ -160,6 +160,7 @@
     <ClInclude Include="CEffect.h" />
     <ClInclude Include="CEffectFire.h" />
     <ClInclude Include="CEffectNormal.h" />
+    <ClInclude Include="CEffectWater.h" />
     <ClInclude Include="CEmber.h" />
     <ClInclude Include="CEventManager.h" />
     <ClInclude Include="CGameManager.h" />
@@ -264,6 +265,7 @@
     <ClCompile Include="CEffect.cpp" />
     <ClCompile Include="CEffectFire.cpp" />
     <ClCompile Include="CEffectNormal.cpp" />
+    <ClCompile Include="CEffectWater.cpp" />
     <ClCompile Include="CEmber.cpp" />
     <ClCompile Include="CEventManager.cpp" />
     <ClCompile Include="CGameManager.cpp" />
