@@ -127,6 +127,9 @@
     <Filter Include="GameObject\Pokemon\Moves\Grass">
       <UniqueIdentifier>{ac07eb57-98ae-4d94-83c3-f3430f6996d6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Effect">
+      <UniqueIdentifier>{a88260fa-7bcb-41ce-a08f-9446b7ba5f3b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -426,6 +429,9 @@
     <ClInclude Include="CVineWhip.h">
       <Filter>GameObject\Pokemon\Moves\Grass</Filter>
     </ClInclude>
+    <ClInclude Include="CEffect.h">
+      <Filter>GameObject\Effect</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -700,6 +706,9 @@
     </ClCompile>
     <ClCompile Include="CVineWhip.cpp">
       <Filter>GameObject\Pokemon\Moves\Grass</Filter>
+    </ClCompile>
+    <ClCompile Include="CEffect.cpp">
+      <Filter>GameObject\Effect</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
