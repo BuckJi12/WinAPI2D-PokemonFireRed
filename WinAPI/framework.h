@@ -106,6 +106,7 @@ using namespace FMOD;
 #include "CBulbasaur.h"			// No.1 이상해씨
 
 #include "CCharmander.h"		// No.4 파이리
+#include "CCharmeleon.h"		// No.5 리자드
 
 #include "CSquirtle.h"			// No.7 꼬부기
 

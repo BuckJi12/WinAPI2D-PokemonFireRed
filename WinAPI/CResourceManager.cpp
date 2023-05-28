@@ -114,7 +114,13 @@ void CResourceManager::Init()
 	charmander->SetIcon(RESOURCE->LoadImg(L"CharmanderIcon", L"Image\\Pokemon\\CharmanderIcon.png"));
 	m_mapPokemonResource.insert(make_pair(4, charmander));
 
-	// No.4 部何扁 
+	// No.5 府磊靛
+	CPokemonResource* charmeleon = new CPokemonResource;
+	charmeleon->SetImage(RESOURCE->LoadImg(L"CharmeleonImage", L"Image\\Pokemon\\CharmeleonImage.png"));
+	charmeleon->SetIcon(RESOURCE->LoadImg(L"CharmeleonIcon", L"Image\\Pokemon\\CharmeleonIcon.png"));
+	m_mapPokemonResource.insert(make_pair(5, charmeleon));
+
+	// No.7 部何扁 
 	CPokemonResource* squirtle = new CPokemonResource;
 	squirtle->SetImage(RESOURCE->LoadImg(L"Squirtle", L"Image\\Pokemon\\SquirtleImage.png"));
 	squirtle->SetIcon(RESOURCE->LoadImg(L"SquirtleIcon", L"Image\\Pokemon\\SquirtleIcon.png"));
