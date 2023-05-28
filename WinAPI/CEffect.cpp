@@ -12,7 +12,7 @@ CEffect::~CEffect()
 
 void CEffect::Play()
 {
-	m_pAnimator->Play(L"EffectPlay");
+	m_pAnimator->Play(L"EffectPlay", true);
 }
 
 void CEffect::Init()

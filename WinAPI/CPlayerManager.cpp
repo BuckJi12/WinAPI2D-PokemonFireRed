@@ -14,7 +14,7 @@ CPlayerManager::~CPlayerManager()
 void CPlayerManager::Init()
 {
 	CPokemon* charmander = new CCharmander();
-	charmander->SetPokemonStat(5);
+	charmander->SetPokemonStat(6);
 	CPokemon* bulbasaur = new CBulbasaur;
 	bulbasaur->SetPokemonStat(7);
 	CPokemon* bulbasaur3 = new CBulbasaur;

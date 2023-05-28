@@ -118,3 +118,8 @@ using namespace FMOD;
 #include "CWaterGun.h"
 // Grass
 #include "CVineWhip.h"
+
+// Effect
+#include "CEffect.h"
+
+#include "CEffectFire.h"

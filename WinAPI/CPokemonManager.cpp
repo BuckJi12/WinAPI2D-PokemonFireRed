@@ -27,9 +27,4 @@ void CPokemonManager::Release()
 	{
 		delete pokemon.second;
 	}
-
-	for (auto move : m_mapMoves)
-	{
-		delete move.second;
-	}
 }

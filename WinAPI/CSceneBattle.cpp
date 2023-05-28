@@ -32,6 +32,7 @@ CSceneBattle::CSceneBattle()
 	m_pImageBackGround		= nullptr;
 	m_pCursor				= nullptr;
 	m_pImagePlayerStatUI	= nullptr;
+	m_pTextBox				= nullptr;
 	m_curTurnSituation		= TurnSituation::Change;
 }
 
@@ -114,7 +115,14 @@ void CSceneBattle::Init()
 	m_pImagePlayerStatUI = new CPlayerStatUI;
 	m_pImagePlayerStatUI->Init();
 	m_pImagePlayerStatUI->SetPos(1000, 1000);
-	
+
+	// Effect
+	CEffect* effect = new CEffectFire;
+	effect->SetPos(1000, 1000);
+	RESOURCE->AddEffect(PokemonType::Fire, effect);
+
+	AddGameObject(effect);
+
 	// ео
 	m_mapTurns.insert(make_pair(PlayerAction::Enter, new CTurnEnter(this)));
 	m_mapTurns.insert(make_pair(PlayerAction::PlayerReady, new CTurnPlayerReady(this)));
@@ -171,4 +179,5 @@ void CSceneBattle::Release()
 	DELETEOBJECT(m_pImageBackGround);
 	DELETEOBJECT(m_pCursor);
 	DELETEOBJECT(m_pImagePlayerStatUI);
+	DELETEOBJECT(m_pTextBox);
 }

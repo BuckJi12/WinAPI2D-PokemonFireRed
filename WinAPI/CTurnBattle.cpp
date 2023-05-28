@@ -29,6 +29,8 @@ void CTurnBattle::PokemonAttack()
 					//TODO: 효과 작성 ex 효과가 굉장했다 등
 					BATTLE->PlayerAttack();
 					BATTLE->GetOpponentCurPokemon()->HitAnimation();
+					RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->SetPos(625, 155);
+					RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->Play();
 					m_playerAttacked = true;
 					if (BATTLE->GetBattleSituation() == BattleSituation::Opponet_CanNot_Battle)
 					{
@@ -48,6 +50,8 @@ void CTurnBattle::PokemonAttack()
 				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->OppoentUseMove();
 				BATTLE->GetPlayerCurPokemon()->HitAnimation();
+				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->SetPos(200, 310);
+				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->Play();
 				m_OpponentAttacked = true;
 				if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
 				{
@@ -76,6 +80,8 @@ void CTurnBattle::PokemonAttack()
 				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->OppoentUseMove();
 				BATTLE->GetPlayerCurPokemon()->HitAnimation();
+				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->SetPos(200, 310);
+				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->Play();
 				m_OpponentAttacked = true;
 				if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
 				{
@@ -103,6 +109,8 @@ void CTurnBattle::PokemonAttack()
 				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->PlayerAttack();
 				BATTLE->GetOpponentCurPokemon()->HitAnimation();
+				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->SetPos(625, 155);
+				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->Play();
 				m_playerAttacked = true;
 				if (BATTLE->GetBattleSituation() == BattleSituation::Opponet_CanNot_Battle)
 				{
@@ -125,6 +133,8 @@ void CTurnBattle::PokemonAttack()
 				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->OppoentUseMove();
 				BATTLE->GetPlayerCurPokemon()->HitAnimation();
+				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->SetPos(200, 310);
+				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->Play();
 				m_OpponentAttacked = true;
 				if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
 				{
