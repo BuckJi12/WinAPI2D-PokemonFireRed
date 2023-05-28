@@ -122,4 +122,5 @@ using namespace FMOD;
 // Effect
 #include "CEffect.h"
 
+#include "CEffectNormal.h"
 #include "CEffectFire.h"

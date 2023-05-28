@@ -130,6 +130,12 @@
     <Filter Include="GameObject\Effect">
       <UniqueIdentifier>{a88260fa-7bcb-41ce-a08f-9446b7ba5f3b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Effect\Normal">
+      <UniqueIdentifier>{a79f4817-d54d-441c-9407-fda1d2703caf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Effect\Fire">
+      <UniqueIdentifier>{e4a30d3f-0013-4075-aafa-9018367dd9d7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -433,7 +439,10 @@
       <Filter>GameObject\Effect</Filter>
     </ClInclude>
     <ClInclude Include="CEffectFire.h">
-      <Filter>GameObject\Effect</Filter>
+      <Filter>GameObject\Effect\Fire</Filter>
+    </ClInclude>
+    <ClInclude Include="CEffectNormal.h">
+      <Filter>GameObject\Effect\Normal</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -714,7 +723,10 @@
       <Filter>GameObject\Effect</Filter>
     </ClCompile>
     <ClCompile Include="CEffectFire.cpp">
-      <Filter>GameObject\Effect</Filter>
+      <Filter>GameObject\Effect\Fire</Filter>
+    </ClCompile>
+    <ClCompile Include="CEffectNormal.cpp">
+      <Filter>GameObject\Effect\Normal</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

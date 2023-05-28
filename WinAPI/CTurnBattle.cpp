@@ -50,8 +50,8 @@ void CTurnBattle::PokemonAttack()
 				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->OppoentUseMove();
 				BATTLE->GetPlayerCurPokemon()->HitAnimation();
-				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->SetPos(200, 310);
-				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->Play();
+				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->SetPos(200, 310);
+				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->Play();
 				m_OpponentAttacked = true;
 				if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
 				{
@@ -80,8 +80,8 @@ void CTurnBattle::PokemonAttack()
 				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->OppoentUseMove();
 				BATTLE->GetPlayerCurPokemon()->HitAnimation();
-				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->SetPos(200, 310);
-				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->Play();
+				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->SetPos(200, 310);
+				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->Play();
 				m_OpponentAttacked = true;
 				if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
 				{
@@ -133,8 +133,8 @@ void CTurnBattle::PokemonAttack()
 				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->OppoentUseMove();
 				BATTLE->GetPlayerCurPokemon()->HitAnimation();
-				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->SetPos(200, 310);
-				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->Play();
+				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->SetPos(200, 310);
+				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->Play();
 				m_OpponentAttacked = true;
 				if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
 				{

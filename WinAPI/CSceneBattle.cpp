@@ -117,11 +117,15 @@ void CSceneBattle::Init()
 	m_pImagePlayerStatUI->SetPos(1000, 1000);
 
 	// Effect
-	CEffect* effect = new CEffectFire;
-	effect->SetPos(1000, 1000);
-	RESOURCE->AddEffect(PokemonType::Fire, effect);
+	CEffect* fire = new CEffectFire;
+	fire->SetPos(1000, 1000);
+	RESOURCE->AddEffect(PokemonType::Fire, fire);
+	CEffect* normal = new CEffectNormal;
+	normal->SetPos(1000, 1000);
+	RESOURCE->AddEffect(PokemonType::Normal, normal);
 
-	AddGameObject(effect);
+	AddGameObject(fire);
+	AddGameObject(normal);
 
 	// ео
 	m_mapTurns.insert(make_pair(PlayerAction::Enter, new CTurnEnter(this)));
