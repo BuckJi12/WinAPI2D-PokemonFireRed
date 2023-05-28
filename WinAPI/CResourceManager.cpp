@@ -5,6 +5,7 @@
 #include "CImage.h"
 #include "CSound.h"
 #include "CPokemonResource.h"
+#include "CEffect.h"
 
 CResourceManager::CResourceManager()
 {
@@ -139,4 +140,10 @@ void CResourceManager::Release()
 		delete pokemon.second;
 	}
 	m_mapPokemonResource.clear();
+
+	for (pair<PokemonType, CEffect*> effect : m_mapEffect)
+	{
+		delete effect.second;
+	}
+	m_mapEffect.clear();
 }
