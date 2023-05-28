@@ -158,6 +158,7 @@
     <ClInclude Include="CCore.h" />
     <ClInclude Include="CCurPokemonUI.h" />
     <ClInclude Include="CEffect.h" />
+    <ClInclude Include="CEffectFire.h" />
     <ClInclude Include="CEmber.h" />
     <ClInclude Include="CEventManager.h" />
     <ClInclude Include="CGameManager.h" />
@@ -260,6 +261,7 @@
     <ClCompile Include="CCore.cpp" />
     <ClCompile Include="CCurPokemonUI.cpp" />
     <ClCompile Include="CEffect.cpp" />
+    <ClCompile Include="CEffectFire.cpp" />
     <ClCompile Include="CEmber.cpp" />
     <ClCompile Include="CEventManager.cpp" />
     <ClCompile Include="CGameManager.cpp" />

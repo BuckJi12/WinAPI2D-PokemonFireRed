@@ -432,6 +432,9 @@
     <ClInclude Include="CEffect.h">
       <Filter>GameObject\Effect</Filter>
     </ClInclude>
+    <ClInclude Include="CEffectFire.h">
+      <Filter>GameObject\Effect</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -708,6 +711,9 @@
       <Filter>GameObject\Pokemon\Moves\Grass</Filter>
     </ClCompile>
     <ClCompile Include="CEffect.cpp">
+      <Filter>GameObject\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="CEffectFire.cpp">
       <Filter>GameObject\Effect</Filter>
     </ClCompile>
   </ItemGroup>

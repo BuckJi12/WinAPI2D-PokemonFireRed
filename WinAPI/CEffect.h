@@ -7,8 +7,11 @@ public:
 	CEffect();
 	virtual ~CEffect();
 
+protected:
+	CAnimator* m_pAnimator;
+
 public:
-	virtual void Play() {};
+	void Play();
 
 public:
 	void Init()		override;
