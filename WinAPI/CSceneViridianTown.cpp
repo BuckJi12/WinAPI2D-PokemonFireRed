@@ -29,7 +29,7 @@ void CSceneViridianTown::Init()
 	AddGameObject(m_pPlayer);
 
 	m_pWarp = new CWarp;
-	m_pWarp->SetDestination(GroupScene::Route01); // 포켓몬센터
+	m_pWarp->SetDestination(GroupScene::Center); // 포켓몬센터
 	m_pWarp->SetPos(1697, 1690);
 	m_pWarp->SetScale(56, 25);
 	AddGameObject(m_pWarp);
