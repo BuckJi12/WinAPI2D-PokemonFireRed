@@ -183,6 +183,7 @@
     <ClInclude Include="CPokemonManager.h" />
     <ClInclude Include="CPokemonResource.h" />
     <ClInclude Include="CSceneBattle.h" />
+    <ClInclude Include="CSceneCenter.h" />
     <ClInclude Include="CSceneOakLab.h" />
     <ClInclude Include="CScenePalletTown.h" />
     <ClInclude Include="CScenePlayerHome1F.h" />
@@ -293,6 +294,7 @@
     <ClCompile Include="CPokemonManager.cpp" />
     <ClCompile Include="CPokemonResource.cpp" />
     <ClCompile Include="CSceneBattle.cpp" />
+    <ClCompile Include="CSceneCenter.cpp" />
     <ClCompile Include="CSceneOakLab.cpp" />
     <ClCompile Include="CScenePalletTown.cpp" />
     <ClCompile Include="CScenePlayerHome1F.cpp" />

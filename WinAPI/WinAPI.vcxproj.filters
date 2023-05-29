@@ -471,6 +471,9 @@
     <ClInclude Include="CSceneViridianTown.h">
       <Filter>Scene</Filter>
     </ClInclude>
+    <ClInclude Include="CSceneCenter.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -771,6 +774,9 @@
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="CSceneViridianTown.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneCenter.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
   </ItemGroup>
