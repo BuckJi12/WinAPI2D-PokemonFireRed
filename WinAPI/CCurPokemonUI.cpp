@@ -3,13 +3,19 @@
 
 CCurPokemonUI::CCurPokemonUI()
 {
-	m_layer = Layer::Environment2;
-	m_bar = 164;
-	m_color = Color(0, 255, 0, 1);
+	m_layer			= Layer::Environment2;
+	m_targetPokemon = nullptr;
+	m_bar			= 164;
+	m_color			= Color(0, 255, 0, 1);
 }
 
 CCurPokemonUI::~CCurPokemonUI()
 {
+}
+
+void CCurPokemonUI::SetPokemon(CPokemon* pokemon)
+{
+	m_targetPokemon = pokemon;
 }
 
 void CCurPokemonUI::Init()
@@ -28,10 +34,10 @@ void CCurPokemonUI::Render()
 {
 	CImageObject::Render();
 
-	if (BATTLE->GetPlayerCurPokemon() != nullptr)
+	if (m_targetPokemon != nullptr)
 	{
 		RENDER->Image(
-			BATTLE->GetPlayerCurPokemon()->GetPokemonResource()->GetIcon(),
+			m_targetPokemon->GetPokemonResource()->GetIcon(),
 			m_vecPos.x + 20,
 			m_vecPos.y + 20,
 			m_vecPos.x + 20 + (float)BATTLE->GetPlayerCurPokemon()->GetPokemonResource()->GetIcon()->GetWidth(),
@@ -39,7 +45,7 @@ void CCurPokemonUI::Render()
 		);
 
 		RENDER->Text(
-			BATTLE->GetPlayerCurPokemon()->GetPokemonInfo().name,
+			m_targetPokemon->GetPokemonInfo().name,
 			m_vecPos.x + 120,
 			m_vecPos.y + 60,
 			m_vecPos.x + 220,
@@ -49,7 +55,7 @@ void CCurPokemonUI::Render()
 		);
 
 		RENDER->Text(
-			L"LV  " + to_wstring(BATTLE->GetPlayerCurPokemon()->GetPokemonStat().level),
+			L"LV  " + to_wstring(m_targetPokemon->GetPokemonStat().level),
 			m_vecPos.x + 120,
 			m_vecPos.y + 100,
 			m_vecPos.x + 220,
@@ -58,7 +64,7 @@ void CCurPokemonUI::Render()
 			25
 		);
 
-		if (BATTLE->GetPlayerCurPokemon()->GetPokemonStat().curHp >= 0)
+		if (m_targetPokemon->GetPokemonStat().curHp >= 0)
 		{
 			RENDER->FillRect(
 				m_vecPos.x + 103,
@@ -70,8 +76,8 @@ void CCurPokemonUI::Render()
 		}
 
 		RENDER->Text(
-			to_wstring(BATTLE->GetPlayerCurPokemon()->GetPokemonStat().curHp) + L" / "
-			+ to_wstring(BATTLE->GetPlayerCurPokemon()->GetPokemonStat().maxHp),
+			to_wstring(m_targetPokemon->GetPokemonStat().curHp) + L" / "
+			+ to_wstring(m_targetPokemon->GetPokemonStat().maxHp),
 			m_vecPos.x + 150,
 			m_vecPos.y + 170,
 			m_vecPos.x + 250,

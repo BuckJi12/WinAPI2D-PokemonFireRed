@@ -26,6 +26,8 @@ CTurnChange::~CTurnChange()
 
 void CTurnChange::Setting()
 {
+	m_pImageCurPokemonUI->SetPokemon(BATTLE->GetPlayerCurPokemon());
+
 	for (int i = 0; i < PLAYER->GetPlayerPokemonList().size(); i++)
 	{
 		if (PLAYER->GetPlayerPokemonList()[i] == BATTLE->GetPlayerCurPokemon())
@@ -176,6 +178,7 @@ void CTurnChange::Init()
 
 	m_pImageCurPokemonUI = new CCurPokemonUI;
 	m_pImageCurPokemonUI->SetPos(1000, 1000);
+	m_pImageCurPokemonUI->SetPokemon(BATTLE->GetPlayerCurPokemon());
 	m_pImageCurPokemonUI->Init();
 	m_battleScene->AddObjectThisScene(m_pImageCurPokemonUI);
 

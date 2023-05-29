@@ -8,8 +8,12 @@ public:
 	virtual ~CCurPokemonUI();
 
 private:
-	float m_bar;
-	Color m_color;
+	CPokemon*	m_targetPokemon;
+	float		m_bar;
+	Color		m_color;
+
+public:
+	void SetPokemon(CPokemon* pokemon);
 
 public:
 	void Init()		override;
