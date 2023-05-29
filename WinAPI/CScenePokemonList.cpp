@@ -158,7 +158,9 @@ void CScenePokemonList::PokemonChange()
 		}
 
 		// 포켓몬 변경
-		Logger::Debug(to_wstring(m_first) + L"번" + to_wstring(m_second) + L"번 체인지");
+		PLAYER->PokemonSwap(m_first, m_second);
+		m_pPokemonUI[m_first]->SetPokemon(PLAYER->GetPlayerPokemonList()[m_first]);
+		m_pPokemonUI[m_second]->SetPokemon(PLAYER->GetPlayerPokemonList()[m_second]);
 		m_first			= -1;
 		m_firstCheck	= false;
 		m_second		= -1;

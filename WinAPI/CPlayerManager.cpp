@@ -109,3 +109,15 @@ void CPlayerManager::RemoveItem(CItem* item)
 		}
 	}
 }
+
+void CPlayerManager::PokemonSwap(int a, int b)
+{
+	if (a > m_pVecPlayerPokemons.size() - 1)
+		return;
+	if (b > m_pVecPlayerPokemons.size() - 1)
+		return;
+
+	CPokemon* temp = m_pVecPlayerPokemons[a];
+	m_pVecPlayerPokemons[a] = m_pVecPlayerPokemons[b];
+	m_pVecPlayerPokemons[b] = temp;
+}
