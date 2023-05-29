@@ -480,6 +480,9 @@
     <ClInclude Include="CTitleText.h">
       <Filter>GameObject\Battle\UI\Title</Filter>
     </ClInclude>
+    <ClInclude Include="CTitleAnimation.h">
+      <Filter>GameObject\Battle\UI\Title</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -786,6 +789,9 @@
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="CTitleText.cpp">
+      <Filter>GameObject\Battle\UI\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="CTitleAnimation.cpp">
       <Filter>GameObject\Battle\UI\Title</Filter>
     </ClCompile>
   </ItemGroup>

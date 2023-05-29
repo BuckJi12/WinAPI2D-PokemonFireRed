@@ -8,12 +8,14 @@
 #include "CCameraManager.h"
 
 #include "CTitleText.h"
+#include "CTitleAnimation.h"
 
 CSceneTitle::CSceneTitle()
 {
 	m_pImageBackGround		= nullptr;
 	m_titleText				= nullptr;
 	m_pSubTitle				= nullptr;
+	m_pCharizardAni			= nullptr;
 }
 
 CSceneTitle::~CSceneTitle()
@@ -32,9 +34,13 @@ void CSceneTitle::Init()
 	AddGameObject(m_titleText);
 
 	m_pSubTitle = new CImageObject;
-	m_pSubTitle->SetPos(350, 195);
+	m_pSubTitle->SetPos(650, 470);
 	m_pSubTitle->SetImage(RESOURCE->LoadImg(L"SubTitle", L"Image\\UI\\SubTitle.png"));
 	AddGameObject(m_pSubTitle);
+
+	m_pCharizardAni = new CTitleAnimation;
+	m_pCharizardAni->SetPos(400, 350);
+	AddGameObject(m_pCharizardAni);
 }
 
 void CSceneTitle::Enter()
@@ -74,4 +80,5 @@ void CSceneTitle::Release()
 {
 	DELETEOBJECT(m_pImageBackGround);
 	DELETEOBJECT(m_titleText);
+	DELETEOBJECT(m_pCharizardAni);
 }

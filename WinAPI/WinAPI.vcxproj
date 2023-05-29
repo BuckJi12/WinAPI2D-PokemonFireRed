@@ -195,6 +195,7 @@
     <ClInclude Include="CSubject.h" />
     <ClInclude Include="CTackle.h" />
     <ClInclude Include="CTextBox.h" />
+    <ClInclude Include="CTitleAnimation.h" />
     <ClInclude Include="CTitleText.h" />
     <ClInclude Include="CTurn.h" />
     <ClInclude Include="CTurnBag.h" />
@@ -307,6 +308,7 @@
     <ClCompile Include="CSubject.cpp" />
     <ClCompile Include="CTackle.cpp" />
     <ClCompile Include="CTextBox.cpp" />
+    <ClCompile Include="CTitleAnimation.cpp" />
     <ClCompile Include="CTitleText.cpp" />
     <ClCompile Include="CTurn.cpp" />
     <ClCompile Include="CTurnBag.cpp" />

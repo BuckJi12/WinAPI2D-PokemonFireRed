@@ -2,6 +2,7 @@
 #include "CScene.h"
 
 class CTitleText;
+class CTitleAnimation;
 
 class CSceneTitle : public CScene
 {
@@ -10,9 +11,10 @@ public:
 	virtual ~CSceneTitle();
 
 private:
-	CImageObject*	m_pImageBackGround;
-	CTitleText*		m_titleText;
-	CImageObject*	m_pSubTitle;
+	CImageObject*		m_pImageBackGround;
+	CTitleText*			m_titleText;
+	CImageObject*		m_pSubTitle;
+	CTitleAnimation*	m_pCharizardAni;
 
 private:
 	void Init()		override;

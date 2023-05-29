@@ -31,5 +31,4 @@ void CTitleText::Render()
 
 void CTitleText::Release()
 {
-	delete m_pAnimator;
 }
