@@ -26,8 +26,11 @@ void CCurPokemonUI::Init()
 void CCurPokemonUI::Update()
 {
 	// 추후 옵저버 구독 방식으로 변경 예정 
-	m_bar = 164 * ((float)BATTLE->GetPlayerCurPokemon()->GetPokemonStat().curHp /
-			(float)BATTLE->GetPlayerCurPokemon()->GetPokemonStat().maxHp);
+	if (m_targetPokemon != nullptr)
+	{
+		m_bar = 164 * ((float)m_targetPokemon->GetPokemonStat().curHp /
+			(float)m_targetPokemon->GetPokemonStat().maxHp);
+	}
 }
 
 void CCurPokemonUI::Render()
@@ -40,8 +43,8 @@ void CCurPokemonUI::Render()
 			m_targetPokemon->GetPokemonResource()->GetIcon(),
 			m_vecPos.x + 20,
 			m_vecPos.y + 20,
-			m_vecPos.x + 20 + (float)BATTLE->GetPlayerCurPokemon()->GetPokemonResource()->GetIcon()->GetWidth(),
-			m_vecPos.y + 20 + (float)BATTLE->GetPlayerCurPokemon()->GetPokemonResource()->GetIcon()->GetHeight()
+			m_vecPos.x + 20 + (float)m_targetPokemon->GetPokemonResource()->GetIcon()->GetWidth(),
+			m_vecPos.y + 20 + (float)m_targetPokemon->GetPokemonResource()->GetIcon()->GetHeight()
 		);
 
 		RENDER->Text(
@@ -80,7 +83,7 @@ void CCurPokemonUI::Render()
 			+ to_wstring(m_targetPokemon->GetPokemonStat().maxHp),
 			m_vecPos.x + 150,
 			m_vecPos.y + 170,
-			m_vecPos.x + 250,
+			m_vecPos.x + 300,
 			m_vecPos.y + 200,
 			Color(255, 255, 255, 1),
 			25

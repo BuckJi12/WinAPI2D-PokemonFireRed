@@ -42,6 +42,11 @@ void CGameManager::Update()
 	{
 		SetRandomValue();
 	}
+
+	if (BUTTONDOWN('P'))
+	{
+		DELAYCHANGESCENE(GroupScene::PokemonList, 0.5f);
+	}
 }
 
 void CGameManager::Release()

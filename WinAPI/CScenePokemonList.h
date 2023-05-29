@@ -1,10 +1,19 @@
 #pragma once
 
+class CCurPokemonUI;
+
 class CScenePokemonList : public CScene
 {
 public:
 	CScenePokemonList();
 	virtual ~CScenePokemonList();
+
+private:
+	CImageObject*	m_pBackGround;
+	CCurPokemonUI*	m_pPokemonUI[6];
+
+private:
+	void Setting();
 
 private:
 	void Init()		override;
