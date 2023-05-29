@@ -188,6 +188,7 @@
     <ClInclude Include="CScenePlayerHome1F.h" />
     <ClInclude Include="CScenePokemonList.h" />
     <ClInclude Include="CSceneRoute01.h" />
+    <ClInclude Include="CSceneViridianTown.h" />
     <ClInclude Include="CSelectBox.h" />
     <ClInclude Include="CSquirtle.h" />
     <ClInclude Include="CSubject.h" />
@@ -297,6 +298,7 @@
     <ClCompile Include="CScenePlayerHome1F.cpp" />
     <ClCompile Include="CScenePokemonList.cpp" />
     <ClCompile Include="CSceneRoute01.cpp" />
+    <ClCompile Include="CSceneViridianTown.cpp" />
     <ClCompile Include="CSelectBox.cpp" />
     <ClCompile Include="CSquirtle.cpp" />
     <ClCompile Include="CSubject.cpp" />

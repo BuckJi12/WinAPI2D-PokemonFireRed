@@ -41,7 +41,7 @@ void CSceneRoute01::Init()
 	m_pWarp2 = new CWarp;
 	m_pWarp2->SetPos(750, 0);
 	m_pWarp2->SetScale(300, 40);
-	m_pWarp2->SetDestination(GroupScene::PalletTown);
+	m_pWarp2->SetDestination(GroupScene::ViridianTown);
 	AddGameObject(m_pWarp2);
 
 	LoadTile(GETPATH + L"Tile\\Route01.tile");

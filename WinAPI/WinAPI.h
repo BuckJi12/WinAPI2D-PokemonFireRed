@@ -33,6 +33,7 @@ enum class GroupScene
 	PalletTown,
 	OakLab,
 	Route01,
+	ViridianTown,
 
 	PokemonList,
 	PrevScene,
