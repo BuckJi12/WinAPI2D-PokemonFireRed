@@ -145,6 +145,9 @@
     <Filter Include="GameObject\NPC">
       <UniqueIdentifier>{0eae2b04-07a0-4989-9ce8-5e4ca6d62afc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Battle\UI\Title">
+      <UniqueIdentifier>{bb89e7f9-6c35-41bb-9a44-0e2e566489eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -474,6 +477,9 @@
     <ClInclude Include="CSceneCenter.h">
       <Filter>Scene</Filter>
     </ClInclude>
+    <ClInclude Include="CTitleText.h">
+      <Filter>GameObject\Battle\UI\Title</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -778,6 +784,9 @@
     </ClCompile>
     <ClCompile Include="CSceneCenter.cpp">
       <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CTitleText.cpp">
+      <Filter>GameObject\Battle\UI\Title</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
