@@ -7,8 +7,13 @@
 #include "CEventManager.h"
 #include "CCameraManager.h"
 
+#include "CTitleText.h"
+
 CSceneTitle::CSceneTitle()
 {
+	m_pImageBackGround		= nullptr;
+	m_titleText				= nullptr;
+	m_pSubTitle				= nullptr;
 }
 
 CSceneTitle::~CSceneTitle()
@@ -17,6 +22,19 @@ CSceneTitle::~CSceneTitle()
 
 void CSceneTitle::Init()
 {
+	m_pImageBackGround = new CImageObject;
+	m_pImageBackGround->SetPos(0,0);
+	m_pImageBackGround->SetImage(RESOURCE->LoadImg(L"TitleBackGround",L"Image\\UI\\TitleBackGround.png"));
+	AddGameObject(m_pImageBackGround);
+
+	m_titleText = new CTitleText;
+	m_titleText->SetPos(400, 120);
+	AddGameObject(m_titleText);
+
+	m_pSubTitle = new CImageObject;
+	m_pSubTitle->SetPos(350, 195);
+	m_pSubTitle->SetImage(RESOURCE->LoadImg(L"SubTitle", L"Image\\UI\\SubTitle.png"));
+	AddGameObject(m_pSubTitle);
 }
 
 void CSceneTitle::Enter()
@@ -40,11 +58,11 @@ void CSceneTitle::Update()
 void CSceneTitle::Render()
 {
 	RENDER->Text(L"press space to start",
-		WINSIZEX * 0.5f - 100,
-		WINSIZEY * 0.5f - 10,
-		WINSIZEX * 0.5f + 100,
-		WINSIZEY * 0.5f + 10,
-		Color(0, 0, 0, 1.f),
+		300,
+		500,
+		500,
+		550,
+		Color(255, 255, 255, 1.f),
 		20.f);
 }
 
@@ -54,4 +72,6 @@ void CSceneTitle::Exit()
 
 void CSceneTitle::Release()
 {
+	DELETEOBJECT(m_pImageBackGround);
+	DELETEOBJECT(m_titleText);
 }

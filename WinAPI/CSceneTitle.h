@@ -1,11 +1,18 @@
 #pragma once
 #include "CScene.h"
 
+class CTitleText;
+
 class CSceneTitle : public CScene
 {
 public:
 	CSceneTitle();
 	virtual ~CSceneTitle();
+
+private:
+	CImageObject*	m_pImageBackGround;
+	CTitleText*		m_titleText;
+	CImageObject*	m_pSubTitle;
 
 private:
 	void Init()		override;
