@@ -142,6 +142,9 @@
     <Filter Include="GameObject\Effect\Grass">
       <UniqueIdentifier>{741dfba2-47f4-495b-b708-5cccc6546d86}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\NPC">
+      <UniqueIdentifier>{0eae2b04-07a0-4989-9ce8-5e4ca6d62afc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -459,6 +462,9 @@
     <ClInclude Include="CCharmeleon.h">
       <Filter>GameObject\Pokemon\Pokemon\Fire</Filter>
     </ClInclude>
+    <ClInclude Include="CNPC.h">
+      <Filter>GameObject\NPC</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -751,6 +757,9 @@
     </ClCompile>
     <ClCompile Include="CCharmeleon.cpp">
       <Filter>GameObject\Pokemon\Pokemon\Fire</Filter>
+    </ClCompile>
+    <ClCompile Include="CNPC.cpp">
+      <Filter>GameObject\NPC</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
