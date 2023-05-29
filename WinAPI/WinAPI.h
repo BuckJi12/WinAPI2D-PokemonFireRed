@@ -34,6 +34,7 @@ enum class GroupScene
 	OakLab,
 	Route01,
 
+	PokemonList,
 	PrevScene,
 	Battle,
 	None,

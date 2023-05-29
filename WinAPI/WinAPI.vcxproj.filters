@@ -465,6 +465,9 @@
     <ClInclude Include="CNPC.h">
       <Filter>GameObject\NPC</Filter>
     </ClInclude>
+    <ClInclude Include="CScenePokemonList.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -760,6 +763,9 @@
     </ClCompile>
     <ClCompile Include="CNPC.cpp">
       <Filter>GameObject\NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="CScenePokemonList.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
