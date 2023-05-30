@@ -157,6 +157,9 @@
     <Filter Include="GameObject\Pokemon\Moves\Ice">
       <UniqueIdentifier>{0b129a94-2cdc-42b3-b361-42538b0ee5d0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Pokemon\Moves\Lightning">
+      <UniqueIdentifier>{415a54d8-7fa8-4227-a9b6-fc9e7bc1e4c8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -507,6 +510,9 @@
     <ClInclude Include="CIceBeam.h">
       <Filter>GameObject\Pokemon\Moves\Ice</Filter>
     </ClInclude>
+    <ClInclude Include="CThunderBolt.h">
+      <Filter>GameObject\Pokemon\Moves\Lightning</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -832,6 +838,9 @@
     </ClCompile>
     <ClCompile Include="CIceBeam.cpp">
       <Filter>GameObject\Pokemon\Moves\Ice</Filter>
+    </ClCompile>
+    <ClCompile Include="CThunderBolt.cpp">
+      <Filter>GameObject\Pokemon\Moves\Lightning</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
