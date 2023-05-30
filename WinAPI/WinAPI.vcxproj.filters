@@ -151,6 +151,9 @@
     <Filter Include="GameObject\NPC\OakLab">
       <UniqueIdentifier>{9ece61d3-814e-4464-858b-2940d22f3b4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Pokemon\Moves\Psychic">
+      <UniqueIdentifier>{c71ddaf1-5d5d-415f-a078-9e0783737a83}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -495,6 +498,9 @@
     <ClInclude Include="CPokemonFrame.h">
       <Filter>GameObject\Battle\UI</Filter>
     </ClInclude>
+    <ClInclude Include="CPsychic.h">
+      <Filter>GameObject\Pokemon\Moves\Psychic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -814,6 +820,9 @@
     </ClCompile>
     <ClCompile Include="CPokemonFrame.cpp">
       <Filter>GameObject\Battle\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CPsychic.cpp">
+      <Filter>GameObject\Pokemon\Moves\Psychic</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

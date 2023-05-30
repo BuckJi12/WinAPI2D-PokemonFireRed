@@ -119,6 +119,8 @@ using namespace FMOD;
 #include "CWaterGun.h"
 // Grass
 #include "CVineWhip.h"
+// Psychic
+#include "CPsychic.h"
 
 // Effect
 #include "CEffect.h"
