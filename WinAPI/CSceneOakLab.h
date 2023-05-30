@@ -30,6 +30,7 @@ private:
 	void PokemonChoosing();
 	void FrameControl();
 	void FrameSelcet();
+	void GivePokemon(int index);
 
 private:
 	void Init()		override;

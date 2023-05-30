@@ -15,6 +15,7 @@ private:
 	bool	m_canMove;
 	bool	m_debugMode;
 	bool	m_canMeet;
+	bool	m_playerGetStarting;
 	int		m_randomValue;
 
 public:
@@ -23,9 +24,11 @@ public:
 	bool GetDebugMode();
 	bool GetCanMove();
 	bool GetCanMeet();
+	bool GetPlayerGetStarting();
 	int	 GetValue();
 
 	void SetRandomValue();
+	void SetPlayerGetStarting(bool get);
 	void SetCanMove(bool canMove);
 
 private:

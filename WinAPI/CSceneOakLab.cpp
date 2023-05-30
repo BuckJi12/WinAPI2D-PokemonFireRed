@@ -52,9 +52,9 @@ void CSceneOakLab::PokemonChoosing()
 void CSceneOakLab::FrameControl()
 {
 	if (BUTTONDOWN(VK_LEFT))
-		m_curCount += 1;
-	else if (BUTTONDOWN(VK_RIGHT))
 		m_curCount -= 1;
+	else if (BUTTONDOWN(VK_RIGHT))
+		m_curCount += 1;
 
 	if (m_curCount > 2)
 		m_curCount = 0;
@@ -94,7 +94,30 @@ void CSceneOakLab::FrameSelcet()
 		m_pPokemonFrame[2]->SetPos(3000, 3000);
 		m_pTextBox->SetPos(3000, 3000);
 		GAME->SetCanMove(true);
-		//TODO: 선택 포켓몬 추가
+		GAME->SetPlayerGetStarting(true);
+		GivePokemon(m_curCount);
+	}
+}
+
+void CSceneOakLab::GivePokemon(int index)
+{
+	if (index == 0)	// 이상해씨
+	{
+		CPokemon* pokemon = new CPokemon(*POKEMON->FindPokemon(1));
+		pokemon->SetPokemonStat(5);
+		PLAYER->AddPokemonToPlayer(pokemon);
+	}
+	else if (index == 1) // 파이리
+	{
+		CPokemon* pokemon = new CPokemon(*POKEMON->FindPokemon(4));
+		pokemon->SetPokemonStat(5);
+		PLAYER->AddPokemonToPlayer(pokemon);
+	}
+	else // 꼬부기
+	{
+		CPokemon* pokemon = new CPokemon(*POKEMON->FindPokemon(7));
+		pokemon->SetPokemonStat(5);
+		PLAYER->AddPokemonToPlayer(pokemon);
 	}
 }
 
@@ -129,10 +152,13 @@ void CSceneOakLab::Init()
 
 	auto TalkingToChoosePokemon = [](DWORD_PTR param)
 	{
-		CSceneOakLab* scene = (CSceneOakLab*)param;
-		scene->m_pTextBox->SetPos(CAMERA->ScreenToWorldPoint(Vector(0, 400)));;
-		scene->m_choosing = true;
-		GAME->SetCanMove(false);
+		if (GAME->GetPlayerGetStarting() == false)
+		{
+			CSceneOakLab* scene = (CSceneOakLab*)param;
+			scene->m_pTextBox->SetPos(CAMERA->ScreenToWorldPoint(Vector(0, 400)));;
+			scene->m_choosing = true;
+			GAME->SetCanMove(false);
+		}
 	};
 
 
