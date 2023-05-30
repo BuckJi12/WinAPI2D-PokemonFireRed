@@ -75,7 +75,7 @@ void CSceneOakLab::Update()
 {
 	if (m_talking)
 	{
-		if (BUTTONDOWN(VK_SPACE))
+		if (BUTTONDOWN(VK_ESCAPE))
 		{
 			// TODO: 행동 가능
 			m_talking = false;
