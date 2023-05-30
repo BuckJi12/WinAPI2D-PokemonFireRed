@@ -121,6 +121,8 @@ using namespace FMOD;
 #include "CVineWhip.h"
 // Psychic
 #include "CPsychic.h"
+// Ice
+#include "CIceBeam.h"
 
 // Effect
 #include "CEffect.h"

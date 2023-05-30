@@ -154,6 +154,9 @@
     <Filter Include="GameObject\Pokemon\Moves\Psychic">
       <UniqueIdentifier>{c71ddaf1-5d5d-415f-a078-9e0783737a83}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Pokemon\Moves\Ice">
+      <UniqueIdentifier>{0b129a94-2cdc-42b3-b361-42538b0ee5d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -501,6 +504,9 @@
     <ClInclude Include="CPsychic.h">
       <Filter>GameObject\Pokemon\Moves\Psychic</Filter>
     </ClInclude>
+    <ClInclude Include="CIceBeam.h">
+      <Filter>GameObject\Pokemon\Moves\Ice</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -823,6 +829,9 @@
     </ClCompile>
     <ClCompile Include="CPsychic.cpp">
       <Filter>GameObject\Pokemon\Moves\Psychic</Filter>
+    </ClCompile>
+    <ClCompile Include="CIceBeam.cpp">
+      <Filter>GameObject\Pokemon\Moves\Ice</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
