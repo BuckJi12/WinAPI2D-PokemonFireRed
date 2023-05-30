@@ -492,6 +492,9 @@
     <ClInclude Include="CChoosePokemon.h">
       <Filter>GameObject\NPC\OakLab</Filter>
     </ClInclude>
+    <ClInclude Include="CPokemonFrame.h">
+      <Filter>GameObject\Battle\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -808,6 +811,9 @@
     </ClCompile>
     <ClCompile Include="CChoosePokemon.cpp">
       <Filter>GameObject\NPC\OakLab</Filter>
+    </ClCompile>
+    <ClCompile Include="CPokemonFrame.cpp">
+      <Filter>GameObject\Battle\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

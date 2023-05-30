@@ -57,6 +57,7 @@ enum class Layer
 	Environment,
 	Environment2,
 	Environment3,
+	Interface,
 
 	Ui,
 	Size,

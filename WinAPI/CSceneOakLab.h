@@ -5,6 +5,7 @@ class CWarp;
 class CProfessorOak;
 class CTextBox;
 class CChoosePokemon;
+class CPokemonFrame;
 
 class CSceneOakLab : public CScene
 {
@@ -19,7 +20,17 @@ private:
 	CWarp*			m_pWarp;
 	CTextBox*		m_pTextBox;
 	CChoosePokemon* m_pChoosePokemon;
+	CPokemonFrame*	m_pPokemonFrame[3];
+
+	int				m_curCount;
+	bool			m_choosing;
 	bool			m_talking;
+
+private:
+	void PokemonChoosing();
+	void FrameControl();
+	void FrameSelcet();
+
 private:
 	void Init()		override;
 	void Enter()	override;

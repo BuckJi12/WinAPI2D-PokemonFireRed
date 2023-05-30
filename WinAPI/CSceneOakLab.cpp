@@ -7,6 +7,7 @@
 #include "CWarp.h"
 #include "CTextBox.h"
 #include "CChoosePokemon.h"
+#include "CPokemonFrame.h"
 
 CSceneOakLab::CSceneOakLab()
 {
@@ -17,6 +18,12 @@ CSceneOakLab::CSceneOakLab()
 	m_pTextBox			= nullptr;
 	m_pChoosePokemon	= nullptr;
 
+	m_pPokemonFrame[0]	= nullptr;
+	m_pPokemonFrame[1]	= nullptr;
+	m_pPokemonFrame[2]	= nullptr;
+
+	m_curCount			= 0;
+	m_choosing			= false;
 	m_talking			= false;
 }
 
@@ -25,6 +32,66 @@ CSceneOakLab::~CSceneOakLab()
 	delete m_pPlayer;
 	delete m_pImageBackGround;
 	delete m_pWarp;
+}
+
+void CSceneOakLab::PokemonChoosing()
+{
+	if (m_choosing)
+	{
+		if (BUTTONDOWN(VK_ESCAPE))
+			m_choosing = false;
+
+		FrameControl();
+		FrameSelcet();
+	}
+}
+
+void CSceneOakLab::FrameControl()
+{
+	if (BUTTONDOWN(VK_LEFT))
+		m_curCount += 1;
+	else if (BUTTONDOWN(VK_RIGHT))
+		m_curCount -= 1;
+
+	if (m_curCount > 2)
+		m_curCount = 0;
+	if (m_curCount < 0)
+		m_curCount = 2;
+
+	switch (m_curCount)
+	{
+	case 0:
+		m_pPokemonFrame[0]->SetPos(CAMERA->ScreenToWorldPoint(Vector(400, 200)));
+		m_pPokemonFrame[1]->SetPos(3000, 3000);
+		m_pPokemonFrame[2]->SetPos(3000, 3000);
+		m_pTextBox->SetText(L"풀 타입 포켓몬 이상해씨로 선택하시겠습니까?");
+		break;
+	case 1:
+		m_pPokemonFrame[0]->SetPos(3000, 3000);
+		m_pPokemonFrame[1]->SetPos(CAMERA->ScreenToWorldPoint(Vector(400, 200)));
+		m_pPokemonFrame[2]->SetPos(3000, 3000);
+		m_pTextBox->SetText(L"불꽃 타입 포켓몬 파이리로 선택하시겠습니까?");
+		break;
+	case 2:
+		m_pPokemonFrame[0]->SetPos(3000, 3000);
+		m_pPokemonFrame[1]->SetPos(3000, 3000);
+		m_pPokemonFrame[2]->SetPos(CAMERA->ScreenToWorldPoint(Vector(400, 200)));
+		m_pTextBox->SetText(L"물 타입 꼬부기로 선택하시겠습니까?");
+		break;
+	}
+}
+
+void CSceneOakLab::FrameSelcet()
+{
+	if (BUTTONDOWN(VK_SPACE))
+	{
+		m_choosing = false;
+		m_pPokemonFrame[0]->SetPos(3000, 3000);
+		m_pPokemonFrame[1]->SetPos(3000, 3000);
+		m_pPokemonFrame[2]->SetPos(3000, 3000);
+		m_pTextBox->SetPos(3000, 3000);
+		//TODO: 선택 포켓몬 추가
+	}
 }
 
 void CSceneOakLab::Init()
@@ -56,10 +123,34 @@ void CSceneOakLab::Init()
 	m_pOak->SetCallBack(TalkingToOak, (DWORD_PTR)this);
 	AddGameObject(m_pOak);
 
+	auto TalkingToChoosePokemon = [](DWORD_PTR param)
+	{
+		CSceneOakLab* scene = (CSceneOakLab*)param;
+		scene->m_pTextBox->SetPos(CAMERA->ScreenToWorldPoint(Vector(0, 400)));;
+		scene->m_choosing = true;
+		// TODO: 행동 불가
+	};
+
 
 	m_pChoosePokemon = new CChoosePokemon;
 	m_pChoosePokemon->SetPos(925, 627);
+	m_pChoosePokemon->SetCallBack(TalkingToChoosePokemon, (DWORD_PTR)this);
 	AddGameObject(m_pChoosePokemon);
+
+	m_pPokemonFrame[0] = new CPokemonFrame;
+	m_pPokemonFrame[0]->SetImage(RESOURCE->LoadImg(L"BulbasaurImage", L"Image\\Pokemon\\Bulbasaur.png"));
+	m_pPokemonFrame[0]->SetPos(3000, 3000);
+	AddGameObject(m_pPokemonFrame[0]);
+
+	m_pPokemonFrame[1] = new CPokemonFrame;
+	m_pPokemonFrame[1]->SetImage(RESOURCE->LoadImg(L"CharmanderImage", L"Image\\Pokemon\\Charmander.png"));
+	m_pPokemonFrame[1]->SetPos(3000, 3000);
+	AddGameObject(m_pPokemonFrame[1]);
+
+	m_pPokemonFrame[2] = new CPokemonFrame;
+	m_pPokemonFrame[2]->SetImage(RESOURCE->LoadImg(L"SquirtleImage", L"Image\\Pokemon\\Squirtle.png"));
+	m_pPokemonFrame[2]->SetPos(3000, 3000);
+	AddGameObject(m_pPokemonFrame[2]);
 
 	// 태초마을
 	m_pWarp = new CWarp;
@@ -89,6 +180,8 @@ void CSceneOakLab::Update()
 			m_pTextBox->SetPos(CAMERA->WorldToScreenPoint(Vector(3000, 3000)));
 		}
 	}
+
+	PokemonChoosing();
 }
 
 void CSceneOakLab::Render()
