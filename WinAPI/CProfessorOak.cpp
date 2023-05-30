@@ -4,6 +4,7 @@
 CProfessorOak::CProfessorOak()
 {
 	m_pCallBack = nullptr;
+	m_pParam	= 0;
 	m_layer		= Layer::NPC;
 	m_vecScale	= Vector(64, 80);
 }
@@ -12,9 +13,10 @@ CProfessorOak::~CProfessorOak()
 {
 }
 
-void CProfessorOak::SetCallBack(CallBackFunc callBackFunc)
+void CProfessorOak::SetCallBack(CallBackFunc callBackFunc, DWORD_PTR param)
 {
 	m_pCallBack = callBackFunc;
+	m_pParam	= param;
 }
 
 void CProfessorOak::Init()
@@ -57,7 +59,7 @@ void CProfessorOak::OnCollisionStay(CCollider* pOtherCollider)
 		if (BUTTONDOWN(VK_SPACE))
 		{
 			if (m_pCallBack != nullptr)
-				m_pCallBack();
+				m_pCallBack(m_pParam);
 		}
 	}
 }

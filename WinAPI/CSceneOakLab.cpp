@@ -5,6 +5,7 @@
 #include "CProfessorOak.h"
 #include "CImageObject.h"
 #include "CWarp.h"
+#include "CTextBox.h"
 
 CSceneOakLab::CSceneOakLab()
 {
@@ -12,6 +13,9 @@ CSceneOakLab::CSceneOakLab()
 	m_pOak				= nullptr;
 	m_pImageBackGround	= nullptr;
 	m_pWarp				= nullptr;
+	m_pTextBox			= nullptr;
+
+	m_talking			= false;
 }
 
 CSceneOakLab::~CSceneOakLab()
@@ -28,18 +32,26 @@ void CSceneOakLab::Init()
 	m_pImageBackGround->SetPos(0, 0);
 	AddGameObject(m_pImageBackGround);
 
+	m_pTextBox = new CTextBox;
+	m_pTextBox->SetPos(3000, 3000);
+	AddGameObject(m_pTextBox);
+
 	m_pPlayer = new CPlayer;
 	m_pPlayer->SetPos(700, 1000);
 	AddGameObject(m_pPlayer);
 
-	auto TalkingToOak = []()
+	auto TalkingToOak = [](DWORD_PTR param)
 	{
-		Logger::Debug(L"박사님 날씨가 좋군요!");
+		CSceneOakLab* scene = (CSceneOakLab*)param;
+		scene->m_pTextBox->SetText(L"오박사: 오 왔는가 현준 군!!\n마음에 드는 포켓몬을 한 마리 데려가게!");
+		scene->m_pTextBox->SetPos(CAMERA->ScreenToWorldPoint(Vector(0, 400)));;
+		scene->m_talking = true;
+		// TODO: 행동 불가
 	};
 
 	m_pOak = new CProfessorOak;
 	m_pOak->SetPos(738, 525);
-	m_pOak->SetCallBack(TalkingToOak);
+	m_pOak->SetCallBack(TalkingToOak, (DWORD_PTR)this);
 	AddGameObject(m_pOak);
 
 	// 태초마을
@@ -60,6 +72,15 @@ void CSceneOakLab::Enter()
 
 void CSceneOakLab::Update()
 {
+	if (m_talking)
+	{
+		if (BUTTONDOWN(VK_SPACE))
+		{
+			// TODO: 행동 가능
+			m_talking = false;
+			m_pTextBox->SetPos(CAMERA->WorldToScreenPoint(Vector(3000, 3000)));
+		}
+	}
 }
 
 void CSceneOakLab::Render()
