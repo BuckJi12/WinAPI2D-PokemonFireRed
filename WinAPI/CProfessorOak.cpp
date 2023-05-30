@@ -13,12 +13,6 @@ CProfessorOak::~CProfessorOak()
 {
 }
 
-void CProfessorOak::SetCallBack(CallBackFunc callBackFunc, DWORD_PTR param)
-{
-	m_pCallBack = callBackFunc;
-	m_pParam	= param;
-}
-
 void CProfessorOak::Init()
 {
 	m_pImage = RESOURCE->LoadImg(L"ProfessorOak", L"Image\\NPC\\ProfessorOak.png");
@@ -54,14 +48,7 @@ void CProfessorOak::OnCollisionEnter(CCollider* pOtherCollider)
 
 void CProfessorOak::OnCollisionStay(CCollider* pOtherCollider)
 {
-	if (pOtherCollider->GetObjName() == L"플레이어")
-	{
-		if (BUTTONDOWN(VK_SPACE))
-		{
-			if (m_pCallBack != nullptr)
-				m_pCallBack(m_pParam);
-		}
-	}
+	CNPC::OnCollisionStay(pOtherCollider);
 }
 
 void CProfessorOak::OnCollisionExit(CCollider* pOtherCollider)

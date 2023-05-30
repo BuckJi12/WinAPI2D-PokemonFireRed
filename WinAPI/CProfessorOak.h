@@ -1,19 +1,11 @@
 #pragma once
 #include "CNPC.h"
 
-typedef void(*CallBackFunc)(DWORD_PTR);
 class CProfessorOak : public CNPC
 {
 public:
 	CProfessorOak();
 	virtual ~CProfessorOak();
-
-private:
-	CallBackFunc	m_pCallBack;
-	DWORD_PTR		m_pParam;
-
-public:
-	void SetCallBack(CallBackFunc callBackFunc, DWORD_PTR param);
 
 private:
 	void Init() override;

@@ -1,5 +1,6 @@
 #pragma once
 
+typedef void(*CallBackFunc)(DWORD_PTR);
 class CNPC : public CGameObject
 {
 public:
@@ -7,12 +8,15 @@ public:
 	virtual ~CNPC();
 
 protected:
-	CImage*		m_pImage;
-	CAnimator*	m_pAnimator;
+	CImage*			m_pImage;
+	CAnimator*		m_pAnimator;
+	CallBackFunc	m_pCallBack;
+	DWORD_PTR		m_pParam;
 
 public:
 	CImage*		GetImage();
 	CAnimator*	GetAnimator();
+	void SetCallBack(CallBackFunc callBackFunc, DWORD_PTR param);
 
 protected:
 	void Init() override;
