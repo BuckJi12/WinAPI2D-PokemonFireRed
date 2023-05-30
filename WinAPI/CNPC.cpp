@@ -5,6 +5,7 @@ CNPC::CNPC()
 {
 	m_pImage	= nullptr;
 	m_pAnimator = nullptr;
+	m_talking	= false;
 }
 
 CNPC::~CNPC()
@@ -51,14 +52,18 @@ void CNPC::OnCollisionStay(CCollider* pOtherCollider)
 {
 	if (pOtherCollider->GetObjName() == L"플레이어")
 	{
-		if (BUTTONDOWN(VK_SPACE))
+		if (BUTTONDOWN(VK_SPACE) && !m_talking)
 		{
 			if (m_pCallBack != nullptr)
+			{
+				m_talking = true;
 				m_pCallBack(m_pParam);
+			}
 		}
 	}
 }
 
 void CNPC::OnCollisionExit(CCollider* pOtherCollider)
 {
+	m_talking = false;
 }

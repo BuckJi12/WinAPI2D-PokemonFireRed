@@ -13,6 +13,7 @@ protected:
 	CallBackFunc	m_pCallBack;
 	DWORD_PTR		m_pParam;
 
+	bool			m_talking;
 public:
 	CImage*		GetImage();
 	CAnimator*	GetAnimator();

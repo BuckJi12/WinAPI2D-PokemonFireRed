@@ -44,6 +44,7 @@ void CProfessorOak::Release()
 
 void CProfessorOak::OnCollisionEnter(CCollider* pOtherCollider)
 {
+	CNPC::OnCollisionEnter(pOtherCollider);
 }
 
 void CProfessorOak::OnCollisionStay(CCollider* pOtherCollider)
@@ -53,4 +54,5 @@ void CProfessorOak::OnCollisionStay(CCollider* pOtherCollider)
 
 void CProfessorOak::OnCollisionExit(CCollider* pOtherCollider)
 {
+	CNPC::OnCollisionExit(pOtherCollider);
 }
