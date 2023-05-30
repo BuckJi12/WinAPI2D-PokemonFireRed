@@ -4,6 +4,16 @@ class CCore;
 class CMove;
 class CItem;
 
+enum class MoveResult
+{
+	Normal,
+	Good,
+	Bad,
+	Nothing,
+
+	Size
+};
+
 class CBattleManager : public SingleTon<CBattleManager>
 {
 	friend SingleTon<CBattleManager>;
@@ -20,6 +30,7 @@ private:
 	FirstAttack		m_curFirstAttack;
 	BattleSituation m_curBattleSituation;
 	BattleResult	m_battleResult;
+	MoveResult		m_curMoveResult;
 	int				m_playerCurInex;
 
 	int				m_catchRate;
@@ -32,6 +43,7 @@ public:
 	FirstAttack		GetFirstAttack();
 	BattleSituation GetBattleSituation();
 	BattleResult	GetBattleResult();
+	MoveResult		GetMoveResult();
 	CMove*			GetCurMove();
 	CMove*			GetCurOpponentMove();
 	void			OpponentSelectMove();
@@ -50,6 +62,7 @@ public:
 	int				CalculateDamage(CPokemon* attacker, CPokemon* victim, CMove* move);
 	int				CalculateCatchRate(CItem* item);	//TODO: 아이템 추가
 	bool			PlayerCheckBattleAble();
+	void			IsGoodEffect(CPokemon* attacker, CPokemon* victim, CMove* move);
 	
 	CatchResult		TryPokemonCatch();
 };

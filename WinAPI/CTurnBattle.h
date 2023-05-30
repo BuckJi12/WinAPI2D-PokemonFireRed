@@ -15,6 +15,7 @@ private:
 
 private:
 	void PokemonAttack();
+	void OutPutMoveResult(MoveResult result);
 
 public:
 	void Init()    override;

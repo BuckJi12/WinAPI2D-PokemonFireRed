@@ -28,6 +28,7 @@ void CTurnBattle::PokemonAttack()
 				{
 					//TODO: 효과 작성 ex 효과가 굉장했다 등
 					BATTLE->PlayerAttack();
+					OutPutMoveResult(BATTLE->GetMoveResult());
 					BATTLE->GetOpponentCurPokemon()->HitAnimation();
 					RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->SetPos(625, 155);
 					RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->Play();
@@ -49,6 +50,7 @@ void CTurnBattle::PokemonAttack()
 			{
 				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->OppoentUseMove();
+				OutPutMoveResult(BATTLE->GetMoveResult());
 				BATTLE->GetPlayerCurPokemon()->HitAnimation();
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->SetPos(200, 310);
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->Play();
@@ -79,6 +81,7 @@ void CTurnBattle::PokemonAttack()
 			{
 				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->OppoentUseMove();
+				OutPutMoveResult(BATTLE->GetMoveResult());
 				BATTLE->GetPlayerCurPokemon()->HitAnimation();
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->SetPos(200, 310);
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->Play();
@@ -108,6 +111,7 @@ void CTurnBattle::PokemonAttack()
 			{
 				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->PlayerAttack();
+				OutPutMoveResult(BATTLE->GetMoveResult());
 				BATTLE->GetOpponentCurPokemon()->HitAnimation();
 				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->SetPos(625, 155);
 				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->Play();
@@ -132,6 +136,7 @@ void CTurnBattle::PokemonAttack()
 			{
 				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->OppoentUseMove();
+				OutPutMoveResult(BATTLE->GetMoveResult());
 				BATTLE->GetPlayerCurPokemon()->HitAnimation();
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->SetPos(200, 310);
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->Play();
@@ -162,6 +167,25 @@ void CTurnBattle::PokemonAttack()
 		{
 			m_battleScene->ChangeTurn(PlayerAction::ChooseAction);
 		}
+	}
+}
+
+void CTurnBattle::OutPutMoveResult(MoveResult result)
+{
+	switch (result)
+	{
+	case MoveResult::Normal:
+		m_battleScene->GetTextBox()->SetText(L"효과가 평범했다!\n");
+		break;
+	case MoveResult::Good:
+		m_battleScene->GetTextBox()->SetText(L"효과가 굉장했다!!!!\n");
+		break;
+	case MoveResult::Bad:
+		m_battleScene->GetTextBox()->SetText(L"효과가 별로였다...\n");
+		break;
+	case MoveResult::Nothing:
+		m_battleScene->GetTextBox()->SetText(L"아무일도 없었다......\n");
+		break;
 	}
 }
 

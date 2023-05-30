@@ -38,6 +38,7 @@ CBattleManager::CBattleManager()
 	m_playerCurInex			= 0;
 	m_curBattleSituation	= BattleSituation::BothSide_Can_Battle;
 	m_battleResult			= BattleResult::Win;
+	m_curMoveResult			= MoveResult::Normal;
 
 	m_catchRate				= 1;
 	m_isCatching			= false;
@@ -75,6 +76,11 @@ BattleSituation CBattleManager::GetBattleSituation()
 BattleResult CBattleManager::GetBattleResult()
 {
 	return m_battleResult;
+}
+
+MoveResult CBattleManager::GetMoveResult()
+{
+	return m_curMoveResult;
 }
 
 CMove* CBattleManager::GetCurMove()
@@ -146,6 +152,8 @@ void CBattleManager::PlayerAttack()
 	m_pPlayerCurPokemon->GetPokemonMoveList()[m_playerCurInex]->UseMove(m_pOppoentCurPokemon);
 	m_pOppoentCurPokemon->TakeDamage(CalculateDamage(m_pPlayerCurPokemon, m_pOppoentCurPokemon,
 		m_pPlayerCurPokemon->GetPokemonMoveList()[m_playerCurInex]));
+	IsGoodEffect(m_pPlayerCurPokemon, m_pOppoentCurPokemon, 
+		m_pPlayerCurPokemon->GetPokemonMoveList()[m_playerCurInex]);
 	CheckBattleAble();
 }
 
@@ -154,6 +162,8 @@ void CBattleManager::OppoentUseMove()
 	m_pOpponentCurMove->UseMove(m_pPlayerCurPokemon);
 	m_pPlayerCurPokemon->TakeDamage(CalculateDamage(m_pOppoentCurPokemon, m_pPlayerCurPokemon,
 		m_pOpponentCurMove));
+	IsGoodEffect(m_pOppoentCurPokemon, m_pPlayerCurPokemon,
+		m_pOpponentCurMove);
 	CheckBattleAble();
 }
 
@@ -209,6 +219,21 @@ bool CBattleManager::PlayerCheckBattleAble()
 	}
 
 	return false;
+}
+
+void CBattleManager::IsGoodEffect(CPokemon* attacker, CPokemon* victim, CMove* move)
+{
+	float result =typeDamage[(int)move->GetType()][(int)victim->GetType(1)] * 
+		typeDamage[(int)move->GetType()][(int)victim->GetType(2)];
+
+	if (result >= 2)
+		m_curMoveResult = MoveResult::Good;
+	else if (result < 1)
+		m_curMoveResult = MoveResult::Bad;
+	else if (result == 0)
+		m_curMoveResult = MoveResult::Nothing;
+	else
+		m_curMoveResult = MoveResult::Normal;
 }
 
 CatchResult CBattleManager::TryPokemonCatch()
