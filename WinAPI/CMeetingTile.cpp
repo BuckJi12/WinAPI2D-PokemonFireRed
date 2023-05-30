@@ -49,9 +49,10 @@ void CMeetingTile::Release()
 void CMeetingTile::OnCollisionEnter(CCollider* pOther)
 {
 	GAME->m_meetTime += 1;
-	if (GAME->m_canMeet && GAME->m_meetTime > GAME->m_randomValue)
+	if (GAME->GetCanMeet() && GAME->m_meetTime > GAME->GetValue())
 	{
 		CAMERA->FadeOut(0.25f);
+		GAME->SetCanMove(false);
 		DELAYCHANGESCENE(GroupScene::Battle, 0.5f);
 	}
 }

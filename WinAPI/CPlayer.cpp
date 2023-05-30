@@ -60,7 +60,10 @@ void CPlayer::Init()
 
 void CPlayer::Update()
 {
-	m_mapState[m_curState]->Update();
+	if (GAME->GetCanMove())
+	{
+		m_mapState[m_curState]->Update();
+	}
 }
 
 void CPlayer::Render()

@@ -39,7 +39,10 @@ void CSceneOakLab::PokemonChoosing()
 	if (m_choosing)
 	{
 		if (BUTTONDOWN(VK_ESCAPE))
+		{
+			GAME->SetCanMove(true);
 			m_choosing = false;
+		}
 
 		FrameControl();
 		FrameSelcet();
@@ -90,6 +93,7 @@ void CSceneOakLab::FrameSelcet()
 		m_pPokemonFrame[1]->SetPos(3000, 3000);
 		m_pPokemonFrame[2]->SetPos(3000, 3000);
 		m_pTextBox->SetPos(3000, 3000);
+		GAME->SetCanMove(true);
 		//TODO: 선택 포켓몬 추가
 	}
 }
@@ -115,7 +119,7 @@ void CSceneOakLab::Init()
 		scene->m_pTextBox->SetText(L"오박사: 오 왔는가 현준 군!!\n마음에 드는 포켓몬을 한 마리 데려가게!");
 		scene->m_pTextBox->SetPos(CAMERA->ScreenToWorldPoint(Vector(0, 400)));;
 		scene->m_talking = true;
-		// TODO: 행동 불가
+		GAME->SetCanMove(false);
 	};
 
 	m_pOak = new CProfessorOak;
@@ -128,7 +132,7 @@ void CSceneOakLab::Init()
 		CSceneOakLab* scene = (CSceneOakLab*)param;
 		scene->m_pTextBox->SetPos(CAMERA->ScreenToWorldPoint(Vector(0, 400)));;
 		scene->m_choosing = true;
-		// TODO: 행동 불가
+		GAME->SetCanMove(false);
 	};
 
 
@@ -175,7 +179,7 @@ void CSceneOakLab::Update()
 	{
 		if (BUTTONDOWN(VK_SPACE))
 		{
-			// TODO: 행동 가능
+			GAME->SetCanMove(true);
 			m_talking = false;
 			m_pTextBox->SetPos(CAMERA->WorldToScreenPoint(Vector(3000, 3000)));
 		}

@@ -76,6 +76,7 @@ void CTurnChooseAction::CursorControl()
 			Exit();
 			SCENE->ChangePrevScene();
 			GAME->SetRandomValue();
+			GAME->SetCanMove(true);
 			break;
 		}
 	}

@@ -11,13 +11,22 @@ private:
 	CGameManager();
 	virtual ~CGameManager();
 
-public:
-	float	m_meetTime;
+private:
+	bool	m_canMove;
 	bool	m_debugMode;
 	bool	m_canMeet;
 	int		m_randomValue;
 
+public:
+	float	m_meetTime;
+
+	bool GetDebugMode();
+	bool GetCanMove();
+	bool GetCanMeet();
+	int	 GetValue();
+
 	void SetRandomValue();
+	void SetCanMove(bool canMove);
 
 private:
 	void ChangeDebugMode();

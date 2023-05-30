@@ -56,6 +56,7 @@ void CTurnResult::Update()
 		Exit();
 		SCENE->ChangePrevScene();
 		GAME->SetRandomValue();
+		GAME->SetCanMove(true);
 	}
 }
 

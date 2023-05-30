@@ -3,10 +3,11 @@
 
 CGameManager::CGameManager()
 {
-	m_meetTime = 0;
-	m_debugMode = false;
-	m_canMeet = true;
-	m_randomValue = 0;
+	m_meetTime		= 0;
+	m_debugMode		= false;
+	m_canMove		= true;
+	m_canMeet		= true;
+	m_randomValue	= 0;
 	srand(time(NULL));
 }
 
@@ -19,11 +20,36 @@ void CGameManager::ChangeDebugMode()
 	m_debugMode = !m_debugMode;
 }
 
+bool CGameManager::GetDebugMode()
+{
+	return m_debugMode;
+}
+
+bool CGameManager::GetCanMove()
+{
+	return m_canMove;
+}
+
+bool CGameManager::GetCanMeet()
+{
+	return m_canMeet;
+}
+
+int CGameManager::GetValue()
+{
+	return m_randomValue;
+}
+
 void CGameManager::SetRandomValue()
 {
 	GAME->m_meetTime = 0;
 	m_canMeet = true;
 	m_randomValue = rand() % 15 + 5;
+}
+
+void CGameManager::SetCanMove(bool canMove)
+{
+	m_canMove = canMove;
 }
 
 void CGameManager::Init()
