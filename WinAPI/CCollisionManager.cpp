@@ -19,6 +19,7 @@ void CCollisionManager::Init()
 {
 	CheckLayer(Layer::Tile, Layer::Player);
 	CheckLayer(Layer::Wall, Layer::Player);
+	CheckLayer(Layer::NPC, Layer::Player);
 	CheckLayer(Layer::Environment, Layer::Player);
 }
 

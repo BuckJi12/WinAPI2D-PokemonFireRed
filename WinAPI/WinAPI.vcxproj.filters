@@ -483,6 +483,9 @@
     <ClInclude Include="CTitleAnimation.h">
       <Filter>GameObject\Battle\UI\Title</Filter>
     </ClInclude>
+    <ClInclude Include="CProfessorOak.h">
+      <Filter>GameObject\NPC</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -793,6 +796,9 @@
     </ClCompile>
     <ClCompile Include="CTitleAnimation.cpp">
       <Filter>GameObject\Battle\UI\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="CProfessorOak.cpp">
+      <Filter>GameObject\NPC</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -51,6 +51,7 @@ enum class Layer
 {
 	Default,
 	Tile,
+	NPC,
 	Player,
 	Wall,
 	Environment,

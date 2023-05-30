@@ -2,14 +2,16 @@
 #include "CSceneOakLab.h"
 
 #include "CPlayer.h"
+#include "CProfessorOak.h"
 #include "CImageObject.h"
 #include "CWarp.h"
 
 CSceneOakLab::CSceneOakLab()
 {
-	m_pPlayer = nullptr;
-	m_pImageBackGround = nullptr;
-	m_pWarp = nullptr;
+	m_pPlayer			= nullptr;
+	m_pOak				= nullptr;
+	m_pImageBackGround	= nullptr;
+	m_pWarp				= nullptr;
 }
 
 CSceneOakLab::~CSceneOakLab()
@@ -29,6 +31,16 @@ void CSceneOakLab::Init()
 	m_pPlayer = new CPlayer;
 	m_pPlayer->SetPos(700, 1000);
 	AddGameObject(m_pPlayer);
+
+	auto TalkingToOak = []()
+	{
+		Logger::Debug(L"박사님 날씨가 좋군요!");
+	};
+
+	m_pOak = new CProfessorOak;
+	m_pOak->SetPos(738, 525);
+	m_pOak->SetCallBack(TalkingToOak);
+	AddGameObject(m_pOak);
 
 	// 태초마을
 	m_pWarp = new CWarp;
@@ -60,4 +72,8 @@ void CSceneOakLab::Exit()
 
 void CSceneOakLab::Release()
 {
+	DELETEOBJECT(m_pPlayer);
+	DELETEOBJECT(m_pOak);
+	DELETEOBJECT(m_pImageBackGround);
+	DELETEOBJECT(m_pWarp);
 }

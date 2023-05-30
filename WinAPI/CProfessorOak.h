@@ -1,20 +1,20 @@
 #pragma once
+#include "CNPC.h"
 
-class CNPC : public CGameObject
+typedef void(*CallBackFunc)();
+class CProfessorOak : public CNPC
 {
 public:
-	CNPC();
-	virtual ~CNPC();
+	CProfessorOak();
+	virtual ~CProfessorOak();
 
-protected:
-	CImage*		m_pImage;
-	CAnimator*	m_pAnimator;
+private:
+	CallBackFunc m_pCallBack;
 
 public:
-	CImage*		GetImage();
-	CAnimator*	GetAnimator();
+	void SetCallBack(CallBackFunc callBackFunc);
 
-protected:
+private:
 	void Init() override;
 	void Update() override;
 	void Render() override;

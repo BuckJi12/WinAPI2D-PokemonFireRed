@@ -2,6 +2,7 @@
 class CPlayer;
 class CImageObject;
 class CWarp;
+class CProfessorOak;
 
 class CSceneOakLab : public CScene
 {
@@ -10,9 +11,10 @@ public:
 	virtual ~CSceneOakLab();
 
 private:
-	CPlayer* m_pPlayer;
-	CImageObject* m_pImageBackGround;
-	CWarp* m_pWarp;
+	CPlayer*		m_pPlayer;
+	CProfessorOak*	m_pOak;
+	CImageObject*	m_pImageBackGround;
+	CWarp*			m_pWarp;
 
 private:
 	void Init()		override;
