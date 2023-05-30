@@ -3,8 +3,6 @@
 
 CProfessorOak::CProfessorOak()
 {
-	m_pCallBack = nullptr;
-	m_pParam	= 0;
 	m_layer		= Layer::NPC;
 	m_vecScale	= Vector(64, 80);
 }

@@ -3,6 +3,8 @@
 
 CNPC::CNPC()
 {
+	m_pCallBack = nullptr;
+	m_pParam	= 0;
 	m_pImage	= nullptr;
 	m_pAnimator = nullptr;
 	m_talking	= false;

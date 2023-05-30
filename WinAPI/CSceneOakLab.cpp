@@ -6,6 +6,7 @@
 #include "CImageObject.h"
 #include "CWarp.h"
 #include "CTextBox.h"
+#include "CChoosePokemon.h"
 
 CSceneOakLab::CSceneOakLab()
 {
@@ -14,6 +15,7 @@ CSceneOakLab::CSceneOakLab()
 	m_pImageBackGround	= nullptr;
 	m_pWarp				= nullptr;
 	m_pTextBox			= nullptr;
+	m_pChoosePokemon	= nullptr;
 
 	m_talking			= false;
 }
@@ -53,6 +55,11 @@ void CSceneOakLab::Init()
 	m_pOak->SetPos(738, 525);
 	m_pOak->SetCallBack(TalkingToOak, (DWORD_PTR)this);
 	AddGameObject(m_pOak);
+
+
+	m_pChoosePokemon = new CChoosePokemon;
+	m_pChoosePokemon->SetPos(925, 627);
+	AddGameObject(m_pChoosePokemon);
 
 	// 태초마을
 	m_pWarp = new CWarp;
@@ -96,6 +103,8 @@ void CSceneOakLab::Release()
 {
 	DELETEOBJECT(m_pPlayer);
 	DELETEOBJECT(m_pOak);
+	DELETEOBJECT(m_pTextBox);
 	DELETEOBJECT(m_pImageBackGround);
 	DELETEOBJECT(m_pWarp);
+	DELETEOBJECT(m_pChoosePokemon);
 }

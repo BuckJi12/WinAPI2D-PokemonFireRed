@@ -148,6 +148,9 @@
     <Filter Include="GameObject\Battle\UI\Title">
       <UniqueIdentifier>{bb89e7f9-6c35-41bb-9a44-0e2e566489eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\NPC\OakLab">
+      <UniqueIdentifier>{9ece61d3-814e-4464-858b-2940d22f3b4e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -484,7 +487,10 @@
       <Filter>GameObject\Battle\UI\Title</Filter>
     </ClInclude>
     <ClInclude Include="CProfessorOak.h">
-      <Filter>GameObject\NPC</Filter>
+      <Filter>GameObject\NPC\OakLab</Filter>
+    </ClInclude>
+    <ClInclude Include="CChoosePokemon.h">
+      <Filter>GameObject\NPC\OakLab</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -798,7 +804,10 @@
       <Filter>GameObject\Battle\UI\Title</Filter>
     </ClCompile>
     <ClCompile Include="CProfessorOak.cpp">
-      <Filter>GameObject\NPC</Filter>
+      <Filter>GameObject\NPC\OakLab</Filter>
+    </ClCompile>
+    <ClCompile Include="CChoosePokemon.cpp">
+      <Filter>GameObject\NPC\OakLab</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
