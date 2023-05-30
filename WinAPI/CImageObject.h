@@ -13,7 +13,7 @@ protected:
 	CImage* m_pImage;
 
 public:
-	CImage* GetIamge();
+	CImage* GetImage();
 	void SetImage(CImage* pImage);
 
 protected:

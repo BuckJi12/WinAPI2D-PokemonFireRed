@@ -47,6 +47,8 @@ void CSceneViridianTown::Enter()
 {
 	CAMERA->FadeIn(0.5f);
 	CAMERA->SetTargetObj(m_pPlayer);
+	CAMERA->SetTargetBackGround(m_pImageBackGround);
+	CAMERA->OneTimeMove();
 }
 
 void CSceneViridianTown::Update()

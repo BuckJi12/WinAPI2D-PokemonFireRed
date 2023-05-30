@@ -40,6 +40,7 @@ void CSceneCenter::Enter()
 {
 	CAMERA->FadeIn(0.5f);
 	CAMERA->SetTargetObj(m_pPlayer);
+	CAMERA->SetTargetBackGround(m_pImageBackGround);
 }
 
 void CSceneCenter::Update()

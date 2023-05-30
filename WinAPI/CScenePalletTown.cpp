@@ -63,6 +63,7 @@ void CScenePalletTown::Enter()
 {
 	CAMERA->FadeIn(1.0f);
 	CAMERA->SetTargetObj(m_pPlayer);
+	CAMERA->SetTargetBackGround(m_pImageBackGround);
 }
 
 void CScenePalletTown::Update()

@@ -51,6 +51,8 @@ void CSceneRoute01::Enter()
 {
 	CAMERA->FadeIn(1.0f);
 	CAMERA->SetTargetObj(m_pPlayer);
+	CAMERA->SetTargetBackGround(m_pImageBackGround);
+	CAMERA->OneTimeMove();
 }
 
 void CSceneRoute01::Update()

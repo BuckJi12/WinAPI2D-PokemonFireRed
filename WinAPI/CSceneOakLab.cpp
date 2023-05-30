@@ -68,6 +68,7 @@ void CSceneOakLab::Enter()
 {
 	CAMERA->FadeIn(1.0f);
 	CAMERA->SetTargetObj(m_pPlayer);
+	CAMERA->SetTargetBackGround(m_pImageBackGround);
 }
 
 void CSceneOakLab::Update()

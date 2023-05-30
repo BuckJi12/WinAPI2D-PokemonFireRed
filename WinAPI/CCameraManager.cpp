@@ -7,14 +7,15 @@
 
 CCameraManager::CCameraManager()
 {
-	m_vecLookAt		= Vector(0, 0);
-	m_vecTargetPos	= Vector(0, 0);
-	m_pTargetObj	= nullptr;
-	m_fTimeToTarget = 0;
+	m_vecLookAt			= Vector(0, 0);
+	m_vecTargetPos		= Vector(0, 0);
+	m_pTargetObj		= nullptr;
+	m_pTargetBackGround = nullptr;
+	m_fTimeToTarget		= 0;
 
-	m_fTargetBright = 1.f;
-	m_fCurBright = 1.f;
-	m_fTimeToBright = 0.f;
+	m_fTargetBright		= 1.f;
+	m_fCurBright		= 1.f;
+	m_fTimeToBright		= 0.f;
 }
 
 CCameraManager::~CCameraManager()
@@ -36,15 +37,52 @@ CGameObject* CCameraManager::GetTargetObj()
 	return m_pTargetObj;
 }
 
+CImageObject* CCameraManager::GetTargetBackGround()
+{
+	return m_pTargetBackGround;
+}
+
 void CCameraManager::SetTargetPos(Vector targetPos, float timeToTarget)
 {
-	m_vecTargetPos = targetPos;
+	m_vecTargetPos	= targetPos;
+	m_fTimeToTarget = timeToTarget;
+}
+
+void CCameraManager::SetTargetPosX(float targetPos, float timeToTarget)
+{
+	m_vecTargetPos.x = targetPos;
+	m_fTimeToTarget = timeToTarget;
+}
+
+void CCameraManager::SetTargetPosY(float targetPos, float timeToTarget)
+{
+	m_vecTargetPos.y = targetPos;
 	m_fTimeToTarget = timeToTarget;
 }
 
 void CCameraManager::SetTargetObj(CGameObject* pTargetObj)
 {
 	m_pTargetObj = pTargetObj;
+}
+
+void CCameraManager::SetTargetBackGround(CImageObject* pTargetObj)
+{
+	m_pTargetBackGround = pTargetObj;
+}
+
+void CCameraManager::OneTimeMove()
+{
+	SetTargetPos(m_pTargetObj->GetPos());
+
+	if (m_pTargetObj->GetPos().x < WINSIZEX * 0.5f)
+		m_vecTargetPos.x = WINSIZEX * 0.5f;
+	else if (m_pTargetObj->GetPos().x > m_pTargetBackGround->GetImage()->GetWidth() - WINSIZEX * 0.5f)
+		m_vecTargetPos.x = m_pTargetBackGround->GetImage()->GetWidth() - WINSIZEX * 0.5f;
+
+	if (m_pTargetObj->GetPos().y < WINSIZEY * 0.5f)
+		m_vecTargetPos.y = WINSIZEY * 0.5f;
+	else if (m_pTargetObj->GetPos().y > m_pTargetBackGround->GetImage()->GetHeight() - WINSIZEY * 0.5f)
+		m_vecTargetPos.y = m_pTargetBackGround->GetImage()->GetHeight() - WINSIZEY * 0.5f;
 }
 
 Vector CCameraManager::WorldToScreenPoint(Vector worldPoint)
@@ -88,7 +126,7 @@ void CCameraManager::Init()
 void CCameraManager::Update()
 {
 	// 추적할 게임오브젝트가 있을 경우
-	if (nullptr != m_pTargetObj)
+ 	if (nullptr != m_pTargetObj)
 	{
 		if (m_pTargetObj->GetReserveDelete())
 		{
@@ -98,7 +136,19 @@ void CCameraManager::Update()
 		else
 		{
 			// 추적할 게임오브젝트가 있을 경우 게임오브젝트의 위치를 목표위치로 지정
-			SetTargetPos(m_pTargetObj->GetPos());
+			if (nullptr != m_pTargetBackGround)
+			{
+				if (WINSIZEX * 0.5f < m_pTargetObj->GetPos().x &&
+					m_pTargetBackGround->GetImage()->GetWidth() - WINSIZEX * 0.5f > m_pTargetObj->GetPos().x)
+					SetTargetPosX(m_pTargetObj->GetPos().x);
+				if (WINSIZEY * 0.5f < m_pTargetObj->GetPos().y &&
+					m_pTargetBackGround->GetImage()->GetHeight() - WINSIZEY * 0.5f > m_pTargetObj->GetPos().y)
+					SetTargetPosY(m_pTargetObj->GetPos().y);
+			}
+			else
+			{
+				SetTargetPos(m_pTargetObj->GetPos());
+			}
 		}
 	}
 

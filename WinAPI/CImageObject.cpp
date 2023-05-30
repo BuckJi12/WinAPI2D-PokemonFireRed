@@ -14,7 +14,7 @@ CImageObject::~CImageObject()
 {
 }
 
-CImage* CImageObject::GetIamge()
+CImage* CImageObject::GetImage()
 {
     return m_pImage;
 }
