@@ -173,6 +173,12 @@ void CResourceManager::Init()
 	butterfree->SetImage(RESOURCE->LoadImg(L"Butterfree", L"Image\\Pokemon\\ButterfreeImage.png"));
 	butterfree->SetIcon(RESOURCE->LoadImg(L"Butterfree", L"Image\\Pokemon\\ButterfreeIcon.png"));
 	m_mapPokemonResource.insert(make_pair(12, butterfree));
+
+	// No.13 ÇÇÄ«Ãò 
+	CPokemonResource* pikachu = new CPokemonResource;
+	pikachu->SetImage(RESOURCE->LoadImg(L"Pikachu", L"Image\\Pokemon\\PikachuImage.png"));
+	pikachu->SetIcon(RESOURCE->LoadImg(L"Pikachu", L"Image\\Pokemon\\PikachuIcon.png"));
+	m_mapPokemonResource.insert(make_pair(13, pikachu));
 }
 
 void CResourceManager::Release()

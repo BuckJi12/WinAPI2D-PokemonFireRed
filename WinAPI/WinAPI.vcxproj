@@ -193,6 +193,7 @@
     <ClInclude Include="CNurse.h" />
     <ClInclude Include="COpponentFloor.h" />
     <ClInclude Include="COpponentStatUI.h" />
+    <ClInclude Include="CPikachu.h" />
     <ClInclude Include="CPlayerFloor.h" />
     <ClInclude Include="CPlayerManager.h" />
     <ClInclude Include="CPlayerStatUI.h" />
@@ -332,6 +333,7 @@
     <ClCompile Include="CNurse.cpp" />
     <ClCompile Include="COpponentFloor.cpp" />
     <ClCompile Include="COpponentStatUI.cpp" />
+    <ClCompile Include="CPikachu.cpp" />
     <ClCompile Include="CPlayerFloor.cpp" />
     <ClCompile Include="CPlayerManager.cpp" />
     <ClCompile Include="CPlayerStatUI.cpp" />

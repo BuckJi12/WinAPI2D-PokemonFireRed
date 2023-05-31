@@ -175,6 +175,9 @@
     <Filter Include="GameObject\Pokemon\Pokemon\Bug">
       <UniqueIdentifier>{e00c79b2-4bcd-4a42-845a-5087f673eb72}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Pokemon\Pokemon\Lightning">
+      <UniqueIdentifier>{da1e9b15-65f8-481f-aef3-8f04627e3d17}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -588,6 +591,9 @@
     <ClInclude Include="CButterfree.h">
       <Filter>GameObject\Pokemon\Pokemon\Bug</Filter>
     </ClInclude>
+    <ClInclude Include="CPikachu.h">
+      <Filter>GameObject\Pokemon\Pokemon\Lightning</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -976,6 +982,9 @@
     </ClCompile>
     <ClCompile Include="CButterfree.cpp">
       <Filter>GameObject\Pokemon\Pokemon\Bug</Filter>
+    </ClCompile>
+    <ClCompile Include="CPikachu.cpp">
+      <Filter>GameObject\Pokemon\Pokemon\Lightning</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
