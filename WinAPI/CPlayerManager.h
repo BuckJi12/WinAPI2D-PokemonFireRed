@@ -27,6 +27,7 @@ public:
 	void				AddItem(CItem* item, int count);
 	void				RemoveItem(CItem* item);
 	void				PokemonSwap(int a, int b);
+	void				DeletePokemon(int index);
 	void				RecoverPokemon();
 	CPokemon*			GetPlayerFirstPokemon();
 	vector<CPokemon*>	GetPlayerPokemonList();

@@ -168,6 +168,15 @@ void CScenePokemonList::PokemonChange()
 	}
 }
 
+void CScenePokemonList::DeletePokemon()
+{
+	if (BUTTONDOWN('D'))
+	{
+		PLAYER->DeletePokemon(m_curCount);
+		Enter();
+	}
+}
+
 void CScenePokemonList::Init()
 {
 	m_pBackGround = new CImageObject;
@@ -225,6 +234,7 @@ void CScenePokemonList::Update()
 	BoxControl();
 	BoxSelect();
 	PokemonChange();
+	DeletePokemon();
 
 	if (BUTTONDOWN(VK_ESCAPE) && !m_firstCheck && !m_secondCheck)
 	{

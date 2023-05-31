@@ -122,6 +122,24 @@ void CPlayerManager::PokemonSwap(int a, int b)
 	m_pVecPlayerPokemons[b] = temp;
 }
 
+void CPlayerManager::DeletePokemon(int index)
+{
+	if (m_pVecPlayerPokemons.size() > 1)
+	{
+		// index가 벡터의 맨 뒤면
+		if (index == m_pVecPlayerPokemons.size() - 1)
+		{
+			m_pVecPlayerPokemons.pop_back();
+			return;
+		}
+		else
+		{
+			PokemonSwap(index, index + 1);
+			DeletePokemon(index + 1);
+		}
+	}
+}
+
 void CPlayerManager::RecoverPokemon()
 {
 	for (auto pokemon : m_pVecPlayerPokemons)

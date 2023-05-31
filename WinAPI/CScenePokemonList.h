@@ -27,6 +27,7 @@ private:
 	void BoxSelect();
 	void SelectCancel();
 	void PokemonChange();
+	void DeletePokemon();
 
 private:
 	void Init()		override;
