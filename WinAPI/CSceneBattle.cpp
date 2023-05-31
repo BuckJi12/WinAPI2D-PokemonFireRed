@@ -135,6 +135,9 @@ void CSceneBattle::Init()
 	CEffect* ice = new CEffectIce;
 	ice->SetPos(1000, 1000);
 	RESOURCE->AddEffect(PokemonType::Ice, ice);
+	CEffect* psychic = new CEffectPsyChic;
+	psychic->SetPos(1000, 1000);
+	RESOURCE->AddEffect(PokemonType::Psychic, psychic);
 
 
 	AddGameObject(fire);

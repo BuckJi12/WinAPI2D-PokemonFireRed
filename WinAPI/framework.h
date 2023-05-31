@@ -143,3 +143,4 @@ using namespace FMOD;
 #include "CEffectWater.h"
 #include "CEffectLightning.h"
 #include "CEffectIce.h"
+#include "CEffectPsyChic.h"

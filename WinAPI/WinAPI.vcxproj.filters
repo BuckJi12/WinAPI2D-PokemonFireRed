@@ -166,6 +166,9 @@
     <Filter Include="GameObject\Effect\Ice">
       <UniqueIdentifier>{8264f953-6f17-44e4-8bdf-d3e527f93ac8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Effect\Psychic">
+      <UniqueIdentifier>{8b4c4066-7c61-4b85-8784-a6fed381ddfa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -549,6 +552,9 @@
     <ClInclude Include="CEffectIce.h">
       <Filter>GameObject\Effect\Ice</Filter>
     </ClInclude>
+    <ClInclude Include="CEffectPsyChic.h">
+      <Filter>GameObject\Effect\Psychic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -907,6 +913,9 @@
     </ClCompile>
     <ClCompile Include="CEffectIce.cpp">
       <Filter>GameObject\Effect\Ice</Filter>
+    </ClCompile>
+    <ClCompile Include="CEffectPsyChic.cpp">
+      <Filter>GameObject\Effect\Psychic</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
