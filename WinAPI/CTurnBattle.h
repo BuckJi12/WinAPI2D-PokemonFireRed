@@ -12,6 +12,8 @@ private:
 
 	bool m_playerAttacked;
 	bool m_OpponentAttacked;
+	bool m_checkPlayer;
+	bool m_checkOpponent;
 
 private:
 	void PokemonAttack();

@@ -6,6 +6,8 @@ CTurnBattle::CTurnBattle(CSceneBattle* battleScene) : CTurn(battleScene)
 	m_timer				= 0;
 	m_playerAttacked	= false;
 	m_OpponentAttacked	= false;
+	m_checkPlayer		= false;
+	m_checkOpponent		= false;
 }
 
 CTurnBattle::~CTurnBattle()
@@ -33,20 +35,28 @@ void CTurnBattle::PokemonAttack()
 					RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->SetPos(625, 155);
 					RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->Play();
 					m_playerAttacked = true;
-					if (BATTLE->GetBattleSituation() == BattleSituation::Opponet_CanNot_Battle)
-					{
-						//배틀 승리
-						BATTLE->SetBattleResult(BattleResult::Win);
-						m_battleScene->ChangeTurn(PlayerAction::Result);
-					}
 				}
 		}
-		if (m_timer > 6 && !m_OpponentAttacked)
+
+		if (m_timer > 6 && !m_checkOpponent)
+		{
+			m_checkOpponent = true;
+			if (BATTLE->GetBattleSituation() == BattleSituation::Opponet_CanNot_Battle)
+			{
+				//배틀 승리
+				m_battleScene->GetTextBox()->SetText(BATTLE->GetOpponentCurPokemon()->GetPokemonInfo().name + L"이(가) " +
+					L" " + L"쓰러졌다\n");
+				BATTLE->SetBattleResult(BattleResult::Win);
+				m_battleScene->ChangeTurn(PlayerAction::Result);
+			}
+		}
+
+		if (m_timer > 9 && !m_OpponentAttacked)
 		{
 			//상대 사용 기술 대사
 			m_battleScene->GetTextBox()->SetText(BATTLE->GetOpponentCurPokemon()->GetPokemonInfo().name + L"이(가) " +
 				L" " + BATTLE->GetCurOpponentMove()->GetMoveStat().name + L" 사용했다! \n");
-			if (m_timer > 9)
+			if (m_timer > 12)
 			{
 				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->OppoentUseMove();
@@ -55,20 +65,25 @@ void CTurnBattle::PokemonAttack()
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->SetPos(200, 310);
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->Play();
 				m_OpponentAttacked = true;
-				if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
-				{
-					//플레이어 패배
-					if (BATTLE->PlayerCheckBattleAble())
-					{
-						m_battleScene->ChangeTurn(PlayerAction::Continue);
-					}
-					else
-					{
-						BATTLE->SetBattleResult(BattleResult::Lose);
-						m_battleScene->ChangeTurn(PlayerAction::Result);
-					}
-				}
 			}		
+		}
+
+		if (m_timer > 15 && !m_checkPlayer)
+		{
+			m_checkPlayer = true;
+			if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
+			{
+				//플레이어 패배
+				if (BATTLE->PlayerCheckBattleAble())
+				{
+					m_battleScene->ChangeTurn(PlayerAction::Continue);
+				}
+				else
+				{
+					BATTLE->SetBattleResult(BattleResult::Lose);
+					m_battleScene->ChangeTurn(PlayerAction::Result);
+				}
+			}
 		}
 		break;
 	case FirstAttack::Oppoent:
@@ -86,28 +101,33 @@ void CTurnBattle::PokemonAttack()
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->SetPos(200, 310);
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->Play();
 				m_OpponentAttacked = true;
-				if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
+			}
+		}
+
+		if (m_timer > 6 && !m_checkPlayer)
+		{
+			m_checkPlayer = true;
+			if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
+			{
+				//플레이어 패배
+				if (BATTLE->PlayerCheckBattleAble())
 				{
-					//플레이어 패배
-					if (BATTLE->PlayerCheckBattleAble())
-					{
-						m_battleScene->ChangeTurn(PlayerAction::Continue);
-					}
-					else
-					{
-						BATTLE->SetBattleResult(BattleResult::Lose);
-						m_battleScene->ChangeTurn(PlayerAction::Result);
-					}
+					m_battleScene->ChangeTurn(PlayerAction::Continue);
+				}
+				else
+				{
+					BATTLE->SetBattleResult(BattleResult::Lose);
+					m_battleScene->ChangeTurn(PlayerAction::Result);
 				}
 			}
 		}
 
-		if (m_timer > 6 && !m_playerAttacked)
+		if (m_timer > 9 && !m_playerAttacked)
 		{
 			//플레이어 사용 기술 대사
 			m_battleScene->GetTextBox()->SetText(L"가라! " + BATTLE->GetPlayerCurPokemon()->GetPokemonInfo().name +
 				L" " + BATTLE->GetCurMove()->GetMoveStat().name + L"\n");
-			if (m_timer > 9)
+			if (m_timer > 12)
 			{
 				//TODO: 효과 작성 ex 효과가 굉장했다 등
 				BATTLE->PlayerAttack();
@@ -116,12 +136,19 @@ void CTurnBattle::PokemonAttack()
 				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->SetPos(625, 155);
 				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->Play();
 				m_playerAttacked = true;
-				if (BATTLE->GetBattleSituation() == BattleSituation::Opponet_CanNot_Battle)
-				{
-					//배틀 승리
-					BATTLE->SetBattleResult(BattleResult::Win);
-					m_battleScene->ChangeTurn(PlayerAction::Result);
-				}
+			}
+		}
+
+		if (m_timer > 15 && !m_checkOpponent)
+		{
+			m_checkOpponent = true;
+			if (BATTLE->GetBattleSituation() == BattleSituation::Opponet_CanNot_Battle)
+			{
+				//배틀 승리
+				m_battleScene->GetTextBox()->SetText(BATTLE->GetOpponentCurPokemon()->GetPokemonInfo().name + L"이(가) " +
+					L" " + L"쓰러졌다\n");
+				BATTLE->SetBattleResult(BattleResult::Win);
+				m_battleScene->ChangeTurn(PlayerAction::Result);
 			}
 		}
 		break;
@@ -141,18 +168,22 @@ void CTurnBattle::PokemonAttack()
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->SetPos(200, 310);
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->Play();
 				m_OpponentAttacked = true;
-				if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
+			}
+		}
+		if (m_timer > 6 && !m_checkPlayer)
+		{
+			m_checkPlayer = true;
+			if (BATTLE->GetBattleSituation() == BattleSituation::Player_CanNot_Battle)
+			{
+				//플레이어 패배
+				if (BATTLE->PlayerCheckBattleAble())
 				{
-					//플레이어 패배
-					if (BATTLE->PlayerCheckBattleAble())
-					{
-						m_battleScene->ChangeTurn(PlayerAction::Continue);
-					}
-					else
-					{
-						BATTLE->SetBattleResult(BattleResult::Lose);
-						m_battleScene->ChangeTurn(PlayerAction::Result);
-					}
+					m_battleScene->ChangeTurn(PlayerAction::Continue);
+				}
+				else
+				{
+					BATTLE->SetBattleResult(BattleResult::Lose);
+					m_battleScene->ChangeTurn(PlayerAction::Result);
 				}
 			}
 		}
@@ -198,6 +229,8 @@ void CTurnBattle::Enter()
 	m_timer = 0;
 	m_playerAttacked = false;
 	m_OpponentAttacked = false;
+	m_checkPlayer = false;
+	m_checkOpponent = false;
 	BATTLE->OpponentSelectMove();
 }
 
