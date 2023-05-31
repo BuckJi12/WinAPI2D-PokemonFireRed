@@ -3,12 +3,14 @@
 
 #include "CPlayer.h"
 #include "CWarp.h"
+#include "CNurse.h"
 
 CSceneCenter::CSceneCenter()
 {
 	m_pImageBackGround	= nullptr;
 	m_pPlayer			= nullptr;
 	m_pWarp				= nullptr;
+	m_pNurse			= nullptr;
 }
 
 CSceneCenter::~CSceneCenter()
@@ -32,6 +34,16 @@ void CSceneCenter::Init()
 	m_pWarp->SetPos(798, 1086);
 	m_pWarp->SetScale(106, 32);
 	AddGameObject(m_pWarp);
+
+	auto recoverPokemon = [](DWORD_PTR param)
+	{
+		//TODO: 포켓몬 회복
+	};
+
+	m_pNurse = new CNurse;
+	m_pNurse->SetPos(800, 650);
+	m_pNurse->SetCallBack(recoverPokemon, (DWORD_PTR)this);
+	AddGameObject(m_pNurse);
 
 	LoadTile(GETPATH + L"Tile\\Center.tile");
 }
@@ -60,4 +72,5 @@ void CSceneCenter::Release()
 	DELETEOBJECT(m_pImageBackGround);
 	DELETEOBJECT(m_pPlayer);
 	DELETEOBJECT(m_pWarp);
+	DELETEOBJECT(m_pNurse);
 }

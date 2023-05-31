@@ -2,6 +2,7 @@
 
 class CPlayer;
 class CWarp;
+class CNurse;
 
 class CSceneCenter : public CScene
 {
@@ -13,6 +14,7 @@ private:
 	CImageObject*	m_pImageBackGround;
 	CPlayer*		m_pPlayer;
 	CWarp*			m_pWarp;
+	CNurse*			m_pNurse;
 
 private:
 	void Init()		override;

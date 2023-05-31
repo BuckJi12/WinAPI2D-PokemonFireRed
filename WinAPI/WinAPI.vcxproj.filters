@@ -169,6 +169,9 @@
     <Filter Include="GameObject\Effect\Psychic">
       <UniqueIdentifier>{8b4c4066-7c61-4b85-8784-a6fed381ddfa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\NPC\Center">
+      <UniqueIdentifier>{bbdb8989-ba0b-4231-a273-7f88fa2da9be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -555,6 +558,9 @@
     <ClInclude Include="CEffectPsyChic.h">
       <Filter>GameObject\Effect\Psychic</Filter>
     </ClInclude>
+    <ClInclude Include="CNurse.h">
+      <Filter>GameObject\NPC\Center</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -916,6 +922,9 @@
     </ClCompile>
     <ClCompile Include="CEffectPsyChic.cpp">
       <Filter>GameObject\Effect\Psychic</Filter>
+    </ClCompile>
+    <ClCompile Include="CNurse.cpp">
+      <Filter>GameObject\NPC\Center</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
