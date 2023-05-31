@@ -516,6 +516,9 @@
     <ClInclude Include="CIcePunch.h">
       <Filter>GameObject\Pokemon\Moves\Ice</Filter>
     </ClInclude>
+    <ClInclude Include="CThunderPunch.h">
+      <Filter>GameObject\Pokemon\Moves\Lightning</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -847,6 +850,9 @@
     </ClCompile>
     <ClCompile Include="CIcePunch.cpp">
       <Filter>GameObject\Pokemon\Moves\Ice</Filter>
+    </ClCompile>
+    <ClCompile Include="CThunderPunch.cpp">
+      <Filter>GameObject\Pokemon\Moves\Lightning</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

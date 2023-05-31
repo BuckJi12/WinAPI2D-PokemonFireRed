@@ -126,6 +126,7 @@ using namespace FMOD;
 #include "CIcePunch.h"
 // Lightning
 #include "CThunderBolt.h"
+#include "CThunderPunch.h"
 
 // Effect
 #include "CEffect.h"

@@ -202,6 +202,7 @@
     <ClInclude Include="CTackle.h" />
     <ClInclude Include="CTextBox.h" />
     <ClInclude Include="CThunderBolt.h" />
+    <ClInclude Include="CThunderPunch.h" />
     <ClInclude Include="CTitleAnimation.h" />
     <ClInclude Include="CTitleText.h" />
     <ClInclude Include="CTurn.h" />
@@ -322,6 +323,7 @@
     <ClCompile Include="CTackle.cpp" />
     <ClCompile Include="CTextBox.cpp" />
     <ClCompile Include="CThunderBolt.cpp" />
+    <ClCompile Include="CThunderPunch.cpp" />
     <ClCompile Include="CTitleAnimation.cpp" />
     <ClCompile Include="CTitleText.cpp" />
     <ClCompile Include="CTurn.cpp" />
