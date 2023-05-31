@@ -117,6 +117,7 @@ using namespace FMOD;
 #include "CButterfree.h"		// No.12	버터플
 #include "CPikachu.h"			// No.13    피카츄
 #include "CGengar.h"			// No.14	팬텀
+#include "CSnorlax.h"			// No.15	잠만보
 
 // Pokemon Moves
 // Normal

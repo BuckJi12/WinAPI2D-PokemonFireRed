@@ -185,6 +185,12 @@ void CResourceManager::Init()
 	gengar->SetImage(RESOURCE->LoadImg(L"Gengar", L"Image\\Pokemon\\GengarImage.png"));
 	gengar->SetIcon(RESOURCE->LoadImg(L"GengarIcon", L"Image\\Pokemon\\GengarIcon.png"));
 	m_mapPokemonResource.insert(make_pair(14, gengar));
+
+	// No.15 Àá¸¸º¸ 
+	CPokemonResource* snorlax = new CPokemonResource;
+	snorlax->SetImage(RESOURCE->LoadImg(L"Snorlax", L"Image\\Pokemon\\SnorlaxImage.png"));
+	snorlax->SetIcon(RESOURCE->LoadImg(L"SnorlaxIcon", L"Image\\Pokemon\\SnorlaxIcon.png"));
+	m_mapPokemonResource.insert(make_pair(15, snorlax));
 }
 
 void CResourceManager::Release()
