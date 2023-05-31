@@ -29,6 +29,7 @@ void CPokemonManager::Init()
 	m_mapPokemons.insert(make_pair(11, new CMetapod()));		// ´Üµ¥±â
 	m_mapPokemons.insert(make_pair(12, new CButterfree()));		// ¹öÅÍÇÃ
 	m_mapPokemons.insert(make_pair(13, new CPikachu()));		// ÇÇÄ«Ãò
+	m_mapPokemons.insert(make_pair(14, new CGengar()));			// ÆÒÅÒ
  }
 
 void CPokemonManager::Release()

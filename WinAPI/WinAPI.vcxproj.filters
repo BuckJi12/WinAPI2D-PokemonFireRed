@@ -178,6 +178,9 @@
     <Filter Include="GameObject\Pokemon\Pokemon\Lightning">
       <UniqueIdentifier>{da1e9b15-65f8-481f-aef3-8f04627e3d17}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Pokemon\Pokemon\Ghost">
+      <UniqueIdentifier>{4dd97d43-53d6-4aa6-b8d9-c62b6bd6d3e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -594,6 +597,9 @@
     <ClInclude Include="CPikachu.h">
       <Filter>GameObject\Pokemon\Pokemon\Lightning</Filter>
     </ClInclude>
+    <ClInclude Include="CGengar.h">
+      <Filter>GameObject\Pokemon\Pokemon\Ghost</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -985,6 +991,9 @@
     </ClCompile>
     <ClCompile Include="CPikachu.cpp">
       <Filter>GameObject\Pokemon\Pokemon\Lightning</Filter>
+    </ClCompile>
+    <ClCompile Include="CGengar.cpp">
+      <Filter>GameObject\Pokemon\Pokemon\Ghost</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
