@@ -149,6 +149,7 @@
     <ClInclude Include="CCameraController.h" />
     <ClInclude Include="CCameraManager.h" />
     <ClInclude Include="CChangePokemonUI.h" />
+    <ClInclude Include="CCharizard.h" />
     <ClInclude Include="CCharmander.h" />
     <ClInclude Include="CCharmeleon.h" />
     <ClInclude Include="CChooseMoveWindow.h" />
@@ -280,6 +281,7 @@
     <ClCompile Include="CCameraController.cpp" />
     <ClCompile Include="CCameraManager.cpp" />
     <ClCompile Include="CChangePokemonUI.cpp" />
+    <ClCompile Include="CCharizard.cpp" />
     <ClCompile Include="CCharmander.cpp" />
     <ClCompile Include="CCharmeleon.cpp" />
     <ClCompile Include="CChooseMoveWindow.cpp" />

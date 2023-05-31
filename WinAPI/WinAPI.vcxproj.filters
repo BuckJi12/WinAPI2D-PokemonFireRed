@@ -561,6 +561,9 @@
     <ClInclude Include="CNurse.h">
       <Filter>GameObject\NPC\Center</Filter>
     </ClInclude>
+    <ClInclude Include="CCharizard.h">
+      <Filter>GameObject\Pokemon\Pokemon\Fire</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -925,6 +928,9 @@
     </ClCompile>
     <ClCompile Include="CNurse.cpp">
       <Filter>GameObject\NPC\Center</Filter>
+    </ClCompile>
+    <ClCompile Include="CCharizard.cpp">
+      <Filter>GameObject\Pokemon\Pokemon\Fire</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
