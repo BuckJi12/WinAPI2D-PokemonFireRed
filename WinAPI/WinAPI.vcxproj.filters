@@ -567,6 +567,9 @@
     <ClInclude Include="CIvysaur.h">
       <Filter>GameObject\Pokemon\Pokemon\Grass</Filter>
     </ClInclude>
+    <ClInclude Include="CVenusaur.h">
+      <Filter>GameObject\Pokemon\Pokemon\Grass</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -936,6 +939,9 @@
       <Filter>GameObject\Pokemon\Pokemon\Fire</Filter>
     </ClCompile>
     <ClCompile Include="CIvysaur.cpp">
+      <Filter>GameObject\Pokemon\Pokemon\Grass</Filter>
+    </ClCompile>
+    <ClCompile Include="CVenusaur.cpp">
       <Filter>GameObject\Pokemon\Pokemon\Grass</Filter>
     </ClCompile>
   </ItemGroup>

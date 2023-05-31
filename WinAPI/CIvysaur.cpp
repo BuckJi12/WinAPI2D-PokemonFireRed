@@ -9,7 +9,7 @@ CIvysaur::CIvysaur()
 	m_info.number				= 2;
 	m_info.rate					= 45;
 
-	// 포켓몬 기초값 파이리: 405
+	// 포켓몬 기초값 이상해풀: 405
 	m_baseStat.hp				= 60;
 	m_baseStat.attack			= 62;
 	m_baseStat.specialAttack	= 63;

@@ -1,16 +1,15 @@
 #pragma once
-#include "CPokemon.h"
 
-class CCharmander : public CPokemon
+class CVenusaur : public CPokemon
 {
 public:
-	CCharmander();
-	virtual ~CCharmander();
+	CVenusaur();
+	virtual ~CVenusaur();
 
-	CCharmander(const CCharmander& charmander);
+	CVenusaur(const CVenusaur& venusaur);
 
 private:
-	CMove* m_ember;
+	CMove* m_leafStorm;
 
 public:
 	void Evolution() override;

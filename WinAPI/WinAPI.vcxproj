@@ -227,6 +227,7 @@
     <ClInclude Include="CTurnEnter.h" />
     <ClInclude Include="CTurnPlayerReady.h" />
     <ClInclude Include="CTurnResult.h" />
+    <ClInclude Include="CVenusaur.h" />
     <ClInclude Include="CVineWhip.h" />
     <ClInclude Include="CWallTile.h" />
     <ClInclude Include="CIdle.h" />
@@ -360,6 +361,7 @@
     <ClCompile Include="CTurnEnter.cpp" />
     <ClCompile Include="CTurnPlayerReady.cpp" />
     <ClCompile Include="CTurnResult.cpp" />
+    <ClCompile Include="CVenusaur.cpp" />
     <ClCompile Include="CVineWhip.cpp" />
     <ClCompile Include="CWallTile.cpp" />
     <ClCompile Include="CIdle.cpp" />

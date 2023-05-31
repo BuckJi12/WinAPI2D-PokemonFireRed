@@ -114,6 +114,12 @@ void CResourceManager::Init()
 	ivysaur->SetIcon(RESOURCE->LoadImg(L"IvysaurIcon", L"Image\\Pokemon\\IvysaurIcon.png"));
 	m_mapPokemonResource.insert(make_pair(2, ivysaur));
 
+	// No.2 이상해꽃
+	CPokemonResource* venusaur = new CPokemonResource;
+	venusaur->SetImage(RESOURCE->LoadImg(L"Venusaur", L"Image\\Pokemon\\VenusaurImage.png"));
+	venusaur->SetIcon(RESOURCE->LoadImg(L"VenusaurIcon", L"Image\\Pokemon\\VenusaurIcon.png"));
+	m_mapPokemonResource.insert(make_pair(3, venusaur));
+
 	// No.4 파이리
 	CPokemonResource* charmander = new CPokemonResource;
 	charmander->SetImage(RESOURCE->LoadImg(L"Charmander", L"Image\\Pokemon\\CharmanderImage.png"));

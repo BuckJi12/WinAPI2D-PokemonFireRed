@@ -18,6 +18,7 @@ void CPokemonManager::Init()
 	// ========================== 포켓몬 =========================
 	m_mapPokemons.insert(make_pair(1, new CBulbasaur()));		// 이상해씨
 	m_mapPokemons.insert(make_pair(2, new CIvysaur()));			// 이상해풀
+	m_mapPokemons.insert(make_pair(3, new CVenusaur()));		// 이상해꽃
 	m_mapPokemons.insert(make_pair(4, new CCharmander()));		// 파이리
 	m_mapPokemons.insert(make_pair(5, new CCharmeleon()));		// 리자드
 	m_mapPokemons.insert(make_pair(6, new CCharizard()));		// 리자몽
