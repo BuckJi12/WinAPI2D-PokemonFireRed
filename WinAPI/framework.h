@@ -113,6 +113,7 @@ using namespace FMOD;
 // Pokemon Moves
 // Normal
 #include "CTackle.h"
+#include "CHyperBeam.h"
 // Fire
 #include "CEmber.h"
 #include "CFirePunch.h"
