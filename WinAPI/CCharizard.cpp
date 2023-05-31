@@ -38,7 +38,7 @@ CCharizard::~CCharizard()
 {
 }
 
-CCharizard::CCharizard(const CCharizard& charmeleon)
+CCharizard::CCharizard(const CCharizard& charizard) : CPokemon(charizard)
 {
 	m_fireBlast			= new CFireBlast;
 	m_firePunch			= new CFirePunch;

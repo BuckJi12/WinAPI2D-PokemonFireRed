@@ -104,6 +104,7 @@ using namespace FMOD;
 #include "CPokemonResource.h"
 
 #include "CBulbasaur.h"			// No.1 이상해씨
+#include "CIvysaur.h"			// No.2 이상해풀
 
 #include "CCharmander.h"		// No.4 파이리
 #include "CCharmeleon.h"		// No.5 리자드

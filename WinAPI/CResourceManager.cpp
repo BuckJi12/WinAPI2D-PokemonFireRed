@@ -108,6 +108,12 @@ void CResourceManager::Init()
 	bulbasaur->SetIcon(RESOURCE->LoadImg(L"BulbasaurIcon", L"Image\\Pokemon\\BulbasaurIcon.png"));
 	m_mapPokemonResource.insert(make_pair(1, bulbasaur));
 
+	// No.2 이상해풀
+	CPokemonResource* ivysaur = new CPokemonResource;
+	ivysaur->SetImage(RESOURCE->LoadImg(L"Ivysaur", L"Image\\Pokemon\\IvysaurImage.png"));
+	ivysaur->SetIcon(RESOURCE->LoadImg(L"IvysaurIcon", L"Image\\Pokemon\\IvysaurIcon.png"));
+	m_mapPokemonResource.insert(make_pair(2, ivysaur));
+
 	// No.4 파이리
 	CPokemonResource* charmander = new CPokemonResource;
 	charmander->SetImage(RESOURCE->LoadImg(L"Charmander", L"Image\\Pokemon\\CharmanderImage.png"));
@@ -120,10 +126,11 @@ void CResourceManager::Init()
 	charmeleon->SetIcon(RESOURCE->LoadImg(L"CharmeleonIcon", L"Image\\Pokemon\\CharmeleonIcon.png"));
 	m_mapPokemonResource.insert(make_pair(5, charmeleon));
 
+	// No.6 리자몽
 	CPokemonResource* charizard = new CPokemonResource;
 	charizard->SetImage(RESOURCE->LoadImg(L"CharizardImage", L"Image\\Pokemon\\CharizardImage.png"));
 	charizard->SetIcon(RESOURCE->LoadImg(L"CharizardIcon", L"Image\\Pokemon\\CharizardIcon.png"));
-	m_mapPokemonResource.insert(make_pair(5, charizard));
+	m_mapPokemonResource.insert(make_pair(6, charizard));
 
 	// No.7 꼬부기 
 	CPokemonResource* squirtle = new CPokemonResource;

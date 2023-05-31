@@ -81,6 +81,4 @@ void CCharmander::Render()
 void CCharmander::Release()
 {
 	CPokemon::Release();
-
-	delete m_pResource;
 }

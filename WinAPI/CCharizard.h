@@ -6,7 +6,7 @@ public:
 	CCharizard();
 	virtual ~CCharizard();
 
-	CCharizard(const CCharizard& charmeleon);
+	CCharizard(const CCharizard& charizard);
 
 private:
 	CMove* m_fireBlast;
