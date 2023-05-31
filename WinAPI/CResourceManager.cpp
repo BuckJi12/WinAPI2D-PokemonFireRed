@@ -203,6 +203,12 @@ void CResourceManager::Init()
 	articuno->SetImage(RESOURCE->LoadImg(L"Articuno", L"Image\\Pokemon\\ArticunoImage.png"));
 	articuno->SetIcon(RESOURCE->LoadImg(L"ArticunoIcon", L"Image\\Pokemon\\ArticunoIcon.png"));
 	m_mapPokemonResource.insert(make_pair(17, articuno));
+
+	// No.17 ÇÁ¸®Á® 
+	CPokemonResource* zapdos = new CPokemonResource;
+	zapdos->SetImage(RESOURCE->LoadImg(L"Zapdos", L"Image\\Pokemon\\ZapdosImage.png"));
+	zapdos->SetIcon(RESOURCE->LoadImg(L"ZapdosIcon", L"Image\\Pokemon\\ZapdosIcon.png"));
+	m_mapPokemonResource.insert(make_pair(18, zapdos));
 }
 
 void CResourceManager::Release()

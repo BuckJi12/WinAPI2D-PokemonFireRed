@@ -618,6 +618,9 @@
     <ClInclude Include="CArticuno.h">
       <Filter>GameObject\Pokemon\Pokemon\Ice</Filter>
     </ClInclude>
+    <ClInclude Include="CZapdos.h">
+      <Filter>GameObject\Pokemon\Pokemon\Lightning</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -1021,6 +1024,9 @@
     </ClCompile>
     <ClCompile Include="CArticuno.cpp">
       <Filter>GameObject\Pokemon\Pokemon\Ice</Filter>
+    </ClCompile>
+    <ClCompile Include="CZapdos.cpp">
+      <Filter>GameObject\Pokemon\Pokemon\Lightning</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
