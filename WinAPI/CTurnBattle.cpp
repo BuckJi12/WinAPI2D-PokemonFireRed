@@ -190,7 +190,7 @@ void CTurnBattle::PokemonAttack()
 		break;
 	}
 
-	if (m_playerAttacked && m_OpponentAttacked)
+	if (m_playerAttacked && m_OpponentAttacked && m_checkOpponent && m_checkPlayer)
 	{
 		BATTLE->CheckBattleAble();
 		// 두 포켓몬 모두 배틀이 가능할 시 플레이어 행동선택턴으로 이동
