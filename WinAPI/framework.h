@@ -115,6 +115,7 @@ using namespace FMOD;
 #include "CTackle.h"
 // Fire
 #include "CEmber.h"
+#include "CFirePunch.h"
 // Water
 #include "CWaterGun.h"
 // Grass
