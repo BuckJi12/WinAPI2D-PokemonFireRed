@@ -162,6 +162,7 @@
     <ClInclude Include="CEffect.h" />
     <ClInclude Include="CEffectFire.h" />
     <ClInclude Include="CEffectGrass.h" />
+    <ClInclude Include="CEffectLightning.h" />
     <ClInclude Include="CEffectNormal.h" />
     <ClInclude Include="CEffectWater.h" />
     <ClInclude Include="CEmber.h" />
@@ -289,6 +290,7 @@
     <ClCompile Include="CEffect.cpp" />
     <ClCompile Include="CEffectFire.cpp" />
     <ClCompile Include="CEffectGrass.cpp" />
+    <ClCompile Include="CEffectLightning.cpp" />
     <ClCompile Include="CEffectNormal.cpp" />
     <ClCompile Include="CEffectWater.cpp" />
     <ClCompile Include="CEmber.cpp" />

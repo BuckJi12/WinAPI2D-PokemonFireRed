@@ -141,3 +141,4 @@ using namespace FMOD;
 #include "CEffectGrass.h"
 #include "CEffectFire.h"
 #include "CEffectWater.h"
+#include "CEffectLightning.h"

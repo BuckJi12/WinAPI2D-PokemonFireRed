@@ -129,6 +129,10 @@ void CSceneBattle::Init()
 	CEffect* grass = new CEffectGrass;
 	grass->SetPos(1000, 1000);
 	RESOURCE->AddEffect(PokemonType::Grass, grass);
+	CEffect* lightning = new CEffectLightning;
+	lightning->SetPos(1000, 1000);
+	RESOURCE->AddEffect(PokemonType::Electric, lightning);
+
 
 	AddGameObject(fire);
 	AddGameObject(normal);
