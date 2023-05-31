@@ -161,6 +161,12 @@ void CResourceManager::Init()
 	caterpie->SetImage(RESOURCE->LoadImg(L"Caterpie", L"Image\\Pokemon\\CaterpieImage.png"));
 	caterpie->SetIcon(RESOURCE->LoadImg(L"CaterpieIcon", L"Image\\Pokemon\\CaterpieIcon.png"));
 	m_mapPokemonResource.insert(make_pair(10, caterpie));
+
+	// No.11 ´Üµ¥±â 
+	CPokemonResource* metapod = new CPokemonResource;
+	metapod->SetImage(RESOURCE->LoadImg(L"Metapod", L"Image\\Pokemon\\MetapodImage.png"));
+	metapod->SetIcon(RESOURCE->LoadImg(L"MetapodIcon", L"Image\\Pokemon\\MetapodIcon.png"));
+	m_mapPokemonResource.insert(make_pair(11, metapod));
 }
 
 void CResourceManager::Release()

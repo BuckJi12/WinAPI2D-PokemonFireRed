@@ -113,6 +113,7 @@ using namespace FMOD;
 #include "CWartortle.h"			// No.8		어니부기
 #include "CBlastoise.h"			// No.9		거북왕
 #include "CCaterpie.h"			// No.10	캐터피
+#include "CMetapod.h"			// No.11	단데기
 
 // Pokemon Moves
 // Normal
