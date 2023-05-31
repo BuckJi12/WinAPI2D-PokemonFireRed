@@ -123,6 +123,7 @@ void CTurnChooseMove::Exit()
 {
 	m_pImageChooseMove->SetPos(1000, 1000);
 	m_battleScene->GetCursor()->SetPos(1000, 1000);
+	m_curCount = 0;
 }
 
 void CTurnChooseMove::Release()

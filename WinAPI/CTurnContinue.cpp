@@ -65,7 +65,7 @@ void CTurnContinue::Init()
 void CTurnContinue::Enter()
 {
 	m_pImageContinue->SetPos(400, 400);
-	m_battleScene->GetTextBox()->SetText(L"포켓몬을 \n교체하시겠습니까?\n");
+	m_battleScene->GetTextBox()->SetText(L"포켓몬을 \n교체하시겠습니까?");
 }
 
 void CTurnContinue::Update()

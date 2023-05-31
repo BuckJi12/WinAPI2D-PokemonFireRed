@@ -154,6 +154,7 @@ void CTurnBattle::PokemonAttack()
 		break;
 	case FirstAttack::OnlyOpponent:
 		m_playerAttacked = true;
+		m_checkOpponent = true;
 		if (!m_OpponentAttacked)
 		{
 			//상대 사용 기술 대사
