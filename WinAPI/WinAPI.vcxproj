@@ -169,6 +169,7 @@
     <ClInclude Include="CFirePunch.h" />
     <ClInclude Include="CGameManager.h" />
     <ClInclude Include="CGameObject.h" />
+    <ClInclude Include="CHydroPump.h" />
     <ClInclude Include="CIceBeam.h" />
     <ClInclude Include="CIcePunch.h" />
     <ClInclude Include="CItem.h" />
@@ -293,6 +294,7 @@
     <ClCompile Include="CFirePunch.cpp" />
     <ClCompile Include="CGameManager.cpp" />
     <ClCompile Include="CGameObject.cpp" />
+    <ClCompile Include="CHydroPump.cpp" />
     <ClCompile Include="CIceBeam.cpp" />
     <ClCompile Include="CIcePunch.cpp" />
     <ClCompile Include="CItem.cpp" />

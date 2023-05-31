@@ -528,6 +528,9 @@
     <ClInclude Include="CWaterPulse.h">
       <Filter>GameObject\Pokemon\Moves\Water</Filter>
     </ClInclude>
+    <ClInclude Include="CHydroPump.h">
+      <Filter>GameObject\Pokemon\Moves\Water</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -870,6 +873,9 @@
       <Filter>GameObject\Pokemon\Moves\Grass</Filter>
     </ClCompile>
     <ClCompile Include="CWaterPulse.cpp">
+      <Filter>GameObject\Pokemon\Moves\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="CHydroPump.cpp">
       <Filter>GameObject\Pokemon\Moves\Water</Filter>
     </ClCompile>
   </ItemGroup>
