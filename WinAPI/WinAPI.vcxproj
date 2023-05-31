@@ -166,6 +166,7 @@
     <ClInclude Include="CEffectWater.h" />
     <ClInclude Include="CEmber.h" />
     <ClInclude Include="CEventManager.h" />
+    <ClInclude Include="CFireBlast.h" />
     <ClInclude Include="CFirePunch.h" />
     <ClInclude Include="CGameManager.h" />
     <ClInclude Include="CGameObject.h" />
@@ -292,6 +293,7 @@
     <ClCompile Include="CEffectWater.cpp" />
     <ClCompile Include="CEmber.cpp" />
     <ClCompile Include="CEventManager.cpp" />
+    <ClCompile Include="CFireBlast.cpp" />
     <ClCompile Include="CFirePunch.cpp" />
     <ClCompile Include="CGameManager.cpp" />
     <ClCompile Include="CGameObject.cpp" />
