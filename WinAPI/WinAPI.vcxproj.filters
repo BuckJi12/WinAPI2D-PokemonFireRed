@@ -184,6 +184,9 @@
     <Filter Include="GameObject\Pokemon\Pokemon\Normal">
       <UniqueIdentifier>{234f3c83-a278-44e7-abac-5f83ccbbad44}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Pokemon\Pokemon\Dragon">
+      <UniqueIdentifier>{836f73d8-c346-4931-8a0d-d856cc3cdead}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -606,6 +609,9 @@
     <ClInclude Include="CSnorlax.h">
       <Filter>GameObject\Pokemon\Pokemon\Normal</Filter>
     </ClInclude>
+    <ClInclude Include="CDragonite.h">
+      <Filter>GameObject\Pokemon\Pokemon\Dragon</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -1003,6 +1009,9 @@
     </ClCompile>
     <ClCompile Include="CSnorlax.cpp">
       <Filter>GameObject\Pokemon\Pokemon\Normal</Filter>
+    </ClCompile>
+    <ClCompile Include="CDragonite.cpp">
+      <Filter>GameObject\Pokemon\Pokemon\Dragon</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

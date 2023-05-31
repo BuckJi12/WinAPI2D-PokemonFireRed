@@ -191,6 +191,12 @@ void CResourceManager::Init()
 	snorlax->SetImage(RESOURCE->LoadImg(L"Snorlax", L"Image\\Pokemon\\SnorlaxImage.png"));
 	snorlax->SetIcon(RESOURCE->LoadImg(L"SnorlaxIcon", L"Image\\Pokemon\\SnorlaxIcon.png"));
 	m_mapPokemonResource.insert(make_pair(15, snorlax));
+
+	// No.16 ¸Á³ª´¨ 
+	CPokemonResource* dragonite = new CPokemonResource;
+	dragonite->SetImage(RESOURCE->LoadImg(L"Dragonite", L"Image\\Pokemon\\DragoniteImage.png"));
+	dragonite->SetIcon(RESOURCE->LoadImg(L"DragoniteIcon", L"Image\\Pokemon\\DragoniteIcon.png"));
+	m_mapPokemonResource.insert(make_pair(16, dragonite));
 }
 
 void CResourceManager::Release()

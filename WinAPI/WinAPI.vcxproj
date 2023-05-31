@@ -163,6 +163,7 @@
     <ClInclude Include="CComponent.h" />
     <ClInclude Include="CCore.h" />
     <ClInclude Include="CCurPokemonUI.h" />
+    <ClInclude Include="CDragonite.h" />
     <ClInclude Include="CEffect.h" />
     <ClInclude Include="CEffectFire.h" />
     <ClInclude Include="CEffectGrass.h" />
@@ -305,6 +306,7 @@
     <ClCompile Include="CComponent.cpp" />
     <ClCompile Include="CCore.cpp" />
     <ClCompile Include="CCurPokemonUI.cpp" />
+    <ClCompile Include="CDragonite.cpp" />
     <ClCompile Include="CEffect.cpp" />
     <ClCompile Include="CEffectFire.cpp" />
     <ClCompile Include="CEffectGrass.cpp" />
