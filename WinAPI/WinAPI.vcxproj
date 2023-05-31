@@ -172,6 +172,7 @@
     <ClInclude Include="CIceBeam.h" />
     <ClInclude Include="CIcePunch.h" />
     <ClInclude Include="CItem.h" />
+    <ClInclude Include="CLeafStrom.h" />
     <ClInclude Include="CMasterBall.h" />
     <ClInclude Include="CMeetingTile.h" />
     <ClInclude Include="CMonsterBall.h" />
@@ -294,6 +295,7 @@
     <ClCompile Include="CIceBeam.cpp" />
     <ClCompile Include="CIcePunch.cpp" />
     <ClCompile Include="CItem.cpp" />
+    <ClCompile Include="CLeafStrom.cpp" />
     <ClCompile Include="CMasterBall.cpp" />
     <ClCompile Include="CMeetingTile.cpp" />
     <ClCompile Include="CMonsterBall.cpp" />

@@ -120,6 +120,7 @@ using namespace FMOD;
 #include "CWaterGun.h"
 // Grass
 #include "CVineWhip.h"
+#include "CLeafStrom.h"
 // Psychic
 #include "CPsychic.h"
 // Ice
