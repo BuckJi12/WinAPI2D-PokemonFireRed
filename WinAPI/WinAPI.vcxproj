@@ -146,6 +146,7 @@
     <ClInclude Include="CBattleManager.h" />
     <ClInclude Include="CBlastoise.h" />
     <ClInclude Include="CBulbasaur.h" />
+    <ClInclude Include="CButterfree.h" />
     <ClInclude Include="CButton.h" />
     <ClInclude Include="CCameraController.h" />
     <ClInclude Include="CCameraManager.h" />
@@ -284,6 +285,7 @@
     <ClCompile Include="CBattleManager.cpp" />
     <ClCompile Include="CBlastoise.cpp" />
     <ClCompile Include="CBulbasaur.cpp" />
+    <ClCompile Include="CButterfree.cpp" />
     <ClCompile Include="CButton.cpp" />
     <ClCompile Include="CCameraController.cpp" />
     <ClCompile Include="CCameraManager.cpp" />

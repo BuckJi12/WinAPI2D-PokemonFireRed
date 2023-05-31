@@ -27,6 +27,7 @@ void CPokemonManager::Init()
 	m_mapPokemons.insert(make_pair(9, new CBlastoise()));		// 거북왕
 	m_mapPokemons.insert(make_pair(10, new CCaterpie()));		// 캐터피
 	m_mapPokemons.insert(make_pair(11, new CMetapod()));		// 단데기
+	m_mapPokemons.insert(make_pair(12, new CButterfree()));		// 버터플
  }
 
 void CPokemonManager::Release()

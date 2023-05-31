@@ -585,6 +585,9 @@
     <ClInclude Include="CMetapod.h">
       <Filter>GameObject\Pokemon\Pokemon\Bug</Filter>
     </ClInclude>
+    <ClInclude Include="CButterfree.h">
+      <Filter>GameObject\Pokemon\Pokemon\Bug</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -969,6 +972,9 @@
       <Filter>GameObject\Pokemon\Pokemon\Bug</Filter>
     </ClCompile>
     <ClCompile Include="CMetapod.cpp">
+      <Filter>GameObject\Pokemon\Pokemon\Bug</Filter>
+    </ClCompile>
+    <ClCompile Include="CButterfree.cpp">
       <Filter>GameObject\Pokemon\Pokemon\Bug</Filter>
     </ClCompile>
   </ItemGroup>

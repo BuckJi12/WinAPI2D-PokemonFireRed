@@ -167,6 +167,12 @@ void CResourceManager::Init()
 	metapod->SetImage(RESOURCE->LoadImg(L"Metapod", L"Image\\Pokemon\\MetapodImage.png"));
 	metapod->SetIcon(RESOURCE->LoadImg(L"MetapodIcon", L"Image\\Pokemon\\MetapodIcon.png"));
 	m_mapPokemonResource.insert(make_pair(11, metapod));
+
+	// No.12 ¹öÅÍÇÃ 
+	CPokemonResource* butterfree = new CPokemonResource;
+	butterfree->SetImage(RESOURCE->LoadImg(L"Butterfree", L"Image\\Pokemon\\ButterfreeImage.png"));
+	butterfree->SetIcon(RESOURCE->LoadImg(L"Butterfree", L"Image\\Pokemon\\ButterfreeIcon.png"));
+	m_mapPokemonResource.insert(make_pair(12, butterfree));
 }
 
 void CResourceManager::Release()

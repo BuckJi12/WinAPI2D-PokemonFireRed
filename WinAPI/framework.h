@@ -114,6 +114,7 @@ using namespace FMOD;
 #include "CBlastoise.h"			// No.9		거북왕
 #include "CCaterpie.h"			// No.10	캐터피
 #include "CMetapod.h"			// No.11	단데기
+#include "CButterfree.h"		// No.12	버터플
 
 // Pokemon Moves
 // Normal
