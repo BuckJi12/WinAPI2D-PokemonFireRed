@@ -621,6 +621,9 @@
     <ClInclude Include="CZapdos.h">
       <Filter>GameObject\Pokemon\Pokemon\Lightning</Filter>
     </ClInclude>
+    <ClInclude Include="CMoltres.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -1027,6 +1030,9 @@
     </ClCompile>
     <ClCompile Include="CZapdos.cpp">
       <Filter>GameObject\Pokemon\Pokemon\Lightning</Filter>
+    </ClCompile>
+    <ClCompile Include="CMoltres.cpp">
+      <Filter>GameObject\Pokemon\Pokemon\Fire</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

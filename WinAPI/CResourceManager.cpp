@@ -204,11 +204,17 @@ void CResourceManager::Init()
 	articuno->SetIcon(RESOURCE->LoadImg(L"ArticunoIcon", L"Image\\Pokemon\\ArticunoIcon.png"));
 	m_mapPokemonResource.insert(make_pair(17, articuno));
 
-	// No.17 프리져 
+	// No.18 프리져 
 	CPokemonResource* zapdos = new CPokemonResource;
 	zapdos->SetImage(RESOURCE->LoadImg(L"Zapdos", L"Image\\Pokemon\\ZapdosImage.png"));
 	zapdos->SetIcon(RESOURCE->LoadImg(L"ZapdosIcon", L"Image\\Pokemon\\ZapdosIcon.png"));
 	m_mapPokemonResource.insert(make_pair(18, zapdos));
+
+	// No.19 파이어 
+	CPokemonResource* moltres = new CPokemonResource;
+	moltres->SetImage(RESOURCE->LoadImg(L"Moltres", L"Image\\Pokemon\\MoltresImage.png"));
+	moltres->SetIcon(RESOURCE->LoadImg(L"MoltresIcon", L"Image\\Pokemon\\MoltresIcon.png"));
+	m_mapPokemonResource.insert(make_pair(19, moltres));
 }
 
 void CResourceManager::Release()

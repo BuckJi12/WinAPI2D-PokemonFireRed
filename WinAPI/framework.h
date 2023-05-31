@@ -121,6 +121,7 @@ using namespace FMOD;
 #include "CDragonite.h"			// No.16	망나뇽
 #include "CArticuno.h"			// No.17	프리져
 #include "CZapdos.h"			// No.18	썬더
+#include "CMoltres.h"			// No.19	파이어
 
 // Pokemon Moves
 // Normal

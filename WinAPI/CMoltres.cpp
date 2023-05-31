@@ -1,26 +1,26 @@
 #include "framework.h"
-#include "CZapdos.h"
+#include "CMoltres.h"
 
-CZapdos::CZapdos()
+CMoltres::CMoltres()
 {
 	// 포켓몬 정보
-	m_info.name						= L"썬더";
+	m_info.name						= L"파이어";
 	m_info.description				= L"";
-	m_info.number					= 18;
+	m_info.number					= 19;
 	m_info.rate						= 3;
 	m_info.evolutionNumber			= -1;
 
-	// 포켓몬 기초값 썬더: 580
+	// 포켓몬 기초값 파이어: 580
 	m_baseStat.hp					= 90;
-	m_baseStat.attack				= 90;
-	m_baseStat.specialAttack		= 85;
+	m_baseStat.attack				= 100;
+	m_baseStat.specialAttack		= 90;
 	m_baseStat.defence				= 125;
-	m_baseStat.specialDefence		= 90;
-	m_baseStat.speed				= 100;
+	m_baseStat.specialDefence		= 85;
+	m_baseStat.speed				= 90;
 
 	m_curState						= PokemonState::Normal;
 	m_owner							= PokemonOwner::Wild;
-	m_type1							= PokemonType::Electric;
+	m_type1							= PokemonType::Fire;
 	m_type2							= PokemonType::Flying;
 	// 초기화
 	m_pResource = nullptr;
@@ -28,28 +28,29 @@ CZapdos::CZapdos()
 
 	CMove* tackle = new CTackle;
 	LearnMove(tackle);
-	CMove* thunderBolt = new CThunderBolt;
-	LearnMove(thunderBolt);
+	CMove* fireBlast = new CFireBlast;
+	LearnMove(fireBlast);
+
 	Init();
 }
 
-CZapdos::~CZapdos()
+CMoltres::~CMoltres()
 {
 }
 
-CZapdos::CZapdos(const CZapdos& zapdos) : CPokemon(zapdos)
+CMoltres::CMoltres(const CMoltres& moltres) : CPokemon(moltres)
 {
 }
 
-void CZapdos::Evolution()
+void CMoltres::Evolution()
 {
 }
 
-void CZapdos::LearnMoveList()
+void CMoltres::LearnMoveList()
 {
 }
 
-void CZapdos::Init()
+void CMoltres::Init()
 {
 	m_pResource = new CPokemonResource();
 	m_pResource = RESOURCE->GetPokemonResource(m_info.number);
@@ -60,17 +61,17 @@ void CZapdos::Init()
 	AddComponent(m_pAnimator);
 }
 
-void CZapdos::Update()
+void CMoltres::Update()
 {
 	CPokemon::Update();
 }
 
-void CZapdos::Render()
+void CMoltres::Render()
 {
 	CPokemon::Render();
 }
 
-void CZapdos::Release()
+void CMoltres::Release()
 {
 	CPokemon::Release();
 }
