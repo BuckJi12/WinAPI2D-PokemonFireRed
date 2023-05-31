@@ -123,6 +123,7 @@ using namespace FMOD;
 #include "CPsychic.h"
 // Ice
 #include "CIceBeam.h"
+#include "CIcePunch.h"
 // Lightning
 #include "CThunderBolt.h"
 
