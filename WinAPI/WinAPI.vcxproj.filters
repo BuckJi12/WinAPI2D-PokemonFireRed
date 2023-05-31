@@ -190,6 +190,9 @@
     <Filter Include="GameObject\Pokemon\Pokemon\Ice">
       <UniqueIdentifier>{e8f339ac-1f62-4572-9f1f-5f5dd97d3cae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Pokemon\Pokemon\Psychic">
+      <UniqueIdentifier>{643d4beb-ec5c-43c8-8461-1b7f30b4f6e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -624,6 +627,9 @@
     <ClInclude Include="CMoltres.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CMewtwo.h">
+      <Filter>GameObject\Pokemon\Pokemon\Psychic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -1033,6 +1039,9 @@
     </ClCompile>
     <ClCompile Include="CMoltres.cpp">
       <Filter>GameObject\Pokemon\Pokemon\Fire</Filter>
+    </ClCompile>
+    <ClCompile Include="CMewtwo.cpp">
+      <Filter>GameObject\Pokemon\Pokemon\Psychic</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

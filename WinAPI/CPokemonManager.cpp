@@ -35,6 +35,7 @@ void CPokemonManager::Init()
 	m_mapPokemons.insert(make_pair(17, new CArticuno()));		// ÇÁ¸®Á®
 	m_mapPokemons.insert(make_pair(18, new CZapdos()));			// ½ã´õ
 	m_mapPokemons.insert(make_pair(19, new CMoltres()));		// ÆÄÀÌ¾î
+	m_mapPokemons.insert(make_pair(20, new CMewtwo()));			// ¹ÂÃ÷
  }
 
 void CPokemonManager::Release()

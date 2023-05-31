@@ -190,6 +190,7 @@
     <ClInclude Include="CMasterBall.h" />
     <ClInclude Include="CMeetingTile.h" />
     <ClInclude Include="CMetapod.h" />
+    <ClInclude Include="CMewtwo.h" />
     <ClInclude Include="CMoltres.h" />
     <ClInclude Include="CMonsterBall.h" />
     <ClInclude Include="CMove.h" />
@@ -336,6 +337,7 @@
     <ClCompile Include="CMasterBall.cpp" />
     <ClCompile Include="CMeetingTile.cpp" />
     <ClCompile Include="CMetapod.cpp" />
+    <ClCompile Include="CMewtwo.cpp" />
     <ClCompile Include="CMoltres.cpp" />
     <ClCompile Include="CMonsterBall.cpp" />
     <ClCompile Include="CMove.cpp" />

@@ -215,6 +215,12 @@ void CResourceManager::Init()
 	moltres->SetImage(RESOURCE->LoadImg(L"Moltres", L"Image\\Pokemon\\MoltresImage.png"));
 	moltres->SetIcon(RESOURCE->LoadImg(L"MoltresIcon", L"Image\\Pokemon\\MoltresIcon.png"));
 	m_mapPokemonResource.insert(make_pair(19, moltres));
+
+	// No.20 ¹ÂÃ÷ 
+	CPokemonResource* mewtwo = new CPokemonResource;
+	mewtwo->SetImage(RESOURCE->LoadImg(L"Mewtwo", L"Image\\Pokemon\\MewtwoImage.png"));
+	mewtwo->SetIcon(RESOURCE->LoadImg(L"MewtwoIcon", L"Image\\Pokemon\\MewtwoIcon.png"));
+	m_mapPokemonResource.insert(make_pair(20, mewtwo));
 }
 
 void CResourceManager::Release()
