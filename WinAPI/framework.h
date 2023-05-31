@@ -103,15 +103,16 @@ using namespace FMOD;
 #include "CMove.h"
 #include "CPokemonResource.h"
 
-#include "CBulbasaur.h"			// No.1 이상해씨
-#include "CIvysaur.h"			// No.2 이상해풀
-#include "CVenusaur.h"			// No.3 이상해꽃
-#include "CCharmander.h"		// No.4 파이리
-#include "CCharmeleon.h"		// No.5 리자드
-#include "CCharizard.h"			// No.6 리자몽
-#include "CSquirtle.h"			// No.7 꼬부기
-#include "CWartortle.h"			// No.8 어니부기
-#include "CBlastoise.h"			// No.9 거북왕
+#include "CBulbasaur.h"			// No.1		이상해씨
+#include "CIvysaur.h"			// No.2		이상해풀
+#include "CVenusaur.h"			// No.3		이상해꽃
+#include "CCharmander.h"		// No.4		파이리
+#include "CCharmeleon.h"		// No.5		리자드
+#include "CCharizard.h"			// No.6		리자몽
+#include "CSquirtle.h"			// No.7		꼬부기
+#include "CWartortle.h"			// No.8		어니부기
+#include "CBlastoise.h"			// No.9		거북왕
+#include "CCaterpie.h"			// No.10	캐터피
 
 // Pokemon Moves
 // Normal

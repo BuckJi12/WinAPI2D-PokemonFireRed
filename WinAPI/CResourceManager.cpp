@@ -150,11 +150,17 @@ void CResourceManager::Init()
 	wartortle->SetIcon(RESOURCE->LoadImg(L"WartortleIcon", L"Image\\Pokemon\\WartortleIcon.png"));
 	m_mapPokemonResource.insert(make_pair(8, wartortle));
 
-	// No.8 °ÅºÏ¿Õ 
+	// No.9 °ÅºÏ¿Õ 
 	CPokemonResource* blastoise = new CPokemonResource;
 	blastoise->SetImage(RESOURCE->LoadImg(L"Blastoise", L"Image\\Pokemon\\BlastoiseImage.png"));
 	blastoise->SetIcon(RESOURCE->LoadImg(L"BlastoiseIcon", L"Image\\Pokemon\\BlastoiseIcon.png"));
 	m_mapPokemonResource.insert(make_pair(9, blastoise));
+
+	// No.10 Ä³ÅÍÇÇ 
+	CPokemonResource* caterpie = new CPokemonResource;
+	caterpie->SetImage(RESOURCE->LoadImg(L"Caterpie", L"Image\\Pokemon\\CaterpieImage.png"));
+	caterpie->SetIcon(RESOURCE->LoadImg(L"CaterpieIcon", L"Image\\Pokemon\\CaterpieIcon.png"));
+	m_mapPokemonResource.insert(make_pair(10, caterpie));
 }
 
 void CResourceManager::Release()

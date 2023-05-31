@@ -172,6 +172,9 @@
     <Filter Include="GameObject\NPC\Center">
       <UniqueIdentifier>{bbdb8989-ba0b-4231-a273-7f88fa2da9be}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Pokemon\Pokemon\Bug">
+      <UniqueIdentifier>{e00c79b2-4bcd-4a42-845a-5087f673eb72}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -576,6 +579,9 @@
     <ClInclude Include="CBlastoise.h">
       <Filter>GameObject\Pokemon\Pokemon\Water</Filter>
     </ClInclude>
+    <ClInclude Include="CCaterpie.h">
+      <Filter>GameObject\Pokemon\Pokemon\Bug</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -955,6 +961,9 @@
     </ClCompile>
     <ClCompile Include="CBlastoise.cpp">
       <Filter>GameObject\Pokemon\Pokemon\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="CCaterpie.cpp">
+      <Filter>GameObject\Pokemon\Pokemon\Bug</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
