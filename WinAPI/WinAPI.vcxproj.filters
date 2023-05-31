@@ -573,6 +573,9 @@
     <ClInclude Include="CWartortle.h">
       <Filter>GameObject\Pokemon\Pokemon\Water</Filter>
     </ClInclude>
+    <ClInclude Include="CBlastoise.h">
+      <Filter>GameObject\Pokemon\Pokemon\Water</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -948,6 +951,9 @@
       <Filter>GameObject\Pokemon\Pokemon\Grass</Filter>
     </ClCompile>
     <ClCompile Include="CWartortle.cpp">
+      <Filter>GameObject\Pokemon\Pokemon\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="CBlastoise.cpp">
       <Filter>GameObject\Pokemon\Pokemon\Water</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,22 +1,22 @@
 #include "framework.h"
-#include "CWartortle.h"
+#include "CBlastoise.h"
 
-CWartortle::CWartortle()
+CBlastoise::CBlastoise()
 {
 	// 포켓몬 정보
-	m_info.name						= L"어니부기";
+	m_info.name						= L"거북왕";
 	m_info.description				= L"";
-	m_info.number					= 8;
+	m_info.number					= 9;
 	m_info.rate						= 45;
-	m_info.evolutionNumber			= 9;
+	m_info.evolutionNumber			= -1;
 
-	// 포켓몬 기초값 어니부기: 405
-	m_baseStat.hp					= 59;
-	m_baseStat.attack				= 63;
-	m_baseStat.specialAttack		= 80;
-	m_baseStat.defence				= 65;
-	m_baseStat.specialDefence		= 80;
-	m_baseStat.speed				= 58;
+	// 포켓몬 기초값 거북왕: 530
+	m_baseStat.hp					= 79;
+	m_baseStat.attack				= 83;
+	m_baseStat.specialAttack		= 100;
+	m_baseStat.defence				= 85;
+	m_baseStat.specialDefence		= 105;
+	m_baseStat.speed				= 78;
 
 	m_curState						= PokemonState::Normal;
 	m_owner							= PokemonOwner::Wild;
@@ -28,30 +28,37 @@ CWartortle::CWartortle()
 
 	CMove* tackle = new CTackle;
 	LearnMove(tackle);
-	CMove* waterGun = new CWaterGun;
-	LearnMove(waterGun);
 	CMove* waterPulse = new CWaterPulse;
 	LearnMove(waterPulse);
+	CMove* hyperBeam = new CHyperBeam;
+	LearnMove(hyperBeam);
+	m_hydroPump = new CHydroPump;
 	Init();
 }
 
-CWartortle::~CWartortle()
+CBlastoise::~CBlastoise()
 {
 }
 
-CWartortle::CWartortle(const CWartortle& wartortle) : CPokemon(wartortle)
+CBlastoise::CBlastoise(const CBlastoise& blastoise)
+{
+	m_hydroPump = new CHydroPump;
+}
+
+void CBlastoise::Evolution()
 {
 }
 
-void CWartortle::Evolution()
+void CBlastoise::LearnMoveList()
 {
+	if (m_stat.level >= 30 && !m_hydroPump->GetIsLearned())
+	{
+		LearnMove(m_hydroPump);
+		m_hydroPump->SetLearned(true);
+	}
 }
 
-void CWartortle::LearnMoveList()
-{
-}
-
-void CWartortle::Init()
+void CBlastoise::Init()
 {
 	m_pResource = new CPokemonResource();
 	m_pResource = RESOURCE->GetPokemonResource(m_info.number);
@@ -62,17 +69,17 @@ void CWartortle::Init()
 	AddComponent(m_pAnimator);
 }
 
-void CWartortle::Update()
+void CBlastoise::Update()
 {
 	CPokemon::Update();
 }
 
-void CWartortle::Render()
+void CBlastoise::Render()
 {
 	CPokemon::Render();
 }
 
-void CWartortle::Release()
+void CBlastoise::Release()
 {
 	CPokemon::Release();
 }

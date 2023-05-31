@@ -9,6 +9,7 @@ CCharmander::CCharmander()
 	m_info.description			= L"태어날 때부터 꼬리의 불꽃이 타오르고 있다.\n 불꽃이 꺼지면 그 생명이 다하고 만다.";
 	m_info.number				= 4;
 	m_info.rate					= 45;
+	m_info.evolutionNumber		= 5;
 
 	// 포켓몬 기초값 파이리: 309
 	m_baseStat.hp				= 39;

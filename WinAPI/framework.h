@@ -111,6 +111,7 @@ using namespace FMOD;
 #include "CCharizard.h"			// No.6 리자몽
 #include "CSquirtle.h"			// No.7 꼬부기
 #include "CWartortle.h"			// No.8 어니부기
+#include "CBlastoise.h"			// No.9 거북왕
 
 // Pokemon Moves
 // Normal

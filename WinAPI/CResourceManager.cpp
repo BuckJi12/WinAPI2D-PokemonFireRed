@@ -149,6 +149,12 @@ void CResourceManager::Init()
 	wartortle->SetImage(RESOURCE->LoadImg(L"Wartortle", L"Image\\Pokemon\\WartortleImage.png"));
 	wartortle->SetIcon(RESOURCE->LoadImg(L"WartortleIcon", L"Image\\Pokemon\\WartortleIcon.png"));
 	m_mapPokemonResource.insert(make_pair(8, wartortle));
+
+	// No.8 °ÅºÏ¿Õ 
+	CPokemonResource* blastoise = new CPokemonResource;
+	blastoise->SetImage(RESOURCE->LoadImg(L"Blastoise", L"Image\\Pokemon\\BlastoiseImage.png"));
+	blastoise->SetIcon(RESOURCE->LoadImg(L"BlastoiseIcon", L"Image\\Pokemon\\BlastoiseIcon.png"));
+	m_mapPokemonResource.insert(make_pair(9, blastoise));
 }
 
 void CResourceManager::Release()

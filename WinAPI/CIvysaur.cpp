@@ -8,6 +8,7 @@ CIvysaur::CIvysaur()
 	m_info.description			= L"";
 	m_info.number				= 2;
 	m_info.rate					= 45;
+	m_info.evolutionNumber		= 3;
 
 	// 포켓몬 기초값 이상해풀: 405
 	m_baseStat.hp				= 60;

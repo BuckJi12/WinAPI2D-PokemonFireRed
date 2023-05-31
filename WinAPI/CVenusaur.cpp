@@ -8,6 +8,7 @@ CVenusaur::CVenusaur()
 	m_info.description				= L"";
 	m_info.number					= 3;
 	m_info.rate						= 45;
+	m_info.evolutionNumber			= -1;
 
 	// 포켓몬 기초값 이상해꽃: 525
 	m_baseStat.hp					= 80;
