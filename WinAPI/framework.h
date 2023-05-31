@@ -119,6 +119,7 @@ using namespace FMOD;
 #include "CGengar.h"			// No.14	팬텀
 #include "CSnorlax.h"			// No.15	잠만보
 #include "CDragonite.h"			// No.16	망나뇽
+#include "CArticuno.h"			// No.17	프리져
 
 // Pokemon Moves
 // Normal

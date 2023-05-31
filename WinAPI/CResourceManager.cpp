@@ -197,6 +197,12 @@ void CResourceManager::Init()
 	dragonite->SetImage(RESOURCE->LoadImg(L"Dragonite", L"Image\\Pokemon\\DragoniteImage.png"));
 	dragonite->SetIcon(RESOURCE->LoadImg(L"DragoniteIcon", L"Image\\Pokemon\\DragoniteIcon.png"));
 	m_mapPokemonResource.insert(make_pair(16, dragonite));
+
+	// No.17 ÇÁ¸®Á® 
+	CPokemonResource* articuno = new CPokemonResource;
+	articuno->SetImage(RESOURCE->LoadImg(L"Articuno", L"Image\\Pokemon\\ArticunoImage.png"));
+	articuno->SetIcon(RESOURCE->LoadImg(L"ArticunoIcon", L"Image\\Pokemon\\ArticunoIcon.png"));
+	m_mapPokemonResource.insert(make_pair(17, articuno));
 }
 
 void CResourceManager::Release()

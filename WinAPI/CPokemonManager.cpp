@@ -32,6 +32,7 @@ void CPokemonManager::Init()
 	m_mapPokemons.insert(make_pair(14, new CGengar()));			// ∆“≈“
 	m_mapPokemons.insert(make_pair(15, new CSnorlax()));		// ¿·∏∏∫∏
 	m_mapPokemons.insert(make_pair(16, new CDragonite()));		// ∏¡≥™¥®
+	m_mapPokemons.insert(make_pair(17, new CArticuno()));		// «¡∏Æ¡Æ
  }
 
 void CPokemonManager::Release()

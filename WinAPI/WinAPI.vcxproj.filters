@@ -187,6 +187,9 @@
     <Filter Include="GameObject\Pokemon\Pokemon\Dragon">
       <UniqueIdentifier>{836f73d8-c346-4931-8a0d-d856cc3cdead}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Pokemon\Pokemon\Ice">
+      <UniqueIdentifier>{e8f339ac-1f62-4572-9f1f-5f5dd97d3cae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -612,6 +615,9 @@
     <ClInclude Include="CDragonite.h">
       <Filter>GameObject\Pokemon\Pokemon\Dragon</Filter>
     </ClInclude>
+    <ClInclude Include="CArticuno.h">
+      <Filter>GameObject\Pokemon\Pokemon\Ice</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -1012,6 +1018,9 @@
     </ClCompile>
     <ClCompile Include="CDragonite.cpp">
       <Filter>GameObject\Pokemon\Pokemon\Dragon</Filter>
+    </ClCompile>
+    <ClCompile Include="CArticuno.cpp">
+      <Filter>GameObject\Pokemon\Pokemon\Ice</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
