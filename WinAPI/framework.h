@@ -118,6 +118,7 @@ using namespace FMOD;
 #include "CFirePunch.h"
 // Water
 #include "CWaterGun.h"
+#include "CWaterPulse.h"
 // Grass
 #include "CVineWhip.h"
 #include "CLeafStrom.h"

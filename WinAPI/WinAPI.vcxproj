@@ -251,6 +251,7 @@
     <ClInclude Include="CWalk.h" />
     <ClInclude Include="CWarp.h" />
     <ClInclude Include="CWaterGun.h" />
+    <ClInclude Include="CWaterPulse.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="ISubject.h" />
     <ClInclude Include="IObserver.h" />
@@ -374,6 +375,7 @@
     <ClCompile Include="CWalk.cpp" />
     <ClCompile Include="CWarp.cpp" />
     <ClCompile Include="CWaterGun.cpp" />
+    <ClCompile Include="CWaterPulse.cpp" />
     <ClCompile Include="WinAPI.cpp" />
   </ItemGroup>
   <ItemGroup>

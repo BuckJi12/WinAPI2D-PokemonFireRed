@@ -525,6 +525,9 @@
     <ClInclude Include="CLeafStrom.h">
       <Filter>GameObject\Pokemon\Moves\Grass</Filter>
     </ClInclude>
+    <ClInclude Include="CWaterPulse.h">
+      <Filter>GameObject\Pokemon\Moves\Water</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -865,6 +868,9 @@
     </ClCompile>
     <ClCompile Include="CLeafStrom.cpp">
       <Filter>GameObject\Pokemon\Moves\Grass</Filter>
+    </ClCompile>
+    <ClCompile Include="CWaterPulse.cpp">
+      <Filter>GameObject\Pokemon\Moves\Water</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
