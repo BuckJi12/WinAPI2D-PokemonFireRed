@@ -570,6 +570,9 @@
     <ClInclude Include="CVenusaur.h">
       <Filter>GameObject\Pokemon\Pokemon\Grass</Filter>
     </ClInclude>
+    <ClInclude Include="CWartortle.h">
+      <Filter>GameObject\Pokemon\Pokemon\Water</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -943,6 +946,9 @@
     </ClCompile>
     <ClCompile Include="CVenusaur.cpp">
       <Filter>GameObject\Pokemon\Pokemon\Grass</Filter>
+    </ClCompile>
+    <ClCompile Include="CWartortle.cpp">
+      <Filter>GameObject\Pokemon\Pokemon\Water</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

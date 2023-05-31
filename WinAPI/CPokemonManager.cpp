@@ -23,6 +23,7 @@ void CPokemonManager::Init()
 	m_mapPokemons.insert(make_pair(5, new CCharmeleon()));		// 府磊靛
 	m_mapPokemons.insert(make_pair(6, new CCharizard()));		// 府磊根
 	m_mapPokemons.insert(make_pair(7, new CSquirtle()));		// 部何扁
+	m_mapPokemons.insert(make_pair(8, new CWartortle()));		// 绢聪何扁
  }
 
 void CPokemonManager::Release()

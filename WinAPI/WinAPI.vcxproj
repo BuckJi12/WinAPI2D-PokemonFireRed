@@ -260,6 +260,7 @@
     <ClInclude Include="CUIManager.h" />
     <ClInclude Include="CWalk.h" />
     <ClInclude Include="CWarp.h" />
+    <ClInclude Include="CWartortle.h" />
     <ClInclude Include="CWaterGun.h" />
     <ClInclude Include="CWaterPulse.h" />
     <ClInclude Include="framework.h" />
@@ -394,6 +395,7 @@
     <ClCompile Include="CUIManager.cpp" />
     <ClCompile Include="CWalk.cpp" />
     <ClCompile Include="CWarp.cpp" />
+    <ClCompile Include="CWartortle.cpp" />
     <ClCompile Include="CWaterGun.cpp" />
     <ClCompile Include="CWaterPulse.cpp" />
     <ClCompile Include="WinAPI.cpp" />

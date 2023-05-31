@@ -143,6 +143,12 @@ void CResourceManager::Init()
 	squirtle->SetImage(RESOURCE->LoadImg(L"Squirtle", L"Image\\Pokemon\\SquirtleImage.png"));
 	squirtle->SetIcon(RESOURCE->LoadImg(L"SquirtleIcon", L"Image\\Pokemon\\SquirtleIcon.png"));
 	m_mapPokemonResource.insert(make_pair(7, squirtle));
+
+	// No.8 어니부기 
+	CPokemonResource* wartortle = new CPokemonResource;
+	wartortle->SetImage(RESOURCE->LoadImg(L"Wartortle", L"Image\\Pokemon\\WartortleImage.png"));
+	wartortle->SetIcon(RESOURCE->LoadImg(L"WartortleIcon", L"Image\\Pokemon\\WartortleIcon.png"));
+	m_mapPokemonResource.insert(make_pair(8, wartortle));
 }
 
 void CResourceManager::Release()
