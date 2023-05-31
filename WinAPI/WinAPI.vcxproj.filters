@@ -163,6 +163,9 @@
     <Filter Include="GameObject\Effect\Lightning">
       <UniqueIdentifier>{9dc05f10-41f0-448b-952b-d7f3fd6be4a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Effect\Ice">
+      <UniqueIdentifier>{8264f953-6f17-44e4-8bdf-d3e527f93ac8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -543,6 +546,9 @@
     <ClInclude Include="CEffectLightning.h">
       <Filter>GameObject\Effect\Lightning</Filter>
     </ClInclude>
+    <ClInclude Include="CEffectIce.h">
+      <Filter>GameObject\Effect\Ice</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -898,6 +904,9 @@
     </ClCompile>
     <ClCompile Include="CEffectLightning.cpp">
       <Filter>GameObject\Effect\Lightning</Filter>
+    </ClCompile>
+    <ClCompile Include="CEffectIce.cpp">
+      <Filter>GameObject\Effect\Ice</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -132,6 +132,9 @@ void CSceneBattle::Init()
 	CEffect* lightning = new CEffectLightning;
 	lightning->SetPos(1000, 1000);
 	RESOURCE->AddEffect(PokemonType::Electric, lightning);
+	CEffect* ice = new CEffectIce;
+	ice->SetPos(1000, 1000);
+	RESOURCE->AddEffect(PokemonType::Ice, ice);
 
 
 	AddGameObject(fire);
