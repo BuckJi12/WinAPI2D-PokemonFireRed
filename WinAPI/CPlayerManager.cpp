@@ -121,3 +121,11 @@ void CPlayerManager::PokemonSwap(int a, int b)
 	m_pVecPlayerPokemons[a] = m_pVecPlayerPokemons[b];
 	m_pVecPlayerPokemons[b] = temp;
 }
+
+void CPlayerManager::RecoverPokemon()
+{
+	for (auto pokemon : m_pVecPlayerPokemons)
+	{
+		pokemon->Recover();
+	}
+}

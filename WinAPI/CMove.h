@@ -53,7 +53,7 @@ public:
 	
 	bool			GetIsLearned();
 	void			SetLearned(bool isLearned);
-	void			RecoverPP(int value);
+	void			RecoverPP();
 	virtual void	UseMove(CPokemon* pokemon);
 };
 

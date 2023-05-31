@@ -37,7 +37,7 @@ void CSceneCenter::Init()
 
 	auto recoverPokemon = [](DWORD_PTR param)
 	{
-		//TODO: 포켓몬 회복
+		PLAYER->RecoverPokemon();
 	};
 
 	m_pNurse = new CNurse;

@@ -237,6 +237,10 @@ void CPokemon::Recover()
 {
 	ChangeState(PokemonState::Normal);
 	SetPokemonStat(m_stat.level);
+	for (auto move : m_vecMoves)
+	{
+		move->RecoverPP();
+	}
 	Notify();
 }
 

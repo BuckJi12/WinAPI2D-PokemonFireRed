@@ -61,7 +61,7 @@ void CMove::UseMove(CPokemon* pokemon)
 	m_moveStat.curPP -= 1;
 }
 
-void CMove::RecoverPP(int value)
+void CMove::RecoverPP()
 {
-	m_moveStat.curPP = value;
+	m_moveStat.curPP = m_moveStat.curPP;
 }
