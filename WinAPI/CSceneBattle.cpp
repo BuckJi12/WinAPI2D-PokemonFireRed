@@ -144,6 +144,9 @@ void CSceneBattle::Init()
 	AddGameObject(normal);
 	AddGameObject(water);
 	AddGameObject(grass);
+	AddGameObject(lightning);
+	AddGameObject(ice);
+	AddGameObject(psychic);
 
 	// ео
 	m_mapTurns.insert(make_pair(PlayerAction::Enter, new CTurnEnter(this)));
