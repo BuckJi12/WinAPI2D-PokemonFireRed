@@ -46,6 +46,7 @@ void CSceneTitle::Init()
 void CSceneTitle::Enter()
 {
 	CAMERA->FadeIn(0.25f);
+	SOUND->Play(SOUND->GetBGM(GroupScene::Title), 0.2f, true);
 }
 
 void CSceneTitle::Update()
@@ -74,6 +75,7 @@ void CSceneTitle::Render()
 
 void CSceneTitle::Exit()
 {
+	SOUND->Stop(SOUND->GetBGM(GroupScene::Title));
 }
 
 void CSceneTitle::Release()

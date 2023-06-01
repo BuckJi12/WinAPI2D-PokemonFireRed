@@ -49,6 +49,7 @@ void CSceneViridianTown::Enter()
 	CAMERA->SetTargetObj(m_pPlayer);
 	CAMERA->SetTargetBackGround(m_pImageBackGround);
 	CAMERA->OneTimeMove();
+	SOUND->Play(SOUND->GetBGM(GroupScene::ViridianTown), 0.2f, true);
 }
 
 void CSceneViridianTown::Update()
@@ -61,6 +62,7 @@ void CSceneViridianTown::Render()
 
 void CSceneViridianTown::Exit()
 {
+	SOUND->Stop(SOUND->GetBGM(GroupScene::ViridianTown));
 }
 
 void CSceneViridianTown::Release()

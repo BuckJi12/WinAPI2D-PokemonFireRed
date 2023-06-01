@@ -197,6 +197,7 @@ void CSceneOakLab::Enter()
 	CAMERA->FadeIn(1.0f);
 	CAMERA->SetTargetObj(m_pPlayer);
 	CAMERA->SetTargetBackGround(m_pImageBackGround);
+	SOUND->Play(SOUND->GetBGM(GroupScene::OakLab), 0.2f, true);
 }
 
 void CSceneOakLab::Update()
@@ -220,6 +221,7 @@ void CSceneOakLab::Render()
 
 void CSceneOakLab::Exit()
 {
+	SOUND->Stop(SOUND->GetBGM(GroupScene::OakLab));
 }
 
 void CSceneOakLab::Release()

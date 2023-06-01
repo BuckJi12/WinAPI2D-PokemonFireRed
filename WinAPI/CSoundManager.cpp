@@ -22,6 +22,11 @@ CSound* CSoundManager::GetMoveEffect(PokemonType type)
 	return m_mapSoundEffect[type];
 }
 
+CSound* CSoundManager::GetBGM(GroupScene scene)
+{
+	return m_mapBGM[scene];
+}
+
 void CSoundManager::Play(CSound* pSound, float volume, bool loop)
 {
 	FMOD_RESULT result;
@@ -104,6 +109,19 @@ void CSoundManager::Init()
 	m_mapSoundEffect.insert(make_pair(PokemonType::Psychic, psychicSound));
 	CSound* iceSound = RESOURCE->LoadSound(L"IceSound", L"Sound\\Effect\\Ice.mp3");
 	m_mapSoundEffect.insert(make_pair(PokemonType::Ice, iceSound));
+
+	CSound* palletTown = RESOURCE->LoadSound(L"PalletTownBGM", L"Sound\\BGM\\PalletTown.wav");
+	m_mapBGM.insert(make_pair(GroupScene::PalletTown, palletTown));
+	CSound* battle = RESOURCE->LoadSound(L"BattleBGM", L"Sound\\BGM\\Battle.wav");
+	m_mapBGM.insert(make_pair(GroupScene::Battle, battle));
+	CSound* center = RESOURCE->LoadSound(L"CenterBGM", L"Sound\\BGM\\Center.wav");
+	m_mapBGM.insert(make_pair(GroupScene::Center, center));
+	CSound* oakLab = RESOURCE->LoadSound(L"OakLabBGM", L"Sound\\BGM\\ProfessorOak.wav");
+	m_mapBGM.insert(make_pair(GroupScene::OakLab, oakLab));
+	CSound* title = RESOURCE->LoadSound(L"TitleBGM", L"Sound\\BGM\\Title.wav");
+	m_mapBGM.insert(make_pair(GroupScene::Title, title));
+	CSound* viridianTown = RESOURCE->LoadSound(L"ViridianTown", L"Sound\\BGM\\Viridian.wav");
+	m_mapBGM.insert(make_pair(GroupScene::ViridianTown, viridianTown));
 }
 
 void CSoundManager::Update()
@@ -119,4 +137,16 @@ void CSoundManager::Release()
 		m_pSystem->release();
 		m_pSystem->close();
 	}
+
+	for (auto moveSound : m_mapSoundEffect)
+	{
+		delete moveSound.second;
+	}
+	m_mapSoundEffect.clear();
+
+	for (auto BGM : m_mapBGM)
+	{
+		delete BGM.second;
+	}
+	m_mapBGM.clear();
 }

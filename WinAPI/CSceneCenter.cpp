@@ -53,6 +53,7 @@ void CSceneCenter::Enter()
 	CAMERA->FadeIn(0.5f);
 	CAMERA->SetTargetObj(m_pPlayer);
 	CAMERA->SetTargetBackGround(m_pImageBackGround);
+	SOUND->Play(SOUND->GetBGM(GroupScene::Center), 0.2f, true);
 }
 
 void CSceneCenter::Update()
@@ -65,6 +66,7 @@ void CSceneCenter::Render()
 
 void CSceneCenter::Exit()
 {
+	SOUND->Stop(SOUND->GetBGM(GroupScene::Center));
 }
 
 void CSceneCenter::Release()

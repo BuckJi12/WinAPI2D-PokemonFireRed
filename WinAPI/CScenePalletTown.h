@@ -16,8 +16,6 @@ private:
 	CWarp*			m_pWarp2;
 	CWarp*			m_pWarp3;
 
-	CSound*			m_pBGM;
-
 private:
 	void Init()		override;
 	void Enter()	override;

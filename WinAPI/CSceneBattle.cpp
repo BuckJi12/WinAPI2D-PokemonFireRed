@@ -179,6 +179,7 @@ void CSceneBattle::Enter()
 	m_curTurn = m_mapTurns[PlayerAction::Enter];
 	m_curTurn->Enter();
 	CheckAddedGameObject();
+	SOUND->Play(SOUND->GetBGM(GroupScene::Battle), 0.2f, true);
 }
 
 void CSceneBattle::Update()
@@ -192,6 +193,7 @@ void CSceneBattle::Render()
 
 void CSceneBattle::Exit()
 {
+	SOUND->Stop(SOUND->GetBGM(GroupScene::Battle));
 }
 
 void CSceneBattle::Release()

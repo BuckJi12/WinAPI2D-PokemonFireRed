@@ -56,8 +56,6 @@ void CScenePalletTown::Init()
 	m_pWarp3->SetDestination(GroupScene::Route01);
 	AddGameObject(m_pWarp3);
 
-	m_pBGM = RESOURCE->LoadSound(L"PalletTownBGM", L"Sound\\BGM\\PalletTown.wav");
-
 	LoadTile(GETPATH + L"Tile\\PalletTown.tile");
 }
 
@@ -66,7 +64,7 @@ void CScenePalletTown::Enter()
 	CAMERA->FadeIn(1.0f);
 	CAMERA->SetTargetObj(m_pPlayer);
 	CAMERA->SetTargetBackGround(m_pImageBackGround);
-	SOUND->Play(m_pBGM, 0.2f, true);
+	SOUND->Play(SOUND->GetBGM(GroupScene::PalletTown), 0.2f, true);
 }
 
 void CScenePalletTown::Update()
@@ -79,7 +77,7 @@ void CScenePalletTown::Render()
 
 void CScenePalletTown::Exit()
 {
-	SOUND->Stop(m_pBGM);
+	SOUND->Stop(SOUND->GetBGM(GroupScene::PalletTown));
 }
 
 void CScenePalletTown::Release()
