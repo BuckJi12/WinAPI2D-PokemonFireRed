@@ -53,6 +53,7 @@ void CSceneRoute01::Enter()
 	CAMERA->SetTargetObj(m_pPlayer);
 	CAMERA->SetTargetBackGround(m_pImageBackGround);
 	CAMERA->OneTimeMove();
+	SOUND->Play(SOUND->GetBGM(GroupScene::PalletTown), 0.2f, true);
 }
 
 void CSceneRoute01::Update()

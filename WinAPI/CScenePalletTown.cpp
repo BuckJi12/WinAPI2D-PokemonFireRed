@@ -77,7 +77,7 @@ void CScenePalletTown::Render()
 
 void CScenePalletTown::Exit()
 {
-	SOUND->Stop(SOUND->GetBGM(GroupScene::PalletTown));
+	SOUND->Pause(SOUND->GetBGM(GroupScene::PalletTown));
 }
 
 void CScenePalletTown::Release()

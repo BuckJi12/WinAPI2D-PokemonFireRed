@@ -62,7 +62,7 @@ void CSceneViridianTown::Render()
 
 void CSceneViridianTown::Exit()
 {
-	SOUND->Stop(SOUND->GetBGM(GroupScene::ViridianTown));
+	SOUND->Pause(SOUND->GetBGM(GroupScene::ViridianTown));
 }
 
 void CSceneViridianTown::Release()
