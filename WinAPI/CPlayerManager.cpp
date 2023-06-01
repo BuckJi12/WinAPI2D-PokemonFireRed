@@ -13,16 +13,6 @@ CPlayerManager::~CPlayerManager()
 
 void CPlayerManager::Init()
 {
-	CPokemon* charmander = new CCharmander();
-	charmander->SetPokemonStat(6);
-	CPokemon* bulbasaur = new CBulbasaur;
-	bulbasaur->SetPokemonStat(7);
-	CPokemon* bulbasaur3 = new CBulbasaur;
-	bulbasaur3->SetPokemonStat(77);
-	AddPokemonToPlayer(charmander);
-	AddPokemonToPlayer(bulbasaur);
-	AddPokemonToPlayer(bulbasaur3);
-
 	CMonsterBall* monsterBall = new CMonsterBall;
 	monsterBall->Init();
 	AddItem(monsterBall, 5);

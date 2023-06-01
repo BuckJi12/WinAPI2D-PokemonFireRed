@@ -58,13 +58,9 @@ void CTurnEnter::Enter()
 	BATTLE->GetPlayerCurPokemon()->SetPos(1000, 1000);
 	m_battleScene->GetPlayerUI()->SetPos(-1600, 266);
 	// 오브젝트 추가
-	if (m_OpponentSpawn == false)
-	{
-		m_pImageOpponentFloor->SetChild(BATTLE->GetOpponentCurPokemon());
-		BATTLE->GetOpponentCurPokemon()->AddObserver(m_pImageOppStatUI);
-		m_battleScene->AddObjectThisScene(BATTLE->GetOpponentCurPokemon());
-		m_OpponentSpawn = true;
-	}
+	m_pImageOpponentFloor->SetChild(BATTLE->GetOpponentCurPokemon());
+	BATTLE->GetOpponentCurPokemon()->AddObserver(m_pImageOppStatUI);
+	m_battleScene->AddObjectThisScene(BATTLE->GetOpponentCurPokemon());
 } 
 
 void CTurnEnter::Update()

@@ -273,10 +273,10 @@ void CPokemon::Render()
 
 void CPokemon::Release()
 {	
-	for (auto move : m_vecMoves)
+	/*for (auto move : m_vecMoves)
 	{
 		delete move;
-	}
+	}*/
 }
 
 void CPokemon::AddObserver(IObserver* observer)

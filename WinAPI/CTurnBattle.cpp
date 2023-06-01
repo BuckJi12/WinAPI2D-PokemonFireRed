@@ -47,7 +47,7 @@ void CTurnBattle::PokemonAttack()
 				//배틀 승리
 				m_battleScene->GetTextBox()->SetText(BATTLE->GetOpponentCurPokemon()->GetPokemonInfo().name + L"이(가) " +
 					L" " + L"쓰러졌다\n");
-				BATTLE->GetOpponentCurPokemon()->SetPos(1000,1000);
+				BATTLE->GetOpponentCurPokemon()->SetPos(1000, 1000);
 				SOUND->Play(SOUND->GetSpecialSound(SpecialSound::Victory), 0.5f);
 				BATTLE->SetBattleResult(BattleResult::Win);
 				m_battleScene->ChangeTurn(PlayerAction::Result);

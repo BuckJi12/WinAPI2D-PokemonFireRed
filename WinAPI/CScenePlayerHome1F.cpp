@@ -49,7 +49,6 @@ void CScenePlayerHome1F::Enter()
 {
 	CAMERA->FadeIn(0.5f);
 	CAMERA->SetTargetObj(m_pPlayer);
-	SOUND->Play(SOUND->GetBGM(GroupScene::PalletTown), 0.2f, true);
 }
 
 void CScenePlayerHome1F::Update()

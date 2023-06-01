@@ -67,19 +67,19 @@ void CSceneOakLab::FrameControl()
 		m_pPokemonFrame[0]->SetPos(CAMERA->ScreenToWorldPoint(Vector(400, 200)));
 		m_pPokemonFrame[1]->SetPos(3000, 3000);
 		m_pPokemonFrame[2]->SetPos(3000, 3000);
-		m_pTextBox->SetText(L"풀 타입 포켓몬 이상해씨로 선택하시겠습니까?");
+		m_pTextBox->SetText(L"풀 타입 포켓몬 이상해꽃을 선택하시겠습니까?");
 		break;
 	case 1:
 		m_pPokemonFrame[0]->SetPos(3000, 3000);
 		m_pPokemonFrame[1]->SetPos(CAMERA->ScreenToWorldPoint(Vector(400, 200)));
 		m_pPokemonFrame[2]->SetPos(3000, 3000);
-		m_pTextBox->SetText(L"불꽃 타입 포켓몬 파이리로 선택하시겠습니까?");
+		m_pTextBox->SetText(L"불꽃 타입 포켓몬 리자몽을 선택하시겠습니까?");
 		break;
 	case 2:
 		m_pPokemonFrame[0]->SetPos(3000, 3000);
 		m_pPokemonFrame[1]->SetPos(3000, 3000);
 		m_pPokemonFrame[2]->SetPos(CAMERA->ScreenToWorldPoint(Vector(400, 200)));
-		m_pTextBox->SetText(L"물 타입 꼬부기로 선택하시겠습니까?");
+		m_pTextBox->SetText(L"물 타입 거북왕을 선택하시겠습니까?");
 		break;
 	}
 }
@@ -101,22 +101,22 @@ void CSceneOakLab::FrameSelcet()
 
 void CSceneOakLab::GivePokemon(int index)
 {
-	if (index == 0)	// 이상해씨
+	if (index == 0)	// 이상해꽃
 	{
-		CPokemon* pokemon = new CPokemon(*POKEMON->FindPokemon(1));
-		pokemon->SetPokemonStat(5);
+		CPokemon* pokemon = new CPokemon(*POKEMON->FindPokemon(3));
+		pokemon->SetPokemonStat(50);
 		PLAYER->AddPokemonToPlayer(pokemon);
 	}
-	else if (index == 1) // 파이리
+	else if (index == 1) // 리자몽
 	{
-		CPokemon* pokemon = new CPokemon(*POKEMON->FindPokemon(4));
-		pokemon->SetPokemonStat(5);
+		CPokemon* pokemon = new CPokemon(*POKEMON->FindPokemon(6));
+		pokemon->SetPokemonStat(50);
 		PLAYER->AddPokemonToPlayer(pokemon);
 	}
-	else // 꼬부기
+	else // 거북왕
 	{
-		CPokemon* pokemon = new CPokemon(*POKEMON->FindPokemon(7));
-		pokemon->SetPokemonStat(5);
+		CPokemon* pokemon = new CPokemon(*POKEMON->FindPokemon(9));
+		pokemon->SetPokemonStat(50);
 		PLAYER->AddPokemonToPlayer(pokemon);
 	}
 }
@@ -168,17 +168,17 @@ void CSceneOakLab::Init()
 	AddGameObject(m_pChoosePokemon);
 
 	m_pPokemonFrame[0] = new CPokemonFrame;
-	m_pPokemonFrame[0]->SetImage(RESOURCE->LoadImg(L"BulbasaurImage", L"Image\\Pokemon\\Bulbasaur.png"));
+	m_pPokemonFrame[0]->SetImage(RESOURCE->LoadImg(L"VenusaurImage", L"Image\\Pokemon\\Venusaur.png"));
 	m_pPokemonFrame[0]->SetPos(3000, 3000);
 	AddGameObject(m_pPokemonFrame[0]);
 
 	m_pPokemonFrame[1] = new CPokemonFrame;
-	m_pPokemonFrame[1]->SetImage(RESOURCE->LoadImg(L"CharmanderImage", L"Image\\Pokemon\\Charmander.png"));
+	m_pPokemonFrame[1]->SetImage(RESOURCE->LoadImg(L"Charizard", L"Image\\Pokemon\\Charizard.png"));
 	m_pPokemonFrame[1]->SetPos(3000, 3000);
 	AddGameObject(m_pPokemonFrame[1]);
 
 	m_pPokemonFrame[2] = new CPokemonFrame;
-	m_pPokemonFrame[2]->SetImage(RESOURCE->LoadImg(L"SquirtleImage", L"Image\\Pokemon\\Squirtle.png"));
+	m_pPokemonFrame[2]->SetImage(RESOURCE->LoadImg(L"BlastoiseImage", L"Image\\Pokemon\\Blastoise.png"));
 	m_pPokemonFrame[2]->SetPos(3000, 3000);
 	AddGameObject(m_pPokemonFrame[2]);
 

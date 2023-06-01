@@ -123,10 +123,13 @@ void CBattleManager::SetBattleSituation(BattleSituation situation)
 
 void CBattleManager::BattleInit()
 {
+	srand(time(NULL));
+	int random = rand() % 18 + 1;
 	m_pPlayerCurPokemon = PLAYER->GetPlayerFirstPokemon();
-	m_pOppoentCurPokemon = new CPokemon();
-	m_pOppoentCurPokemon = POKEMON->FindPokemon(7);
-	m_pOppoentCurPokemon->SetPokemonStat(1);
+	m_pOppoentCurPokemon = new CPokemon(*POKEMON->FindPokemon(random));
+	int random2 = rand() % 5 + 1;
+	int pokemonLevel = m_pPlayerCurPokemon->GetPokemonStat().level - random2;
+	m_pOppoentCurPokemon->SetPokemonStat(pokemonLevel);
 }
 
 void CBattleManager::ChooseAction(PlayerAction action)

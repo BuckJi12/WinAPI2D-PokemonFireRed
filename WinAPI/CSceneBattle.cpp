@@ -193,7 +193,8 @@ void CSceneBattle::Render()
 
 void CSceneBattle::Exit()
 {
-	SOUND->Stop(SOUND->GetBGM(GroupScene::Battle));
+	SOUND->Pause(SOUND->GetBGM(GroupScene::Battle));
+	DELETEOBJECT(BATTLE->GetOpponentCurPokemon());
 }
 
 void CSceneBattle::Release()
