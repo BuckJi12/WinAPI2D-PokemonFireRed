@@ -15,10 +15,10 @@ void CRun::Init()
 {
 	m_pRunImage = RESOURCE->LoadImg(L"PlayerWalk", L"Image\\Player\\PlayerRun.png");
 
-	pPlayer->GetAnimator()->CreateAnimation(L"RunDown", m_pRunImage, Vector(0, 0), Vector(64.f, 80.f), Vector(64.f, 0.f), 0.5, 4);
-	pPlayer->GetAnimator()->CreateAnimation(L"RunUp", m_pRunImage, Vector(0, 80), Vector(64.f, 80.f), Vector(64.f, 0.f), 0.5, 4);
-	pPlayer->GetAnimator()->CreateAnimation(L"RunLeft", m_pRunImage, Vector(0, 160), Vector(64.f, 80.f), Vector(64.f, 0.f), 0.5, 4);
-	pPlayer->GetAnimator()->CreateAnimation(L"RunRight", m_pRunImage, Vector(0, 240), Vector(64.f, 80.f), Vector(64.f, 0.f), 0.5, 4);
+	pPlayer->GetAnimator()->CreateAnimation(L"RunDown", m_pRunImage, Vector(0, 0), Vector(64.f, 80.f), Vector(64.f, 0.f), 0.2, 4);
+	pPlayer->GetAnimator()->CreateAnimation(L"RunUp", m_pRunImage, Vector(0, 80), Vector(64.f, 80.f), Vector(64.f, 0.f), 0.2, 4);
+	pPlayer->GetAnimator()->CreateAnimation(L"RunLeft", m_pRunImage, Vector(0, 160), Vector(64.f, 80.f), Vector(64.f, 0.f), 0.2, 4);
+	pPlayer->GetAnimator()->CreateAnimation(L"RunRight", m_pRunImage, Vector(0, 240), Vector(64.f, 80.f), Vector(64.f, 0.f), 0.2, 4);
 }
 
 void CRun::Enter()
