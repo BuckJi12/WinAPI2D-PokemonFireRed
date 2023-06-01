@@ -90,6 +90,8 @@ void CSoundManager::Init()
 
 	// ==================================== »ç¿îµå =======================================
 
+	CSound* normalSound = RESOURCE->LoadSound(L"NormalSound", L"Sound\\Effect\\Normal.mp3");
+	m_mapSoundEffect.insert(make_pair(PokemonType::Normal, normalSound));
 	CSound* fireSound = RESOURCE->LoadSound(L"FireSound", L"Sound\\Effect\\Fire.mp3");
 	m_mapSoundEffect.insert(make_pair(PokemonType::Fire, fireSound));
 	CSound* waterSound = RESOURCE->LoadSound(L"WaterSound", L"Sound\\Effect\\Water.mp3");
