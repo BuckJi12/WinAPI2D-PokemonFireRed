@@ -10,11 +10,13 @@ public:
 	virtual ~CScenePalletTown();
 
 private:
-	CPlayer* m_pPlayer;
-	CImageObject* m_pImageBackGround;
-	CWarp* m_pWarp;
-	CWarp* m_pWarp2;
-	CWarp* m_pWarp3;
+	CPlayer*		m_pPlayer;
+	CImageObject*	m_pImageBackGround;
+	CWarp*			m_pWarp;
+	CWarp*			m_pWarp2;
+	CWarp*			m_pWarp3;
+
+	CSound*			m_pBGM;
 
 private:
 	void Init()		override;
