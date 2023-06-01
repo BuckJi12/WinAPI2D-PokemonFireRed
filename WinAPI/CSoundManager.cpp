@@ -17,6 +17,11 @@ System* CSoundManager::GetSystem()
 	return m_pSystem;
 }
 
+CSound* CSoundManager::GetMoveEffect(PokemonType type)
+{
+	return m_mapSoundEffect[type];
+}
+
 void CSoundManager::Play(CSound* pSound, float volume, bool loop)
 {
 	FMOD_RESULT result;
@@ -81,6 +86,22 @@ void CSoundManager::Init()
 
 	result = m_pSystem->init(32, FMOD_INIT_NORMAL, nullptr);
 	assert(FMOD_OK == result && L"Init sound system falied");
+
+
+	// ==================================== »ç¿îµå =======================================
+
+	CSound* fireSound = RESOURCE->LoadSound(L"FireSound", L"Sound\\Effect\\Fire.mp3");
+	m_mapSoundEffect.insert(make_pair(PokemonType::Fire, fireSound));
+	CSound* waterSound = RESOURCE->LoadSound(L"WaterSound", L"Sound\\Effect\\Water.mp3");
+	m_mapSoundEffect.insert(make_pair(PokemonType::Water, waterSound));
+	CSound* grassSound = RESOURCE->LoadSound(L"GrassSound", L"Sound\\Effect\\Grass.mp3");
+	m_mapSoundEffect.insert(make_pair(PokemonType::Grass, grassSound));
+	CSound* electricSound = RESOURCE->LoadSound(L"ElectricSound", L"Sound\\Effect\\Electric.mp3");
+	m_mapSoundEffect.insert(make_pair(PokemonType::Electric, electricSound));
+	CSound* psychicSound = RESOURCE->LoadSound(L"PsychicSound", L"Sound\\Effect\\Psychic.mp3");
+	m_mapSoundEffect.insert(make_pair(PokemonType::Psychic, psychicSound));
+	CSound* iceSound = RESOURCE->LoadSound(L"IceSound", L"Sound\\Effect\\Ice.mp3");
+	m_mapSoundEffect.insert(make_pair(PokemonType::Ice, iceSound));
 }
 
 void CSoundManager::Update()

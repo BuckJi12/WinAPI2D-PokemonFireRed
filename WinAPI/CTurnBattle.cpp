@@ -34,6 +34,7 @@ void CTurnBattle::PokemonAttack()
 					BATTLE->GetOpponentCurPokemon()->HitAnimation();
 					RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->SetPos(625, 155);
 					RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->Play();
+					SOUND->Play(SOUND->GetMoveEffect(BATTLE->GetCurMove()->GetType()));
 					m_playerAttacked = true;
 				}
 		}
@@ -64,6 +65,7 @@ void CTurnBattle::PokemonAttack()
 				BATTLE->GetPlayerCurPokemon()->HitAnimation();
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->SetPos(200, 310);
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->Play();
+				SOUND->Play(SOUND->GetMoveEffect(BATTLE->GetCurOpponentMove()->GetType()));
 				m_OpponentAttacked = true;
 			}		
 		}
@@ -100,6 +102,7 @@ void CTurnBattle::PokemonAttack()
 				BATTLE->GetPlayerCurPokemon()->HitAnimation();
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->SetPos(200, 310);
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->Play();
+				SOUND->Play(SOUND->GetMoveEffect(BATTLE->GetCurOpponentMove()->GetType()));
 				m_OpponentAttacked = true;
 			}
 		}
@@ -135,6 +138,7 @@ void CTurnBattle::PokemonAttack()
 				BATTLE->GetOpponentCurPokemon()->HitAnimation();
 				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->SetPos(625, 155);
 				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->Play();
+				SOUND->Play(SOUND->GetMoveEffect(BATTLE->GetCurMove()->GetType()));
 				m_playerAttacked = true;
 			}
 		}
@@ -168,6 +172,7 @@ void CTurnBattle::PokemonAttack()
 				BATTLE->GetPlayerCurPokemon()->HitAnimation();
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->SetPos(200, 310);
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->Play();
+				SOUND->Play(SOUND->GetMoveEffect(BATTLE->GetCurOpponentMove()->GetType()));
 				m_OpponentAttacked = true;
 			}
 		}
