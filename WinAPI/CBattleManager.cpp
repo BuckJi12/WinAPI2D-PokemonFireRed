@@ -126,7 +126,7 @@ void CBattleManager::BattleInit()
 	m_pPlayerCurPokemon = PLAYER->GetPlayerFirstPokemon();
 	m_pOppoentCurPokemon = new CPokemon();
 	m_pOppoentCurPokemon = POKEMON->FindPokemon(7);
-	m_pOppoentCurPokemon->SetPokemonStat(20);
+	m_pOppoentCurPokemon->SetPokemonStat(1);
 }
 
 void CBattleManager::ChooseAction(PlayerAction action)

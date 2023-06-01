@@ -66,6 +66,7 @@ void CSceneRoute01::Render()
 
 void CSceneRoute01::Exit()
 {
+	SOUND->Stop(SOUND->GetBGM(GroupScene::PalletTown));
 }
 
 void CSceneRoute01::Release()

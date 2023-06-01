@@ -38,6 +38,7 @@ void CSceneCenter::Init()
 	auto recoverPokemon = [](DWORD_PTR param)
 	{
 		PLAYER->RecoverPokemon();
+		SOUND->Play(SOUND->GetSpecialSound(SpecialSound::Heal), 0.5f);
 	};
 
 	m_pNurse = new CNurse;

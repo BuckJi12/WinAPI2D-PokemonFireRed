@@ -34,7 +34,7 @@ void CTurnBattle::PokemonAttack()
 					BATTLE->GetOpponentCurPokemon()->HitAnimation();
 					RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->SetPos(625, 155);
 					RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->Play();
-					SOUND->Play(SOUND->GetMoveEffect(BATTLE->GetCurMove()->GetType()));
+					SOUND->Play(SOUND->GetMoveEffect(BATTLE->GetCurMove()->GetType()), 0.5f);
 					m_playerAttacked = true;
 				}
 		}
@@ -47,6 +47,8 @@ void CTurnBattle::PokemonAttack()
 				//배틀 승리
 				m_battleScene->GetTextBox()->SetText(BATTLE->GetOpponentCurPokemon()->GetPokemonInfo().name + L"이(가) " +
 					L" " + L"쓰러졌다\n");
+				BATTLE->GetOpponentCurPokemon()->SetPos(1000,1000);
+				SOUND->Play(SOUND->GetSpecialSound(SpecialSound::Victory), 0.5f);
 				BATTLE->SetBattleResult(BattleResult::Win);
 				m_battleScene->ChangeTurn(PlayerAction::Result);
 			}
@@ -65,7 +67,7 @@ void CTurnBattle::PokemonAttack()
 				BATTLE->GetPlayerCurPokemon()->HitAnimation();
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->SetPos(200, 310);
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->Play();
-				SOUND->Play(SOUND->GetMoveEffect(BATTLE->GetCurOpponentMove()->GetType()));
+				SOUND->Play(SOUND->GetMoveEffect(BATTLE->GetCurOpponentMove()->GetType()), 0.5f);
 				m_OpponentAttacked = true;
 			}		
 		}
@@ -102,7 +104,7 @@ void CTurnBattle::PokemonAttack()
 				BATTLE->GetPlayerCurPokemon()->HitAnimation();
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->SetPos(200, 310);
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->Play();
-				SOUND->Play(SOUND->GetMoveEffect(BATTLE->GetCurOpponentMove()->GetType()));
+				SOUND->Play(SOUND->GetMoveEffect(BATTLE->GetCurOpponentMove()->GetType()), 0.5f);
 				m_OpponentAttacked = true;
 			}
 		}
@@ -138,7 +140,7 @@ void CTurnBattle::PokemonAttack()
 				BATTLE->GetOpponentCurPokemon()->HitAnimation();
 				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->SetPos(625, 155);
 				RESOURCE->GetEffect(BATTLE->GetCurMove()->GetType())->Play();
-				SOUND->Play(SOUND->GetMoveEffect(BATTLE->GetCurMove()->GetType()));
+				SOUND->Play(SOUND->GetMoveEffect(BATTLE->GetCurMove()->GetType()), 0.5f);
 				m_playerAttacked = true;
 			}
 		}
@@ -151,6 +153,8 @@ void CTurnBattle::PokemonAttack()
 				//배틀 승리
 				m_battleScene->GetTextBox()->SetText(BATTLE->GetOpponentCurPokemon()->GetPokemonInfo().name + L"이(가) " +
 					L" " + L"쓰러졌다\n");
+				SOUND->Play(SOUND->GetSpecialSound(SpecialSound::Victory), 0.5f);
+				BATTLE->GetOpponentCurPokemon()->SetPos(1000, 1000);
 				BATTLE->SetBattleResult(BattleResult::Win);
 				m_battleScene->ChangeTurn(PlayerAction::Result);
 			}
@@ -172,7 +176,7 @@ void CTurnBattle::PokemonAttack()
 				BATTLE->GetPlayerCurPokemon()->HitAnimation();
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->SetPos(200, 310);
 				RESOURCE->GetEffect(BATTLE->GetCurOpponentMove()->GetType())->Play();
-				SOUND->Play(SOUND->GetMoveEffect(BATTLE->GetCurOpponentMove()->GetType()));
+				SOUND->Play(SOUND->GetMoveEffect(BATTLE->GetCurOpponentMove()->GetType()), 0.5f);
 				m_OpponentAttacked = true;
 			}
 		}

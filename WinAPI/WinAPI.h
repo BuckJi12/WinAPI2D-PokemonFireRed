@@ -179,3 +179,15 @@ enum class BattleResult
 
 	Size
 };
+
+//========================================
+//##				»ç¿îµå				##
+//========================================
+
+enum class SpecialSound
+{
+	Victory,
+	Heal,
+
+	Size
+};

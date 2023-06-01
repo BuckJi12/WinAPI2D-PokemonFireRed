@@ -27,6 +27,11 @@ CSound* CSoundManager::GetBGM(GroupScene scene)
 	return m_mapBGM[scene];
 }
 
+CSound* CSoundManager::GetSpecialSound(SpecialSound sound)
+{
+	return m_mapSpecialSound[sound];
+}
+
 void CSoundManager::Play(CSound* pSound, float volume, bool loop)
 {
 	FMOD_RESULT result;
@@ -122,6 +127,11 @@ void CSoundManager::Init()
 	m_mapBGM.insert(make_pair(GroupScene::Title, title));
 	CSound* viridianTown = RESOURCE->LoadSound(L"ViridianTown", L"Sound\\BGM\\Viridian.wav");
 	m_mapBGM.insert(make_pair(GroupScene::ViridianTown, viridianTown));
+
+	CSound* victory = RESOURCE->LoadSound(L"VictorySound", L"Sound\\Special\\Victory.wav");
+	m_mapSpecialSound.insert(make_pair(SpecialSound::Victory, victory));
+	CSound* heal = RESOURCE->LoadSound(L"HealSound", L"Sound\\Special\\Heal.wav");
+	m_mapSpecialSound.insert(make_pair(SpecialSound::Heal, heal));
 }
 
 void CSoundManager::Update()
