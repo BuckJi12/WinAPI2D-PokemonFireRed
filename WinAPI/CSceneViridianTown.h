@@ -14,6 +14,7 @@ private:
 	CPlayer*		m_pPlayer;
 	CWarp*			m_pWarp;
 	CWarp*			m_pWarp2;
+	CWarp*			m_pWarpToMountain;
 
 private:
 	void Init()		override;

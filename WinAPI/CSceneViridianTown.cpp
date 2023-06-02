@@ -10,6 +10,7 @@ CSceneViridianTown::CSceneViridianTown()
 	m_pPlayer			= nullptr;
 	m_pWarp				= nullptr;
 	m_pWarp2			= nullptr;
+	m_pWarpToMountain	= nullptr;
 }
 
 CSceneViridianTown::~CSceneViridianTown()
@@ -39,6 +40,12 @@ void CSceneViridianTown::Init()
 	m_pWarp2->SetPos(1530, 2550);
 	m_pWarp2->SetScale(270, 34);
 	AddGameObject(m_pWarp2);
+
+	m_pWarpToMountain = new CWarp;
+	m_pWarpToMountain->SetDestination(GroupScene::Mountain);
+	m_pWarpToMountain->SetPos(10, 1150);
+	m_pWarpToMountain->SetScale(52, 255);
+	AddGameObject(m_pWarpToMountain);
 
 	LoadTile(GETPATH + L"Tile\\ViridianTown.tile");
 }
@@ -71,4 +78,5 @@ void CSceneViridianTown::Release()
 	DELETEOBJECT(m_pPlayer);
 	DELETEOBJECT(m_pWarp);
 	DELETEOBJECT(m_pWarp2);
+	DELETEOBJECT(m_pWarpToMountain);
 }

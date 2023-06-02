@@ -127,6 +127,8 @@ void CSoundManager::Init()
 	m_mapBGM.insert(make_pair(GroupScene::Title, title));
 	CSound* viridianTown = RESOURCE->LoadSound(L"ViridianTown", L"Sound\\BGM\\Viridian.wav");
 	m_mapBGM.insert(make_pair(GroupScene::ViridianTown, viridianTown));
+	CSound* mountain = RESOURCE->LoadSound(L"mountainBGM", L"Sound\\BGM\\Mountain.mp3");
+	m_mapBGM.insert(make_pair(GroupScene::Mountain, mountain));
 
 	CSound* victory = RESOURCE->LoadSound(L"VictorySound", L"Sound\\Special\\Victory.wav");
 	m_mapSpecialSound.insert(make_pair(SpecialSound::Victory, victory));
