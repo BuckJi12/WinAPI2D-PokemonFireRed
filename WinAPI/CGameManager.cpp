@@ -63,9 +63,20 @@ void CGameManager::SetCanMove(bool canMove)
 	m_canMove = canMove;
 }
 
+void CGameManager::GetMonsterBall()
+{
+	PLAYER->AddItem(m_ball, 5);
+}
+
 void CGameManager::Init()
 {
 	SetRandomValue();
+	m_ball = new CMonsterBall;
+	m_ball->Init();
+	PLAYER->AddItem(m_ball, 5);
+	m_masterBall = new CMasterBall;
+	m_masterBall->Init();
+	PLAYER->AddItem(m_masterBall, 1);
 }
 
 void CGameManager::Update()
@@ -77,7 +88,7 @@ void CGameManager::Update()
 
 	if (BUTTONDOWN(VK_F6))
 	{
-		SetRandomValue();
+		GetMonsterBall();
 	}
 
 	if (BUTTONDOWN('P'))

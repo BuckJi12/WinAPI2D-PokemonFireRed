@@ -12,11 +12,14 @@ private:
 	virtual ~CGameManager();
 
 private:
-	bool	m_canMove;
-	bool	m_debugMode;
-	bool	m_canMeet;
-	bool	m_playerGetStarting;
-	int		m_randomValue;
+	CMonsterBall*	m_ball;
+	CMasterBall*	m_masterBall;
+
+	bool			m_canMove;
+	bool			m_debugMode;
+	bool			m_canMeet;
+	bool			m_playerGetStarting;
+	int				m_randomValue;
 
 public:
 	float	m_meetTime;
@@ -30,6 +33,9 @@ public:
 	void SetRandomValue();
 	void SetPlayerGetStarting(bool get);
 	void SetCanMove(bool canMove);
+
+private:
+	void GetMonsterBall();
 
 private:
 	void ChangeDebugMode();
