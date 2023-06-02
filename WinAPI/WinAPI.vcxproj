@@ -195,6 +195,7 @@
     <ClInclude Include="CMonsterBall.h" />
     <ClInclude Include="CMove.h" />
     <ClInclude Include="CNPC.h" />
+    <ClInclude Include="CNPCMewtwo.h" />
     <ClInclude Include="CNurse.h" />
     <ClInclude Include="COpponentFloor.h" />
     <ClInclude Include="COpponentStatUI.h" />
@@ -343,6 +344,7 @@
     <ClCompile Include="CMonsterBall.cpp" />
     <ClCompile Include="CMove.cpp" />
     <ClCompile Include="CNPC.cpp" />
+    <ClCompile Include="CNPCMewtwo.cpp" />
     <ClCompile Include="CNurse.cpp" />
     <ClCompile Include="COpponentFloor.cpp" />
     <ClCompile Include="COpponentStatUI.cpp" />

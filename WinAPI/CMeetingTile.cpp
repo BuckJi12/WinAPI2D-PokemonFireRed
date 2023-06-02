@@ -51,6 +51,11 @@ void CMeetingTile::OnCollisionEnter(CCollider* pOther)
 	GAME->m_meetTime += 1;
 	if (GAME->GetCanMeet() && GAME->m_meetTime > GAME->GetValue())
 	{
+		srand(time(NULL));
+		int random = rand() % 18 + 1;
+		int random2 = rand() % 10 - 5;
+		int pokemonLevel = PLAYER->GetPlayerFirstPokemon()->GetPokemonStat().level - random2;
+		BATTLE->BattleInit(random, pokemonLevel);
 		CAMERA->FadeOut(0.25f);
 		GAME->SetCanMove(false);
 		DELAYCHANGESCENE(GroupScene::Battle, 0.5f);

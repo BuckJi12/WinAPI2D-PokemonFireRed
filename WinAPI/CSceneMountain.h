@@ -2,6 +2,7 @@
 
 class CWarp;
 class CPlayer;
+class CNPCMewtwo;
 
 class CSceneMountain : public CScene
 {
@@ -13,6 +14,7 @@ private:
 	CImageObject*	m_pImageBackGround;
 	CPlayer*		m_pPlayer;
 	CWarp*			m_pWarpToViridian;
+	CNPCMewtwo*		m_pNPCMewTwo;
 
 private:
 	void Init()		override;

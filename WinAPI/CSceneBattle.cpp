@@ -175,7 +175,6 @@ void CSceneBattle::Init()
 void CSceneBattle::Enter()
 {
 	CAMERA->FadeIn(3.0f);
-	BATTLE->BattleInit();
 	m_curTurn = m_mapTurns[PlayerAction::Enter];
 	m_curTurn->Enter();
 	CheckAddedGameObject();

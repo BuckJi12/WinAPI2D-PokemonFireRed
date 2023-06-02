@@ -50,7 +50,7 @@ public:
 	void			SetBattleResult(BattleResult result);
 	void			SetFirstAttack(FirstAttack attack);
 	void			SetBattleSituation(BattleSituation situation);
-	void			BattleInit();	// 배틀 기본 설정
+	void			BattleInit(int pokeNum, int level);	// 배틀 기본 설정
 	void			ChooseAction(PlayerAction action); // 1. 배틀 2. 교체 3. 아이템 4. 도망
 	void			CheckFirstAttack();
 	void			PlayerAttack();

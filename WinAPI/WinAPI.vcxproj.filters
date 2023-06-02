@@ -193,6 +193,9 @@
     <Filter Include="GameObject\Pokemon\Pokemon\Psychic">
       <UniqueIdentifier>{643d4beb-ec5c-43c8-8461-1b7f30b4f6e7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\NPC\Mountain">
+      <UniqueIdentifier>{1e2c345d-1d1c-4001-88e3-b54faa560cde}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -633,6 +636,9 @@
     <ClInclude Include="CSceneMountain.h">
       <Filter>Scene</Filter>
     </ClInclude>
+    <ClInclude Include="CNPCMewtwo.h">
+      <Filter>GameObject\NPC\Mountain</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -1048,6 +1054,9 @@
     </ClCompile>
     <ClCompile Include="CSceneMountain.cpp">
       <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CNPCMewtwo.cpp">
+      <Filter>GameObject\NPC\Mountain</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
