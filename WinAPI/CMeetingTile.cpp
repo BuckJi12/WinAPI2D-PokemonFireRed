@@ -48,7 +48,8 @@ void CMeetingTile::Release()
 
 void CMeetingTile::OnCollisionEnter(CCollider* pOther)
 {
-	GAME->m_meetTime += 1;
+	if (GAME->GetCanMeet())
+		GAME->m_meetTime += 1;
 	if (GAME->GetCanMeet() && GAME->m_meetTime > GAME->GetValue())
 	{
 		srand(time(NULL));

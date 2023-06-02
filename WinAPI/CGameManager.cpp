@@ -12,6 +12,9 @@ CGameManager::CGameManager()
 	m_canMeet			= true;
 	m_playerGetStarting = false;
 	m_randomValue		= 0;
+
+	m_ball				= nullptr;
+	m_masterBall		= nullptr;
 	srand(time(NULL));
 }
 
@@ -71,6 +74,11 @@ void CGameManager::GetMonsterBall()
 	PLAYER->AddItem(m_ball, 5);
 }
 
+void CGameManager::ChangeCanMeetPokemon()
+{
+	m_canMeet = !m_canMeet;
+}
+
 void CGameManager::Init()
 {
 	SetRandomValue();
@@ -87,6 +95,7 @@ void CGameManager::Update()
 	if (BUTTONDOWN(VK_F5))
 	{
 		ChangeDebugMode();
+		ChangeCanMeetPokemon();
 	}
 
 	if (BUTTONDOWN(VK_F6))

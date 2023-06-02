@@ -38,6 +38,7 @@ public:
 
 private:
 	void GetMonsterBall();
+	void ChangeCanMeetPokemon();
 
 private:
 	void ChangeDebugMode();
