@@ -103,19 +103,22 @@ void CSceneOakLab::GivePokemon(int index)
 {
 	if (index == 0)	// 捞惑秦采
 	{
-		CPokemon* pokemon = new CPokemon(*POKEMON->FindPokemon(3));
+		CPokemon* pokemon = POKEMON->FindPokemon(3)->Clone();
+		pokemon->Init();
 		pokemon->SetPokemonStat(50);
 		PLAYER->AddPokemonToPlayer(pokemon);
 	}
 	else if (index == 1) // 府磊根
 	{
-		CPokemon* pokemon = new CPokemon(*POKEMON->FindPokemon(6));
+		CPokemon* pokemon = POKEMON->FindPokemon(6)->Clone();
+		pokemon->Init();
 		pokemon->SetPokemonStat(50);
 		PLAYER->AddPokemonToPlayer(pokemon);
 	}
 	else // 芭合空
 	{
-		CPokemon* pokemon = new CPokemon(*POKEMON->FindPokemon(9));
+		CPokemon* pokemon = POKEMON->FindPokemon(9)->Clone();
+		pokemon->Init();
 		pokemon->SetPokemonStat(50);
 		PLAYER->AddPokemonToPlayer(pokemon);
 	}

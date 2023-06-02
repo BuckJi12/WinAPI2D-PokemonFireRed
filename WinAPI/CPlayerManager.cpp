@@ -13,9 +13,6 @@ CPlayerManager::~CPlayerManager()
 
 void CPlayerManager::Init()
 {
-	CPokemon* pokemon = POKEMON->FindPokemon(6)->Clone();
-	pokemon->SetPokemonStat(50);
-	PLAYER->AddPokemonToPlayer(pokemon);
 }
 
 void CPlayerManager::Update()
