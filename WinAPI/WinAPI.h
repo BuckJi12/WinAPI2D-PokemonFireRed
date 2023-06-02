@@ -35,6 +35,7 @@ enum class GroupScene
 	Route01,
 	ViridianTown,
 	Center,
+	Mountain,
 
 	PokemonList,
 	PrevScene,

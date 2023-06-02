@@ -630,6 +630,9 @@
     <ClInclude Include="CMoltres.h">
       <Filter>GameObject\Pokemon\Pokemon\Fire</Filter>
     </ClInclude>
+    <ClInclude Include="CSceneMountain.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI.cpp">
@@ -1042,6 +1045,9 @@
     </ClCompile>
     <ClCompile Include="CMewtwo.cpp">
       <Filter>GameObject\Pokemon\Pokemon\Psychic</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMountain.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

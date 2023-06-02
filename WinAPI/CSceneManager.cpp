@@ -15,6 +15,7 @@
 #include "CScenePokemonList.h"
 #include "CSceneBattle.h"
 #include "CSceneCenter.h"
+#include "CSceneMountain.h"
 //======== Scene ========
 
 CSceneManager::CSceneManager()
@@ -55,6 +56,8 @@ void CSceneManager::Init()
 	m_mapScene.insert(make_pair(GroupScene::ViridianTown, pViridianTown));
 	CScene* pCenter = new CSceneCenter();
 	m_mapScene.insert(make_pair(GroupScene::Center, pCenter));
+	CScene* pMountain = new CSceneMountain();
+	m_mapScene.insert(make_pair(GroupScene::Mountain, pMountain));
 
 	// 게임씬 자료구조를 순회하며 씬을 초기화
 	for (pair<GroupScene, CScene*> scene : m_mapScene)
