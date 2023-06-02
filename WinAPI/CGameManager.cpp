@@ -1,6 +1,9 @@
 #include "framework.h"
 #include "CGameManager.h"
 
+#include "CMonsterBall.h"
+#include "CMasterBall.h"
+
 CGameManager::CGameManager()
 {
 	m_meetTime			= 0;

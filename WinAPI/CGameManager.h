@@ -1,6 +1,8 @@
 #pragma once
 
 class CCore;
+class CMonsterBall;
+class CMasterBall;
 
 class CGameManager : public SingleTon<CGameManager>
 {
