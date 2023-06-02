@@ -4,7 +4,7 @@
 CArticuno::CArticuno()
 {
 	// 포켓몬 정보
-	m_info.name						= L"파이리";
+	m_info.name						= L"프리져";
 	m_info.description				= L"";
 	m_info.number					= 17;
 	m_info.rate						= 3;
@@ -39,6 +39,14 @@ CArticuno::~CArticuno()
 
 CArticuno::CArticuno(const CArticuno& articuno) : CPokemon(articuno)
 {
+}
+
+CArticuno* CArticuno::Clone()
+{
+	CArticuno* copy = new CArticuno;
+	copy->CPokemon::Clone();
+
+	return copy;
 }
 
 void CArticuno::Evolution()

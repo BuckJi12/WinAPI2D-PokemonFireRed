@@ -249,6 +249,31 @@ bool CPokemon::GetCanEvolution()
 	return m_canEvolution;
 }
 
+CPokemon* CPokemon::Clone()
+{
+	CPokemon* copy = new CPokemon;
+
+	copy->m_originalLocation	= this->m_originalLocation;
+	copy->m_knockBackLocation	= this->m_knockBackLocation;
+	copy->m_timer				= this->m_timer;
+	copy->m_onHit				= this->m_onHit;
+
+	copy->m_info				= this->m_info;
+	copy->m_stat				= this->m_stat;
+	copy->m_baseStat			= this->m_baseStat;
+	copy->m_curState			= this->m_curState;
+	copy->m_type1				= this->m_type1;
+	copy->m_type2				= this->m_type2;
+	copy->m_owner				= this->m_owner;
+
+	for (int i = 0; i < this->m_vecMoves.size(); i++)
+	{
+		CMove* move(this->m_vecMoves[i]);
+		copy->m_vecMoves.push_back(move);
+	}
+	return copy;
+}
+
 void CPokemon::Init()
 {
 }

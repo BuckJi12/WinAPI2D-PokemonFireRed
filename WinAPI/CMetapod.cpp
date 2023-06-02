@@ -39,6 +39,14 @@ CMetapod::CMetapod(const CMetapod& metapod) : CPokemon(metapod)
 {
 }
 
+CMetapod* CMetapod::Clone()
+{
+	CMetapod* copy = new CMetapod;
+	copy->CPokemon::Clone();
+
+	return copy;
+}
+
 void CMetapod::Evolution()
 {
 }

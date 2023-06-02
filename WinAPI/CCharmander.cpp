@@ -43,6 +43,15 @@ CCharmander::CCharmander(const CCharmander& charmander) : CPokemon(charmander)
 	m_ember = new CEmber;
 }
 
+CCharmander* CCharmander::Clone()
+{
+	CCharmander* copy = new CCharmander;
+	copy->CPokemon::Clone();
+	copy->m_ember = new CEmber;
+
+	return copy;
+}
+
 void CCharmander::Evolution()
 {
 	// TODO: 진화 구현

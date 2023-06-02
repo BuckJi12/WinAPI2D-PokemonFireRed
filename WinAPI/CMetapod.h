@@ -7,6 +7,7 @@ public:
 	virtual ~CMetapod();
 
 	CMetapod(const CMetapod& metapod);
+	CMetapod* Clone() override;
 
 public:
 	void Evolution() override;

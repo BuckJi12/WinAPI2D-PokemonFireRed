@@ -7,6 +7,7 @@ public:
 	virtual ~CPikachu();
 
 	CPikachu(const CPikachu& pikachu);
+	CPikachu* Clone() override;
 
 public:
 	void Evolution() override;

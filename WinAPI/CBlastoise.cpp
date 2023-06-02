@@ -45,6 +45,14 @@ CBlastoise::CBlastoise(const CBlastoise& blastoise)
 	m_hydroPump = new CHydroPump;
 }
 
+CBlastoise* CBlastoise::Clone()
+{
+	CBlastoise* copy = new CBlastoise;
+	copy->CPokemon::Clone();
+
+	return copy;
+}
+
 void CBlastoise::Evolution()
 {
 }

@@ -7,6 +7,7 @@ public:
 	virtual ~CGengar();
 
 	CGengar(const CGengar& gengar);
+	CGengar* Clone() override;
 
 public:
 	void Evolution() override;

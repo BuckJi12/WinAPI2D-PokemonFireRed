@@ -43,6 +43,15 @@ CVenusaur::CVenusaur(const CVenusaur& venusaur) : CPokemon(venusaur)
 	m_leafStorm = new CLeafStrom;
 }
 
+CVenusaur* CVenusaur::Clone()
+{
+	CVenusaur* copy = new CVenusaur;
+	copy->CPokemon::Clone();
+	copy->m_leafStorm = new CLeafStrom;
+
+	return copy;
+}
+
 void CVenusaur::Evolution()
 {
 }

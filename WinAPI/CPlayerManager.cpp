@@ -13,6 +13,11 @@ CPlayerManager::~CPlayerManager()
 
 void CPlayerManager::Init()
 {
+	//CPokemon* copy = new CPokemon(*POKEMON->FindPokemon(6));
+	CPokemon* pokemon = POKEMON->FindPokemon(6)->Clone();
+	pokemon->SetPokemonStat(50);
+	PLAYER->AddPokemonToPlayer(pokemon);
+
 	CMonsterBall* monsterBall = new CMonsterBall;
 	monsterBall->Init();
 	AddItem(monsterBall, 5);

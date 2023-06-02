@@ -39,6 +39,14 @@ CSquirtle::CSquirtle(const CSquirtle& squirtle) : CPokemon(squirtle)
 {
 }
 
+CSquirtle* CSquirtle::Clone()
+{
+	CSquirtle* copy = new CSquirtle;
+	copy->CPokemon::Clone();
+
+	return copy;
+}
+
 void CSquirtle::Evolution()
 {
 	// TODO: 진화 구현

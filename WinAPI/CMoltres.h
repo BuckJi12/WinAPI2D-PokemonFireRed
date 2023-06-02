@@ -7,6 +7,7 @@ public:
 	virtual ~CMoltres();
 
 	CMoltres(const CMoltres& moltres);
+	CMoltres* Clone() override;
 
 public:
 	void Evolution() override;

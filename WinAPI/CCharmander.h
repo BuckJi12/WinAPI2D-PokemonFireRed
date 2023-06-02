@@ -8,6 +8,7 @@ public:
 	virtual ~CCharmander();
 
 	CCharmander(const CCharmander& charmander);
+	CCharmander* Clone() override;
 
 private:
 	CMove* m_ember;

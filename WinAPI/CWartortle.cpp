@@ -43,6 +43,14 @@ CWartortle::CWartortle(const CWartortle& wartortle) : CPokemon(wartortle)
 {
 }
 
+CWartortle* CWartortle::Clone()
+{
+	CWartortle* copy = new CWartortle;
+	copy->CPokemon::Clone();
+
+	return copy;
+}
+
 void CWartortle::Evolution()
 {
 }

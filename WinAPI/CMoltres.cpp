@@ -42,6 +42,14 @@ CMoltres::CMoltres(const CMoltres& moltres) : CPokemon(moltres)
 {
 }
 
+CMoltres* CMoltres::Clone()
+{
+	CMoltres* copy = new CMoltres;
+	copy->CPokemon::Clone();
+
+	return copy;
+}
+
 void CMoltres::Evolution()
 {
 }

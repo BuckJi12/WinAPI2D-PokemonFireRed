@@ -7,6 +7,7 @@ public:
 	virtual ~CArticuno();
 
 	CArticuno(const CArticuno& articuno);
+	CArticuno* Clone() override;
 
 public:
 	void Evolution() override;

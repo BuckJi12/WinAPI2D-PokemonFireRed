@@ -7,6 +7,7 @@ public:
 	virtual ~CSquirtle();
 
 	CSquirtle(const CSquirtle& squirtle);
+	CSquirtle* Clone() override;
 
 public:
 	void Evolution() override;

@@ -54,7 +54,7 @@ void CTurnResult::Update()
 	if (BUTTONDOWN(VK_SPACE))
 	{
 		Exit();
-		SOUND->Stop(SOUND->GetSpecialSound(SpecialSound::Victory));
+		SOUND->Pause(SOUND->GetSpecialSound(SpecialSound::Victory));
 		SCENE->ChangePrevScene();
 		GAME->SetRandomValue();
 		GAME->SetCanMove(true);

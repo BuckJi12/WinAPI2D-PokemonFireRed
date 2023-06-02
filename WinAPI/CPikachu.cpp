@@ -43,6 +43,14 @@ CPikachu::CPikachu(const CPikachu& pikachu) : CPokemon(pikachu)
 {
 }
 
+CPikachu* CPikachu::Clone()
+{
+	CPikachu* copy = new CPikachu;
+	copy->CPokemon::Clone();
+
+	return copy;
+}
+
 void CPikachu::Evolution()
 {
 }

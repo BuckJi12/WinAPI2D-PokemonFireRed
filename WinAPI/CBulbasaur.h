@@ -6,6 +6,7 @@ public:
 	virtual ~CBulbasaur();
 
 	CBulbasaur(const CBulbasaur& bulbasaur);
+	CBulbasaur* Clone() override;
 
 public:
 	void Evolution()		override;

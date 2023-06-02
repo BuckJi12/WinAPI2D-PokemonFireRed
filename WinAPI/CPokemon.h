@@ -174,6 +174,7 @@ public:
 public:
 	virtual void		Evolution() {};
 	virtual void		LearnMoveList() {};
+	virtual CPokemon*	Clone();
 
 	void				Init() override;
 protected:

@@ -7,6 +7,7 @@ public:
 	virtual ~CZapdos();
 
 	CZapdos(const CZapdos& zapdos);
+	CZapdos* Clone() override;
 
 public:
 	void Evolution() override;

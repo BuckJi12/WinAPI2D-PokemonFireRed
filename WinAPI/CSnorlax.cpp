@@ -43,6 +43,14 @@ CSnorlax::CSnorlax(const CSnorlax& snorlax) : CPokemon(snorlax)
 {
 }
 
+CSnorlax* CSnorlax::Clone()
+{
+	CSnorlax* copy = new CSnorlax;
+	copy->CPokemon::Clone();
+
+	return copy;
+}
+
 void CSnorlax::Evolution()
 {
 }

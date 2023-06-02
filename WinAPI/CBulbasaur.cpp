@@ -42,6 +42,14 @@ CBulbasaur::CBulbasaur(const CBulbasaur& bulbasaur) : CPokemon(bulbasaur)
 {
 }
 
+CBulbasaur* CBulbasaur::Clone()
+{
+	CBulbasaur* copy = new CBulbasaur;
+	copy->CPokemon::Clone();
+
+	return copy;
+}
+
 void CBulbasaur::Evolution()
 {
 	// TODO: 진화 구현

@@ -7,6 +7,7 @@ public:
 	virtual ~CSnorlax();
 
 	CSnorlax(const CSnorlax& snorlax);
+	CSnorlax* Clone() override;
 
 public:
 	void Evolution() override;

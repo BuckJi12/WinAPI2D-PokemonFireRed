@@ -39,6 +39,14 @@ CButterfree::CButterfree(const CButterfree& butterfree) : CPokemon(butterfree)
 {
 }
 
+CButterfree* CButterfree::Clone()
+{
+	CButterfree* copy = new CButterfree;
+	copy->CPokemon::Clone();
+
+	return copy;
+}
+
 void CButterfree::Evolution()
 {
 }

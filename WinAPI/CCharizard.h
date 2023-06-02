@@ -7,6 +7,7 @@ public:
 	virtual ~CCharizard();
 
 	CCharizard(const CCharizard& charizard);
+	CCharizard* Clone() override;
 
 private:
 	CMove* m_fireBlast;

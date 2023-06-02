@@ -39,6 +39,14 @@ CCaterpie::CCaterpie(const CCaterpie& caterpie) : CPokemon(caterpie)
 {
 }
 
+CCaterpie* CCaterpie::Clone()
+{
+	CCaterpie* caterpie = new CCaterpie;
+	caterpie->CPokemon::Clone();
+
+	return caterpie;
+}
+
 void CCaterpie::Evolution()
 {
 }

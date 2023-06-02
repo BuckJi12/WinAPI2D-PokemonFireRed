@@ -7,6 +7,7 @@ public:
 	virtual ~CDragonite();
 
 	CDragonite(const CDragonite& dragonite);
+	CDragonite* Clone() override;
 
 public:
 	void Evolution() override;

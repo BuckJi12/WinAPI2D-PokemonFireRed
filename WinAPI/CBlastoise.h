@@ -7,6 +7,7 @@ public:
 	virtual ~CBlastoise();
 
 	CBlastoise(const CBlastoise& blastoise);
+	CBlastoise* Clone() override;
 
 private:
 	CMove* m_hydroPump;

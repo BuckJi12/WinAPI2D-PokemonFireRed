@@ -42,6 +42,14 @@ CCharmeleon::CCharmeleon(const CCharmeleon& charmeleon) : CPokemon(charmeleon)
 	m_ember = new CEmber;
 }
 
+CCharmeleon* CCharmeleon::Clone()
+{
+	CCharmeleon* copy = new CCharmeleon;
+	copy->CPokemon::Clone();
+
+	return copy;
+}
+
 void CCharmeleon::Evolution()
 {
 	// TODO: 진화 구현

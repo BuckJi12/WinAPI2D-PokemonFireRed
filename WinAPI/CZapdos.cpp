@@ -41,6 +41,14 @@ CZapdos::CZapdos(const CZapdos& zapdos) : CPokemon(zapdos)
 {
 }
 
+CZapdos* CZapdos::Clone()
+{
+	CZapdos* copy = new CZapdos;
+	copy->CPokemon::Clone();
+
+	return copy;
+}
+
 void CZapdos::Evolution()
 {
 }

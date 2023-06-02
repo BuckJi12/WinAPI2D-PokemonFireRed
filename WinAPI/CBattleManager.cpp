@@ -126,8 +126,8 @@ void CBattleManager::BattleInit()
 	srand(time(NULL));
 	int random = rand() % 18 + 1;
 	m_pPlayerCurPokemon = PLAYER->GetPlayerFirstPokemon();
-	m_pOppoentCurPokemon = new CPokemon(*POKEMON->FindPokemon(random));
-	int random2 = rand() % 5 + 1;
+	m_pOppoentCurPokemon = POKEMON->FindPokemon(random)->Clone();
+	int random2 = rand() % 10 - 5;
 	int pokemonLevel = m_pPlayerCurPokemon->GetPokemonStat().level - random2;
 	m_pOppoentCurPokemon->SetPokemonStat(pokemonLevel);
 }

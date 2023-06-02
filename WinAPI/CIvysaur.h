@@ -7,6 +7,7 @@ public:
 	virtual ~CIvysaur();
 
 	CIvysaur(const CIvysaur& ivysaur);
+	CIvysaur* Clone() override;
 
 private:
 	CMove* m_vineWhip;

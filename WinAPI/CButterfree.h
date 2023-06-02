@@ -7,6 +7,7 @@ public:
 	virtual ~CButterfree();
 
 	CButterfree(const CButterfree& butterfree);
+	CButterfree* Clone() override;
 
 public:
 	void Evolution() override;

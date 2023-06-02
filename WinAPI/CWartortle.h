@@ -7,6 +7,7 @@ public:
 	virtual ~CWartortle();
 
 	CWartortle(const CWartortle& wartortle);
+	CWartortle* Clone() override;
 
 public:
 	void Evolution() override;

@@ -47,6 +47,14 @@ CMewtwo::CMewtwo(const CMewtwo& mewtwo) : CPokemon(mewtwo)
 {
 }
 
+CMewtwo* CMewtwo::Clone()
+{
+	CMewtwo* copy = new CMewtwo;
+	copy->CPokemon::Clone();
+
+	return copy;
+}
+
 void CMewtwo::Evolution()
 {
 }

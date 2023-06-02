@@ -47,6 +47,14 @@ CGengar::CGengar(const CGengar& gengar) : CPokemon(gengar)
 {
 }
 
+CGengar* CGengar::Clone()
+{
+	CGengar* copy = new CGengar;
+	copy->CPokemon::Clone();
+
+	return copy;
+}
+
 void CGengar::Evolution()
 {
 }

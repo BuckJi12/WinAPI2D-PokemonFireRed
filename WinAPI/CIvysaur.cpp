@@ -41,6 +41,14 @@ CIvysaur::CIvysaur(const CIvysaur& ivysaur) : CPokemon(ivysaur)
 	m_vineWhip = new CVineWhip;
 }
 
+CIvysaur* CIvysaur::Clone()
+{
+	CIvysaur* copy = new CIvysaur;
+	copy->CPokemon::Clone();
+
+	return copy;
+}
+
 void CIvysaur::Evolution()
 {
 }

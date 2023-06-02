@@ -7,6 +7,7 @@ public:
 	virtual ~CCaterpie();
 
 	CCaterpie(const CCaterpie& caterpie);
+	CCaterpie* Clone() override;
 
 public:
 	void Evolution() override;

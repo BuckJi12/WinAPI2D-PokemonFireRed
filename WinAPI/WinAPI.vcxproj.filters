@@ -624,11 +624,11 @@
     <ClInclude Include="CZapdos.h">
       <Filter>GameObject\Pokemon\Pokemon\Lightning</Filter>
     </ClInclude>
-    <ClInclude Include="CMoltres.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="CMewtwo.h">
       <Filter>GameObject\Pokemon\Pokemon\Psychic</Filter>
+    </ClInclude>
+    <ClInclude Include="CMoltres.h">
+      <Filter>GameObject\Pokemon\Pokemon\Fire</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

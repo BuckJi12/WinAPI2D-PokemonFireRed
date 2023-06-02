@@ -7,6 +7,7 @@ public:
 	virtual ~CCharmeleon();
 
 	CCharmeleon(const CCharmeleon& charmeleon);
+	CCharmeleon* Clone() override;
 
 private:
 	CMove* m_ember;

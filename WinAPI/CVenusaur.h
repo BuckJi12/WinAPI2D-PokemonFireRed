@@ -7,6 +7,7 @@ public:
 	virtual ~CVenusaur();
 
 	CVenusaur(const CVenusaur& venusaur);
+	CVenusaur* Clone() override;
 
 private:
 	CMove* m_leafStorm;

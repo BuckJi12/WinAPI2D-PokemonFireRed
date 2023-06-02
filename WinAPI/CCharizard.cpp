@@ -45,6 +45,17 @@ CCharizard::CCharizard(const CCharizard& charizard) : CPokemon(charizard)
 	m_thunderPunch		= new CThunderPunch;
 }
 
+CCharizard* CCharizard::Clone()
+{
+	CCharizard* copy = new CCharizard;
+	copy->CPokemon::Clone();
+	copy->m_fireBlast		= new CFireBlast;
+	copy->m_firePunch		= new CFirePunch;
+	copy->m_thunderPunch	= new CThunderPunch;
+
+	return copy;
+}
+
 void CCharizard::Evolution()
 {
 }

@@ -7,6 +7,7 @@ public:
 	virtual ~CMewtwo();
 
 	CMewtwo(const CMewtwo& mewtwo);
+	CMewtwo* Clone() override;
 
 public:
 	void Evolution() override;

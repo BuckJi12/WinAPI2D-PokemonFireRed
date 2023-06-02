@@ -29,6 +29,12 @@ CDragonite::CDragonite()
 
 	CMove* tackle = new CTackle;
 	LearnMove(tackle);
+	CMove* thunderPunch = new CThunderPunch;
+	LearnMove(thunderPunch);
+	CMove* icePunch = new CIcePunch;
+	LearnMove(icePunch);
+	CMove* firePunch = new CFirePunch;
+	LearnMove(firePunch);
 
 	Init();
 }
@@ -39,6 +45,14 @@ CDragonite::~CDragonite()
 
 CDragonite::CDragonite(const CDragonite& dragonite) : CPokemon(dragonite)
 {
+}
+
+CDragonite* CDragonite::Clone()
+{
+	CDragonite* copy = new CDragonite;
+	copy->CPokemon::Clone();
+
+	return copy;
 }
 
 void CDragonite::Evolution()
