@@ -38,8 +38,8 @@ void CCore::Init()
 	UI->Init();
 	SOUND->Init();
 	GAME->Init();
-	PLAYER->Init();
 	POKEMON->Init();
+	PLAYER->Init();
 
 	SCENE->Init();
 }

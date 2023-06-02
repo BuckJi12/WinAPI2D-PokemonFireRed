@@ -18,7 +18,7 @@ void CTurnResult::GetReward()
 		m_gotReward = true;
 		for (auto pokemon : PLAYER->GetPlayerPokemonList())
 		{
-			pokemon->AddExp(pokemon->GetPokemonStat().maxExp);
+			pokemon->LevelUp();
 		}
 	}
 
